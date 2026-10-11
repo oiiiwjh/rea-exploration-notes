@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "reportHttpStatus": 200,
+  "embeddedImage": true,
+  "wide": [
+    1280,
+    900
+  ],
+  "narrow": [
+    390,
+    844
+  ],
+  "wikiLink": true,
+  "consoleErrors": []
+}

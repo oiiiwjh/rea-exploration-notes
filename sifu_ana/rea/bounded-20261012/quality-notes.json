@@ -1,0 +1,6 @@
+{
+  "phase": "intermediate-code-seeds-only",
+  "transportSucceeded": true,
+  "issue": "Existing exception-directory function bodies may still contain only the entry instruction even after code seeds decode further instructions. Superseded by pdb-ranges-20261012 with checked explicit PDB extents.",
+  "wholeGameRecovery": false
+}

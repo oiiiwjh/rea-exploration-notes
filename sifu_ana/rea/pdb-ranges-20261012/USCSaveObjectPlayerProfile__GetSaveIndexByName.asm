@@ -1,0 +1,47 @@
+0x140a4eeb0: MOV qword ptr [RSP + 0x8], RBX
+0x140a4eeb5: MOV qword ptr [RSP + 0x10], RSI
+0x140a4eeba: MOV qword ptr [RSP + 0x18], RDI
+0x140a4eebf: PUSH R14
+0x140a4eec1: SUB RSP, 0x20
+0x140a4eec5: MOV R14, qword ptr [RCX + 0x48]
+0x140a4eec9: MOV RDI, RDX
+0x140a4eecc: MOVSXD RAX, dword ptr [RCX + 0x50]
+0x140a4eed0: MOV RBX, R14
+0x140a4eed3: LEA RCX, [RAX + RAX*0x4]
+0x140a4eed7: LEA RSI, [R14 + RCX*0x8]
+0x140a4eedb: CMP R14, RSI
+0x140a4eede: JZ 0x140a4ef13
+0x140a4eee0: MOV EAX, dword ptr [RDI + 0x8]
+0x140a4eee3: MOV ECX, dword ptr [RBX + 0x8]
+0x140a4eee6: CMP EAX, ECX
+0x140a4eee8: JZ 0x140a4eef1
+0x140a4eeea: ADD EAX, ECX
+0x140a4eeec: CMP EAX, 0x1
+0x140a4eeef: JMP 0x140a4ef03
+0x140a4eef1: CMP EAX, 0x1
+0x140a4eef4: JLE 0x140a4ef2e
+0x140a4eef6: MOV RDX, qword ptr [RBX]
+0x140a4eef9: MOV RCX, qword ptr [RDI]
+0x140a4eefc: CALL 0x141bb8c50
+0x140a4ef01: TEST EAX, EAX
+0x140a4ef03: SETZ AL
+0x140a4ef06: TEST AL, AL
+0x140a4ef08: JNZ 0x140a4ef2e
+0x140a4ef0a: ADD RBX, 0x28
+0x140a4ef0e: CMP RBX, RSI
+0x140a4ef11: JNZ 0x140a4eee0
+0x140a4ef13: MOV EAX, 0xffffffff
+0x140a4ef18: MOV RBX, qword ptr [RSP + 0x30]
+0x140a4ef1d: MOV RSI, qword ptr [RSP + 0x38]
+0x140a4ef22: MOV RDI, qword ptr [RSP + 0x40]
+0x140a4ef27: ADD RSP, 0x20
+0x140a4ef2b: POP R14
+0x140a4ef2d: RET
+0x140a4ef2e: SUB RBX, R14
+0x140a4ef31: MOV RAX, 0x6666666666666667
+0x140a4ef3b: IMUL RBX
+0x140a4ef3e: SAR RDX, 0x4
+0x140a4ef42: MOV RAX, RDX
+0x140a4ef45: SHR RAX, 0x3f
+0x140a4ef49: ADD RAX, RDX
+0x140a4ef4c: JMP 0x140a4ef18

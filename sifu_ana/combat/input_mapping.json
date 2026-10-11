@@ -1,0 +1,1508 @@
+{
+  "transition_to_input": [
+    {
+      "transition_id": 0,
+      "transition": "Light",
+      "input_id": 0,
+      "input": "AttackLight",
+      "target_rva": "0x178fa1b"
+    },
+    {
+      "transition_id": 1,
+      "transition": "LightHold",
+      "input_id": 1,
+      "input": "AttackLightHold",
+      "target_rva": "0x178fa1e"
+    },
+    {
+      "transition_id": 2,
+      "transition": "LightAlt",
+      "input_id": 2,
+      "input": "AttackLightAlt",
+      "target_rva": "0x178fa21"
+    },
+    {
+      "transition_id": 3,
+      "transition": "LightFront",
+      "input_id": 111,
+      "input": "AttackLightFront",
+      "target_rva": "0x178fa2d"
+    },
+    {
+      "transition_id": 4,
+      "transition": "LightFrontFront",
+      "input_id": 110,
+      "input": "AttackLightFrontFront",
+      "target_rva": "0x178fa33"
+    },
+    {
+      "transition_id": 5,
+      "transition": "LightBackFront",
+      "input_id": 109,
+      "input": "AttackLightBackFront",
+      "target_rva": "0x178fa30"
+    },
+    {
+      "transition_id": 6,
+      "transition": "Heavy",
+      "input_id": 3,
+      "input": "AttackHeavy",
+      "target_rva": "0x178fa24"
+    },
+    {
+      "transition_id": 7,
+      "transition": "HeavyHold",
+      "input_id": 4,
+      "input": "AttackHeavyHold",
+      "target_rva": "0x178fa27"
+    },
+    {
+      "transition_id": 8,
+      "transition": "HeavyAlt",
+      "input_id": 5,
+      "input": "AttackHeavyAlt",
+      "target_rva": "0x178fa2a"
+    },
+    {
+      "transition_id": 9,
+      "transition": "HeavyFront",
+      "input_id": 114,
+      "input": "AttackHeavyFront",
+      "target_rva": "0x178fa36"
+    },
+    {
+      "transition_id": 10,
+      "transition": "HeavyFrontFront",
+      "input_id": 113,
+      "input": "AttackHeavyFrontFront",
+      "target_rva": "0x178fa3c"
+    },
+    {
+      "transition_id": 11,
+      "transition": "HeavyBackFront",
+      "input_id": 112,
+      "input": "AttackHeavyBackFront",
+      "target_rva": "0x178fa39"
+    },
+    {
+      "transition_id": 12,
+      "transition": "AttackKnockdown",
+      "input_id": 116,
+      "input": "AttackKnockdown",
+      "target_rva": "0x178fa3f"
+    },
+    {
+      "transition_id": 13,
+      "transition": "AttackKnockdownHold",
+      "input_id": 117,
+      "input": "AttackKnockdownHold",
+      "target_rva": "0x178fa42"
+    },
+    {
+      "transition_id": 14,
+      "transition": "Grab",
+      "input_id": 118,
+      "input": "AttackGrab",
+      "target_rva": "0x178fa45"
+    },
+    {
+      "transition_id": 15,
+      "transition": "LightRushAttack",
+      "input_id": 145,
+      "input": "LightRushAttack",
+      "target_rva": "0x178fa48"
+    },
+    {
+      "transition_id": 16,
+      "transition": "DodgeAttack",
+      "input_id": 209,
+      "input": "None",
+      "target_rva": "0x178fa51"
+    },
+    {
+      "transition_id": 17,
+      "transition": "LightGuard",
+      "input_id": 209,
+      "input": "None",
+      "target_rva": "0x178fa51"
+    },
+    {
+      "transition_id": 18,
+      "transition": "HeavyGuard",
+      "input_id": 209,
+      "input": "None",
+      "target_rva": "0x178fa51"
+    },
+    {
+      "transition_id": 19,
+      "transition": "Disengage",
+      "input_id": 170,
+      "input": "Disengage",
+      "target_rva": "0x178fa4e"
+    },
+    {
+      "transition_id": 20,
+      "transition": "HeavyRushAttack",
+      "input_id": 174,
+      "input": "HeavyRushAttack",
+      "target_rva": "0x178fa4b"
+    }
+  ],
+  "input_to_transition": [
+    {
+      "input_id": 0,
+      "input": "AttackLight",
+      "transition_id": 0,
+      "transition": "Light",
+      "target_rva": "0x178fdf5"
+    },
+    {
+      "input_id": 1,
+      "input": "AttackLightHold",
+      "transition_id": 1,
+      "transition": "LightHold",
+      "target_rva": "0x178fdf8"
+    },
+    {
+      "input_id": 2,
+      "input": "AttackLightAlt",
+      "transition_id": 2,
+      "transition": "LightAlt",
+      "target_rva": "0x178fdfb"
+    },
+    {
+      "input_id": 3,
+      "input": "AttackHeavy",
+      "transition_id": 6,
+      "transition": "Heavy",
+      "target_rva": "0x178fe07"
+    },
+    {
+      "input_id": 4,
+      "input": "AttackHeavyHold",
+      "transition_id": 7,
+      "transition": "HeavyHold",
+      "target_rva": "0x178fe0a"
+    },
+    {
+      "input_id": 5,
+      "input": "AttackHeavyAlt",
+      "transition_id": 8,
+      "transition": "HeavyAlt",
+      "target_rva": "0x178fe0d"
+    },
+    {
+      "input_id": 6,
+      "input": "Guard",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 7,
+      "input": "Dodge",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 8,
+      "input": "Rush",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 9,
+      "input": "Parry",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 10,
+      "input": "Avoid",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 11,
+      "input": "Absorb",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 12,
+      "input": "Move",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 13,
+      "input": "LockMove",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 14,
+      "input": "MoveInterrupt",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 15,
+      "input": "GuardInterrupt",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 16,
+      "input": "Look",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 17,
+      "input": "Lock",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 18,
+      "input": "TargetSwitch",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 19,
+      "input": "DesignateTarget",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 20,
+      "input": "Cancel",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 21,
+      "input": "SheatheDropWeapon",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 22,
+      "input": "Action",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 23,
+      "input": "DodgeMove",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 24,
+      "input": "DodgeReorientation",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 25,
+      "input": "MenuRemove",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 26,
+      "input": "MenuCancel",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 27,
+      "input": "AttackDetailsCancel",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 28,
+      "input": "ParrySelection",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 29,
+      "input": "AvoidSelection",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 30,
+      "input": "PlayCombo",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 31,
+      "input": "QuadrantChange",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 32,
+      "input": "DrawWeapon",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 33,
+      "input": "NextMenuPage",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 34,
+      "input": "PreviousMenuPage",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 35,
+      "input": "SpectatorMove",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 36,
+      "input": "SpectatorLook",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 37,
+      "input": "SpectatorLock",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 38,
+      "input": "SpectatorDebug",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 39,
+      "input": "VerticalStrafe",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 40,
+      "input": "ChangeCameraSpeed",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 41,
+      "input": "ChangeCameraFOV",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 42,
+      "input": "ChangeCameraDamping",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 43,
+      "input": "InGameMenu",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 44,
+      "input": "UseItemRight",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 45,
+      "input": "UseItemLeft",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 46,
+      "input": "DropItem",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 47,
+      "input": "LaunchEmote",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 48,
+      "input": "ResetQuadrant",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 49,
+      "input": "DebugMenu",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 50,
+      "input": "FlyMode",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 51,
+      "input": "MenuEdit",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 52,
+      "input": "MenuRename",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 53,
+      "input": "MenuPreview",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 54,
+      "input": "StopTraining",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 55,
+      "input": "MenuCopy",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 56,
+      "input": "MenuPaste",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 57,
+      "input": "CancelMatchmaking",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 58,
+      "input": "MenuAction",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 59,
+      "input": "MenuActionHold",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 60,
+      "input": "DismissRequest",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 61,
+      "input": "MenuToggleStats",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 62,
+      "input": "Revive",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 63,
+      "input": "Vanish",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 64,
+      "input": "MenuNavigation",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 65,
+      "input": "MouseLook",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 66,
+      "input": "MouseWheelSelection",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 67,
+      "input": "StanceMode",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 68,
+      "input": "MenuStartTraining",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 69,
+      "input": "MenuQuadrantChange",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 70,
+      "input": "MenuToggleOverview",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 71,
+      "input": "MenuStanceSelectionQuadrantChange",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 72,
+      "input": "DrunkenAttack",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 73,
+      "input": "DrunkenAttackPerfect",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 74,
+      "input": "DrunkenAttackSelection",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 75,
+      "input": "SpeedUpFlyMode",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 76,
+      "input": "TutorialList",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 77,
+      "input": "NextTutorialPage",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 78,
+      "input": "PreviousTutorialPage",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 79,
+      "input": "TutorialAction",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 80,
+      "input": "TutorialCancel",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 81,
+      "input": "SkipCinematic",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 82,
+      "input": "TrainingNextWeapon",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 83,
+      "input": "TrainingPrevWeapon",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 84,
+      "input": "TrainingEdit",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 85,
+      "input": "MenuActionTertiary",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 86,
+      "input": "MenuActionSecondary",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 87,
+      "input": "EmoteWheelSelectForEdition",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 88,
+      "input": "StanceBL",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 89,
+      "input": "StanceBR",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 90,
+      "input": "StanceFL",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 91,
+      "input": "StanceFR",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 92,
+      "input": "AI_SpecialAttack",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 93,
+      "input": "MenuDownSpectateNext",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 94,
+      "input": "MenuDownSpectatePrevious",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 95,
+      "input": "TakedownMode",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 96,
+      "input": "TakedownValidation",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 97,
+      "input": "PushObject",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 98,
+      "input": "PickUpObject",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 99,
+      "input": "ThrowObject",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 100,
+      "input": "ThrowFromPickUp",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 101,
+      "input": "DropObject",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 102,
+      "input": "ContextualActionObject",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 103,
+      "input": "ThrowContextualObject",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 104,
+      "input": "ShowMovableInteractions",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 105,
+      "input": "HideMovableInteractions",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 106,
+      "input": "Grab",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 107,
+      "input": "PushFromGrab",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 108,
+      "input": "Traversal",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 109,
+      "input": "AttackLightBackFront",
+      "transition_id": 5,
+      "transition": "LightBackFront",
+      "target_rva": "0x178fe04"
+    },
+    {
+      "input_id": 110,
+      "input": "AttackLightFrontFront",
+      "transition_id": 4,
+      "transition": "LightFrontFront",
+      "target_rva": "0x178fe01"
+    },
+    {
+      "input_id": 111,
+      "input": "AttackLightFront",
+      "transition_id": 3,
+      "transition": "LightFront",
+      "target_rva": "0x178fdfe"
+    },
+    {
+      "input_id": 112,
+      "input": "AttackHeavyBackFront",
+      "transition_id": 11,
+      "transition": "HeavyBackFront",
+      "target_rva": "0x178fe13"
+    },
+    {
+      "input_id": 113,
+      "input": "AttackHeavyFrontFront",
+      "transition_id": 10,
+      "transition": "HeavyFrontFront",
+      "target_rva": "0x178fe16"
+    },
+    {
+      "input_id": 114,
+      "input": "AttackHeavyFront",
+      "transition_id": 9,
+      "transition": "HeavyFront",
+      "target_rva": "0x178fe10"
+    },
+    {
+      "input_id": 115,
+      "input": "DeflectGrab",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 116,
+      "input": "AttackKnockdown",
+      "transition_id": 12,
+      "transition": "AttackKnockdown",
+      "target_rva": "0x178fe19"
+    },
+    {
+      "input_id": 117,
+      "input": "AttackKnockdownHold",
+      "transition_id": 13,
+      "transition": "AttackKnockdownHold",
+      "target_rva": "0x178fe1c"
+    },
+    {
+      "input_id": 118,
+      "input": "AttackGrab",
+      "transition_id": 14,
+      "transition": "Grab",
+      "target_rva": "0x178fe1f"
+    },
+    {
+      "input_id": 119,
+      "input": "PrepFocus",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 120,
+      "input": "PrepFocusHold",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 121,
+      "input": "LaunchFocusExecution",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 122,
+      "input": "ParryFromDown",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 123,
+      "input": "DialogSentence0",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 124,
+      "input": "DialogSentence1",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 125,
+      "input": "DialogSentence2",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 126,
+      "input": "NextAltMenuPage",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 127,
+      "input": "PreviousAltMenuPage",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 128,
+      "input": "FallInterrupt",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 129,
+      "input": "AIDash",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 130,
+      "input": "TestAction1",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 131,
+      "input": "TestAction2",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 132,
+      "input": "TestAction3",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 133,
+      "input": "TestAction4",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 134,
+      "input": "TestAction5",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 135,
+      "input": "TestAction6",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 136,
+      "input": "TestAction7",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 137,
+      "input": "TestAction8",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 138,
+      "input": "TestAction9",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 139,
+      "input": "TestAction10",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 140,
+      "input": "TestActionAxis1",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 141,
+      "input": "TestActionAxis2",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 142,
+      "input": "TestActionAxis3",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 143,
+      "input": "TestActionAxis4",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 144,
+      "input": "TestActionAxis5",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 145,
+      "input": "LightRushAttack",
+      "transition_id": 15,
+      "transition": "LightRushAttack",
+      "target_rva": "0x178fe22"
+    },
+    {
+      "input_id": 146,
+      "input": "DizzyReduction",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 147,
+      "input": "Resume",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 148,
+      "input": "AddKey",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 149,
+      "input": "RemoveKey",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 150,
+      "input": "EditCamera",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 151,
+      "input": "SelectLeftKey",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 152,
+      "input": "SelectRightKey",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 153,
+      "input": "TimelineMoveBackward",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 154,
+      "input": "TimelineMoveForward",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 155,
+      "input": "Scrub",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 156,
+      "input": "CounterGrab",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 157,
+      "input": "SpectatorExit",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 158,
+      "input": "FocusVitalPointSelection",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 159,
+      "input": "EditorSpecialMenu",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 160,
+      "input": "DodgeAttack",
+      "transition_id": 16,
+      "transition": "DodgeAttack",
+      "target_rva": "0x178fe28"
+    },
+    {
+      "input_id": 161,
+      "input": "AttackLightGuard",
+      "transition_id": 17,
+      "transition": "LightGuard",
+      "target_rva": "0x178fe2b"
+    },
+    {
+      "input_id": 162,
+      "input": "AttackHeavyGuard",
+      "transition_id": 18,
+      "transition": "HeavyGuard",
+      "target_rva": "0x178fe2e"
+    },
+    {
+      "input_id": 163,
+      "input": "ReplayExport",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 164,
+      "input": "ReplayMenu",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 165,
+      "input": "PushbackCancel",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 166,
+      "input": "CameraSettings",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 167,
+      "input": "ApplySettings",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 168,
+      "input": "ReplayTimelineMode",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 169,
+      "input": "MenuActionSecondaryHold",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 170,
+      "input": "Disengage",
+      "transition_id": 19,
+      "transition": "Disengage",
+      "target_rva": "0x178fe31"
+    },
+    {
+      "input_id": 171,
+      "input": "CameraZoom",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 172,
+      "input": "CameraRoll",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 173,
+      "input": "CycleUIMode",
+      "transition_id": 22,
+      "transition": "None",
+      "target_rva": "0x178fe34"
+    },
+    {
+      "input_id": 174,
+      "input": "HeavyRushAttack",
+      "transition_id": 20,
+      "transition": "HeavyRushAttack",
+      "target_rva": "0x178fe25"
+    }
+  ],
+  "target_lookup_input": [
+    {
+      "transition": "Light",
+      "input": "AttackLight",
+      "input_id": 0,
+      "target_rva": "0x179e373"
+    },
+    {
+      "transition": "LightHold",
+      "input": "AttackLightHold",
+      "input_id": 1,
+      "target_rva": "0x179e377"
+    },
+    {
+      "transition": "LightAlt",
+      "input": "AttackLightAlt",
+      "input_id": 2,
+      "target_rva": "0x179e37b"
+    },
+    {
+      "transition": "LightFront",
+      "input": "AttackLightFront",
+      "input_id": 111,
+      "target_rva": "0x179e38b"
+    },
+    {
+      "transition": "LightFrontFront",
+      "input": "AttackLightFrontFront",
+      "input_id": 110,
+      "target_rva": "0x179e393"
+    },
+    {
+      "transition": "LightBackFront",
+      "input": "AttackLightBackFront",
+      "input_id": 109,
+      "target_rva": "0x179e38f"
+    },
+    {
+      "transition": "Heavy",
+      "input": "AttackHeavy",
+      "input_id": 3,
+      "target_rva": "0x179e37f"
+    },
+    {
+      "transition": "HeavyHold",
+      "input": "AttackHeavyHold",
+      "input_id": 4,
+      "target_rva": "0x179e383"
+    },
+    {
+      "transition": "HeavyAlt",
+      "input": "AttackHeavyAlt",
+      "input_id": 5,
+      "target_rva": "0x179e387"
+    },
+    {
+      "transition": "HeavyFront",
+      "input": "AttackHeavyFront",
+      "input_id": 114,
+      "target_rva": "0x179e397"
+    },
+    {
+      "transition": "HeavyFrontFront",
+      "input": "AttackHeavyFrontFront",
+      "input_id": 113,
+      "target_rva": "0x179e39f"
+    },
+    {
+      "transition": "HeavyBackFront",
+      "input": "AttackHeavyBackFront",
+      "input_id": 112,
+      "target_rva": "0x179e39b"
+    },
+    {
+      "transition": "AttackKnockdown",
+      "input": "AttackKnockdown",
+      "input_id": 116,
+      "target_rva": "0x179e3a3"
+    },
+    {
+      "transition": "AttackKnockdownHold",
+      "input": "AttackKnockdownHold",
+      "input_id": 117,
+      "target_rva": "0x179e3a7"
+    },
+    {
+      "transition": "Grab",
+      "input": "AttackGrab",
+      "input_id": 118,
+      "target_rva": "0x179e3ab"
+    },
+    {
+      "transition": "LightRushAttack",
+      "input": "LightRushAttack",
+      "input_id": 145,
+      "target_rva": "0x179e3af"
+    },
+    {
+      "transition": "DodgeAttack",
+      "input": "None",
+      "input_id": 209,
+      "target_rva": "0x179e3bb"
+    },
+    {
+      "transition": "LightGuard",
+      "input": "None",
+      "input_id": 209,
+      "target_rva": "0x179e3bb"
+    },
+    {
+      "transition": "HeavyGuard",
+      "input": "None",
+      "input_id": 209,
+      "target_rva": "0x179e3bb"
+    },
+    {
+      "transition": "Disengage",
+      "input": "Disengage",
+      "input_id": 170,
+      "target_rva": "0x179e3b7"
+    },
+    {
+      "transition": "HeavyRushAttack",
+      "input": "HeavyRushAttack",
+      "input_id": 174,
+      "target_rva": "0x179e3b3"
+    }
+  ],
+  "default_transition": 22,
+  "default_input": 209
+}

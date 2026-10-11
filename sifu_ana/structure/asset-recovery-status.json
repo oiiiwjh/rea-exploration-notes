@@ -1,0 +1,25 @@
+{
+  "targetSha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e",
+  "pakBytes": 31100859986,
+  "version": 11,
+  "encryptedIndex": true,
+  "keyGuidRaw": "00000000000000000000000000000000",
+  "indexOffset": 31095030533,
+  "indexBytes": 1150256,
+  "storedIndexSha1": "189148edc81f69fa9a301c46339f4d73511c9d56",
+  "rawIndexSha1": "45d6667091e1af0261501771f0bfcaa974f9c9eb",
+  "rawIndexHashMatches": false,
+  "namedCryptoEntries": 7,
+  "directCallCandidates": 4,
+  "confirmedCalls": 4,
+  "plaintextIndexRecovered": false,
+  "assetManifestRecovered": false,
+  "limitations": [
+    "Raw ciphertext hash mismatch is not a corruption test.",
+    "Named encryption functions and their references do not prove that an applicable key was recovered.",
+    "Only direct E8 candidates to two named functions were scanned; indirect calls and other key registration mechanisms remain unresolved.",
+    "Pak signature, complete archive hash, index decryption and uasset/animation decoding are not validated."
+  ],
+  "phase": "initial-ciphertext-probe-only",
+  "followUp": "asset-summary.json / asset-extraction-results.json"
+}

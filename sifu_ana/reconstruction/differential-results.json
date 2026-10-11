@@ -1,0 +1,63 @@
+{
+  "ok": true,
+  "targetSha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e",
+  "engine": "Unicorn 2.1.4",
+  "totalCases": 1719,
+  "checks": [
+    {
+      "name": "IsParryWindowOpen",
+      "cases": 8,
+      "passed": true,
+      "scope": "All boolean combinations of current, prediction and selector"
+    },
+    {
+      "name": "CanDeflect",
+      "cases": 512,
+      "passed": true,
+      "scope": "All guard input byte values with both auto-deflect states"
+    },
+    {
+      "name": "GetTransitionFallback",
+      "cases": 256,
+      "passed": true,
+      "scope": "All transition input byte values"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetTransitionFromInput",
+      "cases": 256,
+      "passed": true,
+      "scope": "All input byte values including original in-function jump tables and default branches"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetInputFromTransition",
+      "cases": 256,
+      "passed": true,
+      "scope": "All input byte values including original in-function jump tables and default branches"
+    },
+    {
+      "name": "SetParryWindow",
+      "cases": 160,
+      "passed": true,
+      "scope": "Window bytes and ordered array/weak-reference call destinations; two callees intercepted"
+    },
+    {
+      "name": "GetGameOptionValue",
+      "cases": 256,
+      "passed": true,
+      "scope": "All byte indices; XMM0 float result and out-of-range zero"
+    },
+    {
+      "name": "IsFocusMechanicOnToggle",
+      "cases": 15,
+      "passed": true,
+      "scope": "Original RIP-relative absolute-value mask and threshold; zero, threshold neighbors, NaN and infinities"
+    }
+  ],
+  "gameProcessStarted": false,
+  "limitations": [
+    "Only eight bounded functions are compared; no whole-game equivalence.",
+    "SetParryWindow TArray allocation/copy and FWeakObjectPtr resolution are stubbed; calls and branch effects are verified, not UObject lifetime behavior.",
+    "Original code bytes come from the matching locally owned EXE and are not uploaded as a runnable image.",
+    "Guard timing, Avoid collision, combo graph traversal, assets and rendering are outside this differential test."
+  ]
+}

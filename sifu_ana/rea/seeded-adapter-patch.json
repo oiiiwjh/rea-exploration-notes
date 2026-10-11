@@ -1,0 +1,34 @@
+{
+  "basePackage": "rea-agents@6.4.0",
+  "patch": "sifu-pdb-ranges-noanalysis-v2",
+  "originalInstallationModified": false,
+  "changes": [
+    "Add official Ghidra -noanalysis switch; code/function seeds still run before the bridge.",
+    "Apply checked PDB function extents to fix one-instruction exception-directory bodies.",
+    "Commit disabled auto-analysis, local patch identifier and range-file SHA-256 into the analysis profile digest."
+  ],
+  "files": [
+    {
+      "path": "dist/ghidra/GhidraLauncher.js",
+      "originalSha256": "02a32db6bb3d1356c8d545fa135820cf6d68ecd36e0aad49c8e333042986c49f",
+      "patchedSha256": "a332ca2ebd02baa320a4f0bbb543e38655a19108a11b5dafc03f7544d7e93555"
+    },
+    {
+      "path": "dist/ghidra/GhidraLauncher.js",
+      "originalSha256": "a332ca2ebd02baa320a4f0bbb543e38655a19108a11b5dafc03f7544d7e93555",
+      "patchedSha256": "a4f5e23b7626f94d25f32df87ae6c520092baa3a089e57601ca50829cb8afbcb"
+    },
+    {
+      "path": "dist/ghidra/GhidraAnalysisProfile.js",
+      "originalSha256": "71a22832dfdb954e7f453b4c9c6d04e5239ff4d18f05d8d014a80e9f5b1e7f3b",
+      "patchedSha256": "5eb7e146f4cb54c5f8ec3b1cae2dd47491dfae37182e2b87dfe1a52cee116d5e"
+    }
+  ],
+  "rangeScriptSha256": "58671875b5d754fa4d6155d7eed681c18159bed79953126fad9f3a077a7ef27f",
+  "limitations": [
+    "Local analysis copy, not the unmodified published release.",
+    "Only decoded/seeded instructions and functions contribute references; xrefs are not a whole-game inventory.",
+    "PDB extents are caller assertions from the matched build; shared tails/optimized aliases still require interpretation.",
+    "No full Ghidra type inference, stack-variable, string, switch or external-call analysis. Pseudocode must be checked against PDB ranges and disassembly."
+  ]
+}

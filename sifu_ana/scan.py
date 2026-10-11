@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Read-only Sifu installation scanner. Writes only to the supplied output directory."""
-import argparse, pathlib, json, csv, hashlib, struct, re, mmap, subprocess, shutil
+import argparse, pathlib, json, csv, hashlib, struct, re, mmap, subprocess, shutil, os
 from collections import Counter
-p=argparse.ArgumentParser(); p.add_argument('--root',default='/mnt/d/SteamLibrary/steamapps/common/Sifu'); p.add_argument('--out',default=str(pathlib.Path(__file__).resolve().parent)); a=p.parse_args()
+p=argparse.ArgumentParser(); p.add_argument('--root',default=os.environ.get('SIFU_ROOT','/mnt/d/SteamLibrary/steamapps/common/Sifu')); p.add_argument('--out',default=str(pathlib.Path(__file__).resolve().parent)); a=p.parse_args()
 root=pathlib.Path(a.root); out=pathlib.Path(a.out); out.mkdir(parents=True,exist_ok=True)
 files=sorted(x for x in root.rglob('*') if x.is_file()); rows=[{'path':str(x.relative_to(root)),'bytes':x.stat().st_size} for x in files]
 with (out/'inventory.csv').open('w',newline='') as f:

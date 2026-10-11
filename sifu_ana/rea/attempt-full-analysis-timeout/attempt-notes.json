@@ -1,0 +1,9 @@
+{
+  "completed": false,
+  "status": "interrupted-after-timeout",
+  "originalRunDirectory": "sifu_ana/rea/run-20261012",
+  "reason": "Full default Ghidra auto-analysis reached the 1740000 ms startup deadline on the 96 MiB Sifu EXE. The next call had restarted analysis, so the driver was stopped to avoid repeating the same import.",
+  "firstFunctionError": "provider_timeout",
+  "gameProcessStarted": false,
+  "nextApproach": "A separate local REA copy with -noanalysis and an explicit changed analysis-profile commitment; immutable original target with PDB-derived function seeds."
+}

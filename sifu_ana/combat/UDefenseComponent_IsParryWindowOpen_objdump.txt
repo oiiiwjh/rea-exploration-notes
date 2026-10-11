@@ -1,0 +1,13 @@
+
+/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe:     file format pei-x86-64
+
+
+Disassembly of section .text:
+
+00000001417a0320 <.text+0x179f320>:
+   1417a0320:	84 d2                                           	test   dl,dl
+   1417a0322:	74 08                                           	je     0x1417a032c
+   1417a0324:	0f b6 81 b8 02 00 00                            	movzx  eax,BYTE PTR [rcx+0x2b8]
+   1417a032b:	c3                                              	ret    
+   1417a032c:	0f b6 81 a7 02 00 00                            	movzx  eax,BYTE PTR [rcx+0x2a7]
+   1417a0333:	c3                                              	ret    

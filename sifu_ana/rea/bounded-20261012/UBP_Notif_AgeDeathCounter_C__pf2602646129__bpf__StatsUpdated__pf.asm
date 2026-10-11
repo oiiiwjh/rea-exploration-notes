@@ -1,0 +1,5 @@
+0x141082c70: MOV byte ptr [RCX + 0x4b1], DL
+0x141082c76: MOV EDX, 0x15
+0x141082c7b: MOV dword ptr [RCX + 0x4b4], R8D
+0x141082c82: MOV dword ptr [RCX + 0x4b8], R9D
+0x141082c89: JMP 0x14107fe30

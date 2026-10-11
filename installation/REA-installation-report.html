@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="REA 在 WSL 的实际安装过程、版本路径、下载校验、Ghidra/MCP 验证与 Windows 使用命令。"><title>REA 安装过程与验证记录 · 2026-10-12</title><style>:root{color-scheme:light;--ink:#18283f;--muted:#55647b;--line:#dce4ef;--blue:#315ccb}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:#f5f7fb;color:var(--ink);font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;overflow-wrap:anywhere}main{max-width:1040px;margin:30px auto;padding:0 24px 50px}header{padding:30px 34px;background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:20px}.eyebrow{font:12px/1.5 monospace;color:var(--blue);letter-spacing:.08em}h1{font-size:32px;line-height:1.4;margin:12px 0}header p{color:var(--muted);margin:8px 0}.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}button,.badge{padding:5px 11px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--blue);font:12px/1.6 inherit}.badge{font-size:12px;background:#edf2ff}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}nav,article{background:#fff;border:1px solid var(--line);border-radius:12px;padding:25px 34px;margin-bottom:20px}nav strong{font-size:13px;color:var(--muted)}nav ul{columns:2;padding-left:20px;margin:10px 0 0;list-style:decimal}nav li{font-size:13px;margin:6px 0}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}h2{font-size:23px;line-height:1.5;margin:32px 0 16px;padding-top:24px;border-top:1px solid var(--line)}article>h2:first-child{border:0;padding:0;margin-top:0}h3{font-size:17px;line-height:1.5;margin:24px 0 12px}p,ul,ol{margin:12px 0}li{margin:7px 0}ul,ol{padding-left:24px}code{font:0.87em/1.7 "Cascadia Code",Consolas,monospace;background:#edf2fb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;margin:18px 0}table{width:100%;min-width:620px;border-collapse:collapse;font-size:13px}th,td{padding:10px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#edf2fb;font-size:12px}tr:last-child td{border:0}.codebox{margin:17px 0;border-radius:8px;overflow:hidden;background:#16263e;color:#dbe7fa}.code-head{display:flex;justify-content:space-between;align-items:center;padding:6px 13px;border-bottom:1px solid #ffffff22;font:11px/1.8 monospace;color:#adbfdb}.copy{background:transparent;border:1px solid #ffffff44;color:#dbe7fa;font-size:11px;padding:1px 8px}pre{margin:0;padding:16px 18px;overflow:auto;font:12px/1.8 Consolas,monospace}pre code{background:transparent;color:inherit;font:inherit;padding:0;white-space:pre;overflow-wrap:normal}footer{padding:12px 0;text-align:center;font-size:12px;color:var(--muted)}#status{min-height:20px;color:var(--muted);font-size:12px}@media(max-width:650px){body{font-size:14px}main{margin:14px auto;padding:0 12px 30px}header,nav,article{padding:22px 20px}h1{font-size:25px}h2{font-size:21px}nav ul{columns:1}pre{font-size:11px;padding:13px}}@media print{body{background:#fff;color:#000;font-size:10pt}main{margin:0;padding:0;max-width:none}header,nav,article{border:0;border-radius:0;padding:10px 0}nav,.toolbar,.copy,#status{display:none!important}h1{font-size:23pt}h2{font-size:16pt;break-after:avoid}h3{break-after:avoid}.codebox{background:#f1f3f6;color:#000;border:1px solid #ccc;break-inside:avoid}.code-head{color:#333;border-color:#ccc}pre,pre code{white-space:pre-wrap;overflow-wrap:anywhere}.table-wrap{overflow:visible}table{min-width:0;font-size:9pt}a{color:#164b9c}}</style></head><body><main><header><div class="eyebrow">REA / LOCAL INSTALLATION RECORD</div><h1>REA 安装过程与验证记录</h1><p>WSL Ubuntu-20.04 · Linux x86_64 · 安装日期 2026-10-12（Asia/Shanghai）</p><p>记录本机已执行的安装和验证，供后续 Sifu 静态分析使用。</p><div class="toolbar"><span class="badge">REA 6.4.0</span><span class="badge">Ghidra 12.1.4</span><span class="badge">自包含 HTML · 可离线阅读</span><button id="print" type="button">打印 / 保存 PDF</button></div><div id="status" role="status"></div></header><nav aria-label="文档目录"><strong>目录</strong><ul><li><a href="#chapter-1">安装环境与版本</a></li><li><a href="#chapter-2">实际安装步骤</a></li><li><a href="#chapter-3">验证结果与环境范围</a></li><li><a href="#chapter-4">Sifu 分析环境与后续使用</a></li><li><a href="#chapter-7">下载校验与记录索引</a></li><li><a href="#chapter-8">安装结果快照</a></li></ul></nav><article><h2 id="chapter-1">安装环境与版本</h2>
+<p><strong>2026-10-12 已在 WSL 的 <code>Ubuntu-20.04</code> 中安装 REA 和 Ghidra。</strong> 软件位于 Linux 用户目录，游戏仍从 Windows 磁盘读取。Windows 提供一个命令入口，将请求转发给这套 WSL 工具。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>已安装版本</th>
+<th>安装位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Node.js</td>
+<td>24.21.0，Linux x64</td>
+<td><code>/home/jeremiah/.local/share/rea/node</code></td>
+</tr>
+<tr>
+<td>npm</td>
+<td>11.19.0，随上述 Node 提供</td>
+<td><code>/home/jeremiah/.local/share/rea/node/bin/npm</code></td>
+</tr>
+<tr>
+<td>REA</td>
+<td>npm 发布版 <code>rea-agents@6.4.0</code></td>
+<td><code>/home/jeremiah/.local/share/rea/npm/lib/node_modules/rea-agents</code></td>
+</tr>
+<tr>
+<td>完整 JDK</td>
+<td>Eclipse Temurin 21.0.12.1+1，64 位</td>
+<td><code>/home/jeremiah/.local/share/rea/jdk</code></td>
+</tr>
+<tr>
+<td>Ghidra</td>
+<td>12.1.4 PUBLIC</td>
+<td><code>/home/jeremiah/.local/share/rea/ghidra</code></td>
+</tr>
+<tr>
+<td>常用命令入口</td>
+<td><code>rea</code>、<code>rea-agents</code></td>
+<td><code>/home/jeremiah/.local/bin/</code></td>
+</tr>
+<tr>
+<td>Windows 调用入口</td>
+<td><code>rea-wsl.cmd</code></td>
+<td><code>D:\projects\rea\installation\rea-wsl.cmd</code></td>
+</tr>
+</tbody></table>
+</div><h2 id="chapter-2">实际安装步骤</h2>
+<ol>
+<li><strong>检查环境与目标。</strong> 确认 WSL 是 Ubuntu 20.04 x86_64，原环境没有可用的 Linux Node，Java 只有 JRE 8、缺少 <code>javac</code>；检查 npm Registry，安装时发布版是 REA 6.4.0。确认 Sifu 安装目录存在。</li>
+<li><strong>下载并校验运行时与引擎。</strong> 从 Node.js 官方站、Adoptium 和 NSA Ghidra 官方发布页下载 Node 24、完整 JDK 21、Ghidra 12.1.4。校验三个归档的 SHA-256 后才解压。下载较慢时使用服务器支持的并行 HTTP 字节范围，最终仍对完整文件校验。</li>
+<li><strong>安装 REA 发布包。</strong> 使用新的 Linux Node/npm，安装到独立的用户级 npm 全局前缀。npm 实际报告新增 144 个包，耗时约 25 秒。</li>
+<li><strong>创建启动入口。</strong> <code>configure-rea.py</code> 创建 <code>rea</code> 和 <code>rea-agents</code> 脚本，设置本机 Node、JDK、Ghidra 位置，默认选择 Ghidra。现有 shell 配置已加载 <code>~/.local/bin</code>，无需修改配置文件。</li>
+<li><strong>执行专项诊断。</strong> <code>rea --version</code>、CLI 帮助和 Ghidra 专项 doctor 均验证；原生反编译器动态库依赖可以正确加载。</li>
+<li><strong>验证实际工作流。</strong> 启动 stdio MCP，获取 170 个工具并成功查询 <code>binary_session</code>。生成项目自有的 1,536 字节 Windows x64 PE，对函数 <code>0x140001010</code> 做真实 Ghidra 反编译，得到预期的 <code>return 0x2a;</code>，即 42。该 EXE 没有被执行。</li>
+</ol>
+<p>以下按依赖顺序列出完整安装命令，包括前置工具和 REA 包本身；<code>PATH</code> 设置只用于该终端及其子进程。</p>
+<div class="codebox"><div class="code-head"><span>bash</span><button type="button" class="copy">复制</button></div><pre><code>cd /mnt/d/projects/rea
+python3 installation/install-tools.py
+export PATH=&quot;/home/jeremiah/.local/share/rea/node/bin:$PATH&quot;
+npm install --global \
+  --prefix /home/jeremiah/.local/share/rea/npm \
+  --registry=https://registry.npmjs.org \
+  rea-agents@6.4.0 --no-audit --no-fund
+python3 installation/configure-rea.py</code></pre></div>
+<p>前置工具的下载、校验、解压步骤保存在 <code>installation/install-tools.py</code>；实际下载 URL、版本和 SHA-256 在 <code>installation/toolchain-manifest.json</code> 中。该脚本复用校验成功的缓存，遇到已有工具别名指向另一安装时会停止，不覆盖它。</p>
+<h2 id="chapter-3">验证结果与环境范围</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>验证</th>
+<th>结果</th>
+<th>本地记录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CLI 版本和帮助</td>
+<td>6.4.0，可正常读取帮助</td>
+<td><code>installation/rea-help.txt</code></td>
+</tr>
+<tr>
+<td>Ghidra 专项 doctor</td>
+<td><code>healthy: true</code>，9 项检查通过</td>
+<td><code>installation/doctor-ghidra.json</code></td>
+</tr>
+<tr>
+<td>MCP stdio</td>
+<td>170 个工具，session 状态调用成功</td>
+<td><code>installation/mcp-check.json</code></td>
+</tr>
+<tr>
+<td>真实 PE 反编译</td>
+<td>Ghidra 12.1.4，返回值 42 与样本一致</td>
+<td><code>installation/fixture-decompile.json</code>、<code>installation/native-check.json</code></td>
+</tr>
+<tr>
+<td>Windows → WSL 命令入口</td>
+<td><code>--version</code> 返回 6.4.0</td>
+<td><code>installation/windows-wrapper-check.json</code></td>
+</tr>
+</tbody></table>
+</div><p><strong>专项就绪与整体环境状态不同。</strong> 当前 <code>doctor --provider ghidra --json</code> 同时返回 <code>environment_healthy: false</code>：Ubuntu 20.04 未列入 REA 官方支持宿主矩阵，doctor 将其标记为 <code>unsupported_host</code>，并且 Hopper、IDA、客户端注册和 Skill 尚未配置。本次已实际验证 Ghidra 在该主机读取和反编译微型 PE；不能据此承诺所有 Provider 或整个游戏的分析均通过。没有升级系统发行版。</p>
+<p>本次测试的是 REA 发布包，不是 <code>source</code> 目录的开发构建。MCP 服务本身已验证，Windows 客户端可用的配置示例保存在 <code>installation/rea-mcp-windows.json</code>，尚未写入 Codex 或其他客户端配置。后续可以直接通过终端调用这套工具。</p>
+<p>下载依据：<a href="https://nodejs.org/dist/v24.21.0/SHASUMS256.txt">Node.js 24.21.0 校验清单</a>、<a href="https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.12.1%2B1">Temurin JDK 21 发布</a>、<a href="https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build">Ghidra 12.1.4 官方发布</a>。REA 安装和引擎语义依据：<a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer"><code>docs/installation.md</code></a>、<a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-provider.md" target="_blank" rel="noopener noreferrer"><code>docs/ghidra-provider.md</code></a>。测试样本依据：<a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/create-ghidra-windows-fixture.mjs" target="_blank" rel="noopener noreferrer"><code>scripts/create-ghidra-windows-fixture.mjs</code></a>。</p>
+<h2 id="chapter-4">Sifu 分析环境与后续使用</h2>
+<h3 id="chapter-5">为什么选择 WSL</h3>
+<p>REA 的 Ghidra Provider 在 Linux x64 可以静态读取 Windows PE，并以独立的临时分析数据库提供伪代码、汇编、函数和引用。本机这一链路已通过真实样本验证。WSL 也便于沿用现有 Python 扫描结果。游戏继续在 Windows 运行；涉及实时调试、Windows GUI 或游戏进程内存时，需要相应的 Windows 端工具。</p>
+<p>本机游戏目录为：</p>
+<div class="codebox"><div class="code-head"><span>text</span><button type="button" class="copy">复制</button></div><pre><code>Windows: D:\SteamLibrary\steamapps\common\Sifu
+WSL:     /mnt/d/SteamLibrary/steamapps/common/Sifu
+主程序:  Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe
+符号:    Sifu/Binaries/Win64/Sifu-Win64-Shipping.pdb</code></pre></div>
+<p>此前的 <code>D:\projects\rea\sifu_ana\README.md</code> 和 <code>summary.json</code> 记录：该安装是 x64 UE4.26 Shipping 构建，主 EXE 约 96 MiB，PDB 约 896 MiB，EXE/PDB 的 GUID 与 age 匹配。这些属于此前盘点结果，本次安装没有重新分析整个主程序。</p>
+<p>后续研究可以先读取 PDB 的函数名与地址，再按明确问题定位战斗、招架、闪避或 AI 调度函数。<strong>REA 导入 EXE 时使用私有副本，不能假定自动加载游戏目录中的 PDB。</strong> 符号导入或地址种子需要单独验证。主 Pak 已记录索引加密；安装 REA/Ghidra 并不自动提供明文资产、蓝图或完整源码。</p>
+<h3 id="chapter-6">常用命令</h3>
+<p>在新开的 WSL 终端中：</p>
+<div class="codebox"><div class="code-head"><span>bash</span><button type="button" class="copy">复制</button></div><pre><code>rea --version
+rea doctor --provider ghidra --json
+rea providers --json
+
+# 重现安装时的微型 PE 测试
+REA_GHIDRA_STARTUP_TIMEOUT_MS=120000 GHIDRA_HEADLESS_MAXMEM=512M \
+  rea decompile \
+  /mnt/d/projects/rea/installation/build/fixtures/rea-ghidra-windows.exe \
+  0x140001010 --provider ghidra --json</code></pre></div>
+<p>在 Windows PowerShell 中：</p>
+<div class="codebox"><div class="code-head"><span>powershell</span><button type="button" class="copy">复制</button></div><pre><code>cd D:\projects\rea
+.\installation\rea-wsl.cmd --version
+.\installation\rea-wsl.cmd doctor --provider ghidra --json</code></pre></div>
+<p>从 Windows 入口传给 REA 的目标路径仍使用 WSL 格式，例如 <code>/mnt/d/SteamLibrary/steamapps/common/Sifu/...</code>。</p>
+<p>默认启动脚本配置 <code>GHIDRA_HEADLESS_MAXMEM=4G</code>、<code>REA_GHIDRA_STARTUP_TIMEOUT_MS=900000</code>，也就是 4 GiB Java 堆、15 分钟首次导入期限。可以在启动命令前覆盖这两个标准变量；Java 堆不是整个进程的总内存上限，较大目标也可能需要更多内存或时间。本次微型测试使用 512 MiB 和 120 秒，不能将其耗时外推到 Sifu 主程序及 PDB。</p>
+<p>源码和官方行为依据：<a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer"><code>docs/installation.md</code></a>、<a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-provider.md" target="_blank" rel="noopener noreferrer"><code>docs/ghidra-provider.md</code></a>、<a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraClient.ts" target="_blank" rel="noopener noreferrer"><code>src/ghidra/GhidraClient.ts</code></a>、<a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraLauncher.ts" target="_blank" rel="noopener noreferrer"><code>src/ghidra/GhidraLauncher.ts</code></a>。</p>
+<h2 id="chapter-7">下载校验与记录索引</h2>
+<p>以下校验值来自本次下载清单，三个归档均已完成 SHA-256 校验。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>下载归档</th>
+<th>SHA-256</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>node</td>
+<td><code>node-v24.21.0-linux-x64.tar.xz</code></td>
+<td><code>fd8e59d5a511510f6a298afb548f18c7d2b1be404d8b4a27d94fbe49f56cb2d6</code></td>
+</tr>
+<tr>
+<td>jdk</td>
+<td><code>OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz</code></td>
+<td><code>ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94</code></td>
+</tr>
+<tr>
+<td>ghidra</td>
+<td><code>ghidra_12.1.4_PUBLIC_20260921.zip</code></td>
+<td><code>ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db</code></td>
+</tr>
+</tbody></table>
+</div><p>REA 发布包由 npm 按 Registry 提供的 integrity 安装。记录值：</p>
+<div class="codebox"><div class="code-head"><span>text</span><button type="button" class="copy">复制</button></div><pre><code>sha512-Vj1zWfSlna5bphGoaoI/TcVBuYvze9u+OyPC3Shz8YkBqaCTqB4COnnRoX7XDwMpwI24ZlFEel2yEj0k8LTWEQ==</code></pre></div>
+<p>本报告整理于 2026-10-12（Asia/Shanghai），依据实际安装记录编写。复制本 HTML 即可离线阅读；下面的原始文件链接相对于原安装目录，移动 HTML 后请同时保留这些记录或按原路径查找。</p>
+<ul>
+<li><a href="install-summary.json">安装结果摘要</a></li>
+<li><a href="toolchain-manifest.json">版本、来源与校验清单</a></li>
+<li><a href="npm-install.log">npm 实际安装日志</a></li>
+<li><a href="doctor-ghidra.json">Ghidra 专项诊断</a></li>
+<li><a href="mcp-check.json">MCP 工具清单与会话验证</a></li>
+<li><a href="fixture-decompile.json">真实反编译 Evidence</a></li>
+<li><a href="native-check.json">微型 PE 验证摘要</a></li>
+<li><a href="windows-wrapper-check.json">Windows 转发入口验证</a></li>
+<li><a href="install-tools.py">前置工具安装脚本</a></li>
+<li><a href="configure-rea.py">启动入口配置脚本</a></li>
+<li><a href="rea-wsl.cmd">Windows 调用入口</a></li>
+<li><a href="rea-mcp-windows.json">可选 MCP 配置模板</a></li>
+</ul>
+<h2 id="chapter-8">安装结果快照</h2>
+<p>此 JSON 是本次实际安装结果的副本，便于文档单独保存后仍能核对版本和验证范围。</p>
+<div class="codebox"><div class="code-head"><span>json</span><button type="button" class="copy">复制</button></div><pre><code>{
+  &quot;installed&quot;: true,
+  &quot;installationDate&quot;: &quot;2026-10-12&quot;,
+  &quot;timezone&quot;: &quot;Asia/Shanghai&quot;,
+  &quot;platform&quot;: &quot;WSL Ubuntu-20.04 x86_64&quot;,
+  &quot;root&quot;: &quot;/home/jeremiah/.local/share/rea&quot;,
+  &quot;reaVersion&quot;: &quot;6.4.0&quot;,
+  &quot;npmVersion&quot;: &quot;11.19.0&quot;,
+  &quot;tools&quot;: [
+    {
+      &quot;tool&quot;: &quot;node&quot;,
+      &quot;version&quot;: &quot;v24.21.0&quot;,
+      &quot;sha256&quot;: &quot;fd8e59d5a511510f6a298afb548f18c7d2b1be404d8b4a27d94fbe49f56cb2d6&quot;,
+      &quot;installedPath&quot;: &quot;/home/jeremiah/.local/share/rea/node-v24.21.0-linux-x64&quot;
+    },
+    {
+      &quot;tool&quot;: &quot;jdk&quot;,
+      &quot;version&quot;: &quot;21.0.12.1+1-LTS&quot;,
+      &quot;sha256&quot;: &quot;ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94&quot;,
+      &quot;installedPath&quot;: &quot;/home/jeremiah/.local/share/rea/jdk-21.0.12.1+1&quot;
+    },
+    {
+      &quot;tool&quot;: &quot;ghidra&quot;,
+      &quot;version&quot;: &quot;12.1.4&quot;,
+      &quot;sha256&quot;: &quot;ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db&quot;,
+      &quot;installedPath&quot;: &quot;/home/jeremiah/.local/share/rea/ghidra_12.1.4_PUBLIC&quot;
+    }
+  ],
+  &quot;checks&quot;: {
+    &quot;cli&quot;: true,
+    &quot;ghidraDoctor&quot;: true,
+    &quot;overallEnvironmentHealthy&quot;: false,
+    &quot;nativePe&quot;: true,
+    &quot;mcp&quot;: true,
+    &quot;mcpTools&quot;: 170,
+    &quot;windowsWrapper&quot;: true
+  },
+  &quot;verifiedFunction&quot;: {
+    &quot;address&quot;: &quot;0x140001010&quot;,
+    &quot;return&quot;: 42,
+    &quot;pseudocode&quot;: &quot;\nundefined8 FUN_140001010(void)\n\n{\n  return 0x2a;\n}\n\n&quot;,
+    &quot;evidenceId&quot;: &quot;ev_d90f85995af306e465ec0e586673c14c3dcfab501dec89c176b51f88996cba01&quot;
+  },
+  &quot;clientRegistrationChanged&quot;: false,
+  &quot;gameExecuted&quot;: false,
+  &quot;limitations&quot;: [
+    &quot;Ubuntu 20.04 is outside REA recommended overall host matrix; Ghidra scope and micro-PE workflow were validated.&quot;,
+    &quot;Sifu full executable/PDB analysis was not performed by this installation.&quot;
+  ]
+}</code></pre></div>
+</article><footer>独立安装文档 · 基于实际安装记录 · 无外部字体、CDN 或统计脚本</footer></main><script>document.getElementById('print').addEventListener('click',()=>window.print());document.querySelectorAll('.copy').forEach(button=>button.addEventListener('click',async()=>{const text=button.closest('.codebox').querySelector('code').textContent;try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(text);else{const input=document.createElement('textarea');input.value=text;input.style.position='fixed';input.style.opacity='0';document.body.append(input);input.select();const ok=document.execCommand('copy');input.remove();if(!ok)throw new Error('copy unavailable')}document.getElementById('status').textContent='代码已复制';button.textContent='已复制';setTimeout(()=>button.textContent='复制',1800)}catch(e){document.getElementById('status').textContent='请手动选择代码复制。'}}));</script></body></html>

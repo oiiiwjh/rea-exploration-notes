@@ -1,0 +1,95 @@
+{
+  "startedAt": "2026-10-11T18:22:06.978Z",
+  "target": "/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe",
+  "targetSha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e",
+  "reaVersion": "6.4.0",
+  "seedFunctions": 170,
+  "timeoutMs": 600000,
+  "gameExecuted": false,
+  "functions": [
+    {
+      "name": "UDefenseComponent::IsParryWindowOpen",
+      "address": "0x1417a0320",
+      "rva": "0x17a0320",
+      "pdbLength": 20,
+      "pseudoEvidence": "ev_38c265dc94a0b893ecdc3b4decd63eed3e04de3249858f96d59dd0775d4d3c46",
+      "assemblyEvidence": "ev_129d7bfeddb1010741e74e59dd6a766cc6bbb35c21a7cc90d4055c106a607572",
+      "xrefsEvidence": "ev_2cee7894b12175f46955173c63f88584813b9efc93044bda36c4e7972cf95787"
+    },
+    {
+      "name": "UDefenseComponent::CanDeflect",
+      "address": "0x141791390",
+      "rva": "0x1791390",
+      "pdbLength": 26,
+      "pseudoEvidence": "ev_277faf4c5367bc9226e948f5568b0cc3c1e0040254cd740b94760ebc47fe0faf",
+      "assemblyEvidence": "ev_e7e9289161b14464ee96d52e6072f4d278113aea6d6fa0523d680f99a1eeec52",
+      "xrefsEvidence": "ev_55c138b47fc9be336e68e139243c301f34cf97fd9751ff619774b3e1caa987bd"
+    },
+    {
+      "name": "UComboTransitionHelper::GetTransitionFallback",
+      "address": "0x14179e810",
+      "rva": "0x179e810",
+      "pdbLength": 22,
+      "pseudoEvidence": "ev_6a9702a7543743e23c679ee19a9495b4395e572fdce834bc3691dbaffa2e1b9a",
+      "assemblyEvidence": "ev_e4b09e6f4164be4d87a319ffc17555f45f7e47ed5eb75019df13b94cfe5edcad",
+      "xrefsEvidence": "ev_bff4e150ab4f1f3f93b3b8d1afc8fea69ab2a70e56739068b9c4f27516d82c64"
+    },
+    {
+      "name": "UDefenseComponent::SetParryWindow",
+      "address": "0x1417a8b00",
+      "rva": "0x17a8b00",
+      "pdbLength": 182,
+      "pseudoEvidence": "ev_cff5900f38991756cd8b0264e85d777990f37b9da734126636adb7b86826bd4c",
+      "assemblyEvidence": "ev_d20c9b1c2da5f87bac5540ee7f7c63054fff6d1c7e936a2f5d1b6595ee2e9f1f",
+      "xrefsEvidence": "ev_7287756089a693edf258c9b4a23ef3341a5625fe5ae6f9af18d7434456ef9593"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetInputFromTransition",
+      "address": "0x14178fa00",
+      "rva": "0x178fa00",
+      "pdbLength": 168,
+      "pseudoEvidence": "ev_11b5298b92cf0925db79b98d205c8ae0d7a81b84387a48eba51fce22f6b0f57a",
+      "assemblyEvidence": "ev_3e168917a9b45a95e7644281331a63f8a61b4ff713066518ad7c8918fd20a370",
+      "xrefsEvidence": "ev_f781e2573f180bca1dc742cc203d3ed208f87637d3954500604603a3dfb243ff"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetTransitionFromInput",
+      "address": "0x14178fdd0",
+      "rva": "0x178fdd0",
+      "pdbLength": 367,
+      "pseudoEvidence": "ev_595410dd6d50ebabadd116b3aa13b9150c7a0e0b421664ff51d548309daed432",
+      "assemblyEvidence": "ev_2c1b2e42c3f5553ab8c7a383aa09276b9038e5fffce62283a645b9b8b3c9056c",
+      "xrefsEvidence": "ev_c93785d91a26f59a89dd4a8cb78f3b8267631a68bf9a775dc7442ae3d8873b09"
+    },
+    {
+      "name": "UComboManager::EvaluateNextAttack",
+      "address": "0x1417717e0",
+      "rva": "0x17717e0",
+      "pdbLength": 359,
+      "pseudoEvidence": "ev_e4bf6e89dc0b9c98e1beaeff183b97c09d1223f58789915555f269c26b394bd2",
+      "assemblyEvidence": "ev_798387055821714278a7935c174ae7358904c7fe0eaa0ddd5f0ee9901333da40",
+      "xrefsEvidence": "ev_eb7c1415221069b2e8c85813bd865319813170e1a4dd9919428681971161715c"
+    },
+    {
+      "name": "UAvoidWindowNotifyState::NotifyValueChange",
+      "address": "0x141753110",
+      "rva": "0x1753110",
+      "pdbLength": 436,
+      "pseudoEvidence": "ev_685c2b04ab7d3e079dcb0d4e1525d4e65a12fa0d79e596157cea5d71c3deb220",
+      "assemblyEvidence": "ev_1bb8941a55387c082fdc9461f5b44f86941271205b6fb7372e5b7ec02a0c99d3",
+      "xrefsEvidence": "ev_0b35d110652cdb7a6e55e2c8d0439f8651434702c652738e88332dd8ef304699"
+    },
+    {
+      "name": "UGuardAbility::ProcessForPlayer",
+      "address": "0x14184c570",
+      "rva": "0x184c570",
+      "pdbLength": 3908,
+      "pseudoEvidence": "ev_d408113783c859045d66558d0faeaae832be767e3489ab1cee37ac4976b902d9",
+      "assemblyEvidence": "ev_af83ab0e3b42b426a64f5a16f00cf1e07b11a3357faa3008d76a8a4f8157c834",
+      "xrefsEvidence": "ev_5dbfca76f8055a56534f4a623b9d50d2ebdb30bfaf8461f558fb1f50b6011f0b"
+    }
+  ],
+  "errors": [],
+  "ok": true,
+  "finishedAt": "2026-10-11T18:22:59.670Z"
+}

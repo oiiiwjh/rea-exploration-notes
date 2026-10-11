@@ -1,0 +1,40 @@
+{
+  "shipping_sha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e",
+  "exe_pdb_identity_matches": true,
+  "symbol_to_procedure_names_checked": [
+    "UDefenseComponent::SetParryWindow",
+    "UDefenseComponent::IsParryWindowOpen",
+    "UAvoidWindowNotifyState::NotifyValueChange",
+    "UParryWindowNotifyState::NotifyValueChange",
+    "UComboTransitionHelper::GetTransitionFallback",
+    "UComboManager::EvaluateNextAttack",
+    "UComboManager::ActivateNextPendingAttack",
+    "UGuardAbility::ProcessForPlayer"
+  ],
+  "manifest_count": 171,
+  "all_code_ranges_decoded": true,
+  "embedded_switch_tables_separated": 3,
+  "type_layout_conflicts": [],
+  "second_disassembler_checks": [
+    {
+      "name": "UDefenseComponent::IsParryWindowOpen",
+      "instruction_count": 6,
+      "instruction_boundaries_and_bytes_match": true
+    },
+    {
+      "name": "UComboTransitionHelper::GetTransitionFallback",
+      "instruction_count": 11,
+      "instruction_boundaries_and_bytes_match": true
+    },
+    {
+      "name": "UDefenseComponent::SetParryWindow",
+      "instruction_count": 48,
+      "instruction_boundaries_and_bytes_match": true
+    }
+  ],
+  "limitations": [
+    "Most functions only checked structurally; not all control flow interpreted.",
+    "Indirect calls and asset values not resolved.",
+    "PDB identity JSON is the stored GUID/age comparison; EXE hash rechecked now."
+  ]
+}

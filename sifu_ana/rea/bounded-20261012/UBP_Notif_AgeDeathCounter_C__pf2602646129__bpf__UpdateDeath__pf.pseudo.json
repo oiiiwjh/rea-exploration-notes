@@ -1,0 +1,97 @@
+{
+  "evidence_id": "ev_f70b426c1172dc9dd688810e6f15714d1b347d1dcb664b7013ac60f5a2491621",
+  "subject": {
+    "name": "Sifu-Win64-Shipping.exe",
+    "digest": {
+      "sha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e"
+    },
+    "format": "pe",
+    "architecture": "x86_64",
+    "local_path": "/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "pe",
+      "executable_role": "application",
+      "managed": false,
+      "native_aot_metadata": {
+        "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+        "source_bytes": 134217728,
+        "work_units": 67108864,
+        "working_memory_bytes": 67108864,
+        "report_bytes": 4194304
+      },
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "string_inventory_evidence": "defined-data-coverage-v1",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+      "no_return_repair": "returning-imports-decoded-return-v2",
+      "process_launch": "inspected-jvm-launch-support-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "sifu-seeded-noanalysis-v1",
+      "headless_auto_analysis": false,
+      "local_adapter_patch": "sifu-seeded-noanalysis-v1",
+      "analysis_seeds": {
+        "format": "rea-ghidra-seeds-v1",
+        "path": "/mnt/d/projects/rea/sifu_ana/rea/bounded-20261012/pdb-function-seeds.tsv",
+        "configured_path": "/mnt/d/projects/rea/sifu_ana/rea/bounded-20261012/pdb-function-seeds.tsv",
+        "sha256": "cf4ce75c33d5b3f6edf672a570ed64fe5d60b45fa5f548dcf43ce3fada169f41",
+        "entries": {
+          "function": 203,
+          "code": 203,
+          "label": 0
+        }
+      }
+    },
+    "digest": "727de8ebbc3bb1ea319be256a2e35accaef6b52568b7dfe37fa067205c29dfd0"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_pseudo_code",
+  "parameters": {
+    "procedure": "0x141083570"
+  },
+  "raw_result": {
+    "value": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid UBP_Notif_AgeDeathCounter_C__pf2602646129__bpf__UpdateDeath__pf\n               (longlong *param_1,undefined4 *param_2)\n\n{\n  int *piVar1;\n  int iVar2;\n  bool bVar3;\n  uint uVar4;\n  undefined4 uVar5;\n  longlong lVar6;\n  longlong lVar7;\n  longlong *plVar8;\n  ulonglong uVar9;\n  uint uVar10;\n  ulonglong uVar11;\n  ulonglong uVar12;\n  longlong *plVar13;\n  longlong lStack_68;\n  longlong *plStack_60;\n  undefined4 uStack_58;\n  longlong lStack_50;\n  longlong *plStack_48;\n  undefined4 uStack_40;\n  undefined1 auStack_38 [8];\n  longlong *plStack_30;\n  \n  uVar12 = 0;\n  FUN_141bf1d00(&lStack_68);\n  FUN_142ed7480(param_1);\n  lVar6 = FUN_1419f8290(param_1);\n  if (lVar6 == 0) goto LAB_141083900;\n  iVar2 = *(int *)(lVar6 + 0xc);\n  uVar9 = uVar12;\n  if (iVar2 < _DAT_145b66084) {\n    uVar10 = iVar2 >> 0x1f & 0xffff;\n    uVar4 = iVar2 + uVar10;\n    uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n            (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n  }\n  if (((*(uint *)(uVar9 + 8) >> 0x1d & 1) != 0) || (lVar6 = FUN_1417f4150(lVar6), lVar6 == 0))\n  goto LAB_141083900;\n  iVar2 = *(int *)(lVar6 + 0xc);\n  uVar9 = uVar12;\n  if (iVar2 < _DAT_145b66084) {\n    uVar10 = iVar2 >> 0x1f & 0xffff;\n    uVar4 = iVar2 + uVar10;\n    uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n            (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n  }\n  if ((*(uint *)(uVar9 + 8) >> 0x1d & 1) != 0) goto LAB_141083900;\n  lVar7 = FUN_1419f8290(param_1);\n  if (lVar7 == 0) {\nLAB_1410836db:\n    iVar2 = *(int *)(lVar6 + 0xc);\n    uVar11 = uVar12;\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar11 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n               (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    uVar9 = 0;\n    if ((*(uint *)(uVar11 + 8) >> 0x1d & 1) == 0) {\n      uVar4 = FUN_1419c61d0(lVar6,CONCAT71((int7)(uVar11 >> 8),0xc));\n      uVar9 = (ulonglong)uVar4;\n    }\n  }\n  else {\n    iVar2 = *(int *)(lVar7 + 0xc);\n    uVar9 = uVar12;\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n              (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    if (((*(uint *)(uVar9 + 8) >> 0x1d & 1) != 0) ||\n       (lVar6 = FUN_1417f4150(lVar7), uVar9 = uVar12, lVar6 != 0)) goto LAB_1410836db;\n  }\n  uVar5 = (undefined4)uVar9;\n  plVar8 = (longlong *)FUN_1433e52e0(auStack_38,uVar9,0,1,1,0x144);\n  lVar7 = *plVar8;\n  plVar13 = (longlong *)plVar8[1];\n  *plVar8 = lStack_68;\n  plVar8[1] = (longlong)plStack_60;\n  uStack_58 = (undefined4)plVar8[2];\n  lStack_68 = lVar7;\n  plStack_60 = plVar13;\n  if (plStack_30 != (longlong *)0x0) {\n    LOCK();\n    plVar13 = plStack_30 + 1;\n    lVar7 = *plVar13;\n    *(int *)plVar13 = (int)*plVar13 + -1;\n    UNLOCK();\n    if ((int)lVar7 == 1) {\n      (**(code **)*plStack_30)(plStack_30);\n      LOCK();\n      piVar1 = (int *)((longlong)plStack_30 + 0xc);\n      iVar2 = *piVar1;\n      *piVar1 = *piVar1 + -1;\n      UNLOCK();\n      if (iVar2 == 1) {\n        (**(code **)(*plStack_30 + 8))(plStack_30,1);\n      }\n    }\n  }\n  plVar13 = (longlong *)param_1[0x85];\n  if (plVar13 == (longlong *)0x0) {\nLAB_1410837f7:\n    bVar3 = false;\n  }\n  else {\n    iVar2 = *(int *)((longlong)plVar13 + 0xc);\n    uVar9 = uVar12;\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n              (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    if ((*(uint *)(uVar9 + 8) >> 0x1d & 1) != 0) goto LAB_1410837f7;\n    bVar3 = true;\n  }\n  if (bVar3) {\n    lStack_50 = lStack_68;\n    plStack_48 = plStack_60;\n    if (plStack_60 != (longlong *)0x0) {\n      LOCK();\n      *(int *)(plStack_60 + 1) = (int)plStack_60[1] + 1;\n      UNLOCK();\n      plVar13 = (longlong *)param_1[0x85];\n    }\n    uStack_40 = uStack_58;\n    (**(code **)(*plVar13 + 0x2d8))(plVar13,&lStack_50);\n  }\n  (**(code **)(*param_1 + 0x280))(param_1,4);\n  lVar7 = FUN_1419f8290(param_1);\n  if (lVar7 != 0) {\n    iVar2 = *(int *)(lVar7 + 0xc);\n    uVar9 = uVar12;\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n              (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    if ((*(uint *)(uVar9 + 8) >> 0x1d & 1) == 0) {\n      lVar6 = FUN_1417f4150(lVar7);\n    }\n  }\n  if (lVar6 != 0) {\n    iVar2 = *(int *)(lVar6 + 0xc);\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar12 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n               (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    if ((*(uint *)(uVar12 + 8) >> 0x1d & 1) == 0) {\n      uVar5 = FUN_1419c61d0(lVar6,0xc);\n    }\n  }\n  *param_2 = uVar5;\nLAB_141083900:\n  plVar13 = plStack_60;\n  if (plStack_60 != (longlong *)0x0) {\n    LOCK();\n    plVar8 = plStack_60 + 1;\n    lVar6 = *plVar8;\n    *(int *)plVar8 = (int)*plVar8 + -1;\n    UNLOCK();\n    if ((int)lVar6 == 1) {\n      (**(code **)*plStack_60)(plStack_60);\n      LOCK();\n      piVar1 = (int *)((longlong)plVar13 + 0xc);\n      iVar2 = *piVar1;\n      *piVar1 = *piVar1 + -1;\n      UNLOCK();\n      if (iVar2 == 1) {\n        (**(code **)(*plVar13 + 8))(plVar13,1);\n      }\n    }\n  }\n  return;\n}\n\n",
+    "limitations": []
+  },
+  "normalized_result": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid UBP_Notif_AgeDeathCounter_C__pf2602646129__bpf__UpdateDeath__pf\n               (longlong *param_1,undefined4 *param_2)\n\n{\n  int *piVar1;\n  int iVar2;\n  bool bVar3;\n  uint uVar4;\n  undefined4 uVar5;\n  longlong lVar6;\n  longlong lVar7;\n  longlong *plVar8;\n  ulonglong uVar9;\n  uint uVar10;\n  ulonglong uVar11;\n  ulonglong uVar12;\n  longlong *plVar13;\n  longlong lStack_68;\n  longlong *plStack_60;\n  undefined4 uStack_58;\n  longlong lStack_50;\n  longlong *plStack_48;\n  undefined4 uStack_40;\n  undefined1 auStack_38 [8];\n  longlong *plStack_30;\n  \n  uVar12 = 0;\n  FUN_141bf1d00(&lStack_68);\n  FUN_142ed7480(param_1);\n  lVar6 = FUN_1419f8290(param_1);\n  if (lVar6 == 0) goto LAB_141083900;\n  iVar2 = *(int *)(lVar6 + 0xc);\n  uVar9 = uVar12;\n  if (iVar2 < _DAT_145b66084) {\n    uVar10 = iVar2 >> 0x1f & 0xffff;\n    uVar4 = iVar2 + uVar10;\n    uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n            (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n  }\n  if (((*(uint *)(uVar9 + 8) >> 0x1d & 1) != 0) || (lVar6 = FUN_1417f4150(lVar6), lVar6 == 0))\n  goto LAB_141083900;\n  iVar2 = *(int *)(lVar6 + 0xc);\n  uVar9 = uVar12;\n  if (iVar2 < _DAT_145b66084) {\n    uVar10 = iVar2 >> 0x1f & 0xffff;\n    uVar4 = iVar2 + uVar10;\n    uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n            (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n  }\n  if ((*(uint *)(uVar9 + 8) >> 0x1d & 1) != 0) goto LAB_141083900;\n  lVar7 = FUN_1419f8290(param_1);\n  if (lVar7 == 0) {\nLAB_1410836db:\n    iVar2 = *(int *)(lVar6 + 0xc);\n    uVar11 = uVar12;\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar11 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n               (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    uVar9 = 0;\n    if ((*(uint *)(uVar11 + 8) >> 0x1d & 1) == 0) {\n      uVar4 = FUN_1419c61d0(lVar6,CONCAT71((int7)(uVar11 >> 8),0xc));\n      uVar9 = (ulonglong)uVar4;\n    }\n  }\n  else {\n    iVar2 = *(int *)(lVar7 + 0xc);\n    uVar9 = uVar12;\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n              (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    if (((*(uint *)(uVar9 + 8) >> 0x1d & 1) != 0) ||\n       (lVar6 = FUN_1417f4150(lVar7), uVar9 = uVar12, lVar6 != 0)) goto LAB_1410836db;\n  }\n  uVar5 = (undefined4)uVar9;\n  plVar8 = (longlong *)FUN_1433e52e0(auStack_38,uVar9,0,1,1,0x144);\n  lVar7 = *plVar8;\n  plVar13 = (longlong *)plVar8[1];\n  *plVar8 = lStack_68;\n  plVar8[1] = (longlong)plStack_60;\n  uStack_58 = (undefined4)plVar8[2];\n  lStack_68 = lVar7;\n  plStack_60 = plVar13;\n  if (plStack_30 != (longlong *)0x0) {\n    LOCK();\n    plVar13 = plStack_30 + 1;\n    lVar7 = *plVar13;\n    *(int *)plVar13 = (int)*plVar13 + -1;\n    UNLOCK();\n    if ((int)lVar7 == 1) {\n      (**(code **)*plStack_30)(plStack_30);\n      LOCK();\n      piVar1 = (int *)((longlong)plStack_30 + 0xc);\n      iVar2 = *piVar1;\n      *piVar1 = *piVar1 + -1;\n      UNLOCK();\n      if (iVar2 == 1) {\n        (**(code **)(*plStack_30 + 8))(plStack_30,1);\n      }\n    }\n  }\n  plVar13 = (longlong *)param_1[0x85];\n  if (plVar13 == (longlong *)0x0) {\nLAB_1410837f7:\n    bVar3 = false;\n  }\n  else {\n    iVar2 = *(int *)((longlong)plVar13 + 0xc);\n    uVar9 = uVar12;\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n              (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    if ((*(uint *)(uVar9 + 8) >> 0x1d & 1) != 0) goto LAB_1410837f7;\n    bVar3 = true;\n  }\n  if (bVar3) {\n    lStack_50 = lStack_68;\n    plStack_48 = plStack_60;\n    if (plStack_60 != (longlong *)0x0) {\n      LOCK();\n      *(int *)(plStack_60 + 1) = (int)plStack_60[1] + 1;\n      UNLOCK();\n      plVar13 = (longlong *)param_1[0x85];\n    }\n    uStack_40 = uStack_58;\n    (**(code **)(*plVar13 + 0x2d8))(plVar13,&lStack_50);\n  }\n  (**(code **)(*param_1 + 0x280))(param_1,4);\n  lVar7 = FUN_1419f8290(param_1);\n  if (lVar7 != 0) {\n    iVar2 = *(int *)(lVar7 + 0xc);\n    uVar9 = uVar12;\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar9 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n              (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    if ((*(uint *)(uVar9 + 8) >> 0x1d & 1) == 0) {\n      lVar6 = FUN_1417f4150(lVar7);\n    }\n  }\n  if (lVar6 != 0) {\n    iVar2 = *(int *)(lVar6 + 0xc);\n    if (iVar2 < _DAT_145b66084) {\n      uVar10 = iVar2 >> 0x1f & 0xffff;\n      uVar4 = iVar2 + uVar10;\n      uVar12 = *(longlong *)(_DAT_145b66070 + (longlong)((int)uVar4 >> 0x10) * 8) +\n               (longlong)(int)((uVar4 & 0xffff) - uVar10) * 0x18;\n    }\n    if ((*(uint *)(uVar12 + 8) >> 0x1d & 1) == 0) {\n      uVar5 = FUN_1419c61d0(lVar6,0xc);\n    }\n  }\n  *param_2 = uVar5;\nLAB_141083900:\n  plVar13 = plStack_60;\n  if (plStack_60 != (longlong *)0x0) {\n    LOCK();\n    plVar8 = plStack_60 + 1;\n    lVar6 = *plVar8;\n    *(int *)plVar8 = (int)*plVar8 + -1;\n    UNLOCK();\n    if ((int)lVar6 == 1) {\n      (**(code **)*plStack_60)(plStack_60);\n      LOCK();\n      piVar1 = (int *)((longlong)plVar13 + 0xc);\n      iVar2 = *piVar1;\n      *piVar1 = *piVar1 + -1;\n      UNLOCK();\n      if (iVar2 == 1) {\n        (**(code **)(*plVar13 + 8))(plVar13,1);\n      }\n    }\n  }\n  return;\n}\n\n",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+    "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+    "Ghidra analysis was seeded before auto-analysis from /mnt/d/projects/rea/sifu_ana/rea/bounded-20261012/pdb-function-seeds.tsv (sha256 cf4ce75c33d5b3f6edf672a570ed64fe5d60b45fa5f548dcf43ce3fada169f41: 203 function, 203 code, 0 label entries). Seeded functions, code and names are caller assertions, not Ghidra discoveries.",
+    "Seed outcome: 48 functions created, 155 already present, 0 failed; 203 code seeds decoded, 0 failed; 0 labels applied, 0 failed; 0 seeds outside initialized memory."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

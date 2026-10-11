@@ -1,0 +1,8 @@
+{
+  "completed": false,
+  "status": "interrupted",
+  "reason": "Initial driver supplied SDK options as the third positional argument. The installed MCP client SDK expects options as argument 2, so calls used the default 60000ms timeout.",
+  "correction": "Use client.callTool(request, {timeout: timeoutMs}); corrected driver rerun in run-20261012.",
+  "gameProcessStarted": false,
+  "originalGameModified": false
+}

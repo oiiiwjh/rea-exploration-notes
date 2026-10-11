@@ -1,0 +1,3046 @@
+{
+  "descriptorSha256": "683d89837e2e233482b86596717c2d88548856ee59c5e824965f242635b1e234",
+  "engineAssociation": "",
+  "modules": [
+    {
+      "Name": "Sifu",
+      "Type": "Runtime",
+      "LoadingPhase": "PostEngineInit",
+      "AdditionalDependencies": [
+        "AIModule",
+        "Engine",
+        "UMG",
+        "CoreUObject",
+        "LevelSequence",
+        "NavigationSystem",
+        "SCCore",
+        "Text2LipSync"
+      ]
+    },
+    {
+      "Name": "SCLoadingScreen",
+      "Type": "Runtime",
+      "LoadingPhase": "PreLoadingScreen"
+    },
+    {
+      "Name": "AbsolverGraphNodeEditor",
+      "Type": "UncookedOnly",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "PropertyCustomizations",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "ComboEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "AIInfluenceEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "AIPhaseScenarioEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "GameFlowEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "SifuEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default",
+      "AdditionalDependencies": [
+        "Blutility",
+        "ApexDestructionEditor"
+      ]
+    },
+    {
+      "Name": "SCComponentVisualizers",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit"
+    },
+    {
+      "Name": "IgnoreCollisionModule",
+      "Type": "Runtime",
+      "LoadingPhase": "PostEngineInit",
+      "AdditionalDependencies": [
+        "Engine",
+        "CoreUObject"
+      ]
+    }
+  ],
+  "enabledPlugins": [
+    "Wwise",
+    "WinDualShock",
+    "ApexDestruction",
+    "OnlineSubsystemPS4",
+    "OnlineSubsystemLive",
+    "MfMedia",
+    "CustomAnimNode",
+    "CutsceneTools",
+    "EditorTests",
+    "FunctionalTestingEditor",
+    "RuntimeTests",
+    "RenderDocPlugin",
+    "MeshTool",
+    "AnimationBudgetAllocator",
+    "GameplayAbilities",
+    "Text2LipSync",
+    "ControlRig",
+    "EditorScriptingUtilities",
+    "OnlineSubsystemRedpointEOS",
+    "MovieRenderPipeline",
+    "Gauntlet",
+    "SC3DNav",
+    "SCDialogManagerPlugin",
+    "SCSoundOcclusion",
+    "SCCore",
+    "SCTracking",
+    "NotYetContentBrowser",
+    "DLSS",
+    "UAssetBrowser"
+  ],
+  "targetPlatforms": [
+    "PS4",
+    "Windows",
+    "XboxOne",
+    "WindowsNoEditor",
+    "PS5",
+    "Switch",
+    "XSX",
+    "XboxOneGDK",
+    "WinGDK"
+  ],
+  "configs": {
+    "DefaultEngine.ini": {
+      "sha256": "5954baecf5989002d9cb45f96644bd6647e9760a5ba49390d521c86131cd99f6",
+      "sections": [
+        "UnrealEd.EditorEngine",
+        "Launch",
+        "/Script/Engine.Engine",
+        "NetworkReplayStreaming",
+        "OnlineSubsystem",
+        "OnlineSubsystemSteam",
+        "/Script/OnlineSubsystemSteam.SteamNetDriver",
+        "/Script/Engine.UObjectPackages",
+        "/Script/HardwareTargeting.HardwareTargetingSettings",
+        "SystemSettings",
+        "/Script/EngineSettings.GameMapsSettings",
+        "DerivedDataBackendGraph",
+        "CoreRedirects",
+        "VisualLogger",
+        "/Script/Engine.NavigationSystemV1",
+        "/Script/Engine.AnimationSettings",
+        "/Script/Engine.RendererSettings",
+        "/Script/Engine.GarbageCollectionSettings",
+        "Engine.BufferVisualizationMaterials",
+        "/Script/Engine.AISystemBase",
+        "/Script/AIModule.AISystem",
+        "/Script/AIModule",
+        "/Script/AIModule.AISense_Sight",
+        "HostMigration",
+        "ConsoleVariables",
+        "/Script/OnlineSubsystemUtils.IpNetDriver",
+        "/Script/Engine.Player",
+        "/Script/Engine.StreamingSettings",
+        "/Script/UnrealEd.CookerSettings",
+        "PacketSimulationSettings",
+        "/Script/PS4PlatformEditor.PS4TargetSettings",
+        "/Script/Engine.LocalPlayer",
+        "/Script/NavigationSystem.RecastNavMesh",
+        "Core.Log",
+        "/Script/IOSRuntimeSettings.IOSRuntimeSettings",
+        "/Script/RenderDocPlugin.RenderDocPluginSettings",
+        "/Script/SignificanceManager.SignificanceManager",
+        "/Script/AIModule.CrowdManager",
+        "/Script/Engine.UserInterfaceSettings",
+        "/Script/Engine.CollisionProfile",
+        "/Script/Engine.PhysicsSettings",
+        "EpicOnlineServices",
+        "/Script/CinematicCamera.CineCameraComponent",
+        "PacketHandlerComponents"
+      ],
+      "boot": {
+        "EditorStartupMap": "/Game/Maps/Zoos/Zoo_Training.Zoo_Training",
+        "GameInstanceClass": "/Game/Blueprints/ThePlainesGameInstanceBP.ThePlainesGameInstanceBP_C",
+        "GameDefaultMap": "/Game/Maps/Startup/DemoPreStart.DemoPreStart",
+        "GlobalDefaultGameMode": "/Game/Blueprints/DefaultGameMode.DefaultGameMode_C"
+      },
+      "inputMappings": []
+    },
+    "DefaultGame.ini": {
+      "sha256": "a74f2c8f7aad459139da20b9da6f7c6486f9534c8a0b660d98bd2c879b14a4fd",
+      "sections": [
+        "/Script/EngineSettings.GeneralProjectSettings",
+        "Internationalization",
+        "/Script/Engine.GameNetworkManager",
+        "Version",
+        "Staging",
+        "/Script/SCCore.SCGameInstance",
+        "/Script/SCCore.SCBaseGameSettings",
+        "/Script/Sifu.SoundSettings",
+        "/Script/SCDialogManagerPlugin.SCDialogSettings",
+        "/Script/AkAudio.AkSettings",
+        "/Script/SCCore.SCVisualLoggerSettings",
+        "/Script/Sifu.SCUserWidget",
+        "/Script/Sifu.SCSignificanceSettings",
+        "/Script/Sifu.WCollisionSettings",
+        "/Script/SCCore.SCCollisionSettings",
+        "/Script/Engine.WorldSettings",
+        "/Script/Sifu.SCInputSettings",
+        "/Script/SCSoundOcclusion.SCSoundOcclusionSettings",
+        "/Script/AIModule.EnvQueryManager",
+        "/Script/Sifu.SCGameSettings",
+        "/Script/UnrealEd.ProjectPackagingSettings",
+        "/Script/AkAudio.AkAndroidInitializationSettings",
+        "/Script/AkAudio.AkHololensInitializationSettings",
+        "/Script/AkAudio.AkLinuxInitializationSettings",
+        "/Script/AkAudio.AkLuminInitializationSettings",
+        "/Script/AkAudio.AkMacInitializationSettings",
+        "/Script/AkAudio.AkPS4InitializationSettings",
+        "/Script/AkAudio.AkSwitchInitializationSettings",
+        "/Script/AkAudio.AkWindowsInitializationSettings",
+        "/Script/AkAudio.AkXboxOneInitializationSettings",
+        "/Script/Engine.AssetManagerSettings",
+        "/Script/GameplayAbilities.AbilitySystemGlobals"
+      ],
+      "boot": {},
+      "inputMappings": []
+    },
+    "DefaultInput.ini": {
+      "sha256": "3b348f490750ffd54c423c008ea19e5c16807f6a40e3a14bbc4146025bbc3fdf",
+      "sections": [
+        "/Script/EngineSettings.ConsoleSettings",
+        "/Script/Engine.InputSettings"
+      ],
+      "boot": {},
+      "inputMappings": [
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuCancel\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Escape)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuCancel\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuTabNext\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightShoulder)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuTabNext\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=E)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuTabPrev\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_LeftShoulder)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuTabPrev\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Q)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuActionPrimary\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Bottom)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Debug1\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_Special_Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Debug2\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_Special_Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Fly1\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_LeftThumbstick)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Fly2\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightThumbstick)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"InGameMenu\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_Special_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"InGameMenu\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Escape)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Debug_SpectatorCam\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"FlyModeSpeedUp\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightShoulder)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"FlyModeSpeedUp\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=LeftControl)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Attack1\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Rush\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightTriggerAxis)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Dodge\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightTriggerAxis)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Attack2\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Top)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Action\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Bottom)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Action\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=F)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"DebugMenu_PC\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Multiply)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"PushObject\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ThrowObject\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightShoulder)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"PickUpObject\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"DropObject\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ThrowObjectFromPickUp\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightShoulder)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ContextualActionObject\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Traversal\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Bottom)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuActionPrimaryHold\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Bottom)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuActionPrimary\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Enter)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Grab\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightShoulder)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ThrowCharacter1\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Bottom)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"PrepFocus1\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_LeftTriggerAxis)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"FocusExecution\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightTriggerAxis)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Guard\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_LeftShoulder)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"PrepFocus2\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightTriggerAxis)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"TakedownValidation1\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Top)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuActionSecondary\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuActionTertiary\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Top)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"TakedownValidation2\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"FocusExecution\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Bottom)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Dialog1\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_DPad_Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Dialog2\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_DPad_Up)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Dialog3\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_DPad_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"AltMenuTabNext\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightTrigger)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"AltMenuTabPrev\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_LeftTrigger)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"TestAction1\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"TestAction2\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Bottom)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ThrowCharacter2\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"AttackDown\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Resume\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=SpaceBar)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"Resume\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Bottom)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"AddKey\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Insert)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"AddKey\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"RemoveKey\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Delete)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"RemoveKey\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Top)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"EditCamera\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Bottom)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"SelectLeftKey\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_DPad_Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"SelectLeftKey\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"SelectRightKey\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_DPad_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"SelectRightKey\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ScrubBackward\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_LeftShoulder)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ScrubForward\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_RightShoulder)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"MenuBack\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"EditCamera\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=SpaceBar)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"SpectatorExit\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_Special_Left)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"SpectatorExit\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Escape)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"EditorSpecialMenu\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_Special_Right)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"EditorSpecialMenu\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=B)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ReplayExport\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_DPad_Down)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ReplayExport\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=E)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ReplayMenu\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_DPad_Down)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"CameraSettings\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Top)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ReplayMenu\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=G)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"CameraSettings\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=J)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"TimelineMode\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_LeftThumbstick)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"TimelineMode\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=I)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ApplySettings\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Enter)"
+        },
+        {
+          "type": "ActionMappings",
+          "value": "(ActionName=\"ApplySettings\",bShift=False,bCtrl=False,bAlt=False,bCmd=False,Key=Gamepad_FaceButton_Left)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"TestAxis1\",Scale=1.000000,Key=Gamepad_LeftY)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_Speed\",Scale=-1.000000,Key=Gamepad_LeftShoulder)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_Speed\",Scale=1.000000,Key=Gamepad_RightShoulder)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_Vertical\",Scale=-1.000000,Key=Gamepad_LeftTriggerAxis)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_Vertical\",Scale=1.000000,Key=Gamepad_RightTriggerAxis)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_FOV\",Scale=-1.000000,Key=Gamepad_DPad_Up)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_FOV\",Scale=1.000000,Key=Gamepad_DPad_Down)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_Damping\",Scale=1.000000,Key=Gamepad_DPad_Right)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_Damping\",Scale=-1.000000,Key=Gamepad_DPad_Left)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_Speed\",Scale=1.000000,Key=Q)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug_Spectator_Speed\",Scale=-1.000000,Key=E)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug3\",Scale=1.000000,Key=Gamepad_LeftTriggerAxis)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Debug4\",Scale=1.000000,Key=Gamepad_RightTriggerAxis)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuVertical\",Scale=1.000000,Key=Gamepad_LeftY)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuVertical\",Scale=1.000000,Key=Up)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuVertical\",Scale=-1.000000,Key=Down)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuHorizontal\",Scale=1.000000,Key=Gamepad_LeftX)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuHorizontal\",Scale=-1.000000,Key=Left)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuHorizontal\",Scale=1.000000,Key=Right)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"TargetSwitchMouse_Y\",Scale=1.000000,Key=MouseWheelAxis)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuVertical\",Scale=1.000000,Key=Gamepad_DPad_Up)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuVertical\",Scale=-1.000000,Key=Gamepad_DPad_Down)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuHorizontal\",Scale=-1.000000,Key=Gamepad_DPad_Left)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MenuHorizontal\",Scale=1.000000,Key=Gamepad_DPad_Right)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MoveForward\",Scale=1.000000,Key=Gamepad_LeftY)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MoveForward\",Scale=1.000000,Key=W)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MoveForward\",Scale=-1.000000,Key=S)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MoveRight\",Scale=1.000000,Key=Gamepad_LeftX)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MoveRight\",Scale=-1.000000,Key=A)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"MoveRight\",Scale=1.000000,Key=D)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"Turn\",Scale=1.000000,Key=Gamepad_RightX)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"LookUp\",Scale=1.000000,Key=Gamepad_RightY)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"TurnMouse\",Scale=1.000000,Key=MouseX)"
+        },
+        {
+          "type": "AxisMappings",
+          "value": "(AxisName=\"LookUpMouse\",Scale=-1.000000,Key=MouseY)"
+        }
+      ]
+    }
+  },
+  "contentDirectories": {
+    "Environments": 23852,
+    "Characters": 9233,
+    "Animations": 6778,
+    "DB": 5442,
+    "Sounds": 4868,
+    "Maps": 4543,
+    "Blueprints": 3868,
+    "Sequences": 3836,
+    "Effects": 3439,
+    "WwiseAudio": 3265,
+    "UI": 2930,
+    "LevelDesign": 824,
+    "Items": 754,
+    "Camera": 268,
+    "Localization": 240,
+    "Materials": 50,
+    "Editor_Data": 26,
+    "EditorResources": 20,
+    "GameFlow": 6,
+    "BP_TraversalDB.uasset": 1,
+    "BP_TraversalDB.uexp": 1,
+    "InitBank.uasset": 1,
+    "InitBank.uexp": 1,
+    "PipelineCaches": 1,
+    "ShaderArchive-Global-PCD3D_SM5.ushaderbytecode": 1,
+    "ShaderArchive-Sifu-PCD3D_SM5.ushaderbytecode": 1,
+    "Wire.uasset": 1,
+    "Wire.uexp": 1
+  },
+  "mapCount": 859,
+  "maps": [
+    "Sifu/Content/Maps/Hideout0/Hideout_0_Main.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_CommonParts_Dojo_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_CommonParts_House_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_CommonParts_Outdoor_01_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_CommonParts_Outdoor_02_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_CommonParts_Outdoor_03_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_CommonParts_Outdoor_04_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_PrivateParts_Dojo_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_PrivateParts_Garden_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_PrivateParts_House_01_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/FX/Hideout_0_PrivateParts_Outdoor_01_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Hideout_0_Pools.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout0_PrecomputedVisibility.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_CommonParts_Archi_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_CommonParts_Dojo_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_CommonParts_House_01_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_CommonParts_Large.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_CommonParts_OutDoor_01_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_CommonParts_OutDoor_02_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_CommonParts_OutDoor_03_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_CommonParts_OutDoor_04_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_FX.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_Lighting.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_PrivateParts_Archi_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_PrivateParts_Dojo_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_PrivateParts_Garden_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_PrivateParts_House_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_PrivateParts_OutDoor_01_Props_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_PrivateParts_PropsSpecific_LA.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_ScreenshotCameras_test.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LA/Hideout_0_screenshots.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LD/Hideout_0_LD.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LD/Hideout_0_LD_Col.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/LVL_LALD_Col_H0.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Light/Hideout_0_CommonParts_Light.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Light/Hideout_0_Lightmass.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Light/Hideout_0_PrivateParts_Light.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Light/Hideout_0_Vista_Light.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Sound/Hideout_0_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Sound/Hideout_0_Sound_ExtSecondRoom_Zone2.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Sound/Hideout_0_Sound_FirstRoom_Zone1.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Sound/Hideout_0_Sound_GardenBossroom_Zone3.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Sound/Hideout_0_Sound_Global.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Sound/Hideout_0_Sound_SecondRoom_Zone2.umap",
+    "Sifu/Content/Maps/Hideout0/Sublevels/Sound/Hideout_0_Sound_ThirdRoom_Zone3.umap",
+    "Sifu/Content/Maps/Hideout0/Tests/Hideout_0_TestWorld.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_Alley_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_BossRoom_Phase_1_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_BossRoom_Phase_2_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_DryingRoom_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_FajarLounge_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_Hangar_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_IndustrialAlley_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_IndustrialEntrance_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_Office_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_Office_SkullBrother_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_RoofTop_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_TheSquat_Appartement_1_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_TheSquat_Appartement_1_Stairs_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_TheSquat_Appartement_2Upside_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_TheSquat_Appartement_2_FX.umap",
+    "Sifu/Content/Maps/Hideout1/FX/Hideout_1_TheSquat_Street_FX.umap",
+    "Sifu/Content/Maps/Hideout1/Hideout_1_Boss_LD.umap",
+    "Sifu/Content/Maps/Hideout1/Hideout_1_Collisions.umap",
+    "Sifu/Content/Maps/Hideout1/Hideout_1_Hints.umap",
+    "Sifu/Content/Maps/Hideout1/Hideout_1_LD.umap",
+    "Sifu/Content/Maps/Hideout1/Hideout_1_LD_Tests.umap",
+    "Sifu/Content/Maps/Hideout1/Hideout_1_Main.umap",
+    "Sifu/Content/Maps/Hideout1/Hideout_GameFlow.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Alley_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Alley_LA_Large.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_BossRoom_Phase_1_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_BossRoom_Phase_1_Light.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_BossRoom_Phase_2_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_City_LA_Large.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_DryingRoom_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_FajarLounge_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Hangar_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Hangar_LA_Large.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_IndustrialAlley_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_IndustrialAlley_LA_Large.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_IndustrialEntrance_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_IndustrialEntrance_Large_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Industrial_LA_Large.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Intro_Vista.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Large.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Office_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Office_LA_Large.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Office_SkullBrother_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_RoofTop_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_RoofTop_LA_Large.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_TheSquat_Appartement_1_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_TheSquat_Appartement_1_Stairs_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_TheSquat_Appartement_2Upside_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_TheSquat_Appartement_2_LA.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_TheSquat_LA_Large.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_TheSquat_LA_Street.umap",
+    "Sifu/Content/Maps/Hideout1/LA/Hideout_1_Vista.umap",
+    "Sifu/Content/Maps/Hideout1/LD/Hideout_1_Alley_LD.umap",
+    "Sifu/Content/Maps/Hideout1/LD/Hideout_1_Hangar_LD.umap",
+    "Sifu/Content/Maps/Hideout1/LD/Hideout_1_IndustrialAlley_LD.umap",
+    "Sifu/Content/Maps/Hideout1/LD/Hideout_1_IndustrialEntrance_LD.umap",
+    "Sifu/Content/Maps/Hideout1/LD/Hideout_1_TheSquat_Appartement_1_LD.umap",
+    "Sifu/Content/Maps/Hideout1/LD/Hideout_1_TheSquat_Appartement_2_LD.umap",
+    "Sifu/Content/Maps/Hideout1/LD/Hideout_1_TheSquat_Street_LD.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_Alley_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_BossRoom_Phase_2_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_DryingRoom_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_FajarLounge_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_Hangar_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_IndustrialAlley_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_IndustrialEntrance_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_Large_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_Lightmass.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_Office_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_Office_SkullBrother_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_PrecomputedVisibility.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_RoofTop_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_TheSquat_Appartement_1_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_TheSquat_Appartement_1_Stairs_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_TheSquat_Appartement_2Upside_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_TheSquat_Appartement_2_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Light/Hideout_1_TheSquat_Street_Light.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Global.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Reverb_Appartements_Zone2_3.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Reverb_BambooStreet_Zone13.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Reverb_BossRoom_Zone14.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Reverb_Hangar_Zone9_10.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Reverb_Offices_Zone7_8.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Reverb_Rooftop_Zone4_5_6.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Reverb_Shortcut_Zone11_12.umap",
+    "Sifu/Content/Maps/Hideout1/Sound/Hideout_1_Sound_Reverb_Street_Zone1.umap",
+    "Sifu/Content/Maps/Hideout1/Sublevels/Hideout_1_Pools.umap",
+    "Sifu/Content/Maps/Hideout1/Sublevels/LA/Hideout_1_ScreenshotCameras_test.umap",
+    "Sifu/Content/Maps/Hideout1/Tests/Hideout_1_TestWorld.umap",
+    "Sifu/Content/Maps/Hideout2/Hideout_2_Main.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/COL/LVL_LALD_Col_H2.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_BackstageAccess_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_BettingLounge_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_BlazingAtrium_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_BossRoom_Phase01_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_BossRoom_Phase02_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_BurningStreets_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_Entrance_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_FightClubAirlock_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_FireDiscipleRoom_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_FirePit_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_FirePlaza_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_NightClub_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_Patio_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/FX/Hideout_2_SparringRoom_LA_FX.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Hideout_2_Pools.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_BackstageAccess_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_BettingLounge_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_BlazingAtrium_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_BossRoom_Phase01_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_BossRoom_Phase02_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_BurningStreets_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_Entrance_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_FightClubAirlock_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_FireDiscipleRoom_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_FirePit_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_FirePlaza.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_NeonCorridor_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_NightClub_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_Patio_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_PrecomputedVisibility.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_ScreenshotCameras_test.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LA/Hideout_2_SparringRoom_LA.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_BlazingAtrium_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_BurningStreet_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_Entrance_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_Fightclub_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_NightClub_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_SeanBossP2_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_SeanBoss_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_TrainingRoom_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/LD/Hideout_2_Village_LD.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_BackstageAccess_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_BettingLounge_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_BlazingAtrium_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_BossRoom_Lightmass.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_BossRoom_Phase01_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_BossRoom_Phase02_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_BurningStreets_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_Entrance_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_FightClubAirlock_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_FireDiscipleRoom_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_FirePit_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_FirePlaza_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_LIV.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_NeonCorridor_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_NightClub_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_Patio_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Lighting/Hideout_2_SparringRoom_Light.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Global.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Reverb_Zone10_11_Streets.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Reverb_Zone12_FirePlaza.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Reverb_Zone13_BossRoom.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Reverb_Zone1_2Entrance.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Reverb_Zone3_4_NightClub.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Reverb_Zone6_7_8TrainingRooms.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Reverb_Zone_5_FightClub.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Sound/Hideout_2_Sound_Reverb_Zone_9_Patio.umap",
+    "Sifu/Content/Maps/Hideout2/Sublevels/Tests/Hideout_2_TestWorld.umap",
+    "Sifu/Content/Maps/Hideout3/Hideout_3_Main.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Global.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Reverb_Atrium_Zone1_3_5_8.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Reverb_BossRoom_Zone13.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Reverb_FirstRoom_Zone2.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Reverb_Flood_Zone10.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Reverb_Fog_Zone12.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Reverb_Iceberg_Zone11.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Reverb_Rain_Zone9.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Reverb_SecondRoom_Zone4.umap",
+    "Sifu/Content/Maps/Hideout3/Sound/Hideout_3_Sound_Reverb_ThirdRoom_Zone6_7.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Hideout_3_Pools.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Hideout_3_TestWorld.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_Atrium_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_BossRoom_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_KurokiWorkshop_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_PermanentExibition-Room01_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_PermanentExibition-Room02_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_PermanentExibition-Room02_Stairs_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_PermanentExibition-Room02_Stairs_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_PermanentExibition-Room03_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_ScreenshotCameras_test.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_TemporaryExhibition-Flood_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_TemporaryExhibition-Iceberg_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_TemporaryExhibition-Mist_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_TemporaryExhibition-Rain_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LA/Hideout_3_Vista_LA.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_Atrium_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_Boss.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_Col.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_KurokiWorkshop_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_PermanentExhibition-Room01_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_PermanentExhibition-Room02_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_PermanentExhibition-Room03_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_TemporaryExhibition-Flood_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_TemporaryExhibition-Iceberg_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_TemporaryExhibition-Mist_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/LD/Hideout_3_TemporaryExhibition-Rain_LD.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_Atrium_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_BossRoom_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_Lightmass.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_PermanentExibition-Room01_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_PermanentExibition-Room02_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_PermanentExibition-Room03_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_TemporaryExhibition-Flood_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_TemporaryExhibition-Iceberg_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_TemporaryExhibition-Mist_Light.umap",
+    "Sifu/Content/Maps/Hideout3/Sublevels/Light/Hideout_3_TemporaryExhibition-Rain_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Hideout_4_Boss_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Hideout_4_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Hideout_4_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Hideout_4_LightCavern.umap",
+    "Sifu/Content/Maps/Hideout4/Hideout_4_Main.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Collisions/Hideout_4_Collisions.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/FX/Hideout_4_Fx_ZooTest.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Hideout_4_Pools.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Hideout_4_ScreenshotCameras_test.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_BossRoom_2_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_BossRoom_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_CavernGoldDeposit_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_CavernIntelHidden_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_CavernIntel_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_CavernPit_09_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_CavernQuarryRoom_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_CavernWeaponery_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_ElevatorShaft_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_FengJieOffice_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_Hall_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_IntelRoom_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_MeetingRooms_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_OfficerFloor_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LA/Hideout_4_Vista_LA.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_CavernGoldDeposit_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_CavernIntel_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_CavernPit_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_CavernQuarryRoom_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_CavernWeaponery_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_ElevatorShaft_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_FengJieOffice_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_Hall_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_IntelRoom_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_MeetingRooms_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/LD/Hideout_4_OfficerFloor_LD.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_BossRoom_2_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_BossRoom_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_CavernGoldDeposit_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_CavernIntelHidden_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_CavernIntel_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_CavernPit_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_CavernQuarryRoom_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_CavernWeaponery_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_ElevatorShaft_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_FengJieOffice_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_Hall_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_IntelRoom_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_Lightmass.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_MeetingRoom_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_OfficerFloor_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Light/Hideout_4_Vista_Light.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Global.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_BossRoom_Zone14_15.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_CavernIntel_Zone10.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_DeathValey_Zone13.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_FengjieOffice_Zone2_3.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_GoldDeposit_Zone9.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_Hall_Zone1_2.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_IntelRoom_Zone2_5.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_MeetingsRoom_Zone4.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_OfficerRoom_Zone6_7.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_Pit_Zone8.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_Quarry_Zone11.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Sound/Hideout_4_Sound_Reverb_Weaponary_Zone12.umap",
+    "Sifu/Content/Maps/Hideout4/Sublevels/Tests/Hideout_4_TestWorld.umap",
+    "Sifu/Content/Maps/Hideout5/Hideout_5_main.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z1/Hideout_5_Park_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z2/Hideout_5_Entrance_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z2/Hideout_5_ExteriorCourt_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z2/Hideout_5_MainHall_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z2/Hideout_5_Restaurant_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z2/Hideout_5_Terrace_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z3/Hideout_5_1rstFloorHallway_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z4/Hideout_5_AcupunctureOffice_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z4/Hideout_5_AromaticGarden_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z4/Hideout_5_MassageRoom_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z4/Hideout_5_TaiChiCourtyard_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z5/Hideout_5_GardenVista_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z5/Hideout_5_InnerGarden_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z5/Hideout_5_LockedGarden_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z5/Hideout_5_PathToMiracleHouse_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z6/Hideout_5_MiracleHouse_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z8/Hideout_5_BossRoomPhase1_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z8/Hideout_5_BossRoomPhase2_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/FX/Z8/Hideout_5_BossRoomPhase3_FX.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Hideout_5_Pools.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Hideout_5_Large.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Hideout_5_ScreenshotCameras_test.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Hideout_5_Vista_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z1/Hideout_5_Park_LA_V3.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z2/Hideout_5_Entrance_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z2/Hideout_5_ExteriorCourt_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z2/Hideout_5_MainHall_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z2/Hideout_5_Restaurant_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z3/Hideout_5_1rstFloorHallway_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z3/Hideout_5_GroundFloorHallway_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z4/Hideout_5_AcupunctureOffice_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z4/Hideout_5_AromaticGarden_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z4/Hideout_5_MassageRoom_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z4/Hideout_5_TaiChiCourtyard_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z5/Hideout_5_InnerGarden_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z5/Hideout_5_LockedGarden_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z5/Hideout_5_PathToMiracleHouse_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z6/Hideout_5_MiracleHouse_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z8/Hideout_5_BossRoomPhase1_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z8/Hideout_5_BossRoomPhase2_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z8/Hideout_5_BossRoomPhase3_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LA/Z9/Hideout_5_HolyMountains_LA.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LD/Hideout_5_Boss_LD.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LD/Hideout_5_LD.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LD/Hideout_5_LD_Col.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LD/Hideout_5_VengeanceEnding_LD.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/LD/Hideout_5_WudeEnding_LD.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_AcupunctureOffice_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_AromaticGarden_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_BossRoomPhase01_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_GuestHouse_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_HolyMountains_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_InnerGarden_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_Lighting.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_Lightmass.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_MassageRoom_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_MiracleHouse_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_Park_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_PathToMiracleHouse_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_Reception_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_Restaurant_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_TaichiCourtyard_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_VengeanceArena_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Lighting/Hideout_5_WudeArena_Light.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Sound/Hideout_5_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Sound/Hideout_5_Sound_Global.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Sound/Hideout_5_Sound_Reverb_Bossroom_Zone8.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Sound/Hideout_5_Sound_Reverb_HerbalClinic_Zone5.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Sound/Hideout_5_Sound_Reverb_InnerGarden_Zone6.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Sound/Hideout_5_Sound_Reverb_MainHallZone2_3_4.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Sound/Hideout_5_Sound_Reverb_MiracleHouse_Zone7.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Sound/Hideout_5_Sound_Reverb_Park_Zone1.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Sound/Hideout_5_Sound_Reverb_Refuge_Zone3.umap",
+    "Sifu/Content/Maps/Hideout5/SubLevels/Tests/Hideout_5_TestWorld.umap",
+    "Sifu/Content/Maps/Opening/Opening_Main.umap",
+    "Sifu/Content/Maps/Opening/SubLevels/LA/LVL_Wuguan_VistaOpening.umap",
+    "Sifu/Content/Maps/Opening/SubLevels/LA/Opening_Wuguan_Lighting.umap",
+    "Sifu/Content/Maps/Opening/SubLevels/LD/Opening_LD.umap",
+    "Sifu/Content/Maps/Opening/SubLevels/LD/Opening_LD_Col.umap",
+    "Sifu/Content/Maps/Opening/SubLevels/Opening_Pools.umap",
+    "Sifu/Content/Maps/Opening/SubLevels/Sound/Tutorial_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/PostCredits/PostCredits_Main.umap",
+    "Sifu/Content/Maps/PostCredits/SubLevels/PostCredits_LD.umap",
+    "Sifu/Content/Maps/Startup/DemoPreStart.umap",
+    "Sifu/Content/Maps/TU_3/ArenaModeMenu/ArenaMode_Menu.umap",
+    "Sifu/Content/Maps/TU_3/ArenaModeMenu/Sublevels/LA/ArenaMode_Menu_LA.umap",
+    "Sifu/Content/Maps/TU_3/ArenaModeMenu/Sublevels/Light/ArenaMode_Menu_Light.umap",
+    "Sifu/Content/Maps/TU_3/ArenaModeMenu/Sublevels/Sound/ArenaMode_Menu_Sound.umap",
+    "Sifu/Content/Maps/TU_3/Debug/LVL_LD_LightDebug.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/Arena_TheCorridor_main.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LA/Arena_TheCorridor_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LD/Arena_TheCorridor_LD.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LD/Arena_TheCorridor_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LD/Challenges/Arena_TheCorridor_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LD/Challenges/Arena_TheCorridor_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LD/Challenges/Arena_TheCorridor_CHAL03.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LD/Challenges/Arena_TheCorridor_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LD/Challenges/Arena_TheCorridor_CHAL05A.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LD/Challenges/Arena_TheCorridor_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/LD/Challenges/Arena_TheCorridor_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/Light/Arena_TheCorridor_LIV.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/Light/Arena_TheCorridor_Light.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/Sound/Arena_TheCorridor_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/Sound/Arena_TheCorridor_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheCorridor/Tech/Arena_TheCorridor_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/Arena_TheStairs_Collisions.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/Arena_TheStairs_Main.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_Appartement_A_Archi.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_Appartment_A.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_Appartment_B.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_Appartment_B_Archi.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_Appartment_C.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_Appartment_C_Archi.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_BossRoom.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_BossRoom_Archi.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_FirstFloor_Props_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_FourthFloor_Props_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_GroundFloor_Props_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_LA_Court.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_Plant_B.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_Plant_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_SecondFloor_Props_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_ThirdFloor_Props_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LA/Arena_TheStairs_Vista_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Arena_TheStairs_LD.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Arena_TheStairs_Polaroid.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Arena_TheStairs_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Challenges/Arena_TheStairs_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Challenges/Arena_TheStairs_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Challenges/Arena_TheStairs_CHAL03.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Challenges/Arena_TheStairs_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Challenges/Arena_TheStairs_CHAL05B.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Challenges/Arena_TheStairs_CHAL06C.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Challenges/Arena_TheStairs_CHAL07B.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LD/Challenges/Arena_TheStairs_CHAL08.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/LIV/Arena_TheStairs_LIV.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/Light/Arena_TheStairs_Lighting.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/Sound/Arena_TheStairs_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/Sound/Arena_TheStairs_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/H1_TheStairs/SubLevels/Tech/Arena_TheStairs_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Arena_TheHangar_Main.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LA/Arena_Hangar_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LA/Arena_Hangar_LA_Large.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LA/Arena_Vista_LA.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Arena_Hangar_Collisions.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Arena_Hangar_LD.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Arena_Hangar_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_CHAL02A.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_CHAL03A.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_CHAL05.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_CHAL08B.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_CHAL09B.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/LD/Challenges/Arena_TheHangar_POLAS.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/Lighting/Arena_Hangar_Light.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/Lighting/Arena_Hangar_Lightmass.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/Sound/Arena_Hangar_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/Sound/Arena_Hangar_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H1_Arenas/The_Hangar/Sublevels/Tech/Arena_Hangar_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/Arena_Dancefloor_Main.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LA/Arena_TheDancefloor_BackstageAccess_LA.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LA/Arena_TheDancefloor_FightClubAirlock_LA.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LA/Arena_TheDancefloor_LA.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Arena_TheDancefloor_COL.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Arena_TheDancefloor_LD.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Arena_TheDancefloor_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Challenges/Arena_TheDanceFloor_CHAL01A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Challenges/Arena_TheDanceFloor_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Challenges/Arena_TheDanceFloor_CHAL03A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Challenges/Arena_TheDanceFloor_CHAL04A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Challenges/Arena_TheDanceFloor_CHAL05A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Challenges/Arena_TheDanceFloor_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Challenges/Arena_TheDanceFloor_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Challenges/Arena_TheDanceFloor_CHAL08.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/LD/Challenges/Arena_TheDanceFloor_CHAL09.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/Light/Arena_TestLighting.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/Light/Arena_TheDancefloor_BackstageAccess_Light.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/Light/Arena_TheDancefloor_FightClubAirlock_Light.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/Light/Arena_TheDancefloor_LIV.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/Light/Arena_TheDancefloor_Light.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/Light/Arena_TheDancefloor_NightClub_Light.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/Sound/Arena_TheDancefloor_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/DanceFloor/Sound/Arena_TheDancefloor_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/Arena_TheParking_Main.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/Cars/Arena_TheParking_CARS.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LA/Arena_TheParking_Archi_LA.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LA/Arena_TheParking_Props_LA.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LA/Arena_TheParking_Vista_LA.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Arena_TheParking_COL.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Arena_TheParking_LD.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Arena_TheParking_Polaroid.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Arena_TheParking_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Challenges/Arena_TheParking_CHAL01A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Challenges/Arena_TheParking_CHAL02A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Challenges/Arena_TheParking_CHAL03A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Challenges/Arena_TheParking_CHAL04B.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Challenges/Arena_TheParking_CHAL05B.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Challenges/Arena_TheParking_CHAL06B.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Challenges/Arena_TheParking_CHAL07A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Challenges/Arena_TheParking_CHAL08B.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/LD/Challenges/Arena_TheParking_CHAL09B.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/Light/Arena_TheParking_Light.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/Sound/Arena_TheParking_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/Sound/Arena_TheParking_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/TheParking/Tech/Arena_TheParking_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Arena_ThePit_Main.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/FX/Arena_ThePit_FirePit_LA_FX.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LA/Arena_ThePit_FirePit_LA.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LD/Arena_ThePit_Chal01A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LD/Arena_ThePit_Chal02.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LD/Arena_ThePit_Chal03.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LD/Arena_ThePit_Chal04A.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LD/Arena_ThePit_Chal05B.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LD/Arena_ThePit_Chal06.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LD/Arena_ThePit_Chal07.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LD/Arena_ThePit_LD.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/LD/Arena_ThePit_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/Lighting/Arena_ThePit_FirePit_Light.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/Lighting/Arena_ThePit_Light.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/Lighting/Arena_ThePit_Lightmass.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/Sound/Arena_ThePit_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/Sound/Arena_ThePit_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H2_Arenas/The_Pit/Sublevels/Tech/Arena_ThePit_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Arena_TheExposition_Main.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_AnamorphosisLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_BotLandscapeLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_Ceiling_LA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_CorrdidorBallLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_EntranceLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_LA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_LA_Ground.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_LA_Test01.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_LA_Wall.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_LightSphereRoom_LA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_PunchingBallLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_PureRoomLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_RevelationLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_SouvenirLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_StatueLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_TopLandscapeLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_WaitingRoomBotLA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LA/Arena_TheExposition_WaitingRoomTop.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Arena_TheExposition_DribbleInstallation.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Arena_TheExposition_GazingOrbsInstallation.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Arena_TheExposition_GoalInstallation.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Arena_TheExposition_LD.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Arena_TheExposition_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Arena_TheExposition_TackleInstallation.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL02A.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL03A.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL04A.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL05.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL06A.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL08.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL09.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/LD/Challenges/Arena_TheExposition_CHAL10.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_Anamorphosis_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_CorridorBall_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_DribbleInstalation_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_Entrance_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_LIV.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_Landscape_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_LightSphereRoom_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_PunchingBall_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_PureRoom_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_Revelation_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_Souvenir_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_Statue_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_TheExpo_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Light/Arena_TheExposition_TheExpo_WaitingRoom_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Polaroids/Arena_TheExposition_Polaroids.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Sound/Arena_TheExposition_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Sound/Arena_TheExposition_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheExposition/Tech/Arena_TheExposition_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/Arena_TheRain_main.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/FX/Arena_TheRain_FX.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LA/Arena_TheRain_LA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LA/Arena_TheRain_old_LA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Arena_TheRain_COL.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Arena_TheRain_Pola.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Arena_TheRain_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Arena_TheRain_lD.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Challenges/Arena_TheRain_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Challenges/Arena_TheRain_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Challenges/Arena_TheRain_CHAL03.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Challenges/Arena_TheRain_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Challenges/Arena_TheRain_CHAL05.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Challenges/Arena_TheRain_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/LD/Challenges/Arena_TheRain_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/Light/Arena_TheRain_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/Sound/Arena_TheRain_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/Sound/Arena_TheRain_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheRain/Tech/Arena_TheRain_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/Arena_TheSnowGarden_main.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Arena_TheSnowGarden_Decals.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Arena_TheSnowGarden_InteractiveSnow.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Arena_TheSnowGarden_LA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase1/Arena_TheSnowGarden_Phase1_Archi.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase1/Arena_TheSnowGarden_Phase1_Decals.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase1/Arena_TheSnowGarden_Phase1_LA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase1/Arena_TheSnowGarden_Phase1_Plant.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase2/Arena_TheSnowGarden_Phase2_Archi.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase2/Arena_TheSnowGarden_Phase2_Decal.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase2/Arena_TheSnowGarden_Phase2_LA.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase2/Arena_TheSnowGarden_Phase2_Plant.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase3/Arena_TheSnowGarden_Phase3_Archi_Classic.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase3/Arena_TheSnowGarden_Phase3_LA_Classic.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LA/Phase3/Arena_TheSnowGarden_Phase3_Plant.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LD/Arena_TheSnowGarden_LD.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LD/Arena_TheSnowGarden_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LD/Challenges/Arena_TheSnowGarden_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LD/Challenges/Arena_TheSnowGarden_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LD/Challenges/Arena_TheSnowGarden_CHAL03.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LD/Challenges/Arena_TheSnowGarden_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LD/Challenges/Arena_TheSnowGarden_CHAL05.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LD/Challenges/Arena_TheSnowGarden_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/LD/Challenges/Arena_TheSnowGarden_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/Light/Arena_TheSnowGarden_Light.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/Light/Arena_TheSnowGarden_LightPhase1.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/Light/Arena_TheSnowGarden_LightPhase2.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/Light/Arena_TheSnowGarden_LightPhase3.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/Sound/Arena_TheSnowGarden_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/Sound/Arena_TheSnowGarden_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/VFX/Arena_TheSnowGarden_VFX.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/VFX/Arena_TheSnowGarden_VFX_Phase1.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/VFX/Arena_TheSnowGarden_VFX_Phase2.umap",
+    "Sifu/Content/Maps/TU_3/H3_Arenas/TheSnowGarden/VFX/Arena_TheSnowGarden_VFX_Phase3.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/Arena_TheRooftop_main.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/FX/Arena_TheRooftop_FX.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LA/Arena_TheRoofTop_oldLA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LA/Arena_TheRooftop_LA_Archi.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LA/Arena_TheRooftop_LA_Props.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LA/Arena_TheRooftop_vista_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LD/Arena_TheRooftop_LD.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LD/Arena_TheRooftop_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LD/Challenges/Arena_TheRoofTop_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LD/Challenges/Arena_TheRoofTop_CHAL02B.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LD/Challenges/Arena_TheRoofTop_CHAL03A.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LD/Challenges/Arena_TheRoofTop_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LD/Challenges/Arena_TheRoofTop_CHAL05.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LD/Challenges/Arena_TheRoofTop_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/LD/Challenges/Arena_TheRoofTop_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/Light/Arena_TheRooftop_LIV.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/Light/Arena_TheRooftop_Light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/Sound/Arena_TheRooftop_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/Sound/Arena_TheRooftop_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheRooftop/Tech/Arena_TheRoofTop_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Arena_TheServerRoom_main.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_BossRoom_02_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_ControlCenter_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_Corridor_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_InterFloor_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_MazeExterior_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_MazePlatform_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_Maze_Back_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_Maze_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_Stairs_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServerRoom_UnderFloor_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LA/Arena_TheServeur_MazeShape_LA.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Arena_TheServerRoom_COL.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Arena_TheServerRoom_Camera.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Arena_TheServerRoom_LD.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Arena_TheServerRoom_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Challenges/Arena_TheServerRoom_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Challenges/Arena_TheServerRoom_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Challenges/Arena_TheServerRoom_CHAL03.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Challenges/Arena_TheServerRoom_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Challenges/Arena_TheServerRoom_CHAL05.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Challenges/Arena_TheServerRoom_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Challenges/Arena_TheServerRoom_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/LD/Challenges/Arena_TheServerRoom_CHAL08.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Light/Arena_TheServerRoom_BossRoom_02_light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Light/Arena_TheServerRoom_ControlCenter_light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Light/Arena_TheServerRoom_Corridor_light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Light/Arena_TheServerRoom_InterFloor_Light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Light/Arena_TheServerRoom_Light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Light/Arena_TheServerRoom_Maze_Back_Light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Light/Arena_TheServerRoom_Maze_light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Light/Arena_TheServerRoom_Stairs_Light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Light/Arena_TheSeverRoom_UnderFloor_light.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Sound/Arena_TheServerRoom_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Sound/Arena_TheServerRoom_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H4_Arenas/TheServerRoom/Tech/Arena_TheServerRoom_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/Arena_TheKitchen_Main.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/Arena_TheKitchen_ScreenshotCameras_test.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LA/Arena_TheKitchen_LA_Architecture.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LA/Arena_TheKitchen_LA_Basement.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LA/Arena_TheKitchen_LA_Decal.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LA/Arena_TheKitchen_LA_FirstFloor.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LA/Arena_TheKitchen_Secondfloor.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LA/Arena_TheKitchen_VistaLA03.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchenV3_LD.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL03.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL05A.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL08A.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL09.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_CHAL10.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_Polas.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/LD/Arena_TheKitchen_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/Lighting/Arena_TheKitchen_1stFloor_LightingV2.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/Lighting/Arena_TheKitchen_LIV.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/Lighting/Arena_TheKitchen_Lighting.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/Sound/Arena_TheKitchen_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/Sound/Arena_TheKitchen_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/TheKitchen/Tech/Arena_TheKitchen_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/Arena_ThePark_Main.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/FX/Arena_ThePark_FX.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_CliffPath_LA.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_ColumbariumEntry_LA.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_Columbarium_LA.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_Deck_LA.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_Gazebo_LA.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_LA.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_LA_Large.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_PicnicArea_LA.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_RiverPath_LA.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_StairsPath_LA.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LA/Arena_ThePark_Vista.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Arena_ThePark_Col.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Arena_ThePark_LD.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Arena_ThePark_Pools.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Challenges/Arena_ThePark_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Challenges/Arena_ThePark_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Challenges/Arena_ThePark_CHAL03.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Challenges/Arena_ThePark_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Challenges/Arena_ThePark_CHAL05.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Challenges/Arena_ThePark_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Challenges/Arena_ThePark_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/LD/Challenges/Arena_ThePark_CHAL08.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/Light/LVL_Arena_ThePark_LPV.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/Light/LVL_Arena_ThePark_light.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/Sound/Arena_ThePark_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/Sound/Arena_ThePark_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/H5_Arenas/ThePark/Tech/Arena_ThePark_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/Arena_TheRedRoom_main.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LA/Arena_TheRedRoom_LA.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL01.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL03.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL05.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL07.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL08.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL09.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_CHAL10.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_LD.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_Polas.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/LD/Arena_TheRedRoom_Pools.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/Light/Arena_TheRedRoom_light.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/Sound/Arena_TheRedRoom_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/Sound/Arena_TheRedRoom_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/RedRoom/Tech/Arena_TheRedRoom_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/StartupMap/Arena_StartupLevel.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/Arena_TheWuguan_main.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/LD/Arena_TheWuguan_Collisions.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/LD/Arena_TheWuguan_LD.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/LD/Arena_TheWuguan_Pools.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/LD/Challenges/Arena_TheWuguan_CHAL01A.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/LD/Challenges/Arena_TheWuguan_CHAL02.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/LD/Challenges/Arena_TheWuguan_CHAL03.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/LD/Challenges/Arena_TheWuguan_CHAL04.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/LD/Challenges/Arena_TheWuguan_CHAL05.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/LD/Challenges/Arena_TheWuguan_CHAL06.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/Light/Arena_TheWuguan_light.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/Light/Arena_TheWuguan_light_Phase1.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/Light/Arena_TheWuguan_light_Phase2.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/Light/Arena_TheWuguan_light_Phase3.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/Sound/Arena_TheWuguan_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/Sound/Arena_TheWuguan_Sound_Global.umap",
+    "Sifu/Content/Maps/TU_3/TheWuguan/Tech/Arena_TheWuguan_TestWorld.umap",
+    "Sifu/Content/Maps/TU_3/Wuguan/Wuguan_LD_Arena.umap",
+    "Sifu/Content/Maps/TrainingRoom/TrainingRoom_LA.umap",
+    "Sifu/Content/Maps/TrainingRoom/TrainingRoom_LD.umap",
+    "Sifu/Content/Maps/TrainingRoom/TrainingRoom_LD_Col.umap",
+    "Sifu/Content/Maps/TrainingRoom/TrainingRoom_Lighting.umap",
+    "Sifu/Content/Maps/TrainingRoom/TrainingRoom_Main.umap",
+    "Sifu/Content/Maps/UI/SelectHideoutLevel.umap",
+    "Sifu/Content/Maps/UI/UI_3D.umap",
+    "Sifu/Content/Maps/UI/UI_Wude/UI_Wude.umap",
+    "Sifu/Content/Maps/VerticalSlice/VerticalSlice_PendantSceneCapture_SkillTree.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LA/Hideout_0_Large.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LA/Hideout_0_PrivateParts_Large.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LA/LVL_Wuguan_Lighting_01_LA.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LA/LVL_Wuguan_Lighting_02_LA.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LA/LVL_Wuguan_Lighting_03_LA.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LA/LVL_Wuguan_Lighting_04_LA.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LA/LVL_Wuguan_Lighting_05_LA.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LA/LVL_Wuguan_Tutorial_LA.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LA/Wuguan_PrivateParts_Props_LA.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LD/Wuguan2_LD_Col.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LD/Wuguan3_LD_Col.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LD/Wuguan4_LD_Col.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LD/Wuguan5_LD_Col.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LD/Wuguan_LD.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/LD/Wuguan_LD_Col.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Pools/Wuguan_2_Pools.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Pools/Wuguan_3_Pools.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Pools/Wuguan_4_Pools.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Pools/Wuguan_5_Pools.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Pools/Wuguan_Pools.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Sound/Wuguan_1_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Sound/Wuguan_2_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Sound/Wuguan_3_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Sound/Wuguan_4_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Sound/Wuguan_5_Sound_Ambiance.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Sound/Wuguan_Sound_Global.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Vista/LVL_Wuguan_VistaH0.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Vista/LVL_Wuguan_VistaH1.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Vista/LVL_Wuguan_VistaH2.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Vista/LVL_Wuguan_VistaH3.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Vista/LVL_Wuguan_VistaH4.umap",
+    "Sifu/Content/Maps/Wuguan/SubLevels/Vista/LVL_Wuguan_VistaH5.umap",
+    "Sifu/Content/Maps/Wuguan/Wuguan_Main.umap",
+    "Sifu/Content/Maps/Wuguan/Wuguan_Main2.umap",
+    "Sifu/Content/Maps/Wuguan/Wuguan_Main3.umap",
+    "Sifu/Content/Maps/Wuguan/Wuguan_Main4.umap",
+    "Sifu/Content/Maps/Wuguan/Wuguan_Main5.umap",
+    "Sifu/Content/Maps/Zoos/Clement/Maps/ScreenshootsMarket/ScreenshootsMarketH3.umap"
+  ],
+  "selectedPackageExportClasses": {
+    "BlueprintGeneratedClass": 676,
+    "AttackDB": 553,
+    "AIInfluence_TestSequence": 448,
+    "CurveFloat": 248,
+    "AttackMemoryInfluenceTest": 243,
+    "ComboAIConditionMCDomination": 230,
+    "OrderPlayAnimParams": 189,
+    "Function": 167,
+    "AttackPropertiesInfluenceTest": 160,
+    "ComboTransitionConditionTargetDistance": 153,
+    "DefenseInfluenceNodeAvoid": 135,
+    "AIPhaseScenario": 134,
+    "CompositeDataTable": 126,
+    "SCTriggerableActionsComboEvent": 116,
+    "BP_IsTargetKnockedDownComboCondition_C": 113,
+    "AIIdleDB": 109,
+    "AIPhaseTransitionTakedown": 89,
+    "DefenseInfluenceNodeInvalid": 86,
+    "CarriedWeaponCondition": 86,
+    "AIChangeRoleTriggerableActions": 79,
+    "DefenseInfluenceNodeGuard": 78,
+    "AIPhaseTransitionHealthChange": 74,
+    "AvailabilityLayerData": 74,
+    "BP_AICondition_FullLifeCheck_C": 70,
+    "DataTable": 69,
+    "InputData": 69,
+    "OrderDashParams": 68,
+    "Combo": 65,
+    "ComboAIConditionEnemyDistance": 65,
+    "DefenseInfluenceNodeParryDeflect": 64,
+    "TargetCondition": 61,
+    "ComboTransitionConditionLastAttackHit": 60,
+    "AttackPropertiesResistanceDB": 52,
+    "BP_AICondition_BackObstacleCheck_C": 52,
+    "AIAttackTicketData": 52,
+    "ComboAIConditionIsCombatRole": 49,
+    "BP_AiLaunchCounterCombo_C": 48,
+    "SkillUIData_C": 46,
+    "ComboTransitionConditionAILastAttackGuardType": 45,
+    "AILaunchAttackTriggerableAction": 40,
+    "BoxHitDetectionDB": 40,
+    "AIContextualDefense": 38,
+    "GameDifficultyInfluenceTest": 38,
+    "ComboAIConditionGroup": 37,
+    "DefenseInfluenceNodeDodge": 35,
+    "VitalPointData": 34,
+    "ShrineEffectUIData_C": 32,
+    "ComboEventAIGotoPhase": 31,
+    "TC_GenericCondition": 31,
+    "InputMappingProfileContextDB": 30,
+    "GenderCondition": 26,
+    "ThrowAttackInfluenceTest": 24,
+    "BP_TargetPlaysOrder_C": 24,
+    "OrderAttackParams": 23,
+    "InverseActorCondition": 23,
+    "AvailabilityKeyValuePair": 22,
+    "ActorClassCondition": 20,
+    "SkillsChilds": 19,
+    "GuardDB": 18,
+    "SphereHitDetectionDB": 18,
+    "InputUIData_C": 18,
+    "BP_AICondition_AIStructureCheck_C": 17,
+    "ComboAIConditionGameDifficulty": 17,
+    "CapsuleHitDetectionDB": 17,
+    "LineHitDetectionDB": 17,
+    "BaseMovementDB": 16,
+    "BP_AiActionLaunchCombo_C": 16,
+    "BP_IsOrderRunning_InfluenceTest_C": 15,
+    "ComboAIConditionIsTargetFightingState": 15,
+    "BP_AiAction_StandardAttack_C": 15,
+    "VectorInputData": 15,
+    "ConditionTargetWeightEvaluation": 15,
+    "DistanceTargetWeightEvaluation": 15,
+    "OrderWallJumpAttackParams": 14,
+    "InverseActorTargetCondition": 14,
+    "BP_InputProfileUIData_C": 14,
+    "InputMappingProfileDB": 14,
+    "BP_AiActionChangePhase_C": 13,
+    "SelfCondition": 13,
+    "BP_AiComboEvent_GotoPhase_YangDefensive_C": 13,
+    "FidgetDB": 13,
+    "AnalogInputData": 13,
+    "InputContextData": 13,
+    "FilterPresetEntryDB": 13,
+    "DodgeDB": 12,
+    "FightingStateCondition": 12,
+    "BehaviourCombinationInputData": 12,
+    "PivotFootData": 12,
+    "InputMappingPresets": 11,
+    "AngleTargetWeightEvaluation": 11,
+    "GenericStickTargetWeightEvaluation": 11,
+    "ComboAIConditionIsAttacking": 10,
+    "AIPhaseTransitionBossSpare": 10,
+    "BP_TargetIsParryVictim_C": 10,
+    "HittedDB": 9,
+    "ComboAIConditionCanPerformAction": 9,
+    "SCS_Node": 9,
+    "BP_AICondition_FengjieDistanceCheck_C": 9,
+    "BP_AiLaunchCounterCombo_Parry_C": 9,
+    "AvoidPropertyDB": 9,
+    "BP_IsArenaTarget_C": 9,
+    "OrderCondition": 9,
+    "SkeletalMeshHitDetectionDB": 9,
+    "ComboTransitionConditionLastAttackWhiff": 8,
+    "GameplayTagsCondition": 8,
+    "CombinationInputData": 8,
+    "BP_Condition_WeightEvaluation_NTarget_C": 8,
+    "VitalPointDB": 7,
+    "DefenseInfluenceNodeAttackAsDefense": 7,
+    "GPStateInfluenceTest": 7,
+    "ComboTransitionConditionAINavMesh": 7,
+    "SceneComponent": 7,
+    "AIPhaseTransitionDialogCompleted": 7,
+    "GroupTargetCondition": 7,
+    "GroupCondition": 7,
+    "InterchangeableInputData": 7,
+    "AnimSequenceEntryDB": 7,
+    "ComboAIConditionTraceCollision": 6,
+    "BP_AICondition_AIFightingStateIsActive_C": 6,
+    "SCAIDataProvider_QueryActionParams": 6,
+    "ComboTransitionConditionActionState": 6,
+    "BP_ComboTransition_CheatComboCheck_C": 6,
+    "SimpleConstructionScript": 5,
+    "ComboAIConditionIsCharacterOnScreen": 5,
+    "BP_AIAction_RushAttack_NEW_C": 5,
+    "BP_ActorCondition_DifficultyCheck_C": 5,
+    "ComboAIConditionTimedTargetDistance": 4,
+    "ComboTransitionConditionGeneric": 4,
+    "SCAIActionFinishBTTask": 4,
+    "ComboTransitionConditionAIAttackMemory": 4,
+    "BP_AiComboEvent_GotoPhase_C": 4,
+    "BP_Random_InfluenceTest_C": 4,
+    "BP_BossSpareStructureBrokenCountAndTagCheckCondition_C": 4,
+    "BP_AiCondition_TargetOrderState_C": 4,
+    "BP_HasCheatActivatedCondition_C": 4,
+    "TextRenderComponent": 4,
+    "DeathDB": 4,
+    "AnalogInputSequenceData": 4,
+    "CanvasPanelSlot": 4,
+    "SpeedPivotFootData": 4,
+    "TC_ConditionOnTargettingType": 4,
+    "ComboAIConditionIsTargetCarryingWeapon": 3,
+    "DefenseInfluenceNodeTraversalEvasion": 3,
+    "TraversalEvasionInfluenceTest": 3,
+    "ActionPlayOrderBTTask": 3,
+    "FightingActionStateCondition": 3,
+    "BP_AiLaunchCounterCombo_Avoid_C": 3,
+    "DifficultyInfluenceTest": 3,
+    "BP_AiLaunchCounterCombo_Dodge_C": 3,
+    "BP_ScenarioTransition_HealthAndStructureCheck_C": 3,
+    "BP_AIAction_DizzyCounter_C": 3,
+    "BP_AiComboEvent_GotoPhase_YangOffensive_C": 3,
+    "TrumpetSkewData": 3,
+    "RelationshipTypeCondition": 3,
+    "BP_TE_WeightEval_C": 3,
+    "BP_PushConfiguration_C": 2,
+    "AngleWithActorCondition": 2,
+    "BP_AiCondition_WallJumpBamboo_C": 2,
+    "BehaviorTree": 2,
+    "BTComposite_Selector": 2,
+    "BTComposite_Sequence": 2,
+    "NotifyAttackStartedBTTask": 2,
+    "BP_AICondition_AIOrderIsPlayingOrJustStopped_C": 2,
+    "BP_IsNotEasyMod_C": 2,
+    "ComboTransitionConditionLastAttackDeflected": 2,
+    "AIActionChangeCombatRole": 2,
+    "StructureInfluenceTest": 2,
+    "BP_AiAction_Throw_C": 2,
+    "ComboTransitionConditionLastAttackGuarded": 2,
+    "ComboAIConditionIsInPhaseScenario": 2,
+    "BP_AiActionChangePhase_Yang_OffensivePhase_C": 2,
+    "BP_AiComboEvent_ToIndirectOpponent_YangP3_C": 2,
+    "MovementModeCondition": 2,
+    "PlayerInputCondition": 2,
+    "SpeedCondition": 2,
+    "BoxComponent": 2,
+    "InheritableComponentHandler": 2,
+    "AvoidDB": 2,
+    "ActionTargetCondition": 2,
+    "CharacterBuildDB": 2,
+    "WidgetBlueprintGeneratedClass": 2,
+    "CanvasPanel": 2,
+    "Image": 2,
+    "TextBlock": 2,
+    "WidgetTree": 2,
+    "DetailedMoveTransitionDB": 2,
+    "AnimSequenceEntitlementDB": 2,
+    "FilterPresetEntitlementDB": 2,
+    "BaseWeaponData": 2,
+    "HitBoxGenericCondition": 2,
+    "BP_IsInInvertAttack_C": 2,
+    "StatsCondition": 2,
+    "TE_TargetSlot": 2,
+    "TE_Nearest": 2,
+    "BP_TE_DirectionalWeightEval_C": 2,
+    "TC_ConditionGroup": 2,
+    "TraversalActorCondition": 2,
+    "BP_AIActionTimedPauseInCombat_C": 1,
+    "BP_AiCondition_IsTargetStructureBroken_C": 1,
+    "RagingBullDB": 1,
+    "BP_IsTargetPushedComboCondition_C": 1,
+    "AkComponent": 1,
+    "HitBoxComponent": 1,
+    "StaticMeshComponent": 1,
+    "EnvQuery": 1,
+    "EnvQueryGenerator_WallJumps": 1,
+    "EnvQueryOption": 1,
+    "EnvQueryTest_Distance": 1,
+    "BP_AiAction_Dash_S_Grunt_C": 1,
+    "BP_AiCondition_Behavior_C": 1,
+    "AIPhaseTransitionSituationAiCountChange": 1,
+    "Sean_BurstToP3PhaseTransition_C": 1,
+    "Sean_P3ToBurstPhaseTransition_C": 1,
+    "BP_AiAction_YangAnim_C": 1,
+    "BP_AICondition_YangTaunt_C": 1,
+    "ComboAIConditionNoAttackPosition": 1,
+    "TargetActionTypePerCondition": 1,
+    "AbsorbDB": 1,
+    "AbsorbPropertyDB": 1,
+    "TargetableActorComponent": 1,
+    "FocusDB": 1,
+    "RushAttackDB": 1,
+    "CameraDB": 1,
+    "CharacterBuildListDB": 1,
+    "CharacterProgressionDB": 1,
+    "EquipmentSelectionData": 1,
+    "InputSequenceData": 1,
+    "IdleDB": 1,
+    "CursorInputData": 1,
+    "BehaviourVectorInputData": 1,
+    "AvailabilityLayerDB": 1,
+    "InputsDB": 1,
+    "MenuDB": 1,
+    "ParryDB": 1,
+    "ParryPropertyDB": 1,
+    "AnimSequence": 1,
+    "AnimSequenceDB": 1,
+    "FilterPresetDB": 1,
+    "ScreenTextureDB": 1,
+    "ReplayKeyWidgetVisualsDB": 1,
+    "CurveTable": 1,
+    "GameplayEffectReferencer": 1,
+    "SkillsDB": 1,
+    "StatsDB": 1,
+    "BP_TargetIsTrainingDummyCondition_C": 1,
+    "TargetDB": 1,
+    "RandomAnimDB": 1,
+    "BP_Condition_WeightEvaluation_LedgeTarget_C": 1,
+    "TE_NextHit": 1,
+    "TE_GetOrderTarget": 1,
+    "IsTargetSlotCondition": 1
+  },
+  "explicitParryWindows": [
+    {
+      "path": "Sifu/Content/Blueprints/LDIngredients/Weapons/MC_WeaponGuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/BigGuy/BigGuy_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Bodyguard/Bodyguard_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Fajar/FajarMachete_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Fajar/Fajar_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Fengjie/Fengjie_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/FireDisciple/GenericData/FireDisciple_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/FlashKick/FlashKIck_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Grunt/Defense/Grunt_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Kuroki/KurokiTriStaff_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Kuroki/Kuroki_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Kuroki/Shiroizu_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Sean/SeanStaff_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Sean/Sean_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Servant/Servant_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/AI/Archetypes/Yang/_DB/Generic/Yang_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/Guard/GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Sifu/Content/DB/Guard/MC_GuardDB.uasset",
+      "value": [
+        {
+          "name": "LowerBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 0,
+          "valueOffset": 49,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBound",
+          "type": "StructProperty",
+          "arrayIndex": 0,
+          "offset": 127,
+          "valueOffset": 176,
+          "size": 78,
+          "struct": "FloatRangeBound",
+          "structGuid": "00000000000000000000000000000000",
+          "value": [
+            {
+              "name": "Type",
+              "type": "ByteProperty",
+              "arrayIndex": 0,
+              "offset": 0,
+              "valueOffset": 33,
+              "size": 8,
+              "enum": "ERangeBoundTypes",
+              "value": "ERangeBoundTypes::Inclusive"
+            },
+            {
+              "name": "Value",
+              "type": "FloatProperty",
+              "arrayIndex": 0,
+              "offset": 41,
+              "valueOffset": 66,
+              "size": 4,
+              "value": 10.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Project descriptor includes Editor/UncookedOnly modules stripped from the Shipping build.",
+    "Manifest names and import references describe asset structure, not recovered editor source or executable graphs.",
+    "Configured startup map and GuardDB defaults can be changed by runtime code, difficulty or other assets."
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "rva": "0x1c58460",
+    "va": "0x141c58460",
+    "name": "public: static void __cdecl FAES::DecryptData(unsigned char * __ptr64,unsigned int,struct FAES::FAESKey const & __ptr64)"
+  },
+  {
+    "rva": "0x1c58470",
+    "va": "0x141c58470",
+    "name": "public: static void __cdecl FAES::DecryptData(unsigned char * __ptr64,unsigned int,char const * __ptr64)"
+  },
+  {
+    "rva": "0x1c58490",
+    "va": "0x141c58490",
+    "name": "public: static void __cdecl FAES::DecryptData(unsigned char * __ptr64,unsigned int,unsigned char const * __ptr64,unsigned int)"
+  },
+  {
+    "rva": "0x1c802f0",
+    "va": "0x141c802f0",
+    "name": "public: static class TDelegate<void __cdecl(unsigned char * __ptr64),struct FDefaultDelegateUserPolicy> & __ptr64 __cdecl FCoreDelegates::GetPakEncryptionKeyDelegate(void)"
+  },
+  {
+    "rva": "0x1c805c0",
+    "va": "0x141c805c0",
+    "name": "public: static class TMulticastDelegate<void __cdecl(struct FGuid const & __ptr64,struct FAES::FAESKey const & __ptr64),struct FDefaultDelegateUserPolicy> & __ptr64 __cdecl FCoreDelegates::GetRegisterEncryptionKeyMulticastDelegate(void)"
+  },
+  {
+    "rva": "0x1c88a10",
+    "va": "0x141c88a10",
+    "name": "void __cdecl RegisterEncryptionKeyCallback(void (__cdecl*)(unsigned char * __ptr64 const))"
+  },
+  {
+    "rva": "0x3031510",
+    "va": "0x143031510",
+    "name": "private: void __cdecl FPakPlatformFile::RegisterEncryptionKey(struct FGuid const & __ptr64,struct FAES::FAESKey const & __ptr64) __ptr64"
+  }
+]

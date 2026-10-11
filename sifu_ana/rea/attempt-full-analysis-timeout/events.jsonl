@@ -1,0 +1,6 @@
+{"at":"2026-10-11T17:47:10.482Z","step":"call","tool":"open_binary","arguments":{"path":"/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe","provider_id":"ghidra"}}
+{"at":"2026-10-11T17:47:12.964Z","step":"result","tool":"open_binary","file":"open-binary.json","durationMs":2480,"isError":false,"evidenceId":null}
+{"at":"2026-10-11T17:47:12.966Z","step":"call","tool":"procedure_pseudo_code","arguments":{"procedure":"0x1417a0320"}}
+{"at":"2026-10-11T18:16:13.663Z","step":"result","tool":"procedure_pseudo_code","file":"UDefenseComponent__IsParryWindowOpen.pseudo.json","durationMs":1740690,"isError":true,"evidenceId":null}
+{"at":"2026-10-11T18:16:13.665Z","step":"function-error","name":"UDefenseComponent::IsParryWindowOpen","message":"procedure_pseudo_code failed: {\"error\":{\"code\":\"provider_timeout\",\"category\":\"timeout\",\"message\":\"Analysis took too long. Try a smaller request, then run `rea doctor` if it continues.\",\"retryable\":true,\"remediation\":{\"action\":\"Analysis took too long. Try a smaller request, then run `rea doctor` if it continues.\"},\"details\":{\"operation\":\"procedure_pseudo_code\",\"timeout_ms\":1740000}}}"}
+{"at":"2026-10-11T18:16:13.670Z","step":"call","tool":"procedure_pseudo_code","arguments":{"procedure":"0x141791390"}}

@@ -1,0 +1,11 @@
+{
+  "packages": 2722,
+  "failures": [],
+  "taggedSingleExportPackages": 1643,
+  "limitations": [
+    "UE4.26 observed summary/table layout only; unsupported layouts fail closed.",
+    "Only single-export tagged UObject properties are attempted.",
+    "Unknown arrays/native structs retain length and hash; no inferred defaults.",
+    "Import references are package indices, not linked or instantiated UObject graphs."
+  ]
+}

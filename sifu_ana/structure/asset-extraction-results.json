@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "indexedFiles": 79246,
+  "verifiedExtractedFiles": 79246,
+  "plaintextBytes": 31027918472,
+  "storedPayloadSha1Matches": true,
+  "plaintextSha256RecordedForEveryFile": true,
+  "missing": [],
+  "extra": [],
+  "invalid": [],
+  "payloadsPublished": false,
+  "localGeneratedDirectory": "sifu_ana/build/assets/full/",
+  "limitations": [
+    "This compares extraction records with the verified index, not a second disk readback.",
+    "The extractor checks stored payload SHA-1 before decrypting and writing each file.",
+    "Pak .sig and whole-archive SHA-256 have not been validated.",
+    "Cooked file recovery is not equivalent to recovering editor source or complete gameplay."
+  ]
+}

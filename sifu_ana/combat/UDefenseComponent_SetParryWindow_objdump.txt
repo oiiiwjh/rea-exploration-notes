@@ -1,0 +1,55 @@
+
+/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe:     file format pei-x86-64
+
+
+Disassembly of section .text:
+
+00000001417a8b00 <.text+0x17a7b00>:
+   1417a8b00:	48 89 5c 24 08                                  	mov    QWORD PTR [rsp+0x8],rbx
+   1417a8b05:	48 89 6c 24 10                                  	mov    QWORD PTR [rsp+0x10],rbp
+   1417a8b0a:	48 89 74 24 18                                  	mov    QWORD PTR [rsp+0x18],rsi
+   1417a8b0f:	57                                              	push   rdi
+   1417a8b10:	48 83 ec 20                                     	sub    rsp,0x20
+   1417a8b14:	41 0f b6 e9                                     	movzx  ebp,r9b
+   1417a8b18:	49 8b f0                                        	mov    rsi,r8
+   1417a8b1b:	0f b6 fa                                        	movzx  edi,dl
+   1417a8b1e:	48 8b d9                                        	mov    rbx,rcx
+   1417a8b21:	84 d2                                           	test   dl,dl
+   1417a8b23:	74 08                                           	je     0x1417a8b2d
+   1417a8b25:	48 83 7c 24 50 00                               	cmp    QWORD PTR [rsp+0x50],0x0
+   1417a8b2b:	74 74                                           	je     0x1417a8ba1
+   1417a8b2d:	8d 45 ff                                        	lea    eax,[rbp-0x1]
+   1417a8b30:	3c 01                                           	cmp    al,0x1
+   1417a8b32:	77 37                                           	ja     0x1417a8b6b
+   1417a8b34:	40 88 b9 b8 02 00 00                            	mov    BYTE PTR [rcx+0x2b8],dil
+   1417a8b3b:	40 84 ff                                        	test   dil,dil
+   1417a8b3e:	74 14                                           	je     0x1417a8b54
+   1417a8b40:	48 85 f6                                        	test   rsi,rsi
+   1417a8b43:	74 0f                                           	je     0x1417a8b54
+   1417a8b45:	48 81 c1 c0 02 00 00                            	add    rcx,0x2c0
+   1417a8b4c:	48 8b d6                                        	mov    rdx,rsi
+   1417a8b4f:	e8 5c 45 fe ff                                  	call   0x14178d0b0
+   1417a8b54:	48 8b 54 24 50                                  	mov    rdx,QWORD PTR [rsp+0x50]
+   1417a8b59:	48 8d 8b dc 02 00 00                            	lea    rcx,[rbx+0x2dc]
+   1417a8b60:	e8 fb 0c 70 00                                  	call   0x141ea9860
+   1417a8b65:	40 80 fd 02                                     	cmp    bpl,0x2
+   1417a8b69:	74 05                                           	je     0x1417a8b70
+   1417a8b6b:	40 84 ed                                        	test   bpl,bpl
+   1417a8b6e:	75 31                                           	jne    0x1417a8ba1
+   1417a8b70:	40 88 bb a7 02 00 00                            	mov    BYTE PTR [rbx+0x2a7],dil
+   1417a8b77:	40 84 ff                                        	test   dil,dil
+   1417a8b7a:	74 14                                           	je     0x1417a8b90
+   1417a8b7c:	48 85 f6                                        	test   rsi,rsi
+   1417a8b7f:	74 0f                                           	je     0x1417a8b90
+   1417a8b81:	48 8d 8b a8 02 00 00                            	lea    rcx,[rbx+0x2a8]
+   1417a8b88:	48 8b d6                                        	mov    rdx,rsi
+   1417a8b8b:	e8 20 45 fe ff                                  	call   0x14178d0b0
+   1417a8b90:	48 8b 54 24 50                                  	mov    rdx,QWORD PTR [rsp+0x50]
+   1417a8b95:	48 8d 8b e4 02 00 00                            	lea    rcx,[rbx+0x2e4]
+   1417a8b9c:	e8 bf 0c 70 00                                  	call   0x141ea9860
+   1417a8ba1:	48 8b 5c 24 30                                  	mov    rbx,QWORD PTR [rsp+0x30]
+   1417a8ba6:	48 8b 6c 24 38                                  	mov    rbp,QWORD PTR [rsp+0x38]
+   1417a8bab:	48 8b 74 24 40                                  	mov    rsi,QWORD PTR [rsp+0x40]
+   1417a8bb0:	48 83 c4 20                                     	add    rsp,0x20
+   1417a8bb4:	5f                                              	pop    rdi
+   1417a8bb5:	c3                                              	ret    

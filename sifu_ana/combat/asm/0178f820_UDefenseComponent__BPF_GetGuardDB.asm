@@ -1,0 +1,31 @@
+; UDefenseComponent::BPF_GetGuardDB RVA=0x178f820 VA=0x14178f820 length=98 code_length=98 decoded=98 embedded_table_bytes=0
+; PDB {"stream": 558, "record_offset": 213964, "type_index": 1363094, "module": "D:\\UnrealEngine\\Wuguan\\Intermediate\\Build\\Win64\\Sifu\\Shipping\\Sifu\\Module.Sifu.7_of_22.cpp.obj"}
+; Signature {"return": "UGuardDB*", "class": "UDefenseComponent", "this": "UDefenseComponent const/volatile*", "arg_count": 0, "arglist_index": 4177, "this_adjustment": 0, "args": []}
+; Object offsets {"0x0": "UActorComponent", "0xc0": "ISCPoolableActorComponent", "0xc8": "BPE_GuardChanged", "0xd8": "m_UninterruptibleOrderByGuard", "0xe8": "BPE_FightingStateChanged", "0xf8": "BPE_AvoidWindowOpened", "0x108": "m_OnBlockGuardRecoveryPopped", "0x120": "m_ParryDB", "0x128": "m_AvoidDB", "0x130": "m_OnHitDefense", "0x148": "m_OnFilteredImpact", "0x160": "m_fCurrentGuard", "0x168": "BPE_GuardBroken", "0x178": "OnGuardGaugeChanged", "0x188": "OnHighestFightingStateChanged", "0x1a0": "OnFightingStatePop", "0x1b8": "OnFightingStateChanged", "0x1d0": "m_OnVitalPointsChanged", "0x1e8": "m_avoidPropertyDB", "0x1f0": "m_CancelConditions", "0x1f2": "m_AttackConditions", "0x1f4": "m_DodgeConditions", "0x1f6": "m_RushConditions", "0x1f8": "m_fBuildUpFramesMultiplicator", "0x1fc": "m_bDisableGuard", "0x200": "m_GuardDB", "0x210": "m_DefaultGuardDB", "0x218": "m_GuardTargettedStruct", "0x228": "m_GuardGaugeBlender", "0x238": "m_fMaxGuard", "0x23c": "m_MaxGuardMultiplier", "0x248": "m_fGrabbableGuardRatio", "0x24c": "m_fGuardBrokenGaugeCoolDownBeforeRecovery", "0x250": "m_fGuardRecoveryRate", "0x258": "m_GuardRecoveryRateByLife_DEPRECATED", "0x260": "m_GuardRecoveryRateByLifeOverride", "0x268": "m_GuardRecoveryRateByLifePerDifficulty", "0x280": "m_fGuardBrokenRecoveryRate", "0x284": "m_fCurrentGuardGaugeRecoveryRate", "0x288": "m_GuardGaugeRecoveryRateOverWeightRatioCurve", "0x290": "m_iGuardRecoveryBlock", "0x294": "m_fAutoRecoveryBlockerTimer", "0x298": "m_fGuardRecoveryRateCoeffWhenGuarding", "0x29c": "m_fGuardBreakDuration", "0x2a0": "m_bCanDoActionIfGuardGaugeEmpty", "0x2a1": "m_bGuardBlocksImpactsFromBack", "0x2a2": "m_bIgnoreRecoveryBlockInGuardBroken", "0x2a3": "m_eGuardType", "0x2a4": "m_bIsParrying", "0x2a5": "m_bIsParryActive", "0x2a6": "m_uiCurrentSpecialAbilityEnumParam", "0x2a7": "m_bParryWindowOpened", "0x2a8": "m_ParryTypeArray", "0x2b8": "m_bParryWindowOpenedInPrediction", "0x2c0": "m_ParryTypeArrayInPrediction", "0x2d0": "m_vParriedImpactPosition", "0x2dc": "m_ParryProperty", "0x2e4": "m_ParryPropertyInPrediction", "0x2ec": "m_fRangeOfDodgeForRefill", "0x2f0": "m_bDodgeCanRefillStamina", "0x2f4": "m_fDodgeRefillValue", "0x2f8": "m_fDodgeGuardGaugeRefillValue", "0x2fc": "m_iSpecialAbilitySuccessfullAvailabilityLayer", "0x300": "m_fBareHandsGuardCoeff", "0x304": "m_fBareHandsGuardSpecialCoeff", "0x308": "m_AvoidWindowInfos", "0x318": "m_PendingAvoidWindowInfos", "0x328": "m_OverrideAvoidWindow", "0x388": "m_AbsorbDB", "0x390": "m_bCanBeSuperDizzy", "0x394": "m_SuperDizzyGauge", "0x3ac": "m_fSuperDizzyGaugeRatioAfterSuperDizzy", "0x3b0": "m_uiAbsorbStacks", "0x3b1": "m_uiAbsorbStacksInPrediction", "0x3b4": "m_AbsorbProperty", "0x3bc": "m_AbsorbPropertyInPrediction", "0x3c4": "m_fGuardGaugeRecoveryCooldown_DEPRECATED", "0x3c8": "m_GuardGaugeRecoveryCooldownPerDifficulty", "0x3d4": "m_iResilience", "0x3d8": "m_iResilienceAttackBonus", "0x3e0": "m_OpenedStateStack", "0x438": "m_iCurrentFightingStateGeneratorHandle", "0x440": "m_FightingStates", "0x450": "m_iMoveStateFightingStateHandle", "0x458": "m_AttackPropertyResistanceDB", "0x460": "m_AttackPropertyResistanceDBStack", "0x470": "m_VitalPointsDB", "0x480": "m_ePermanentFightingState", "0x488": "m_PreviousFightingStates", "0x498": "m_AvoidWindowNeedingCapsuleAttach", "0x500": "m_bAutoAvoid", "0x501": "m_bIsForceStructureDamage", "0x502": "m_bIsForceHealthDamage", "0x503": "m_bIsAutoDeflect", "0x504": "m_bIsSlapStickFightMode", "0x505": "m_bIsInOnePunchBreaker", "0x506": "m_eSavedGuard", "0x508": "m_SavedAvoidCapsuleLocation", "0x518": "m_fLastNotifiedGuardGaugeValue"}
+; Named locals [{"name": "this", "type_index": 1363049, "flags": 1, "record": "S_LOCAL"}, {"name": "this", "type_index": 89072, "flags": 1, "record": "S_LOCAL"}, {"name": "this", "type_index": 1363049, "offset": 48, "register": 335, "record": "S_REGREL32"}]
+000000014178f820  48895c2410               mov       qword ptr [rsp + 0x10], rbx
+000000014178f825  57                       push      rdi
+000000014178f826  4883ec20                 sub       rsp, 0x20
+000000014178f82a  48638108020000           movsxd    rax, dword ptr [rcx + 0x208]
+000000014178f831  488d1c80                 lea       rbx, [rax + rax*4]
+000000014178f835  48c1e304                 shl       rbx, 4
+000000014178f839  48039900020000           add       rbx, qword ptr [rcx + 0x200]
+000000014178f840  48837bc000               cmp       qword ptr [rbx - 0x40], 0
+000000014178f845  7427                     je        0x14178f86e
+000000014178f847  488b43d0                 mov       rax, qword ptr [rbx - 0x30]
+000000014178f84b  488d4be0                 lea       rcx, [rbx - 0x20]
+000000014178f84f  4885c0                   test      rax, rax
+000000014178f852  480f45c8                 cmovne    rcx, rax
+000000014178f856  488b01                   mov       rax, qword ptr [rcx]
+000000014178f859  ff5008                   call      qword ptr [rax + 8]
+000000014178f85c  488bd0                   mov       rdx, rax
+000000014178f85f  488d4c2430               lea       rcx, [rsp + 0x30]
+000000014178f864  ff53c0                   call      qword ptr [rbx - 0x40]
+000000014178f867  488b10                   mov       rdx, qword ptr [rax]
+000000014178f86a  488953b8                 mov       qword ptr [rbx - 0x48], rdx
+000000014178f86e  488d4bb8                 lea       rcx, [rbx - 0x48]
+000000014178f872  e879237200               call      0x141eb1bf0 ; public: class UObject * __ptr64 __cdecl FWeakObjectPtr::Get(void)const __ptr64
+000000014178f877  488b5c2438               mov       rbx, qword ptr [rsp + 0x38]
+000000014178f87c  4883c420                 add       rsp, 0x20
+000000014178f880  5f                       pop       rdi
+000000014178f881  c3                       ret       

@@ -1,0 +1,1229 @@
+{
+  "kind": "caller-declared-function-seeds-from-matched-PDB",
+  "imageBase": "0x140000000",
+  "targetSha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e",
+  "source": [
+    "sifu_ana/combat/asm_manifest.json",
+    "sifu_ana/structure/system-analysis-targets.json"
+  ],
+  "entries": [
+    {
+      "name": "UAvoidWindowNotifyState::GetNotifyName_Implementation",
+      "rva": "0x1748350",
+      "length": 364,
+      "seedName": "UAvoidWindowNotifyState__GetNotifyName_Implementation"
+    },
+    {
+      "name": "UAvoidWindowNotifyState::NotifyValueChange",
+      "rva": "0x1753110",
+      "length": 436,
+      "seedName": "UAvoidWindowNotifyState__NotifyValueChange"
+    },
+    {
+      "name": "UComboManager::FAttackState::FAttackState",
+      "rva": "0x1760ce0",
+      "length": 146,
+      "seedName": "UComboManager__FAttackState__FAttackState"
+    },
+    {
+      "name": "UComboManager::UComboManager",
+      "rva": "0x1762090",
+      "length": 287,
+      "seedName": "UComboManager__UComboManager"
+    },
+    {
+      "name": "UComboManager::ActivateNextPendingAttack",
+      "rva": "0x1766f80",
+      "length": 533,
+      "seedName": "UComboManager__ActivateNextPendingAttack"
+    },
+    {
+      "name": "UAvoidDB::AreAvoidAndAttackMatching",
+      "rva": "0x1767c60",
+      "length": 1070,
+      "seedName": "UAvoidDB__AreAvoidAndAttackMatching"
+    },
+    {
+      "name": "UAvoidDB::AreAvoidAndAttackMatching",
+      "rva": "0x1768090",
+      "length": 20,
+      "seedName": "UAvoidDB__AreAvoidAndAttackMatching"
+    },
+    {
+      "name": "UAvoidDB::DoesAvoidDismissesHit",
+      "rva": "0x176fd20",
+      "length": 29,
+      "seedName": "UAvoidDB__DoesAvoidDismissesHit"
+    },
+    {
+      "name": "UComboManager::EndCombo",
+      "rva": "0x1771060",
+      "length": 885,
+      "seedName": "UComboManager__EndCombo"
+    },
+    {
+      "name": "UComboManager::EvaluateNextAttack",
+      "rva": "0x17717e0",
+      "length": 359,
+      "seedName": "UComboManager__EvaluateNextAttack"
+    },
+    {
+      "name": "UComboManager::EvaluateNextAttackState",
+      "rva": "0x1771950",
+      "length": 235,
+      "seedName": "UComboManager__EvaluateNextAttackState"
+    },
+    {
+      "name": "UComboManager::EvaluateNextAttackState_Internal",
+      "rva": "0x1771a40",
+      "length": 1315,
+      "seedName": "UComboManager__EvaluateNextAttackState_Internal"
+    },
+    {
+      "name": "UComboManager::GetAttack",
+      "rva": "0x17733b0",
+      "length": 9,
+      "seedName": "UComboManager__GetAttack"
+    },
+    {
+      "name": "UComboManager::GetAttackAnimMetaData",
+      "rva": "0x17733c0",
+      "length": 107,
+      "seedName": "UComboManager__GetAttackAnimMetaData"
+    },
+    {
+      "name": "UComboManager::GetAttackDB",
+      "rva": "0x1773430",
+      "length": 9,
+      "seedName": "UComboManager__GetAttackDB"
+    },
+    {
+      "name": "UComboManager::GetAttackNode",
+      "rva": "0x1773440",
+      "length": 41,
+      "seedName": "UComboManager__GetAttackNode"
+    },
+    {
+      "name": "UComboManager::GetAttackStatesTraversal",
+      "rva": "0x17734b0",
+      "length": 799,
+      "seedName": "UComboManager__GetAttackStatesTraversal"
+    },
+    {
+      "name": "UAvoidDB::GetAttackTrackingResponseFromAvoidType",
+      "rva": "0x17737f0",
+      "length": 19,
+      "seedName": "UAvoidDB__GetAttackTrackingResponseFromAvoidType"
+    },
+    {
+      "name": "UComboManager::GetCurrentAttackDB",
+      "rva": "0x1773bc0",
+      "length": 52,
+      "seedName": "UComboManager__GetCurrentAttackDB"
+    },
+    {
+      "name": "UComboManager::GetCurrentAttackName",
+      "rva": "0x1773c50",
+      "length": 215,
+      "seedName": "UComboManager__GetCurrentAttackName"
+    },
+    {
+      "name": "UComboManager::GetCurrentAttackNode",
+      "rva": "0x1773d30",
+      "length": 41,
+      "seedName": "UComboManager__GetCurrentAttackNode"
+    },
+    {
+      "name": "UComboManager::GetNextAttackNode",
+      "rva": "0x1777110",
+      "length": 317,
+      "seedName": "UComboManager__GetNextAttackNode"
+    },
+    {
+      "name": "UComboManager::GetNextPendingAttackName",
+      "rva": "0x1777250",
+      "length": 142,
+      "seedName": "UComboManager__GetNextPendingAttackName"
+    },
+    {
+      "name": "UParryWindowNotifyState::GetNotifyName_Implementation",
+      "rva": "0x1777500",
+      "length": 236,
+      "seedName": "UParryWindowNotifyState__GetNotifyName_Implementation"
+    },
+    {
+      "name": "UComboManager::GetStartState",
+      "rva": "0x17784e0",
+      "length": 11,
+      "seedName": "UComboManager__GetStartState"
+    },
+    {
+      "name": "UComboManager::HasState",
+      "rva": "0x177a7d0",
+      "length": 148,
+      "seedName": "UComboManager__HasState"
+    },
+    {
+      "name": "UComboManager::HasState",
+      "rva": "0x177a870",
+      "length": 164,
+      "seedName": "UComboManager__HasState"
+    },
+    {
+      "name": "UAvoidDB::InitAvoidMatchCondition",
+      "rva": "0x177bcd0",
+      "length": 306,
+      "seedName": "UAvoidDB__InitAvoidMatchCondition"
+    },
+    {
+      "name": "UComboManager::InterruptCombo",
+      "rva": "0x177c900",
+      "length": 11,
+      "seedName": "UComboManager__InterruptCombo"
+    },
+    {
+      "name": "UParryWindowNotifyState::NotifyValueChange",
+      "rva": "0x177f570",
+      "length": 473,
+      "seedName": "UParryWindowNotifyState__NotifyValueChange"
+    },
+    {
+      "name": "UComboManager::SetStartState",
+      "rva": "0x1786490",
+      "length": 5,
+      "seedName": "UComboManager__SetStartState"
+    },
+    {
+      "name": "UComboManager::TriggerPendingComboEvents",
+      "rva": "0x17884e0",
+      "length": 336,
+      "seedName": "UComboManager__TriggerPendingComboEvents"
+    },
+    {
+      "name": "UDefenseComponent::UDefenseComponent",
+      "rva": "0x178bd00",
+      "length": 1257,
+      "seedName": "UDefenseComponent__UDefenseComponent"
+    },
+    {
+      "name": "FComboNode::~FComboNode",
+      "rva": "0x178cbf0",
+      "length": 177,
+      "seedName": "FComboNode___FComboNode"
+    },
+    {
+      "name": "UDefenseComponent::~UDefenseComponent",
+      "rva": "0x178cd40",
+      "length": 694,
+      "seedName": "UDefenseComponent___UDefenseComponent"
+    },
+    {
+      "name": "UDefenseComponent::AbsorbStacksLeft",
+      "rva": "0x178e220",
+      "length": 20,
+      "seedName": "UDefenseComponent__AbsorbStacksLeft"
+    },
+    {
+      "name": "UDefenseComponent::ActivatePendingAvoidWindows",
+      "rva": "0x178e240",
+      "length": 217,
+      "seedName": "UDefenseComponent__ActivatePendingAvoidWindows"
+    },
+    {
+      "name": "UDefenseComponent::AnimNotifyStaminaFired",
+      "rva": "0x178e500",
+      "length": 479,
+      "seedName": "UDefenseComponent__AnimNotifyStaminaFired"
+    },
+    {
+      "name": "UDefenseComponent::BPF_DecreaseGuardGauge",
+      "rva": "0x178f470",
+      "length": 8,
+      "seedName": "UDefenseComponent__BPF_DecreaseGuardGauge"
+    },
+    {
+      "name": "UDefenseComponent::BPF_DecreaseGuardGaugeOverTime",
+      "rva": "0x178f480",
+      "length": 604,
+      "seedName": "UDefenseComponent__BPF_DecreaseGuardGaugeOverTime"
+    },
+    {
+      "name": "UDefenseComponent::BPF_GetFightingStateInfos",
+      "rva": "0x178f6e0",
+      "length": 218,
+      "seedName": "UDefenseComponent__BPF_GetFightingStateInfos"
+    },
+    {
+      "name": "UDefenseComponent::BPF_GetFightingStateTimeLeft",
+      "rva": "0x178f7c0",
+      "length": 90,
+      "seedName": "UDefenseComponent__BPF_GetFightingStateTimeLeft"
+    },
+    {
+      "name": "UDefenseComponent::BPF_GetGuardDB",
+      "rva": "0x178f820",
+      "length": 98,
+      "seedName": "UDefenseComponent__BPF_GetGuardDB"
+    },
+    {
+      "name": "UDefenseComponent::BPF_GetGuardRatio",
+      "rva": "0x178f890",
+      "length": 106,
+      "seedName": "UDefenseComponent__BPF_GetGuardRatio"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetInputFromTransition",
+      "rva": "0x178fa00",
+      "length": 168,
+      "seedName": "UComboTransitionHelper__BPF_GetInputFromTransition"
+    },
+    {
+      "name": "UDefenseComponent::BPF_GetMaxGuardGauge",
+      "rva": "0x178fab0",
+      "length": 42,
+      "seedName": "UDefenseComponent__BPF_GetMaxGuardGauge"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetTransitionFromInput",
+      "rva": "0x178fdd0",
+      "length": 367,
+      "seedName": "UComboTransitionHelper__BPF_GetTransitionFromInput"
+    },
+    {
+      "name": "UDefenseComponent::BPF_GetVitalPointsDb",
+      "rva": "0x178ff40",
+      "length": 122,
+      "seedName": "UDefenseComponent__BPF_GetVitalPointsDb"
+    },
+    {
+      "name": "UDefenseComponent::BPF_IncreaseGuardGauge",
+      "rva": "0x178ffc0",
+      "length": 425,
+      "seedName": "UDefenseComponent__BPF_IncreaseGuardGauge"
+    },
+    {
+      "name": "UDefenseComponent::BPF_IsAutoAvoid",
+      "rva": "0x1790170",
+      "length": 275,
+      "seedName": "UDefenseComponent__BPF_IsAutoAvoid"
+    },
+    {
+      "name": "UDefenseComponent::BPF_IsFightingStateActive",
+      "rva": "0x1790290",
+      "length": 57,
+      "seedName": "UDefenseComponent__BPF_IsFightingStateActive"
+    },
+    {
+      "name": "UDefenseComponent::BPF_IsGuardBroken",
+      "rva": "0x17902d0",
+      "length": 58,
+      "seedName": "UDefenseComponent__BPF_IsGuardBroken"
+    },
+    {
+      "name": "UDefenseComponent::BPF_NotifyVitalPointsChanged",
+      "rva": "0x1790310",
+      "length": 164,
+      "seedName": "UDefenseComponent__BPF_NotifyVitalPointsChanged"
+    },
+    {
+      "name": "UDefenseComponent::BPF_OverrideGuardDB",
+      "rva": "0x17903c0",
+      "length": 78,
+      "seedName": "UDefenseComponent__BPF_OverrideGuardDB"
+    },
+    {
+      "name": "UDefenseComponent::BPF_PopAttackPropertiesResistanceDBOverride",
+      "rva": "0x1790410",
+      "length": 353,
+      "seedName": "UDefenseComponent__BPF_PopAttackPropertiesResistanceDBOverride"
+    },
+    {
+      "name": "UDefenseComponent::BPF_PopVitalPointsDbOverride",
+      "rva": "0x1790580",
+      "length": 357,
+      "seedName": "UDefenseComponent__BPF_PopVitalPointsDbOverride"
+    },
+    {
+      "name": "UDefenseComponent::BPF_PushAttackPropertiesResistanceDBOverride",
+      "rva": "0x17906f0",
+      "length": 77,
+      "seedName": "UDefenseComponent__BPF_PushAttackPropertiesResistanceDBOverride"
+    },
+    {
+      "name": "UDefenseComponent::BPF_PushVitalPointsDbOverride",
+      "rva": "0x1790740",
+      "length": 84,
+      "seedName": "UDefenseComponent__BPF_PushVitalPointsDbOverride"
+    },
+    {
+      "name": "UDefenseComponent::BPF_ResetGuardDBToDefault",
+      "rva": "0x17907a0",
+      "length": 12,
+      "seedName": "UDefenseComponent__BPF_ResetGuardDBToDefault"
+    },
+    {
+      "name": "UDefenseComponent::BPF_RestoreIncreaseGuardGauge",
+      "rva": "0x17907b0",
+      "length": 442,
+      "seedName": "UDefenseComponent__BPF_RestoreIncreaseGuardGauge"
+    },
+    {
+      "name": "UDefenseComponent::BPF_SetGuardType",
+      "rva": "0x1790970",
+      "length": 71,
+      "seedName": "UDefenseComponent__BPF_SetGuardType"
+    },
+    {
+      "name": "UDefenseComponent::BPF_SetPermanentFightingState",
+      "rva": "0x1790eb0",
+      "length": 7,
+      "seedName": "UDefenseComponent__BPF_SetPermanentFightingState"
+    },
+    {
+      "name": "UDefenseComponent::BeginPlay",
+      "rva": "0x1791120",
+      "length": 88,
+      "seedName": "UDefenseComponent__BeginPlay"
+    },
+    {
+      "name": "FComboNode::CanActivateNode",
+      "rva": "0x1791360",
+      "length": 39,
+      "seedName": "FComboNode__CanActivateNode"
+    },
+    {
+      "name": "UDefenseComponent::CanDeflect",
+      "rva": "0x1791390",
+      "length": 26,
+      "seedName": "UDefenseComponent__CanDeflect"
+    },
+    {
+      "name": "UDefenseComponent::CheckGuardGoingToBeBroken",
+      "rva": "0x1791770",
+      "length": 147,
+      "seedName": "UDefenseComponent__CheckGuardGoingToBeBroken"
+    },
+    {
+      "name": "UDefenseComponent::CloseAllAvoidWindows",
+      "rva": "0x1792840",
+      "length": 132,
+      "seedName": "UDefenseComponent__CloseAllAvoidWindows"
+    },
+    {
+      "name": "UDefenseComponent::ComputeCurrentGuardRecoveryRate",
+      "rva": "0x1794c90",
+      "length": 507,
+      "seedName": "UDefenseComponent__ComputeCurrentGuardRecoveryRate"
+    },
+    {
+      "name": "UCombo::ComputeStartNodesCacheMap",
+      "rva": "0x17953a0",
+      "length": 234,
+      "seedName": "UCombo__ComputeStartNodesCacheMap"
+    },
+    {
+      "name": "UDefenseComponent::DoesAvoidDismissesHit",
+      "rva": "0x1795d80",
+      "length": 2336,
+      "seedName": "UDefenseComponent__DoesAvoidDismissesHit"
+    },
+    {
+      "name": "UDefenseComponent::EndPlay",
+      "rva": "0x17973e0",
+      "length": 101,
+      "seedName": "UDefenseComponent__EndPlay"
+    },
+    {
+      "name": "UDefenseComponent::FilterHit",
+      "rva": "0x1797810",
+      "length": 1873,
+      "seedName": "UDefenseComponent__FilterHit"
+    },
+    {
+      "name": "UDefenseComponent::FilterImpact",
+      "rva": "0x1797f70",
+      "length": 2969,
+      "seedName": "UDefenseComponent__FilterImpact"
+    },
+    {
+      "name": "UDefenseComponent::FindActiveMatchingAvoid",
+      "rva": "0x1799210",
+      "length": 72,
+      "seedName": "UDefenseComponent__FindActiveMatchingAvoid"
+    },
+    {
+      "name": "UDefenseComponent::FindActiveMatchingAvoid",
+      "rva": "0x1799260",
+      "length": 32,
+      "seedName": "UDefenseComponent__FindActiveMatchingAvoid"
+    },
+    {
+      "name": "FComboTransitions::GeNextAttackID",
+      "rva": "0x1799400",
+      "length": 5,
+      "seedName": "FComboTransitions__GeNextAttackID"
+    },
+    {
+      "name": "UDefenseComponent::Get",
+      "rva": "0x1799410",
+      "length": 70,
+      "seedName": "UDefenseComponent__Get"
+    },
+    {
+      "name": "FComboNode::GetAIAttackAction",
+      "rva": "0x1799460",
+      "length": 300,
+      "seedName": "FComboNode__GetAIAttackAction"
+    },
+    {
+      "name": "UDefenseComponent::GetAbsorbPropertyDB",
+      "rva": "0x1799b30",
+      "length": 19,
+      "seedName": "UDefenseComponent__GetAbsorbPropertyDB"
+    },
+    {
+      "name": "UDefenseComponent::GetActiveAvoidMatchingAttack",
+      "rva": "0x1799b80",
+      "length": 612,
+      "seedName": "UDefenseComponent__GetActiveAvoidMatchingAttack"
+    },
+    {
+      "name": "UDefenseComponent::GetActiveAvoidMatchingAttack",
+      "rva": "0x1799df0",
+      "length": 604,
+      "seedName": "UDefenseComponent__GetActiveAvoidMatchingAttack"
+    },
+    {
+      "name": "UCombo::GetAttack",
+      "rva": "0x179a050",
+      "length": 200,
+      "seedName": "UCombo__GetAttack"
+    },
+    {
+      "name": "UCombo::GetAttackDB",
+      "rva": "0x179a120",
+      "length": 191,
+      "seedName": "UCombo__GetAttackDB"
+    },
+    {
+      "name": "FComboNode::GetAttackInfos",
+      "rva": "0x179a1e0",
+      "length": 572,
+      "seedName": "FComboNode__GetAttackInfos"
+    },
+    {
+      "name": "FComboNode::GetAttackName",
+      "rva": "0x179a420",
+      "length": 393,
+      "seedName": "FComboNode__GetAttackName"
+    },
+    {
+      "name": "UDefenseComponent::GetAttackPropertiesResistanceDB",
+      "rva": "0x179a5b0",
+      "length": 98,
+      "seedName": "UDefenseComponent__GetAttackPropertiesResistanceDB"
+    },
+    {
+      "name": "UDefenseComponent::GetAttackTrackingResponseFromAvoidType",
+      "rva": "0x179a890",
+      "length": 19,
+      "seedName": "UDefenseComponent__GetAttackTrackingResponseFromAvoidType"
+    },
+    {
+      "name": "UDefenseComponent::GetAvoidCapsuleBoneTransform",
+      "rva": "0x179a8b0",
+      "length": 1725,
+      "seedName": "UDefenseComponent__GetAvoidCapsuleBoneTransform"
+    },
+    {
+      "name": "UDefenseComponent::GetAvoidWindowInfos",
+      "rva": "0x179af70",
+      "length": 8,
+      "seedName": "UDefenseComponent__GetAvoidWindowInfos"
+    },
+    {
+      "name": "UCombo::GetComboStart",
+      "rva": "0x179b030",
+      "length": 323,
+      "seedName": "UCombo__GetComboStart"
+    },
+    {
+      "name": "UCombo::GetComboStart",
+      "rva": "0x179b180",
+      "length": 556,
+      "seedName": "UCombo__GetComboStart"
+    },
+    {
+      "name": "UDefenseComponent::GetDamageToRecoveryRatio",
+      "rva": "0x179b450",
+      "length": 32,
+      "seedName": "UDefenseComponent__GetDamageToRecoveryRatio"
+    },
+    {
+      "name": "UDefenseComponent::GetDefaultAbsorbPropertyDB",
+      "rva": "0x179b470",
+      "length": 18,
+      "seedName": "UDefenseComponent__GetDefaultAbsorbPropertyDB"
+    },
+    {
+      "name": "UCombo::GetDefaultAttackID",
+      "rva": "0x179b490",
+      "length": 63,
+      "seedName": "UCombo__GetDefaultAttackID"
+    },
+    {
+      "name": "UDefenseComponent::GetDefaultAvoidPropertyDB",
+      "rva": "0x179b4d0",
+      "length": 32,
+      "seedName": "UDefenseComponent__GetDefaultAvoidPropertyDB"
+    },
+    {
+      "name": "UDefenseComponent::GetDefaultParryPropertyDB",
+      "rva": "0x179b4f0",
+      "length": 21,
+      "seedName": "UDefenseComponent__GetDefaultParryPropertyDB"
+    },
+    {
+      "name": "UDefenseComponent::GetDurationOfFightingState",
+      "rva": "0x179b550",
+      "length": 94,
+      "seedName": "UDefenseComponent__GetDurationOfFightingState"
+    },
+    {
+      "name": "UDefenseComponent::GetFightingStateInfos",
+      "rva": "0x179b8c0",
+      "length": 51,
+      "seedName": "UDefenseComponent__GetFightingStateInfos"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardAngleHipsToRoot",
+      "rva": "0x179b900",
+      "length": 35,
+      "seedName": "UDefenseComponent__GetGuardAngleHipsToRoot"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardAngleRootToHips",
+      "rva": "0x179b930",
+      "length": 35,
+      "seedName": "UDefenseComponent__GetGuardAngleRootToHips"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardAnim",
+      "rva": "0x179b960",
+      "length": 61,
+      "seedName": "UDefenseComponent__GetGuardAnim"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardAnimWeapon",
+      "rva": "0x179b9a0",
+      "length": 64,
+      "seedName": "UDefenseComponent__GetGuardAnimWeapon"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardPrepAnim",
+      "rva": "0x179b9e0",
+      "length": 99,
+      "seedName": "UDefenseComponent__GetGuardPrepAnim"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardPrepAnimWeapon",
+      "rva": "0x179ba50",
+      "length": 105,
+      "seedName": "UDefenseComponent__GetGuardPrepAnimWeapon"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardPrepEnterDuration",
+      "rva": "0x179bac0",
+      "length": 35,
+      "seedName": "UDefenseComponent__GetGuardPrepEnterDuration"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardPrepEnterDynamicCurve",
+      "rva": "0x179baf0",
+      "length": 31,
+      "seedName": "UDefenseComponent__GetGuardPrepEnterDynamicCurve"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardPrepExitDuration",
+      "rva": "0x179bb10",
+      "length": 35,
+      "seedName": "UDefenseComponent__GetGuardPrepExitDuration"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardPrepExitDynamicCurve",
+      "rva": "0x179bb40",
+      "length": 31,
+      "seedName": "UDefenseComponent__GetGuardPrepExitDynamicCurve"
+    },
+    {
+      "name": "UDefenseComponent::GetGuardPrepRange",
+      "rva": "0x179bb60",
+      "length": 35,
+      "seedName": "UDefenseComponent__GetGuardPrepRange"
+    },
+    {
+      "name": "UDefenseComponent::GetHighestActiveFightingState",
+      "rva": "0x179bb90",
+      "length": 95,
+      "seedName": "UDefenseComponent__GetHighestActiveFightingState"
+    },
+    {
+      "name": "UDefenseComponent::GetLifetimeReplicatedProps",
+      "rva": "0x179c1f0",
+      "length": 457,
+      "seedName": "UDefenseComponent__GetLifetimeReplicatedProps"
+    },
+    {
+      "name": "FComboTransitions::GetNextAttackID_Internal",
+      "rva": "0x179d020",
+      "length": 1335,
+      "seedName": "FComboTransitions__GetNextAttackID_Internal"
+    },
+    {
+      "name": "FComboTransition::GetTargetNodeID",
+      "rva": "0x179e310",
+      "length": 1084,
+      "seedName": "FComboTransition__GetTargetNodeID"
+    },
+    {
+      "name": "UComboTransitionHelper::GetTransitionFallback",
+      "rva": "0x179e810",
+      "length": 22,
+      "seedName": "UComboTransitionHelper__GetTransitionFallback"
+    },
+    {
+      "name": "UDefenseComponent::InitializeComponent",
+      "rva": "0x179f8e0",
+      "length": 1835,
+      "seedName": "UDefenseComponent__InitializeComponent"
+    },
+    {
+      "name": "UDefenseComponent::IsAbsorbWindowOpened",
+      "rva": "0x17a0010",
+      "length": 19,
+      "seedName": "UDefenseComponent__IsAbsorbWindowOpened"
+    },
+    {
+      "name": "UDefenseComponent::IsGuardPrepForbidMove",
+      "rva": "0x17a0030",
+      "length": 31,
+      "seedName": "UDefenseComponent__IsGuardPrepForbidMove"
+    },
+    {
+      "name": "UDefenseComponent::IsParryActive",
+      "rva": "0x17a0320",
+      "length": 20,
+      "seedName": "UDefenseComponent__IsParryActive"
+    },
+    {
+      "name": "FComboNode::IsValidAttackNode",
+      "rva": "0x17a0f50",
+      "length": 168,
+      "seedName": "FComboNode__IsValidAttackNode"
+    },
+    {
+      "name": "UDefenseComponent::LaunchAvoidAbilityWithInfos",
+      "rva": "0x17a42e0",
+      "length": 1030,
+      "seedName": "UDefenseComponent__LaunchAvoidAbilityWithInfos"
+    },
+    {
+      "name": "UDefenseComponent::MultiCastSetGuardGaugeTarget_Implementation",
+      "rva": "0x17a46f0",
+      "length": 216,
+      "seedName": "UDefenseComponent__MultiCastSetGuardGaugeTarget_Implementation"
+    },
+    {
+      "name": "UDefenseComponent::NotifyAvoidSuccessful",
+      "rva": "0x17a4840",
+      "length": 350,
+      "seedName": "UDefenseComponent__NotifyAvoidSuccessful"
+    },
+    {
+      "name": "UDefenseComponent::OnConfirmedOnOrderAvoidSuccessful",
+      "rva": "0x17a49a0",
+      "length": 253,
+      "seedName": "UDefenseComponent__OnConfirmedOnOrderAvoidSuccessful"
+    },
+    {
+      "name": "UDefenseComponent::OnDamage",
+      "rva": "0x17a4aa0",
+      "length": 77,
+      "seedName": "UDefenseComponent__OnDamage"
+    },
+    {
+      "name": "UDefenseComponent::OnDeath",
+      "rva": "0x17a4af0",
+      "length": 172,
+      "seedName": "UDefenseComponent__OnDeath"
+    },
+    {
+      "name": "UDefenseComponent::OnEffectAddedOrRemovedCallback",
+      "rva": "0x17a4ba0",
+      "length": 46,
+      "seedName": "UDefenseComponent__OnEffectAddedOrRemovedCallback"
+    },
+    {
+      "name": "UDefenseComponent::OnHit",
+      "rva": "0x17a4bd0",
+      "length": 129,
+      "seedName": "UDefenseComponent__OnHit"
+    },
+    {
+      "name": "UDefenseComponent::OnMoveStatusChanged",
+      "rva": "0x17a4c60",
+      "length": 246,
+      "seedName": "UDefenseComponent__OnMoveStatusChanged"
+    },
+    {
+      "name": "UDefenseComponent::OnPoolableOwnerInitializeComponents_Implementation",
+      "rva": "0x17a4d60",
+      "length": 238,
+      "seedName": "UDefenseComponent__OnPoolableOwnerInitializeComponents_Implementation"
+    },
+    {
+      "name": "UDefenseComponent::OnPoolableOwnerUninitializeComponents_Implementation",
+      "rva": "0x17a4e60",
+      "length": 34,
+      "seedName": "UDefenseComponent__OnPoolableOwnerUninitializeComponents_Implementation"
+    },
+    {
+      "name": "UDefenseComponent::OnRep_GuardTargettedStruct",
+      "rva": "0x17a5180",
+      "length": 201,
+      "seedName": "UDefenseComponent__OnRep_GuardTargettedStruct"
+    },
+    {
+      "name": "UDefenseComponent::OnRushStateChanged",
+      "rva": "0x17a5250",
+      "length": 104,
+      "seedName": "UDefenseComponent__OnRushStateChanged"
+    },
+    {
+      "name": "UDefenseComponent::PopBlockGuardRecovery",
+      "rva": "0x17a5860",
+      "length": 231,
+      "seedName": "UDefenseComponent__PopBlockGuardRecovery"
+    },
+    {
+      "name": "UDefenseComponent::PopFightingState",
+      "rva": "0x17a5950",
+      "length": 686,
+      "seedName": "UDefenseComponent__PopFightingState"
+    },
+    {
+      "name": "UDefenseComponent::PopFightingStates",
+      "rva": "0x17a5c00",
+      "length": 56,
+      "seedName": "UDefenseComponent__PopFightingStates"
+    },
+    {
+      "name": "UDefenseComponent::PopOpenedState",
+      "rva": "0x17a5c40",
+      "length": 12,
+      "seedName": "UDefenseComponent__PopOpenedState"
+    },
+    {
+      "name": "UDefenseComponent::PostLoad",
+      "rva": "0x17a5df0",
+      "length": 5,
+      "seedName": "UDefenseComponent__PostLoad"
+    },
+    {
+      "name": "UDefenseComponent::PostPrediction",
+      "rva": "0x17a60a0",
+      "length": 164,
+      "seedName": "UDefenseComponent__PostPrediction"
+    },
+    {
+      "name": "UDefenseComponent::PrePrediction",
+      "rva": "0x17a6150",
+      "length": 14,
+      "seedName": "UDefenseComponent__PrePrediction"
+    },
+    {
+      "name": "UDefenseComponent::PushAvoidWindowInfo",
+      "rva": "0x17a6270",
+      "length": 406,
+      "seedName": "UDefenseComponent__PushAvoidWindowInfo"
+    },
+    {
+      "name": "UDefenseComponent::PushBlockGuardRecovery",
+      "rva": "0x17a6410",
+      "length": 414,
+      "seedName": "UDefenseComponent__PushBlockGuardRecovery"
+    },
+    {
+      "name": "UDefenseComponent::PushFightingState",
+      "rva": "0x17a65b0",
+      "length": 1469,
+      "seedName": "UDefenseComponent__PushFightingState"
+    },
+    {
+      "name": "UDefenseComponent::PushGuardBreakFightingState",
+      "rva": "0x17a6b70",
+      "length": 456,
+      "seedName": "UDefenseComponent__PushGuardBreakFightingState"
+    },
+    {
+      "name": "UDefenseComponent::PushOpenedState",
+      "rva": "0x17a6d40",
+      "length": 43,
+      "seedName": "UDefenseComponent__PushOpenedState"
+    },
+    {
+      "name": "UDefenseComponent::RegisterOnFightingStateStoppedDelegate",
+      "rva": "0x17a6d70",
+      "length": 682,
+      "seedName": "UDefenseComponent__RegisterOnFightingStateStoppedDelegate"
+    },
+    {
+      "name": "UDefenseComponent::RemoveAvoidWindowInfo",
+      "rva": "0x17a7400",
+      "length": 929,
+      "seedName": "UDefenseComponent__RemoveAvoidWindowInfo"
+    },
+    {
+      "name": "UDefenseComponent::ResetGuardGauge",
+      "rva": "0x17a78e0",
+      "length": 208,
+      "seedName": "UDefenseComponent__ResetGuardGauge"
+    },
+    {
+      "name": "UDefenseComponent::SendFightingStateChangedEvent",
+      "rva": "0x17a7fd0",
+      "length": 900,
+      "seedName": "UDefenseComponent__SendFightingStateChangedEvent"
+    },
+    {
+      "name": "UDefenseComponent::ServerRepSetGuardGaugeTarget_Implementation",
+      "rva": "0x17a8360",
+      "length": 20,
+      "seedName": "UDefenseComponent__ServerRepSetGuardGaugeTarget_Implementation"
+    },
+    {
+      "name": "UDefenseComponent::ServerSetGuardGaugeTarget",
+      "rva": "0x17a8380",
+      "length": 14,
+      "seedName": "UDefenseComponent__ServerSetGuardGaugeTarget"
+    },
+    {
+      "name": "UDefenseComponent::ServerSetGuardValue_Implementation",
+      "rva": "0x17a8390",
+      "length": 76,
+      "seedName": "UDefenseComponent__ServerSetGuardValue_Implementation"
+    },
+    {
+      "name": "UDefenseComponent::SetAbsorbWindowOpen",
+      "rva": "0x17a8410",
+      "length": 137,
+      "seedName": "UDefenseComponent__SetAbsorbWindowOpen"
+    },
+    {
+      "name": "UDefenseComponent::SetParryWindow",
+      "rva": "0x17a8b00",
+      "length": 182,
+      "seedName": "UDefenseComponent__SetParryWindow"
+    },
+    {
+      "name": "UDefenseComponent::StaminaImpact",
+      "rva": "0x17a8fe0",
+      "length": 334,
+      "seedName": "UDefenseComponent__StaminaImpact"
+    },
+    {
+      "name": "UDefenseComponent::TickComponent",
+      "rva": "0x17a9950",
+      "length": 575,
+      "seedName": "UDefenseComponent__TickComponent"
+    },
+    {
+      "name": "UDefenseComponent::UninitializeComponent",
+      "rva": "0x17a9e00",
+      "length": 107,
+      "seedName": "UDefenseComponent__UninitializeComponent"
+    },
+    {
+      "name": "UDefenseComponent::UpdateDefenseCapsules",
+      "rva": "0x17aa150",
+      "length": 348,
+      "seedName": "UDefenseComponent__UpdateDefenseCapsules"
+    },
+    {
+      "name": "UDefenseComponent::UpdatePrediction",
+      "rva": "0x17aa340",
+      "length": 8,
+      "seedName": "UDefenseComponent__UpdatePrediction"
+    },
+    {
+      "name": "UParryDB::InitParryMatch",
+      "rva": "0x17c1930",
+      "length": 315,
+      "seedName": "UParryDB__InitParryMatch"
+    },
+    {
+      "name": "UGuardAbility::BPF_CanActivateParryGrab",
+      "rva": "0x1821ac0",
+      "length": 62,
+      "seedName": "UGuardAbility__BPF_CanActivateParryGrab"
+    },
+    {
+      "name": "UGuardAbility::BPF_CanActivateTakedown",
+      "rva": "0x1821b00",
+      "length": 62,
+      "seedName": "UGuardAbility__BPF_CanActivateTakedown"
+    },
+    {
+      "name": "UGuardAbility::FindDefenseOrder",
+      "rva": "0x18325e0",
+      "length": 683,
+      "seedName": "UGuardAbility__FindDefenseOrder"
+    },
+    {
+      "name": "UGuardAbility::OnAvatarSet",
+      "rva": "0x18400f0",
+      "length": 57,
+      "seedName": "UGuardAbility__OnAvatarSet"
+    },
+    {
+      "name": "UGuardAbility::OnHitDefense",
+      "rva": "0x1842060",
+      "length": 4298,
+      "seedName": "UGuardAbility__OnHitDefense"
+    },
+    {
+      "name": "UGuardAbility::OnHitDismissed",
+      "rva": "0x1843130",
+      "length": 15,
+      "seedName": "UGuardAbility__OnHitDismissed"
+    },
+    {
+      "name": "UGuardAbility::ProcessForPlayer",
+      "rva": "0x184c570",
+      "length": 3908,
+      "seedName": "UGuardAbility__ProcessForPlayer"
+    },
+    {
+      "name": "UAttackComponent::BPF_GetCurrentAvoidWindow",
+      "rva": "0x176a1c0",
+      "length": 143,
+      "seedName": "UAttackComponent__BPF_GetCurrentAvoidWindow"
+    },
+    {
+      "name": "UAttackComponent::GetCurrentAvoidWindow",
+      "rva": "0x1773e50",
+      "length": 117,
+      "seedName": "UAttackComponent__GetCurrentAvoidWindow"
+    },
+    {
+      "name": "AFightingCharacter::HandleAvoidSuccessful",
+      "rva": "0x17fde40",
+      "length": 1230,
+      "seedName": "AFightingCharacter__HandleAvoidSuccessful"
+    },
+    {
+      "name": "AFightingCharacter::OnOrderParryInstigatorStarted",
+      "rva": "0x1804b20",
+      "length": 717,
+      "seedName": "AFightingCharacter__OnOrderParryInstigatorStarted"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::BPF_IsSaveValid",
+      "rva": "0xa3c930",
+      "length": 224,
+      "seedName": "USCSaveObjectPlayerProfile__BPF_IsSaveValid"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::GetFirstSaveIndexAvaiblable",
+      "rva": "0xa4c6e0",
+      "length": 286,
+      "seedName": "USCSaveObjectPlayerProfile__GetFirstSaveIndexAvaiblable"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::GetSaveIndexByName",
+      "rva": "0xa4eeb0",
+      "length": 158,
+      "seedName": "USCSaveObjectPlayerProfile__GetSaveIndexByName"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::MarkSaveValid",
+      "rva": "0xa56f20",
+      "length": 137,
+      "seedName": "USCSaveObjectPlayerProfile__MarkSaveValid"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::SetAsFirstSave",
+      "rva": "0xa60560",
+      "length": 129,
+      "seedName": "USCSaveObjectPlayerProfile__SetAsFirstSave"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__ForceAge__pf",
+      "rva": "0x1080ed0",
+      "length": 379,
+      "seedName": "UBP_Notif_AgeDeathCounter_C__pf2602646129__bpf__ForceAge__pf"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__PostDeathGainUpdate__pf",
+      "rva": "0x1081980",
+      "length": 56,
+      "seedName": "UBP_Notif_AgeDeathCounter_C__pf2602646129__bpf__PostDeathGainUpdate__pf"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__StatsUpdated__pf",
+      "rva": "0x1082c70",
+      "length": 30,
+      "seedName": "UBP_Notif_AgeDeathCounter_C__pf2602646129__bpf__StatsUpdated__pf"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__UpdateDeath__pf",
+      "rva": "0x1083570",
+      "length": 1005,
+      "seedName": "UBP_Notif_AgeDeathCounter_C__pf2602646129__bpf__UpdateDeath__pf"
+    },
+    {
+      "name": "FAIAttackTicketManager::CheckPassiveTicketEnabled",
+      "rva": "0x1687910",
+      "length": 164,
+      "seedName": "FAIAttackTicketManager__CheckPassiveTicketEnabled"
+    },
+    {
+      "name": "FAIAttackTicketManager::GetTicketCooldownRemaining",
+      "rva": "0x1692940",
+      "length": 446,
+      "seedName": "FAIAttackTicketManager__GetTicketCooldownRemaining"
+    },
+    {
+      "name": "FAIAttackTicketManager::GetTicketTestEvaluationFactor",
+      "rva": "0x1692fa0",
+      "length": 180,
+      "seedName": "FAIAttackTicketManager__GetTicketTestEvaluationFactor"
+    },
+    {
+      "name": "FAIAttackTicketManager::IsAttackerRegistered",
+      "rva": "0x1696f20",
+      "length": 27,
+      "seedName": "FAIAttackTicketManager__IsAttackerRegistered"
+    },
+    {
+      "name": "FAIAttackTicketManager::IsPassiveTicketAvailable",
+      "rva": "0x16973e0",
+      "length": 153,
+      "seedName": "FAIAttackTicketManager__IsPassiveTicketAvailable"
+    },
+    {
+      "name": "FAIAttackTicketManager::OnDefenderFightingStateChanged",
+      "rva": "0x169bd70",
+      "length": 23,
+      "seedName": "FAIAttackTicketManager__OnDefenderFightingStateChanged"
+    },
+    {
+      "name": "FAIAttackTicketManager::ResetAllTicketsCooldown",
+      "rva": "0x16a6460",
+      "length": 65,
+      "seedName": "FAIAttackTicketManager__ResetAllTicketsCooldown"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::PreReplication",
+      "rva": "0x1983bc0",
+      "length": 282,
+      "seedName": "UReplayFightingCharacterComponent__PreReplication"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::ReplicateVoiceInfos",
+      "rva": "0x1985690",
+      "length": 32,
+      "seedName": "UReplayFightingCharacterComponent__ReplicateVoiceInfos"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::UpdateCollisionProfile",
+      "rva": "0x1989730",
+      "length": 259,
+      "seedName": "UReplayFightingCharacterComponent__UpdateCollisionProfile"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::UpdateReplayCollisionProfile",
+      "rva": "0x198a2c0",
+      "length": 145,
+      "seedName": "UReplayFightingCharacterComponent__UpdateReplayCollisionProfile"
+    },
+    {
+      "name": "UWGSaveObjectGameData::BPF_GetDefaultStatValue",
+      "rva": "0x199b080",
+      "length": 158,
+      "seedName": "UWGSaveObjectGameData__BPF_GetDefaultStatValue"
+    },
+    {
+      "name": "UWGSaveObjectPlayerProfile::GetGameOptionValue",
+      "rva": "0x19a8fb0",
+      "length": 22,
+      "seedName": "UWGSaveObjectPlayerProfile__GetGameOptionValue"
+    },
+    {
+      "name": "UWGSaveObjectPlayerProfile::IsFocusMechanicOnToggle",
+      "rva": "0x19aace0",
+      "length": 26,
+      "seedName": "UWGSaveObjectPlayerProfile__IsFocusMechanicOnToggle"
+    },
+    {
+      "name": "UWGSaveObjectPlayerProfile::SetGameOptionValue",
+      "rva": "0x19b7bb0",
+      "length": 52,
+      "seedName": "UWGSaveObjectPlayerProfile__SetGameOptionValue"
+    },
+    {
+      "name": "UPlayerInput::GetAxisProperties",
+      "rva": "0x375ef10",
+      "length": 217,
+      "seedName": "UPlayerInput__GetAxisProperties"
+    },
+    {
+      "name": "UPlayerInput::GetChordForKey",
+      "rva": "0x375f510",
+      "length": 2028,
+      "seedName": "UPlayerInput__GetChordForKey"
+    },
+    {
+      "name": "UPlayerInput::GetChordsForAction",
+      "rva": "0x375fd00",
+      "length": 1294,
+      "seedName": "UPlayerInput__GetChordsForAction"
+    },
+    {
+      "name": "UPlayerInput::GetChordsForKeyMapping",
+      "rva": "0x3760210",
+      "length": 1344,
+      "seedName": "UPlayerInput__GetChordsForKeyMapping"
+    },
+    {
+      "name": "UPlayerInput::GetKeyValue",
+      "rva": "0x37612d0",
+      "length": 149,
+      "seedName": "UPlayerInput__GetKeyValue"
+    },
+    {
+      "name": "UPlayerInput::GetKeysForAction",
+      "rva": "0x3761370",
+      "length": 192,
+      "seedName": "UPlayerInput__GetKeysForAction"
+    },
+    {
+      "name": "UPlayerInput::GetKeysForAxis",
+      "rva": "0x3761430",
+      "length": 195,
+      "seedName": "UPlayerInput__GetKeysForAxis"
+    },
+    {
+      "name": "UPlayerInput::GetMouseSensitivityX",
+      "rva": "0x3761510",
+      "length": 99,
+      "seedName": "UPlayerInput__GetMouseSensitivityX"
+    },
+    {
+      "name": "UPlayerInput::GetMouseSensitivityY",
+      "rva": "0x3761580",
+      "length": 99,
+      "seedName": "UPlayerInput__GetMouseSensitivityY"
+    }
+  ]
+}

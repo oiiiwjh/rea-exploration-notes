@@ -1,0 +1,7 @@
+{
+  "completed": false,
+  "status": "interrupted",
+  "reason": "Ghidra Java script source resolution rejects a bridge directory symlink whose canonical source bundle differs from the registered scriptPath.",
+  "correction": "Copy the unchanged bridge directory into the local REA analysis copy; node_modules may remain linked.",
+  "gameProcessStarted": false
+}

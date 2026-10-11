@@ -1,0 +1,2 @@
+{"level":30,"time":1791740832957,"application":"rea","mode":"mcp","layer":"server","tool":"open_binary","durationMs":649.78,"status":"ok","msg":"MCP tool execution completed"}
+{"level":40,"time":1791742573650,"application":"rea","mode":"mcp","layer":"server","tool":"procedure_pseudo_code","durationMs":1740674.98,"status":"error","msg":"MCP tool execution completed"}

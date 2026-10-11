@@ -1,0 +1,33 @@
+{
+  "symbol_stream": 11,
+  "debug_streams": [
+    65535,
+    65535,
+    65535,
+    65535,
+    65535,
+    12,
+    65535,
+    65535,
+    65535,
+    65535,
+    65535
+  ],
+  "section_mapping_checked": true,
+  "omap_present": false,
+  "public_count": 678716,
+  "selected_public_count": 12258,
+  "module_count": 3087,
+  "scanned_game_modules": 834,
+  "selected_procedure_count": 7421,
+  "global_record_kinds": {
+    "0x1107": 148401,
+    "0x110c": 80445,
+    "0x1108": 11797,
+    "0x1127": 74548,
+    "0x110d": 134400,
+    "0x1113": 4,
+    "0x1125": 371509,
+    "0x110e": 678725
+  }
+}

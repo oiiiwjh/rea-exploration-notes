@@ -1,0 +1,34 @@
+[
+  {
+    "callRva": "0x30229b7",
+    "targetRva": "0x1c802f0",
+    "target": "GetPakEncryptionKeyDelegate",
+    "nearestPublicRva": "0x3022890",
+    "nearestPublic": "void __cdecl DecryptData(unsigned char * __ptr64,unsigned int,struct FGuid)",
+    "instructionBoundaryConfirmed": true
+  },
+  {
+    "callRva": "0x30229d3",
+    "targetRva": "0x1c802f0",
+    "target": "GetPakEncryptionKeyDelegate",
+    "nearestPublicRva": "0x3022890",
+    "nearestPublic": "void __cdecl DecryptData(unsigned char * __ptr64,unsigned int,struct FGuid)",
+    "instructionBoundaryConfirmed": true
+  },
+  {
+    "callRva": "0x302d257",
+    "targetRva": "0x1c802f0",
+    "target": "GetPakEncryptionKeyDelegate",
+    "nearestPublicRva": "0x302c800",
+    "nearestPublic": "public: bool __cdecl FPakPlatformFile::Mount(wchar_t const * __ptr64,unsigned int,wchar_t const * __ptr64,bool) __ptr64",
+    "instructionBoundaryConfirmed": true
+  },
+  {
+    "callRva": "0x302d273",
+    "targetRva": "0x1c802f0",
+    "target": "GetPakEncryptionKeyDelegate",
+    "nearestPublicRva": "0x302c800",
+    "nearestPublic": "public: bool __cdecl FPakPlatformFile::Mount(wchar_t const * __ptr64,unsigned int,wchar_t const * __ptr64,bool) __ptr64",
+    "instructionBoundaryConfirmed": true
+  }
+]

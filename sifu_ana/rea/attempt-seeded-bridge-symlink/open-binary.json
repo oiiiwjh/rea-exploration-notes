@@ -1,0 +1,9 @@
+{
+  "result": {
+    "path": "/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe",
+    "format": "pe",
+    "kind": "executable",
+    "sha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e",
+    "architecture": "x86_64"
+  }
+}

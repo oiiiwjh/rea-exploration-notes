@@ -1,0 +1,65 @@
+0x14375ef10: MOV qword ptr [RSP + 0x10], RBX
+0x14375ef15: MOV qword ptr [RSP + 0x18], RSI
+0x14375ef1a: PUSH RDI
+0x14375ef1b: SUB RSP, 0x20
+0x14375ef1f: MOV RSI, R8
+0x14375ef22: MOV RDI, RDX
+0x14375ef25: MOV RBX, RCX
+0x14375ef28: CALL 0x143753230
+0x14375ef2d: MOV R8, RDI
+0x14375ef30: LEA RDX, [RSP + 0x30]
+0x14375ef35: LEA RCX, [RBX + 0x170]
+0x14375ef3c: CALL 0x140a15f80
+0x14375ef41: MOVSXD RAX, dword ptr [RSP + 0x30]
+0x14375ef46: CMP EAX, -0x1
+0x14375ef49: JZ 0x14375efac
+0x14375ef4b: XOR EDX, EDX
+0x14375ef4d: LEA RCX, [RAX + RAX*0x2]
+0x14375ef51: SHL RCX, 0x4
+0x14375ef55: ADD RCX, qword ptr [RBX + 0x170]
+0x14375ef5c: LEA RCX, [RCX + 0x18]
+0x14375ef60: CMOVZ RCX, RDX
+0x14375ef64: TEST RCX, RCX
+0x14375ef67: JZ 0x14375efac
+0x14375ef69: MOVUPS XMM0, xmmword ptr [RCX]
+0x14375ef6c: MOVUPS xmmword ptr [RSI], XMM0
+0x14375ef6f: MOV RBX, qword ptr [RDI + 0x10]
+0x14375ef73: TEST RBX, RBX
+0x14375ef76: JZ 0x14375ef9a
+0x14375ef78: SUB dword ptr [RBX + 0x8], 0x1
+0x14375ef7c: JNZ 0x14375ef9a
+0x14375ef7e: MOV RAX, qword ptr [RBX]
+0x14375ef81: MOV RCX, RBX
+0x14375ef84: CALL qword ptr [RAX]
+0x14375ef86: SUB dword ptr [RBX + 0xc], 0x1
+0x14375ef8a: JNZ 0x14375ef9a
+0x14375ef8c: MOV RAX, qword ptr [RBX]
+0x14375ef8f: MOV EDX, 0x1
+0x14375ef94: MOV RCX, RBX
+0x14375ef97: CALL qword ptr [RAX + 0x8]
+0x14375ef9a: MOV AL, 0x1
+0x14375ef9c: MOV RBX, qword ptr [RSP + 0x38]
+0x14375efa1: MOV RSI, qword ptr [RSP + 0x40]
+0x14375efa6: ADD RSP, 0x20
+0x14375efaa: POP RDI
+0x14375efab: RET
+0x14375efac: MOV RBX, qword ptr [RDI + 0x10]
+0x14375efb0: TEST RBX, RBX
+0x14375efb3: JZ 0x14375efd7
+0x14375efb5: SUB dword ptr [RBX + 0x8], 0x1
+0x14375efb9: JNZ 0x14375efd7
+0x14375efbb: MOV RAX, qword ptr [RBX]
+0x14375efbe: MOV RCX, RBX
+0x14375efc1: CALL qword ptr [RAX]
+0x14375efc3: SUB dword ptr [RBX + 0xc], 0x1
+0x14375efc7: JNZ 0x14375efd7
+0x14375efc9: MOV RAX, qword ptr [RBX]
+0x14375efcc: MOV EDX, 0x1
+0x14375efd1: MOV RCX, RBX
+0x14375efd4: CALL qword ptr [RAX + 0x8]
+0x14375efd7: MOV RBX, qword ptr [RSP + 0x38]
+0x14375efdc: XOR AL, AL
+0x14375efde: MOV RSI, qword ptr [RSP + 0x40]
+0x14375efe3: ADD RSP, 0x20
+0x14375efe7: POP RDI
+0x14375efe8: RET

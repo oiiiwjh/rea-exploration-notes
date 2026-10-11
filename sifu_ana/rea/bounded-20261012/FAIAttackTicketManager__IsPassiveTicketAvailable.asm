@@ -1,0 +1,1 @@
+0x1416973e0: MOV qword ptr [RSP + 0x8], RBX

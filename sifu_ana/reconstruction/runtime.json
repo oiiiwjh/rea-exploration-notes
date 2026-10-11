@@ -1,0 +1,19 @@
+{
+  "python": "3.12.13",
+  "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "architecture": "x86_64",
+  "packages": {
+    "pefile": "2024.8.26",
+    "capstone": "5.0.9",
+    "undname": "0.2",
+    "unicorn": "2.1.4",
+    "pycryptodome": "3.23.0",
+    "cffi": "2.0.0",
+    "pycparser": "2.23"
+  },
+  "cppCheck": {
+    "command": "g++ -std=c++17 -fsyntax-only sifu_ana/reconstruction/check_offsets.cpp",
+    "passed": true,
+    "compiler": "g++ (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0"
+  }
+}

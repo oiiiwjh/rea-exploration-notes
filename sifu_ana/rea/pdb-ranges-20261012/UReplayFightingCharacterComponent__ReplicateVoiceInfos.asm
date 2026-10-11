@@ -1,0 +1,7 @@
+0x141985690: MOVUPS XMM0, xmmword ptr [RDX]
+0x141985693: MOVUPS xmmword ptr [RCX + 0xc0], XMM0
+0x14198569a: MOV EAX, dword ptr [RDX + 0x10]
+0x14198569d: MOV EDX, 0x2
+0x1419856a2: MOV dword ptr [RCX + 0xd0], EAX
+0x1419856a8: MOV ECX, dword ptr [RCX + 0x30]
+0x1419856ab: JMP 0x142f941c0

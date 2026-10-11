@@ -1,0 +1,347 @@
+{
+  "ok": true,
+  "functions": [
+    {
+      "name": "UAvoidWindowNotifyState::NotifyValueChange",
+      "listingInstructions": 101,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UComboManager::EvaluateNextAttack",
+      "listingInstructions": 88,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetInputFromTransition",
+      "listingInstructions": 9,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetTransitionFromInput",
+      "listingInstructions": 10,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UDefenseComponent::CanDeflect",
+      "listingInstructions": 11,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UComboTransitionHelper::GetTransitionFallback",
+      "listingInstructions": 11,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UDefenseComponent::IsParryWindowOpen",
+      "listingInstructions": 6,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UDefenseComponent::SetParryWindow",
+      "listingInstructions": 48,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UGuardAbility::ProcessForPlayer",
+      "listingInstructions": 956,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::BPF_IsSaveValid",
+      "listingInstructions": 63,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::GetFirstSaveIndexAvaiblable",
+      "listingInstructions": 84,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::GetSaveIndexByName",
+      "listingInstructions": 47,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::MarkSaveValid",
+      "listingInstructions": 43,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::SetAsFirstSave",
+      "listingInstructions": 42,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__ForceAge__pf",
+      "listingInstructions": 106,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__PostDeathGainUpdate__pf",
+      "listingInstructions": 15,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__StatsUpdated__pf",
+      "listingInstructions": 5,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__UpdateDeath__pf",
+      "listingInstructions": 298,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "FAIAttackTicketManager::CheckPassiveTicketEnabled",
+      "listingInstructions": 50,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "FAIAttackTicketManager::GetTicketCooldownRemaining",
+      "listingInstructions": 115,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "FAIAttackTicketManager::GetTicketTestEvaluationFactor",
+      "listingInstructions": 52,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "FAIAttackTicketManager::IsAttackerRegistered",
+      "listingInstructions": 7,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "FAIAttackTicketManager::IsPassiveTicketAvailable",
+      "listingInstructions": 45,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "FAIAttackTicketManager::OnDefenderFightingStateChanged",
+      "listingInstructions": 9,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "FAIAttackTicketManager::ResetAllTicketsCooldown",
+      "listingInstructions": 19,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::PreReplication",
+      "listingInstructions": 64,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::ReplicateVoiceInfos",
+      "listingInstructions": 7,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::UpdateCollisionProfile",
+      "listingInstructions": 63,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::UpdateReplayCollisionProfile",
+      "listingInstructions": 38,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UWGSaveObjectGameData::BPF_GetDefaultStatValue",
+      "listingInstructions": 46,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UWGSaveObjectPlayerProfile::GetGameOptionValue",
+      "listingInstructions": 7,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UWGSaveObjectPlayerProfile::IsFocusMechanicOnToggle",
+      "listingInstructions": 5,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UWGSaveObjectPlayerProfile::SetGameOptionValue",
+      "listingInstructions": 15,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UPlayerInput::GetAxisProperties",
+      "listingInstructions": 65,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UPlayerInput::GetChordForKey",
+      "listingInstructions": 546,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UPlayerInput::GetChordsForAction",
+      "listingInstructions": 341,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UPlayerInput::GetChordsForKeyMapping",
+      "listingInstructions": 362,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UPlayerInput::GetKeyValue",
+      "listingInstructions": 43,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UPlayerInput::GetKeysForAction",
+      "listingInstructions": 53,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UPlayerInput::GetKeysForAxis",
+      "listingInstructions": 53,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UPlayerInput::GetMouseSensitivityX",
+      "listingInstructions": 22,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    },
+    {
+      "name": "UPlayerInput::GetMouseSensitivityY",
+      "listingInstructions": 22,
+      "nonemptyPseudo": true,
+      "listingAddressesWithinPdbExtent": true,
+      "outside": [],
+      "profile": "sifu-pdb-ranges-noanalysis-v2"
+    }
+  ],
+  "limitations": [
+    "Address extents and non-empty outputs only; not proof that every branch was recovered.",
+    "Switch targets may be missing from Listing without full analysis; byte-level input tables have independent emulator verification.",
+    "Decompiler may follow shared tails outside the declared extent; types/callee signatures require manual verification.",
+    "Some inherited REA limitation text mentions default auto-analysis; the explicit patched profile records that it is disabled."
+  ]
+}

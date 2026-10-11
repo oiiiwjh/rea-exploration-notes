@@ -1,0 +1,6 @@
+{
+  "transportSucceeded": true,
+  "emptyListingResults": 4,
+  "issue": "Function-only seeds skip disassembly for exception-directory functions already present. See bounded-20261012 rerun with explicit code and function seeds.",
+  "notFullRecovery": true
+}

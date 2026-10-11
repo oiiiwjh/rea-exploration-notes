@@ -1,0 +1,7 @@
+pefile==2024.8.26
+capstone==5.0.9
+undname==0.2
+cffi==2.0.0
+pycparser==2.23
+unicorn==2.1.4
+pycryptodome==3.23.0

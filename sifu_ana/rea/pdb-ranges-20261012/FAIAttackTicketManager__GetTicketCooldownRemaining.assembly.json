@@ -1,0 +1,97 @@
+{
+  "evidence_id": "ev_f67741353882c5f5705b9bc7aef7e6911c3fd79051609cbcedfd0c1e7639802d",
+  "subject": {
+    "name": "Sifu-Win64-Shipping.exe",
+    "digest": {
+      "sha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e"
+    },
+    "format": "pe",
+    "architecture": "x86_64",
+    "local_path": "/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "pe",
+      "executable_role": "application",
+      "managed": false,
+      "native_aot_metadata": {
+        "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+        "source_bytes": 134217728,
+        "work_units": 67108864,
+        "working_memory_bytes": 67108864,
+        "report_bytes": 4194304
+      },
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "string_inventory_evidence": "defined-data-coverage-v1",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+      "no_return_repair": "returning-imports-decoded-return-v2",
+      "process_launch": "inspected-jvm-launch-support-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "sifu-pdb-ranges-noanalysis-v2",
+      "headless_auto_analysis": false,
+      "local_adapter_patch": "sifu-pdb-ranges-noanalysis-v2",
+      "caller_declared_ranges_sha256": "b1ef64552f5722ba845dee6059215ff51aa392beff9e2032b0ac585897cbaf90",
+      "analysis_seeds": {
+        "format": "rea-ghidra-seeds-v1",
+        "path": "/mnt/d/projects/rea/sifu_ana/rea/pdb-ranges-20261012/pdb-function-seeds.tsv",
+        "configured_path": "/mnt/d/projects/rea/sifu_ana/rea/pdb-ranges-20261012/pdb-function-seeds.tsv",
+        "sha256": "cf4ce75c33d5b3f6edf672a570ed64fe5d60b45fa5f548dcf43ce3fada169f41",
+        "entries": {
+          "function": 203,
+          "code": 203,
+          "label": 0
+        }
+      }
+    },
+    "digest": "4d5d267fb7bcdd3e312b9fa0d22c4131392ef618de4d3542f5783eba39eab94c"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_assembly",
+  "parameters": {
+    "procedure": "0x141692940"
+  },
+  "raw_result": {
+    "value": "0x141692940: PUSH R13\n0x141692942: SUB RSP, 0x50\n0x141692946: MOVAPS xmmword ptr [RSP + 0x20], XMM6\n0x14169294b: MOV R13, R8\n0x14169294e: MOV qword ptr [RSP + 0x60], RBX\n0x141692953: MOV qword ptr [RSP + 0x68], RBP\n0x141692958: MOV RBP, R9\n0x14169295b: MOV qword ptr [RSP + 0x48], RDI\n0x141692960: MOV RDI, RCX\n0x141692963: MOV qword ptr [RSP + 0x38], R14\n0x141692968: MOV R14, RDX\n0x14169296b: MOV qword ptr [RSP + 0x30], R15\n0x141692970: TEST R9, R9\n0x141692973: JZ 0x14169297c\n0x141692975: MOV dword ptr [R9], 0x800000\n0x14169297c: MOV R15, qword ptr [RSP + 0x80]\n0x141692984: TEST R15, R15\n0x141692987: JZ 0x141692990\n0x141692989: MOV dword ptr [R15], 0x0\n0x141692990: MOVSS XMM6, dword ptr [0x1442e02f8]\n0x141692998: LEA RDX, [RSP + 0x80]\n0x1416929a0: MOV R8B, 0x1\n0x1416929a3: MOV RCX, R14\n0x1416929a6: CALL 0x140a173b0\n0x1416929ab: XOR EDX, EDX\n0x1416929ad: MOV RBX, RAX\n0x1416929b0: MOV ECX, dword ptr [RAX]\n0x1416929b2: CALL 0x141cbfc50\n0x1416929b7: TEST AL, AL\n0x1416929b9: SETZ CL\n0x1416929bc: CMP dword ptr [RBX + 0x4], 0x0\n0x1416929c0: SETNZ AL\n0x1416929c3: OR AL, CL\n0x1416929c5: JZ 0x141692acb\n0x1416929cb: MOV qword ptr [RSP + 0x78], RSI\n0x1416929d0: MOV RSI, qword ptr [RDI + 0x118]\n0x1416929d7: MOV qword ptr [RSP + 0x40], R12\n0x1416929dc: MOVSXD R12, dword ptr [RDI + 0x120]\n0x1416929e3: SHL R12, 0x4\n0x1416929e7: ADD R12, RSI\n0x1416929ea: CMP RSI, R12\n0x1416929ed: JZ 0x141692ac1\n0x1416929f3: NOP dword ptr [RAX]\n0x1416929f7: NOP word ptr [RAX + RAX*0x1]\n0x141692a00: MOV RDI, qword ptr [RSI]\n0x141692a03: XOR EDX, EDX\n0x141692a05: LEA RCX, [RDI + 0x38]\n0x141692a09: CALL 0x140a19da0\n0x141692a0e: XOR EDX, EDX\n0x141692a10: MOV RCX, R14\n0x141692a13: MOV RBX, RAX\n0x141692a16: CALL 0x140a19da0\n0x141692a1b: TEST RBX, RBX\n0x141692a1e: JZ 0x141692a5a\n0x141692a20: TEST RAX, RAX\n0x141692a23: JZ 0x141692a5a\n0x141692a25: CMP RBX, RAX\n0x141692a28: JNZ 0x141692ab4\n0x141692a2e: XOR R8D, R8D\n0x141692a31: LEA RDX, [RSP + 0x80]\n0x141692a39: MOV RCX, R14\n0x141692a3c: CALL 0x140a173b0\n0x141692a41: XOR R8D, R8D\n0x141692a44: LEA RDX, [RSP + 0x70]\n0x141692a49: LEA RCX, [RDI + 0x38]\n0x141692a4d: MOV RBX, qword ptr [RAX]\n0x141692a50: CALL 0x140a173b0\n0x141692a55: CMP qword ptr [RAX], RBX\n0x141692a58: JMP 0x141692a7e\n0x141692a5a: MOV EAX, dword ptr [R14 + 0x10]\n0x141692a5e: CMP dword ptr [RDI + 0x48], EAX\n0x141692a61: JNZ 0x141692ab4\n0x141692a63: MOV RAX, qword ptr [R14 + 0x14]\n0x141692a67: CMP qword ptr [RDI + 0x4c], RAX\n0x141692a6b: JNZ 0x141692ab4\n0x141692a6d: MOV RAX, qword ptr [R14 + 0x8]\n0x141692a71: CMP qword ptr [RDI + 0x40], RAX\n0x141692a75: JNZ 0x141692ab4\n0x141692a77: MOV RAX, qword ptr [R14]\n0x141692a7a: CMP qword ptr [RDI + 0x38], RAX\n0x141692a7e: JNZ 0x141692ab4\n0x141692a80: MOV RAX, qword ptr [RSI]\n0x141692a83: MOVSS XMM1, dword ptr [RAX + 0x1c]\n0x141692a88: MOVAPS XMM0, XMM1\n0x141692a8b: MINSS XMM0, XMM6\n0x141692a8f: MOVAPS XMM6, XMM0\n0x141692a92: TEST RBP, RBP\n0x141692a95: JZ 0x141692aa2\n0x141692a97: COMISS XMM1, dword ptr [RBP]\n0x141692a9b: JBE 0x141692aa2\n0x141692a9d: MOVSS dword ptr [RBP], XMM1\n0x141692aa2: TEST R15, R15\n0x141692aa5: JZ 0x141692ab4\n0x141692aa7: MOV RAX, qword ptr [RSI]\n0x141692aaa: CMP qword ptr [RAX + 0x8], 0x0\n0x141692aaf: JNZ 0x141692ab4\n0x141692ab1: INC dword ptr [R15]\n0x141692ab4: ADD RSI, 0x10\n0x141692ab8: CMP RSI, R12\n0x141692abb: JNZ 0x141692a00\n0x141692ac1: MOV RSI, qword ptr [RSP + 0x78]\n0x141692ac6: MOV R12, qword ptr [RSP + 0x40]\n0x141692acb: MOV R15, qword ptr [RSP + 0x30]\n0x141692ad0: MOVAPS XMM0, XMM6\n0x141692ad3: MOV R14, qword ptr [RSP + 0x38]\n0x141692ad8: MOV RDI, qword ptr [RSP + 0x48]\n0x141692add: MOV RBP, qword ptr [RSP + 0x68]\n0x141692ae2: MOV RBX, qword ptr [RSP + 0x60]\n0x141692ae7: TEST R13, R13\n0x141692aea: JZ 0x141692af2\n0x141692aec: MOVSS dword ptr [R13], XMM6\n0x141692af2: MOVAPS XMM6, xmmword ptr [RSP + 0x20]\n0x141692af7: ADD RSP, 0x50\n0x141692afb: POP R13\n0x141692afd: RET",
+    "limitations": []
+  },
+  "normalized_result": "0x141692940: PUSH R13\n0x141692942: SUB RSP, 0x50\n0x141692946: MOVAPS xmmword ptr [RSP + 0x20], XMM6\n0x14169294b: MOV R13, R8\n0x14169294e: MOV qword ptr [RSP + 0x60], RBX\n0x141692953: MOV qword ptr [RSP + 0x68], RBP\n0x141692958: MOV RBP, R9\n0x14169295b: MOV qword ptr [RSP + 0x48], RDI\n0x141692960: MOV RDI, RCX\n0x141692963: MOV qword ptr [RSP + 0x38], R14\n0x141692968: MOV R14, RDX\n0x14169296b: MOV qword ptr [RSP + 0x30], R15\n0x141692970: TEST R9, R9\n0x141692973: JZ 0x14169297c\n0x141692975: MOV dword ptr [R9], 0x800000\n0x14169297c: MOV R15, qword ptr [RSP + 0x80]\n0x141692984: TEST R15, R15\n0x141692987: JZ 0x141692990\n0x141692989: MOV dword ptr [R15], 0x0\n0x141692990: MOVSS XMM6, dword ptr [0x1442e02f8]\n0x141692998: LEA RDX, [RSP + 0x80]\n0x1416929a0: MOV R8B, 0x1\n0x1416929a3: MOV RCX, R14\n0x1416929a6: CALL 0x140a173b0\n0x1416929ab: XOR EDX, EDX\n0x1416929ad: MOV RBX, RAX\n0x1416929b0: MOV ECX, dword ptr [RAX]\n0x1416929b2: CALL 0x141cbfc50\n0x1416929b7: TEST AL, AL\n0x1416929b9: SETZ CL\n0x1416929bc: CMP dword ptr [RBX + 0x4], 0x0\n0x1416929c0: SETNZ AL\n0x1416929c3: OR AL, CL\n0x1416929c5: JZ 0x141692acb\n0x1416929cb: MOV qword ptr [RSP + 0x78], RSI\n0x1416929d0: MOV RSI, qword ptr [RDI + 0x118]\n0x1416929d7: MOV qword ptr [RSP + 0x40], R12\n0x1416929dc: MOVSXD R12, dword ptr [RDI + 0x120]\n0x1416929e3: SHL R12, 0x4\n0x1416929e7: ADD R12, RSI\n0x1416929ea: CMP RSI, R12\n0x1416929ed: JZ 0x141692ac1\n0x1416929f3: NOP dword ptr [RAX]\n0x1416929f7: NOP word ptr [RAX + RAX*0x1]\n0x141692a00: MOV RDI, qword ptr [RSI]\n0x141692a03: XOR EDX, EDX\n0x141692a05: LEA RCX, [RDI + 0x38]\n0x141692a09: CALL 0x140a19da0\n0x141692a0e: XOR EDX, EDX\n0x141692a10: MOV RCX, R14\n0x141692a13: MOV RBX, RAX\n0x141692a16: CALL 0x140a19da0\n0x141692a1b: TEST RBX, RBX\n0x141692a1e: JZ 0x141692a5a\n0x141692a20: TEST RAX, RAX\n0x141692a23: JZ 0x141692a5a\n0x141692a25: CMP RBX, RAX\n0x141692a28: JNZ 0x141692ab4\n0x141692a2e: XOR R8D, R8D\n0x141692a31: LEA RDX, [RSP + 0x80]\n0x141692a39: MOV RCX, R14\n0x141692a3c: CALL 0x140a173b0\n0x141692a41: XOR R8D, R8D\n0x141692a44: LEA RDX, [RSP + 0x70]\n0x141692a49: LEA RCX, [RDI + 0x38]\n0x141692a4d: MOV RBX, qword ptr [RAX]\n0x141692a50: CALL 0x140a173b0\n0x141692a55: CMP qword ptr [RAX], RBX\n0x141692a58: JMP 0x141692a7e\n0x141692a5a: MOV EAX, dword ptr [R14 + 0x10]\n0x141692a5e: CMP dword ptr [RDI + 0x48], EAX\n0x141692a61: JNZ 0x141692ab4\n0x141692a63: MOV RAX, qword ptr [R14 + 0x14]\n0x141692a67: CMP qword ptr [RDI + 0x4c], RAX\n0x141692a6b: JNZ 0x141692ab4\n0x141692a6d: MOV RAX, qword ptr [R14 + 0x8]\n0x141692a71: CMP qword ptr [RDI + 0x40], RAX\n0x141692a75: JNZ 0x141692ab4\n0x141692a77: MOV RAX, qword ptr [R14]\n0x141692a7a: CMP qword ptr [RDI + 0x38], RAX\n0x141692a7e: JNZ 0x141692ab4\n0x141692a80: MOV RAX, qword ptr [RSI]\n0x141692a83: MOVSS XMM1, dword ptr [RAX + 0x1c]\n0x141692a88: MOVAPS XMM0, XMM1\n0x141692a8b: MINSS XMM0, XMM6\n0x141692a8f: MOVAPS XMM6, XMM0\n0x141692a92: TEST RBP, RBP\n0x141692a95: JZ 0x141692aa2\n0x141692a97: COMISS XMM1, dword ptr [RBP]\n0x141692a9b: JBE 0x141692aa2\n0x141692a9d: MOVSS dword ptr [RBP], XMM1\n0x141692aa2: TEST R15, R15\n0x141692aa5: JZ 0x141692ab4\n0x141692aa7: MOV RAX, qword ptr [RSI]\n0x141692aaa: CMP qword ptr [RAX + 0x8], 0x0\n0x141692aaf: JNZ 0x141692ab4\n0x141692ab1: INC dword ptr [R15]\n0x141692ab4: ADD RSI, 0x10\n0x141692ab8: CMP RSI, R12\n0x141692abb: JNZ 0x141692a00\n0x141692ac1: MOV RSI, qword ptr [RSP + 0x78]\n0x141692ac6: MOV R12, qword ptr [RSP + 0x40]\n0x141692acb: MOV R15, qword ptr [RSP + 0x30]\n0x141692ad0: MOVAPS XMM0, XMM6\n0x141692ad3: MOV R14, qword ptr [RSP + 0x38]\n0x141692ad8: MOV RDI, qword ptr [RSP + 0x48]\n0x141692add: MOV RBP, qword ptr [RSP + 0x68]\n0x141692ae2: MOV RBX, qword ptr [RSP + 0x60]\n0x141692ae7: TEST R13, R13\n0x141692aea: JZ 0x141692af2\n0x141692aec: MOVSS dword ptr [R13], XMM6\n0x141692af2: MOVAPS XMM6, xmmword ptr [RSP + 0x20]\n0x141692af7: ADD RSP, 0x50\n0x141692afb: POP R13\n0x141692afd: RET",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Assembly is Ghidra Listing text and does not claim textual equivalence with Hopper output.",
+    "Ghidra analysis was seeded before auto-analysis from /mnt/d/projects/rea/sifu_ana/rea/pdb-ranges-20261012/pdb-function-seeds.tsv (sha256 cf4ce75c33d5b3f6edf672a570ed64fe5d60b45fa5f548dcf43ce3fada169f41: 203 function, 203 code, 0 label entries). Seeded functions, code and names are caller assertions, not Ghidra discoveries.",
+    "Seed outcome: 48 functions created, 155 already present, 0 failed; 203 code seeds decoded, 0 failed; 0 labels applied, 0 failed; 0 seeds outside initialized memory."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

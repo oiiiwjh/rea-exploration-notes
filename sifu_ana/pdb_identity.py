@@ -1,7 +1,7 @@
 """Read PDB MSF stream 1 and compare GUID/age with executable RSDS."""
 from pathlib import Path
-import struct,uuid,json
-root=Path('/mnt/d/SteamLibrary/steamapps/common/Sifu'); out=Path(__file__).resolve().parent
+import struct,uuid,json,os
+root=Path(os.environ.get('SIFU_ROOT','/mnt/d/SteamLibrary/steamapps/common/Sifu')); out=Path(__file__).resolve().parent
 exe=(root/'Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe').read_bytes(); i=exe.find(b'RSDS')
 rsds={'guid':str(uuid.UUID(bytes_le=exe[i+4:i+20])),'age':struct.unpack_from('<I',exe,i+20)[0],'path':exe[i+24:].split(b'\0',1)[0].decode(errors='replace')}
 with (root/'Sifu/Binaries/Win64/Sifu-Win64-Shipping.pdb').open('rb') as f:

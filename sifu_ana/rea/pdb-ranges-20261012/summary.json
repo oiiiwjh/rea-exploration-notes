@@ -1,0 +1,392 @@
+{
+  "startedAt": "2026-10-11T18:34:43.977Z",
+  "target": "/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe",
+  "targetSha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e",
+  "reaVersion": "6.4.0",
+  "seedFunctions": 203,
+  "timeoutMs": 600000,
+  "gameExecuted": false,
+  "functions": [
+    {
+      "name": "UAvoidWindowNotifyState::NotifyValueChange",
+      "address": "0x141753110",
+      "rva": "0x1753110",
+      "pdbLength": 436,
+      "pseudoEvidence": "ev_b445814358efc8fea4550a641e942fcc94c69db4c4675f2b537ae185f17387ef",
+      "assemblyEvidence": "ev_9c925903fc0a59b70d7530f11f7ddcfe8e800f46f557149045d2f3a880aad7c4",
+      "xrefsEvidence": "ev_340c8a8121e4f06400a0a8cabad28795889ff3e1d8f85e8420343e20a6938078"
+    },
+    {
+      "name": "UComboManager::EvaluateNextAttack",
+      "address": "0x1417717e0",
+      "rva": "0x17717e0",
+      "pdbLength": 359,
+      "pseudoEvidence": "ev_48b5b9b0931546cea01856d690dbdc302cd2117ddf143861d5d6581b2f8b4215",
+      "assemblyEvidence": "ev_af0d85cc58e833a13162fa14690c89732f6fc67ff025b208775584f7a2d0f2d0",
+      "xrefsEvidence": "ev_3f7f01a970f569d7a68c13c072d6bfa564251d36e48a5c871e2ddf7e896a77ce"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetInputFromTransition",
+      "address": "0x14178fa00",
+      "rva": "0x178fa00",
+      "pdbLength": 168,
+      "pseudoEvidence": "ev_229ba2074786755b4d5d6305220824d37e25e803c598e87d9e5e21e1cdcc622a",
+      "assemblyEvidence": "ev_32fc8722f0bfb5af73866974a864992e07805e2008e76bb6afcc921674aea5e5",
+      "xrefsEvidence": "ev_f3226a34f77362d8e5bfd21bffec46c483b4d44dfa96db03a6dde94d6d9fbb6e"
+    },
+    {
+      "name": "UComboTransitionHelper::BPF_GetTransitionFromInput",
+      "address": "0x14178fdd0",
+      "rva": "0x178fdd0",
+      "pdbLength": 367,
+      "pseudoEvidence": "ev_614b715161937b00226a2615f026c244fd970ca13182c51d374a0e07bd3efe1c",
+      "assemblyEvidence": "ev_92f69defa62659eb19fd113de4fa4f8673c99fe73ef01efcd3c07b8f1e99ce29",
+      "xrefsEvidence": "ev_2fb47161fac6b0bd274b7036a5e27643ae10b56a5bcdd292465b3ab5318ec4ab"
+    },
+    {
+      "name": "UDefenseComponent::CanDeflect",
+      "address": "0x141791390",
+      "rva": "0x1791390",
+      "pdbLength": 26,
+      "pseudoEvidence": "ev_5013071e9fb5a6a46407c7b3f517ba1d7f540b5a6304c6f9d916a773830d9bbd",
+      "assemblyEvidence": "ev_b0e5c47702d47c163f9ee418ce8580aa8cb1b69a2df91baac92036b4e39665c7",
+      "xrefsEvidence": "ev_5b66bb324f179fb16aa8277e94c7e94a6df7524f8f7dfe0698ad9070f90d1b68"
+    },
+    {
+      "name": "UComboTransitionHelper::GetTransitionFallback",
+      "address": "0x14179e810",
+      "rva": "0x179e810",
+      "pdbLength": 22,
+      "pseudoEvidence": "ev_aff9b068b0fbd2cd20136318aa25854daad229d7bfde1d969566c447e7c56f01",
+      "assemblyEvidence": "ev_5195acf867f3683ae3e3cc28e277b20fa251368fe6ca78226b78d50c383ecfa4",
+      "xrefsEvidence": "ev_ec13f8091dd852984615ea8045769750ed5f9dec1076a0d7ec7e97c3369cdf58"
+    },
+    {
+      "name": "UDefenseComponent::IsParryWindowOpen",
+      "address": "0x1417a0320",
+      "rva": "0x17a0320",
+      "pdbLength": 20,
+      "pseudoEvidence": "ev_f84dbbbd650b9e42d285936ca3e5251e91d35b1a2b31bd87be3ae2aeb4e2ce85",
+      "assemblyEvidence": "ev_8d989e41719db4bd97c87ebeab0918675e04df50a95bde10b52c24fb56e5f8c8",
+      "xrefsEvidence": "ev_dcf056da240281ad347dc3e92532633a71980906a9e7ac71415d90939b8df880"
+    },
+    {
+      "name": "UDefenseComponent::SetParryWindow",
+      "address": "0x1417a8b00",
+      "rva": "0x17a8b00",
+      "pdbLength": 182,
+      "pseudoEvidence": "ev_07e67a3b1e46f6bd93e876e5895e84fa73fbfa2db0d254b04e6c0a5fb8627919",
+      "assemblyEvidence": "ev_36d26cec2563f3e829b912e486f2efed124f8ce2eb6a8720a6e189f910ca779c",
+      "xrefsEvidence": "ev_1e3ab0b0b3f7b3a1bc0eaaaa2bd3a8054aefa1654bcfb2dc281be026c5fe2332"
+    },
+    {
+      "name": "UGuardAbility::ProcessForPlayer",
+      "address": "0x14184c570",
+      "rva": "0x184c570",
+      "pdbLength": 3908,
+      "pseudoEvidence": "ev_2934a7c0bc6ef2e4ee49ec80d4730c60d8b2972fbaf6a6f949c70dad7c35fa1f",
+      "assemblyEvidence": "ev_769c83bd6f18e9a8857934f7f8b96cd36c39f1b2d7ff238928a06c19aa775b81",
+      "xrefsEvidence": "ev_58406ac49e8aa7a64a9d025a009ff0436a19271280539b6652e257e59e20016e"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::BPF_IsSaveValid",
+      "address": "0x140a3c930",
+      "rva": "0xa3c930",
+      "pdbLength": 224,
+      "pseudoEvidence": "ev_e80b49a9a6b3830df6ab0546672afd82c425787c5808b15ecdcfab8dcb88d8bd",
+      "assemblyEvidence": "ev_35014a4dd4a8f7b21128fee7a7a419ac376a29837edcc6543c1899f9da45761b",
+      "xrefsEvidence": "ev_4a69c73fdc0785c172f0a2945bb6775d551c4239ec5877bcf1b6263c468204ff"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::GetFirstSaveIndexAvaiblable",
+      "address": "0x140a4c6e0",
+      "rva": "0xa4c6e0",
+      "pdbLength": 286,
+      "pseudoEvidence": "ev_374f21399984d8fc173d659ac25b9717b87eb1930bea9fe69b7a5339592ab089",
+      "assemblyEvidence": "ev_17f52028d80689da5064c3d5cff80e550fe1b2537e2909e15ce3506f567d6708",
+      "xrefsEvidence": "ev_e4744d050b6ac1bdb473788ffdc39787958729369169d82eb7ea682eb4c3b2a0"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::GetSaveIndexByName",
+      "address": "0x140a4eeb0",
+      "rva": "0xa4eeb0",
+      "pdbLength": 158,
+      "pseudoEvidence": "ev_73c5871a3552d8613dbe628237950653d14afd5369b14806523644a2e3b80020",
+      "assemblyEvidence": "ev_f48a419bcf853a8f9e121002a80e16c227628bb4991223604a136bb221d32f4e",
+      "xrefsEvidence": "ev_597caa8e7179c92433db1765d8b4b72fea7d4824d01e7cb78ede89ba8e41814e"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::MarkSaveValid",
+      "address": "0x140a56f20",
+      "rva": "0xa56f20",
+      "pdbLength": 137,
+      "pseudoEvidence": "ev_33cf45e3c813bb8e1a79b4a64f13351c23669f723558e10a10c130c61a022043",
+      "assemblyEvidence": "ev_a2a0102308c6c68cdf566408a988fa30230f4dc33919d8677911746b9560d744",
+      "xrefsEvidence": "ev_f8286897b8d4c683f3a145c2ec0ec9df6b0323aad9b4de6fde5d93f28f6e79a6"
+    },
+    {
+      "name": "USCSaveObjectPlayerProfile::SetAsFirstSave",
+      "address": "0x140a60560",
+      "rva": "0xa60560",
+      "pdbLength": 129,
+      "pseudoEvidence": "ev_76962779b8d9ece6f0cc65b78f4adf833469ad43350fbfba57f0b1f2d3c4e52b",
+      "assemblyEvidence": "ev_6137f55d0d4ea4c5ae07dc03333620669a6dba13dcc4360131a4f5866d6f1142",
+      "xrefsEvidence": "ev_8b1d24268622773476fbb5a2041f6c3155d3cbd555298ae90f377ff41bc86f1a"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__ForceAge__pf",
+      "address": "0x141080ed0",
+      "rva": "0x1080ed0",
+      "pdbLength": 379,
+      "pseudoEvidence": "ev_9eb95565e0e580697ed09a3aaf128e594522fcc9ed5906f6edda93099214d27a",
+      "assemblyEvidence": "ev_d18dc7654b43bf626502016e611d9593c9b5aa2dbb77cf0b93ef1d71ee8ca0a1",
+      "xrefsEvidence": "ev_c211dd6c9ffbb30797e16f9c62924f8fe414e28d2a86cdfa242a4d3b3ac4189d"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__PostDeathGainUpdate__pf",
+      "address": "0x141081980",
+      "rva": "0x1081980",
+      "pdbLength": 56,
+      "pseudoEvidence": "ev_ec59587e7b6638eedeef9d9d3a9f23a530ca7321eb7fe14d30975ade424c74fb",
+      "assemblyEvidence": "ev_e850e2ba8101a121bf600e1f0897dd64d05c1bceffa51706d972c2cb06410f4a",
+      "xrefsEvidence": "ev_8fe5479ca0777024b4b0a3a951b97b65e31beff5f1f1b22d5d5016be15638702"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__StatsUpdated__pf",
+      "address": "0x141082c70",
+      "rva": "0x1082c70",
+      "pdbLength": 30,
+      "pseudoEvidence": "ev_1f4983e800f560593d9fcfd8de9f64452b367a69a59589a819411a37473a98c8",
+      "assemblyEvidence": "ev_55c615c2699bafd42cb3fc1d298954fabaeb7aff164f8e96699e55b6cb513bb9",
+      "xrefsEvidence": "ev_b871dd69af24eb9041288c463eaeda2f45683e329d447f46a012cf69dfa7fd42"
+    },
+    {
+      "name": "UBP_Notif_AgeDeathCounter_C__pf2602646129::bpf__UpdateDeath__pf",
+      "address": "0x141083570",
+      "rva": "0x1083570",
+      "pdbLength": 1005,
+      "pseudoEvidence": "ev_b97d5911e4b71044a84f6167df5fcd7545791e428edd2a5bdf2ca07aeb0fda58",
+      "assemblyEvidence": "ev_c524fc746eec5ed998be4893a418ee408702cfa195f4397f31c803bcee8678d4",
+      "xrefsEvidence": "ev_6067c4b180cef8190580f7905a22d7b41522c417edb3487f7cfcd06d9e8f2e4b"
+    },
+    {
+      "name": "FAIAttackTicketManager::CheckPassiveTicketEnabled",
+      "address": "0x141687910",
+      "rva": "0x1687910",
+      "pdbLength": 164,
+      "pseudoEvidence": "ev_be2e1021facdcc284a0c86e3a4fc2e304e0c4c5f9c645d6286351f28f361b4e7",
+      "assemblyEvidence": "ev_994f440af7c1eeae5b36d96ab70412939bc89f628d81c354a7240f4f956db180",
+      "xrefsEvidence": "ev_a178eb2d5844ca456aaa9bf4a3e2fb3974c74a72110bb93ba7997671a6ca900a"
+    },
+    {
+      "name": "FAIAttackTicketManager::GetTicketCooldownRemaining",
+      "address": "0x141692940",
+      "rva": "0x1692940",
+      "pdbLength": 446,
+      "pseudoEvidence": "ev_9826731ab34b0c67388da903f11fe07e08025408c4e84027cf63e24417a93aaa",
+      "assemblyEvidence": "ev_f67741353882c5f5705b9bc7aef7e6911c3fd79051609cbcedfd0c1e7639802d",
+      "xrefsEvidence": "ev_75649122c196bb8ce24162d3e2a2ed2973133d643d0189d2686402a44a723b8d"
+    },
+    {
+      "name": "FAIAttackTicketManager::GetTicketTestEvaluationFactor",
+      "address": "0x141692fa0",
+      "rva": "0x1692fa0",
+      "pdbLength": 180,
+      "pseudoEvidence": "ev_a4256e02f754cffc4b2c2eaddbac0274a27ebba441b0ec39b999c593b7b31fbc",
+      "assemblyEvidence": "ev_955b73834fdc4c9b9f77fd2fc3a0df382f4bac8ac92132432e447a7ead74015b",
+      "xrefsEvidence": "ev_c2220e9eea772118f44980317eced08546adc01c3d500047933b74a690ed2627"
+    },
+    {
+      "name": "FAIAttackTicketManager::IsAttackerRegistered",
+      "address": "0x141696f20",
+      "rva": "0x1696f20",
+      "pdbLength": 27,
+      "pseudoEvidence": "ev_25a6e69b4458bb8909d7eacc9b0c9ed45a9b4b46a78cddc733ee8ed7ed8f94c4",
+      "assemblyEvidence": "ev_b112e138d7b4a374d3eab99e78ca357b206803e58a33bc2cdb849f26de8a4f26",
+      "xrefsEvidence": "ev_b5800769c7bf0fc2c3f22c8c07789deb5edbb2f24b506d51dce0ca0cb9ebfc47"
+    },
+    {
+      "name": "FAIAttackTicketManager::IsPassiveTicketAvailable",
+      "address": "0x1416973e0",
+      "rva": "0x16973e0",
+      "pdbLength": 153,
+      "pseudoEvidence": "ev_55b56f7de6a46abd48e0529672dfa041acc1d9f55ced003e11e0ae1f88071474",
+      "assemblyEvidence": "ev_29c4ceb58b56632c9f399e2241c91acde81d5ff34685089cef4f42a0ae5fa975",
+      "xrefsEvidence": "ev_2243e4d3241edac059e05feda1e30d7ad1324640a8d9392f5938a1eac421e836"
+    },
+    {
+      "name": "FAIAttackTicketManager::OnDefenderFightingStateChanged",
+      "address": "0x14169bd70",
+      "rva": "0x169bd70",
+      "pdbLength": 23,
+      "pseudoEvidence": "ev_6ea3501a4ca37f55c393b2ea29a8562469e406e2c220d409d15edd385abb4022",
+      "assemblyEvidence": "ev_bba136cfe3d56506de13a389ced5e38ac306d49326089ac76d0e986f6fe44802",
+      "xrefsEvidence": "ev_6f9663401a58d5eaf75a756a65fd7741606c702b6cd39070d219481bd967f6c9"
+    },
+    {
+      "name": "FAIAttackTicketManager::ResetAllTicketsCooldown",
+      "address": "0x1416a6460",
+      "rva": "0x16a6460",
+      "pdbLength": 65,
+      "pseudoEvidence": "ev_9bef14479d32176be9012ebf98f4c492a1f38f6599ace727d8f8fb4063a4411a",
+      "assemblyEvidence": "ev_ecce108d5098a3adde67bf8d2f202b3e64c2f51915f6f8dc8a34d7a553c819ab",
+      "xrefsEvidence": "ev_cab5029cedce53978187bde8be266727f999e05ba358f2ec42674e63f5965e88"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::PreReplication",
+      "address": "0x141983bc0",
+      "rva": "0x1983bc0",
+      "pdbLength": 282,
+      "pseudoEvidence": "ev_e4b34cbb73356660d0aee4507a0509ac7c301b2d3e57daf67e7eeb8abcbce231",
+      "assemblyEvidence": "ev_aee027304c1d2af86dff13c5f5a08edbdcbaf6518520bea1eced27491cced50c",
+      "xrefsEvidence": "ev_26b42931dc21ee17b48c08b68a8368c2bf9b2929917a82208ace8c646689989c"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::ReplicateVoiceInfos",
+      "address": "0x141985690",
+      "rva": "0x1985690",
+      "pdbLength": 32,
+      "pseudoEvidence": "ev_f41e8661ad153e416c9b6851a373310b053d95f3105d93741dc857b3357d01b9",
+      "assemblyEvidence": "ev_3aacdade241a935ea7ac92a36be2925fd21aa4b24205d260a92548347d8f8df3",
+      "xrefsEvidence": "ev_147474f8bce755419aea905df8170bb92721d99b465bda76998e9d3a59b6a309"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::UpdateCollisionProfile",
+      "address": "0x141989730",
+      "rva": "0x1989730",
+      "pdbLength": 259,
+      "pseudoEvidence": "ev_362dff5c5f3f8db612c7eed40713e083a626c9d32391e8c38206ecd98d829a7a",
+      "assemblyEvidence": "ev_7bf93d127026e4d1be4d0a83c28a7a6715e2a68cae9d81326ef293774b1d3fd9",
+      "xrefsEvidence": "ev_4aac5ba03ad0ae3f01f235ac155c4bdb4485d252229dca95a4352469979320b9"
+    },
+    {
+      "name": "UReplayFightingCharacterComponent::UpdateReplayCollisionProfile",
+      "address": "0x14198a2c0",
+      "rva": "0x198a2c0",
+      "pdbLength": 145,
+      "pseudoEvidence": "ev_96a7904f8c4bf91436937f9f52efa206b7b48a2a1773076ec848619ae51fc997",
+      "assemblyEvidence": "ev_f6840fd7952a41e7e656bb2aa0cd50cee8731be87c6773fbe9373dd23c2fd705",
+      "xrefsEvidence": "ev_5d238ef5b0253f7d5616e302edabd5439deb8acbc3db508281771d5d04fdd752"
+    },
+    {
+      "name": "UWGSaveObjectGameData::BPF_GetDefaultStatValue",
+      "address": "0x14199b080",
+      "rva": "0x199b080",
+      "pdbLength": 158,
+      "pseudoEvidence": "ev_dcd12ad3b4a7d051535b26f64712683143a3dafb85bb34c94c91148b51c145ab",
+      "assemblyEvidence": "ev_9b51c5df78e8cf84b57676a8928ad72d6c8a94e8aed2cc510fe6a99e4522e8ba",
+      "xrefsEvidence": "ev_f4d530db7c8abb08bead63165eee20e031891540b332ad209f97a1b6fe73d269"
+    },
+    {
+      "name": "UWGSaveObjectPlayerProfile::GetGameOptionValue",
+      "address": "0x1419a8fb0",
+      "rva": "0x19a8fb0",
+      "pdbLength": 22,
+      "pseudoEvidence": "ev_57fea0ce82df695a2f966e7b215bb75f514e6aa2f2f554c186b914ffc0f8099c",
+      "assemblyEvidence": "ev_1d176bd34ff4eeb909f243bc6615f951a04f4c090c4f41f5a2bc12f2f2f588e5",
+      "xrefsEvidence": "ev_c6977e5d6d557b12ea032082b8c1dd0f14e247b844c06c10bd1bde234b7b8e20"
+    },
+    {
+      "name": "UWGSaveObjectPlayerProfile::IsFocusMechanicOnToggle",
+      "address": "0x1419aace0",
+      "rva": "0x19aace0",
+      "pdbLength": 26,
+      "pseudoEvidence": "ev_8f988bb879b7971968a8a4feb2b8a2ba6f6bca0052e6e168bf4d29fd9c923f22",
+      "assemblyEvidence": "ev_683fcbd34f752ebf40de9a4acb61d58d98afbd51480b7c00f8654a27a6281a17",
+      "xrefsEvidence": "ev_4f562a3967a8fc81018696b61213c82cfac418659477a573fd6b867c85a4e6a7"
+    },
+    {
+      "name": "UWGSaveObjectPlayerProfile::SetGameOptionValue",
+      "address": "0x1419b7bb0",
+      "rva": "0x19b7bb0",
+      "pdbLength": 52,
+      "pseudoEvidence": "ev_b4daa4efb57d7a4525e8f89b2bd489990016c920be508d5aee86124a08f8d25b",
+      "assemblyEvidence": "ev_f8fb29c5f8fd643fd26dbb27202f3fbb08a9219c7096223d141f0ced83ae01a8",
+      "xrefsEvidence": "ev_d6f5e96dcf252e0524c39cfebfe7e7f6abecbde21fa9f4a108a8c4a2f52a3bb1"
+    },
+    {
+      "name": "UPlayerInput::GetAxisProperties",
+      "address": "0x14375ef10",
+      "rva": "0x375ef10",
+      "pdbLength": 217,
+      "pseudoEvidence": "ev_68977ecbc931504c6e9c89e7b1d9d94a46fdae2543b57ad955b420d0d7f6809b",
+      "assemblyEvidence": "ev_ac9da459a1417ba3b8a558a61051cd066984c798aaee8e27c223187650c32c21",
+      "xrefsEvidence": "ev_548df13e93cefd9e89d0b901253f96b81667b3ecf152374eb637d27c58600d7c"
+    },
+    {
+      "name": "UPlayerInput::GetChordForKey",
+      "address": "0x14375f510",
+      "rva": "0x375f510",
+      "pdbLength": 2028,
+      "pseudoEvidence": "ev_8daa922ebea8c9722bf7786187dbbfdecbe3de2f367f5b29aea6ec3c97516417",
+      "assemblyEvidence": "ev_a0a935c14ae7571b6c1c37a02b7b69555fdf6a72751492651b89acaa4b0bfb75",
+      "xrefsEvidence": "ev_bf202e4c2917cb4f6f3c6fccd435d8e0b04d41d7e90fad5c9ff0da3a3372e8b6"
+    },
+    {
+      "name": "UPlayerInput::GetChordsForAction",
+      "address": "0x14375fd00",
+      "rva": "0x375fd00",
+      "pdbLength": 1294,
+      "pseudoEvidence": "ev_fee640588b6f805fbd503f546f66aad3ce2ca44fc11224a658a4ef923d1e043a",
+      "assemblyEvidence": "ev_e2dc394681bd437307605a97438eb771b1548210195b572395a77da919f0817a",
+      "xrefsEvidence": "ev_04421a16f038ac04fa425f4284368b3c78156f7e2e6359118a3a4484b5f520aa"
+    },
+    {
+      "name": "UPlayerInput::GetChordsForKeyMapping",
+      "address": "0x143760210",
+      "rva": "0x3760210",
+      "pdbLength": 1344,
+      "pseudoEvidence": "ev_187111eef6c5a22edb318682a4c980978e7d5af41abece33b70014b343e9a9d2",
+      "assemblyEvidence": "ev_65ea4a877d61e575f8bb4df84a939b99608b7f941c5980022b5fb73af75ebff3",
+      "xrefsEvidence": "ev_50b713cb81865944cba7fd4eeb786ad2b5f9c53db99c3b10f8440f8ba69b2399"
+    },
+    {
+      "name": "UPlayerInput::GetKeyValue",
+      "address": "0x1437612d0",
+      "rva": "0x37612d0",
+      "pdbLength": 149,
+      "pseudoEvidence": "ev_bf5b1a509e1c7ecd89a8ce822739a0e7c53a001ef3675417fbb2a07b9e9463b0",
+      "assemblyEvidence": "ev_9da0906f388db5a42835ce643d38b91c9b84cf5fd744ceab24484cfe431d6136",
+      "xrefsEvidence": "ev_34f427603030e4212f111450084082f002610dbdf1ec350f4fc81880b0feb117"
+    },
+    {
+      "name": "UPlayerInput::GetKeysForAction",
+      "address": "0x143761370",
+      "rva": "0x3761370",
+      "pdbLength": 192,
+      "pseudoEvidence": "ev_64fde9c14f53bf2c46f7a837a343da4fbe2fdb88c1bacaf24e6a562c127e53ec",
+      "assemblyEvidence": "ev_07dab5a3b14e86b8c25dc689d1ee5f77ac8dbbda1c57e98dbb32b6411b3e4135",
+      "xrefsEvidence": "ev_db923dd66374558e19e9bd2aff1aaf3b4fbf657fec5995fd59c044921edd3bec"
+    },
+    {
+      "name": "UPlayerInput::GetKeysForAxis",
+      "address": "0x143761430",
+      "rva": "0x3761430",
+      "pdbLength": 195,
+      "pseudoEvidence": "ev_5e4d8daa62aa3e5e0153e6b03701d42e8b8fe494cf098a3d774821376199e4c4",
+      "assemblyEvidence": "ev_6a60447c6556425bfbc6b507092698063c1132c5ccc7af56c6562136ffa309ac",
+      "xrefsEvidence": "ev_2525929179ff0e57b3f5f0dcaeb3520dc2de9cc6057cd5b0afb0e07cda5c7b22"
+    },
+    {
+      "name": "UPlayerInput::GetMouseSensitivityX",
+      "address": "0x143761510",
+      "rva": "0x3761510",
+      "pdbLength": 99,
+      "pseudoEvidence": "ev_4877150e42b53ffa45a94995f278f7c232096dd92f876f366b5fcc2948c270eb",
+      "assemblyEvidence": "ev_7b64a206d0c65d6b9d6c1577e75c5351fbcf42c92f77329e7b1eb0d662274220",
+      "xrefsEvidence": "ev_6e0f5f1f169069c951c05359c2cbe1ce2e99cf58e54a671238e66e7a9186b321"
+    },
+    {
+      "name": "UPlayerInput::GetMouseSensitivityY",
+      "address": "0x143761580",
+      "rva": "0x3761580",
+      "pdbLength": 99,
+      "pseudoEvidence": "ev_29364976dbddc8d45605233f999fcbcbbe8c6794aeb42ce318c587918612432a",
+      "assemblyEvidence": "ev_430ede8954e2c0d00b11b679da2d9447909e4b96a45c532ce91bc9d85ae79d5c",
+      "xrefsEvidence": "ev_d53e26059cff35be945dddec9e9d1607faf31c01f8fa16f2d2046e2be34d4cf6"
+    }
+  ],
+  "errors": [],
+  "ok": true,
+  "finishedAt": "2026-10-11T18:35:40.751Z"
+}

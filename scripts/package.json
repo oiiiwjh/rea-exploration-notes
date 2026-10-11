@@ -1,0 +1,6 @@
+{
+  "name": "rea-sifu-document-rendering",
+  "private": true,
+  "type": "module",
+  "dependencies": { "marked": "17.0.5" }
+}

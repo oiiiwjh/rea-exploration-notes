@@ -1,5 +1,8 @@
-source/
 installation/build/
+sifu_ana/build/
+sifu_ana/combat/public_address_map.json
+sifu_ana/structure/selected-asset-extraction.json
+**/.venv/
 **/__pycache__/
 **/node_modules/
 .env

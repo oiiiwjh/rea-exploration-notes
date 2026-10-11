@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "primaryIndexSha1Matches": true,
+  "primaryIndexSha1": "189148edc81f69fa9a301c46339f4d73511c9d56",
+  "mountPoint": "../../../",
+  "entryCount": 79246,
+  "keyPublished": false,
+  "callbackRva": "0x19cae30",
+  "callbackLength": 179,
+  "callbackCodeSha256": "417aad15835e6fc2b48087ff9834a48c095643169cba7a02967dab0cbe3d7bd6",
+  "method": "8 little-endian immediate dword stores from matched FEncryptionKeyRegistration::Callback"
+}
