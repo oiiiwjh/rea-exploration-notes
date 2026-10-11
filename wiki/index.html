@@ -1,0 +1,1391 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="REA 中文源码 Wiki：项目用途、安装配置、CLI/MCP 操作、逆向分析工作流、Evidence、源码架构与本地挂载。">
+<meta name="rea-source-commit" content="fb94d9dde0ccda83ae520ac6fb22b1d283562cf3"><meta name="color-scheme" content="light dark">
+<title>REA 中文 Wiki · 项目解析与操作手册</title>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('rea-wiki-theme')||'light'}catch(e){}</script>
+<style>:root{color-scheme:light;--bg:#f5f7fb;--paper:#fff;--ink:#17243b;--muted:#5b6b82;--line:#dce3ee;--accent:#315ccb;--soft:#eef3ff;--code:#142137;--codeink:#e4edff;--warn:#fff5dc;--warnink:#725019;--shadow:0 14px 40px #14213708}
+:root[data-theme=dark]{color-scheme:dark;--bg:#0e1728;--paper:#142137;--ink:#e5ecf8;--muted:#aab9cf;--line:#2b3d57;--accent:#9ab5ff;--soft:#1e3152;--code:#0b1424;--codeink:#e4edff;--warn:#332c1e;--warnink:#efcf8b;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.85 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.skip{position:fixed;left:280px;top:-60px;padding:10px;background:var(--paper);z-index:20}.skip:focus{top:10px}.sidebar{position:fixed;inset:0 auto 0 0;width:264px;padding:25px 20px;background:var(--paper);border-right:1px solid var(--line);z-index:12;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}.logo{width:38px;height:38px;display:grid;place-items:center;background:#315ccb;color:#fff;border-radius:10px;font:bold 15px monospace}.brand strong{display:block;font-size:19px;line-height:1.25}.brand small{font-size:11px;color:var(--muted);letter-spacing:.1em}.search-wrap{margin:24px 0 15px}.search-wrap label{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}.search-wrap input{width:100%;padding:10px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:13px}.nav{overflow:auto;flex:1}.nav a{display:flex;gap:10px;padding:7px 10px;margin:2px 0;border-radius:6px;color:var(--muted);font-size:13px;line-height:1.5}.nav a span{font-size:11px;font-family:monospace;opacity:.6;min-width:18px;margin-top:2px}.nav a:hover,.nav a.active{color:var(--accent);background:var(--soft);text-decoration:none}.side-foot{padding-top:14px;margin-top:12px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.side-foot code{font-size:11px}.topbar{position:sticky;top:0;margin-left:264px;height:65px;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 32px;z-index:10}.crumb{font-size:13px;color:var(--muted)}.crumb b{color:var(--ink);font-weight:500}.toolbar{display:flex;gap:8px}.toolbar button{border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--muted);padding:5px 12px;font-size:12px}.menu{display:none}.reading-progress{height:2px;position:fixed;top:63px;left:264px;width:calc(100% - 264px);z-index:11}.reading-progress div{background:#315ccb;height:100%;width:0}main{margin-left:264px;padding:38px 40px 80px;max-width:1390px}.hero{padding:32px 36px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-bottom:26px}.eyebrow{color:var(--accent);font:12px/1.5 monospace;letter-spacing:.1em}.hero h1{font-size:39px;line-height:1.3;letter-spacing:-1px;margin:14px 0}.hero .lead{font-size:17px;max-width:760px;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.tag{padding:3px 10px;border-radius:5px;background:var(--soft);font-size:11px;color:var(--accent)}.jump-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:13px}article section{margin:0 0 26px;padding:30px 36px;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}.section-no{display:block;color:var(--accent);font:11px/1.3 monospace;letter-spacing:.15em;margin-bottom:10px}h2{font-size:25px;line-height:1.45;margin:0 0 20px}h3{font-size:18px;line-height:1.5;margin:26px 0 12px}h4{font-size:15px;margin:20px 0 8px}p{margin:12px 0}ul,ol{padding-left:23px;margin:12px 0}li{padding-left:3px;margin:6px 0}strong{font-weight:650}.callout{padding:14px 17px;border-left:3px solid var(--accent);background:var(--soft);border-radius:0 7px 7px 0;margin:18px 0;font-size:14px}.callout.warn{background:var(--warn);color:var(--warnink);border-color:#c8983e}.callout p:first-child{margin-top:0}.callout p:last-child{margin-bottom:0}code{font-family:"Cascadia Code",Consolas,"SFMono-Regular",monospace;font-size:.88em;background:var(--soft);padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}.codebox{position:relative;margin:16px 0;border-radius:9px;overflow:hidden;background:var(--code);color:var(--codeink)}.code-head{padding:6px 14px;border-bottom:1px solid #ffffff18;display:flex;align-items:center;justify-content:space-between;gap:10px;font:11px/1.8 monospace;color:#a6badb}.copy{background:transparent;border:1px solid #ffffff35;border-radius:4px;color:#cedcf4;padding:1px 9px;font-size:11px}.codebox pre{margin:0;padding:16px 18px;overflow:auto;line-height:1.7;font-size:12px;tab-size:2}.codebox code{font-size:inherit;color:inherit;background:none;padding:0;border-radius:0;white-space:pre;overflow-wrap:normal}.table-wrap{overflow:auto;margin:16px 0;border:1px solid var(--line);border-radius:8px}table{border-collapse:collapse;width:100%;font-size:13px;min-width:520px}th,td{text-align:left;padding:11px 14px;vertical-align:top;border-bottom:1px solid var(--line)}th{background:var(--soft);font-size:12px;white-space:nowrap}tr:last-child td{border-bottom:none}td code{font-size:11px}.source-note{margin:24px 0 0;padding-top:13px;border-top:1px dashed var(--line);font-size:11px;color:var(--muted);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.source-note a{overflow-wrap:anywhere}.pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}.pipeline div{padding:16px 13px;border:1px solid var(--line);background:var(--soft);border-radius:8px;font-size:12px}.pipeline strong{display:block;font-size:14px;margin-bottom:6px}.pipeline .num{display:block;color:var(--accent);font:11px monospace;margin-bottom:9px}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.fact{border:1px solid var(--line);border-radius:8px;padding:15px}.fact strong{display:block;font-size:19px}.fact span{display:block;font-size:12px;color:var(--muted);margin-top:4px}details{border:1px solid var(--line);border-radius:7px;margin:10px 0;padding:12px 16px}summary{cursor:pointer;font-weight:600;font-size:14px}.muted{color:var(--muted);font-size:13px}.status{display:inline-block;font-size:10px;padding:2px 7px;border-radius:4px;background:var(--soft);color:var(--accent);white-space:nowrap}.doc-footer{text-align:center;font-size:12px;color:var(--muted);padding:15px}.search-results{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px 32px;margin-bottom:25px}.search-results h2{font-size:18px}.search-hit{display:block;padding:12px 0;border-bottom:1px solid var(--line)}.search-hit:last-child{border-bottom:none}.search-hit strong{display:block;font-size:14px}.search-hit small{display:block;color:var(--muted);font-size:12px;line-height:1.7;margin-top:5px}.search-results[hidden]{display:none}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);padding:10px 18px;border:1px solid var(--line);border-radius:8px;background:var(--paper);box-shadow:var(--shadow);z-index:30;font-size:13px}.toast[hidden]{display:none}.backdrop{display:none}.tree{font-size:12px}.validation{padding:12px 15px;background:var(--soft);border-radius:8px}.validation li{font-size:13px}
+@media(min-width:1600px){main{padding-left:70px;padding-right:70px}.topbar{padding-left:70px;padding-right:70px}}@media(max-width:1100px){main{padding:25px}.topbar{padding:0 25px}.hero,article section{padding:27px}.pipeline{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:33px}.facts{grid-template-columns:1fr}}
+@media(max-width:780px){.sidebar{transform:translateX(-100%);transition:transform .18s}.sidebar.open{transform:translateX(0)}.backdrop.open{display:block;position:fixed;inset:0;background:#0006;z-index:11}.topbar{margin-left:0;padding:0 15px;height:59px}.reading-progress{left:0;top:57px;width:100%}.menu{display:block}.crumb{font-size:11px}.crumb b{display:none}.toolbar button{font-size:11px;padding:5px 8px}.toolbar{gap:5px}main{margin-left:0;padding:20px 13px 50px}.hero,article section{padding:23px 20px;border-radius:9px}.hero h1{font-size:29px}.hero .lead{font-size:15px}h2{font-size:22px}h3{font-size:17px}body{font-size:14px}.pipeline div{padding:12px}.jump-links{font-size:12px;gap:12px}.source-note{font-size:10px}.skip{left:10px}.search-results{padding:20px}.codebox pre{font-size:11px;padding:13px}}
+article p,article li{overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sidebar{transition:none}}
+@media print{body{background:#fff;color:#000;font-size:10pt}.sidebar,.topbar,.reading-progress,.copy,.toast,.search-results,.jump-links,.backdrop{display:none!important}main{margin:0;padding:0;max-width:none}.hero,article section{border:0;border-radius:0;box-shadow:none;padding:12px 0;margin:0}.hero h1{font-size:25pt}h2{font-size:18pt;break-after:avoid}h3{break-after:avoid}.codebox{background:#f1f3f6;color:#000;border:1px solid #ccc;break-inside:avoid}.code-head{color:#444;border-color:#ccc}.codebox pre{white-space:pre-wrap;overflow-wrap:anywhere}.codebox code{white-space:pre-wrap}.table-wrap{overflow:visible}table{min-width:0;font-size:9pt}th{background:#eee}.source-note{font-size:8pt}a{color:#164b9c}.callout,.fact{break-inside:avoid}.pipeline{grid-template-columns:repeat(4,1fr)}details{break-inside:avoid}}
+
+.nav-label{font-size:10px;letter-spacing:.08em;color:var(--muted);padding:14px 10px 5px}.source-code code{color:var(--accent)}blockquote{margin:16px 0;padding:12px 17px;background:var(--soft);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;font-size:14px}blockquote p{margin:5px 0}</style></head>
+<body><a class="skip" href="#content">跳到正文</a>
+<div id="backdrop" class="backdrop"></div>
+<aside id="sidebar" class="sidebar" aria-label="Wiki 目录"><a class="brand" href="#top"><span class="logo">RE</span><span><strong>REA Wiki</strong><small>中文源码与操作手册</small></span></a>
+<div class="search-wrap"><label for="search">全文检索 <span aria-hidden="true">· Ctrl K</span></label><input id="search" type="search" placeholder="命令、功能、环境变量…" autocomplete="off"></div>
+<nav class="nav" aria-label="章节导航"><div class="nav-label">项目概览</div>
+<a href="#overview-1"><span>01</span>项目用途与核心概念</a>
+<a href="#overview-2"><span>02</span>能力、依赖与平台对照</a>
+<a href="#overview-3"><span>03</span>阅读范围与版本依据</a>
+<div class="nav-label">安装与配置</div>
+<a href="#operations-1"><span>04</span>安装选择与版本边界</a>
+<a href="#operations-3"><span>05</span>MCP 配置与客户端</a>
+<a href="#operations-4"><span>06</span>原生分析引擎配置</a>
+<a href="#operations-5"><span>07</span>选择 provider 与就绪检查</a>
+<a href="#operations-8"><span>08</span>常用环境变量速查</a>
+<a href="#operations-9"><span>09</span>更新、卸载与常见问题</a>
+<div class="nav-label">本机安装与 Sifu</div>
+<a href="#installed-1"><span>10</span>本机安装结果与实际过程</a>
+<a href="#installed-2"><span>11</span>Sifu 分析环境与后续使用</a>
+<div class="nav-label">分析工作流</div>
+<a href="#workflows-3"><span>12</span>从未知文件开始：先识别，再选路线</a>
+<a href="#workflows-4"><span>13</span>原生程序：从字符串找到功能</a>
+<a href="#workflows-5"><span>14</span>JavaScript/Electron 静态分析：ASAR → 应用图 → 功能追踪 → 版本对比</a>
+<a href="#workflows-6"><span>15</span>浏览器：被动捕获与主动场景</a>
+<a href="#workflows-7"><span>16</span>Electron 与 Node 运行观察</a>
+<a href="#workflows-8"><span>17</span>.NET：元数据、CIL、native boundary 与版本变化</a>
+<a href="#workflows-9"><span>18</span>Android APK：manifest → 类 → 重载方法 → 引用</a>
+<a href="#extensions-1"><span>19</span>设备、固件与离线扩展工作流</a>
+<a href="#extensions-2"><span>20</span>进程行为捕获与重建对照</a>
+<div class="nav-label">Evidence 与会话</div>
+<a href="#evidence-7"><span>21</span>Evidence、结果保存与会话</a>
+<a href="#evidence-details-10"><span>22</span>Evidence、缓存、返回值如何读</a>
+<div class="nav-label">源码架构</div>
+<a href="#architecture-1"><span>23</span>架构总览与目录分工</a>
+<a href="#architecture-2"><span>24</span>请求链路：CLI 与 MCP</a>
+<a href="#architecture-3"><span>25</span>Provider 选择与平台边界</a>
+<a href="#architecture-4"><span>26</span>Session、目标身份与 Snapshot</a>
+<a href="#architecture-5"><span>27</span>Evidence、Bundle 与未知项</a>
+<a href="#architecture-6"><span>28</span>JavaScript 图分析与重建验证</a>
+<a href="#architecture-7"><span>29</span>资源、交付与结果解释限制</a>
+<div class="nav-label">构建与开发</div>
+<a href="#develop-2"><span>30</span>源码克隆、构建与直接运行</a>
+<a href="#develop-10"><span>31</span>开发检查与原有文档网站</a>
+<div class="nav-label">挂载与参考</div>
+<a href="#local-1"><span>32</span>Wiki 本地挂载与维护</a>
+<a href="#local-2"><span>33</span>常见问题</a>
+<a href="#local-3"><span>34</span>源码与官方文档索引</a></nav>
+<div class="side-foot">源码基线 <code>fb94d9dd</code><br>整理于 2026-10-12 · 34 个章节<br><a href="https://github.com/morluto/rea" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a></div></aside>
+<header class="topbar"><div class="crumb">morluto / rea <b> / 项目解析与操作手册</b></div><div class="toolbar"><button id="menu" class="menu" aria-expanded="false" aria-controls="sidebar" type="button">目录</button><button id="theme" type="button">深色</button><button id="print" type="button">打印 / PDF</button></div></header>
+<div class="reading-progress" aria-hidden="true"><div id="progress"></div></div>
+<main id="content"><div id="top" class="hero"><div class="eyebrow">REVERSE ENGINEER ANYTHING / SOURCE WIKI</div><h1>REA 项目解析与操作手册</h1><p class="lead">从应用行为到二进制实现，理解 REA 如何组织分析工具、保留证据，并把研究结果交给命令行与 AI Agent。</p><div class="tags"><span class="tag">TypeScript · Node.js</span><span class="tag">CLI + MCP</span><span class="tag">本地分析</span><span class="tag">源码 fb94d9dd</span><span class="tag">MIT</span></div><div class="jump-links"><a href="#operations-1">开始安装 ↓</a><a href="#workflows-5">JS / Electron 示例 ↓</a><a href="#architecture-1">理解源码架构 ↓</a><a href="#local-1">本地挂载 ↓</a></div><p class="muted">命令中的路径和 ID 是占位示例；按实际目标替换。包发布版与 main 的能力差异在正文中单独说明。</p></div>
+<div id="search-results" class="search-results" role="region" aria-live="polite" aria-label="全文检索结果" hidden></div>
+<article><section id="overview-1" aria-labelledby="title-overview-1"><span class="section-no">01 / 项目概览</span><h2 id="title-overview-1">项目用途与核心概念</h2><p><strong>REA（Reverse Engineer Anything）是一套本地逆向分析工具，将应用包、原生二进制、网页和运行时行为的分析能力统一到 CLI 与 MCP。</strong> npm 包名为 <code>rea-agents</code>，安装后同时提供 <code>rea</code> 和 <code>rea-agents</code> 命令。AI Agent 通过 MCP 调用这些能力，也可以由开发者直接在终端执行。</p>
+<p>例如，你想理解一个 Electron 应用如何实现搜索、剪贴板或插件加载。REA 可以读取应用包，建立模块及依赖关系，定位 preload、IPC 与原生扩展，必要时补充运行时观察；Agent 再用这些证据解释实现方式，或在你的项目中编写并验证类似功能。</p>
+<div class="pipeline"><div><span class="num">01 / QUESTION</span><strong>明确问题</strong>选择目标文件、应用、网页和待研究功能。</div><div><span class="num">02 / INSPECT</span><strong>执行分析</strong>CLI 或 Agent 调用静态解析器及配置的分析引擎。</div><div><span class="num">03 / EVIDENCE</span><strong>保留证据</strong>返回目标身份、原始事实、归一化结果与未知项。</div><div><span class="num">04 / VERIFY</span><strong>解释与重建</strong>追踪关键路径，写出实现，再用原目标或测试验证。</div></div>
+
+<h3>适用场景</h3>
+<ul>
+<li><strong>功能理解与实现参考</strong>：追踪搜索、导出、菜单动作、IPC、原生 API 调用等路径。</li>
+<li><strong>包和依赖审查</strong>：检查 ASAR、ZIP、应用目录、.NET 程序集、APK 的结构与依赖边界。</li>
+<li><strong>版本差异分析</strong>：对比两个构建产物、函数、模块关系或运行场景的证据。</li>
+<li><strong>研究与复现</strong>：对二进制反汇编或伪代码进行解释，结合输入输出样例验证重建结果。</li>
+<li><strong>行为观察</strong>：按明确目标记录网页网络、浏览器交互、进程终端与文件系统变化。</li>
+</ul>
+<h3>输出究竟是什么</h3>
+<p>原生分析可返回汇编、伪代码、字符串、符号、调用与引用；JavaScript/Electron 返回模块及其关系；.NET 返回元数据、CIL 与声明的原生依赖。REA 将这些结果包装为 <strong>Evidence</strong>：带有来源、目标身份和不确定性信息的分析记录。</p>
+<p>REA 自身提供工具和工作流。自然语言解释、自动编写重建代码通常由接入的 Agent 完成。反编译伪代码和静态关联可提供线索，但不会自动证明恢复了原始源码，或者覆盖了所有运行时路径。</p>
+<h3>CLI、MCP、Skill 与 Provider</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+<th>如何使用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CLI</td>
+<td>终端命令、脚本、JSON 文件输出</td>
+<td><code>rea COMMAND ...</code></td>
+</tr>
+<tr>
+<td>MCP Server</td>
+<td>将工具、提示和会话暴露给 Agent</td>
+<td><code>rea mcp</code>，通常由客户端启动</td>
+</tr>
+<tr>
+<td>Skill</td>
+<td>教 Agent 怎样选择目标、分步调查、记录证据</td>
+<td><code>rea setup</code> 同时安装匹配版本的工作流说明</td>
+</tr>
+<tr>
+<td>Provider</td>
+<td>实际执行某一类分析的适配器</td>
+<td>如 Hopper、Ghidra、IDA、浏览器或静态解析器</td>
+</tr>
+<tr>
+<td>Evidence</td>
+<td>可追溯的分析记录</td>
+<td>显示结果、保存 JSON、导出 bundle、进行比较</td>
+</tr>
+<tr>
+<td>Snapshot</td>
+<td>复用符合条件的已成功分析结果</td>
+<td>原生 CLI 使用 <code>--snapshot</code>；MCP 使用会话保存参数</td>
+</tr>
+</tbody></table>
+</div><h3>数据在哪里处理</h3>
+<p>REA 的目标分析在本地进行。接入 Agent 后，工具结果会交给 Agent；模型提供方的数据处理规则仍取决于该客户端。静态读取与运行时操作的影响也不同：静态 JS/.NET 检查不执行目标程序，主动观察则可能启动目标、点击页面或写入场景指定的文件。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer"><code>README.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer"><code>package.json</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer"><code>docs/cli.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md" target="_blank" rel="noopener noreferrer"><code>docs/mcp-contracts.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/main.ts" target="_blank" rel="noopener noreferrer"><code>src/main.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer">README.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer">package.json</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer">cli.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md" target="_blank" rel="noopener noreferrer">mcp-contracts.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/main.ts" target="_blank" rel="noopener noreferrer">main.ts</a></span></div></section>
+<section id="overview-2" aria-labelledby="title-overview-2"><span class="section-no">02 / 项目概览</span><h2 id="title-overview-2">能力、依赖与平台对照</h2><p>本表按固定源码提交说明能力。<strong>同一台机器能用某个功能，不代表能用所有功能</strong>；应对目标工作流运行对应的诊断。源码中存在的功能也可能晚于 npm 发布版，见安装章节。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>分析对象</th>
+<th>主要结果</th>
+<th>依赖与边界</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>原生可执行文件与库</td>
+<td>伪代码、汇编、函数、符号、字符串、调用和交叉引用</td>
+<td>Hopper、Ghidra 或 IDA；格式和宿主支持取决于 Provider</td>
+</tr>
+<tr>
+<td>JavaScript / Electron 目录、ASAR</td>
+<td>模块、导入、打包关系、source map、路由、IPC、原生扩展关系</td>
+<td>Node.js；静态检查无需原生反编译引擎</td>
+</tr>
+<tr>
+<td>网站</td>
+<td>DOM、脚本、网络观察、截图；声明式操作场景</td>
+<td>已有 Chrome 系浏览器；被动 CDP 与主动 Playwright 场景分开</td>
+</tr>
+<tr>
+<td>.NET 程序集</td>
+<td>PE/CLI 元数据、类型、方法、CIL、P/Invoke 与跨构建比较</td>
+<td>内置静态解析；无需运行 CLR；NativeAOT 属于另一个原生工作流</td>
+</tr>
+<tr>
+<td>Android APK</td>
+<td>Manifest、类、反编译方法与引用</td>
+<td>Headless JADX 与完整 JDK；当前源码支持 Linux/macOS/Windows x64，旧 npm 版本可能更窄</td>
+</tr>
+<tr>
+<td>Android 设备与模拟器</td>
+<td>设备、包、进程、日志、dump、截图及文件传输</td>
+<td>调用者提供 adb；设备相关操作会影响选定目标</td>
+</tr>
+<tr>
+<td>Android 资源</td>
+<td>解码 Manifest、字符串表、语言与版本信息</td>
+<td>调用者提供 Apktool launcher</td>
+</tr>
+<tr>
+<td>JEB 项目</td>
+<td>项目单元、artifact 摘要、类型/方法伪代码</td>
+<td>调用者预先启动提供 MCP 的 JEB 客户端，配置 <code>REA_JEB_MCP_URL</code></td>
+</tr>
+<tr>
+<td>包、资源与 Apple 应用</td>
+<td>文件清单、SHA-256、plist、bundle 结构、资源提取</td>
+<td>格式与宿主相关；原生代码深度分析仍需引擎</td>
+</tr>
+<tr>
+<td>离线 WASM</td>
+<td>验证、section、精确 import/export WAT、解码后的 WAT</td>
+<td>调用者提供 WABT 1.0.42；结果描述产物，不执行模块</td>
+</tr>
+<tr>
+<td>离线 ELF 布局</td>
+<td>节/段、原始符号、重定位、静态缓解措施候选</td>
+<td>Linux x64，调用者提供 pwntools；不等同运行时防护验证</td>
+</tr>
+<tr>
+<td>离线 EVM bytecode</td>
+<td>selector 分派、字节位置、参数及 mutability 推断</td>
+<td>Linux x64；本地 raw/hex 载体，无需链访问；推断不是原始 ABI</td>
+</tr>
+<tr>
+<td>已录制的 Linux crash/core</td>
+<td>note、每个已记录线程的寄存器/信号、可选映射上下文</td>
+<td>Linux x64 + pwntools，可选 GDB/pwndbg；分析录制文件不等同连接活动进程</td>
+</tr>
+<tr>
+<td>保存的网络捕获</td>
+<td>请求、响应、已有 payload 与源码位置</td>
+<td>HAR；原生 mitmproxy 捕获需要 Linux 上的 mitmdump</td>
+</tr>
+<tr>
+<td>固件</td>
+<td>区域、提取结果、子产物与原生分析交接</td>
+<td>Linux 上的 Binwalk / Unblob；格式覆盖应看具体报告</td>
+</tr>
+<tr>
+<td>进程行为</td>
+<td>PTY 终端输出、交互、退出、文件系统观察、运行差异</td>
+<td>Linux/macOS + 原生 PTY；会真实运行选定程序</td>
+</tr>
+</tbody></table>
+</div><h3>Windows 与 WSL 如何选择</h3>
+<p>本机 Windows 的 Ghidra 支持属于实验 P0，主要为固定本地 NTFS 卷上的 x86/x86-64 PE，保持只读；不能据此宣称已完整覆盖 Unix 引擎、GUI 控制或所有原生格式。需要 Linux 专用工具时，使用 WSL 中的 Linux REA，并在同一环境配置对应依赖。</p>
+<p>Windows REA 使用 <code>D:/apps/example</code> 或 <code>C:/tools/...</code> 路径；WSL REA 使用 <code>/mnt/d/apps/example</code> 或 <code>/absolute/path/...</code>。两边的 Node、JDK、Ghidra 与 Agent 环境配置应各自匹配。网页 Wiki 的本地服务运行于 WSL，浏览器访问本机 <code>127.0.0.1</code>。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer"><code>README.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/windows-ghidra-p0.md" target="_blank" rel="noopener noreferrer"><code>docs/windows-ghidra-p0.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/android-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/android-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/managed-code-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/managed-code-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/wasm-artifacts.md" target="_blank" rel="noopener noreferrer"><code>docs/wasm-artifacts.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/binary-diagnostics.md" target="_blank" rel="noopener noreferrer"><code>docs/binary-diagnostics.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/recorded-crashes.md" target="_blank" rel="noopener noreferrer"><code>docs/recorded-crashes.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/evm-bytecode.md" target="_blank" rel="noopener noreferrer"><code>docs/evm-bytecode.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/process-capture.md" target="_blank" rel="noopener noreferrer"><code>docs/process-capture.md</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer">README.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/windows-ghidra-p0.md" target="_blank" rel="noopener noreferrer">windows-ghidra-p0.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/android-analysis.md" target="_blank" rel="noopener noreferrer">android-analysis.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/managed-code-analysis.md" target="_blank" rel="noopener noreferrer">managed-code-analysis.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/wasm-artifacts.md" target="_blank" rel="noopener noreferrer">wasm-artifacts.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/binary-diagnostics.md" target="_blank" rel="noopener noreferrer">binary-diagnostics.md</a></span></div></section>
+<section id="overview-3" aria-labelledby="title-overview-3"><span class="section-no">03 / 项目概览</span><h2 id="title-overview-3">阅读范围与版本依据</h2><p>这份 Wiki 基于仓库 <code>morluto/rea</code> 的以下固定提交进行源码与文档交叉核对：</p>
+<div class="codebox"><div class="code-head"><span>text</span></div><pre><code>fb94d9dde0ccda83ae520ac6fb22b1d283562cf3
+fix(errors): stop recommending retries for non-retryable failures (#1869)</code></pre></div>
+<p>本地源码：<code>D:\projects\rea\source</code>（WSL：<code>/mnt/d/projects/rea/source</code>）。分析分支：<code>wiki-analysis-20261011</code>。完整主仓库已克隆，<code>main</code> 保留克隆时的分支；子模块按 <a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.gitmodules" target="_blank" rel="noopener noreferrer"><code>.gitmodules</code></a> 保留引用，尚未初始化其外部源码。本 Wiki 的章节链接均指向固定提交，便于复核。</p>
+<p><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer"><code>package.json</code></a> 版本为 <strong>6.4.0</strong>。该提交的安装文档记载 npm 6.4.0 来自较早提交 <code>a56f7bb668ab23fec8d33f7af353ac7ed2fe1895</code>，因此“包版本号相同”不能证明二者代码完全相同。需要 main 上新增能力时，按源码构建流程运行，并检查目标命令的 <code>--help</code>。</p>
+<p><strong>原始 Wiki 的验证范围</strong>：源码与文档静态分析、HTML 结构与本地 HTTP 服务、桌面和移动尺寸页面交互。2026-10-12 后续已在本机 WSL 安装 REA 6.4.0、Node 24、JDK 21、Ghidra 12.1.4，并验证 CLI、MCP 和微型 Windows PE 的真实反编译，详见“本机安装与 Sifu”章节。尚未对 Sifu 主程序做深度分析，也未验证 Hopper/IDA/JADX；其他能力说明来自注明的源码和项目文档。</p>
+<p>文档整理日期：2026-10-12，使用用户时区 Asia/Shanghai。离线保存后内容不会自动随仓库更新。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer"><code>docs/installation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer"><code>package.json</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.gitmodules" target="_blank" rel="noopener noreferrer"><code>.gitmodules</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/AGENTS.md" target="_blank" rel="noopener noreferrer"><code>AGENTS.md</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.gitmodules" target="_blank" rel="noopener noreferrer">.gitmodules</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer">package.json</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/AGENTS.md" target="_blank" rel="noopener noreferrer">AGENTS.md</a></span></div></section>
+<section id="operations-1" aria-labelledby="title-operations-1"><span class="section-no">04 / 安装与配置</span><h2 id="title-operations-1">安装选择与版本边界</h2><p>REA 的 npm 包名是 <code>rea-agents</code>，安装后提供 <code>rea</code> 和 <code>rea-agents</code> 两个命令，二者均指向 <a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs" target="_blank" rel="noopener noreferrer"><code>scripts/rea.mjs</code></a>。当前源码的 <a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer"><code>package.json</code></a> 版本为 <strong>6.4.0</strong>，许可证 MIT。</p>
+<p>运行时支持 <strong>Node.js 22.x（≥22.19）、24.x（≥24.11）或 26+</strong>。Node.js 23、25 与预发布版本不受支持。仓库开发环境另行固定为 <a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.nvmrc" target="_blank" rel="noopener noreferrer"><code>.nvmrc</code></a> 中的 <strong>24.18.0</strong>、<code>packageManager</code> 中的 <strong>npm 11.16.0</strong>；开发工具链与已安装包支持范围应分别理解。</p>
+<p><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer"><code>docs/installation.md</code></a> 记录：2026-10-11 核查的 npm 最新版为 <strong>6.4.0</strong>，对应发布提交 <code>a56f7bb668ab23fec8d33f7af353ac7ed2fe1895</code>。本次分析提交更晚，所以同样的版本字符串不能证明开发源码与 npm 发布包具有完全相同的功能与字节。本 Wiki 按固定源码说明能力；使用 npm 时以服务器实际公布的工具与输入 schema 为准。</p>
+<p>核查发布版本：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>npm view rea-agents dist-tags.latest</code></pre></div>
+<h3>A. 一次性 CLI 使用</h3>
+<p>不要求全局安装，适合先尝试静态 JavaScript/Electron 分析：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>npx -y rea-agents@latest analyze-javascript-application /absolute/path/to/app --json</code></pre></div>
+<p><code>app</code> 可以是提取后的应用目录或 <code>.asar</code> 文件。这类静态分析不需要 Hopper/Ghidra/IDA。</p>
+<h3>B. 全局 CLI 使用</h3>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>npm install --global rea-agents
+rea --help
+rea providers --json</code></pre></div>
+<p><code>npm install rea-agents</code> 不带 <code>--global</code> 只安装到当前项目的 <code>node_modules/.bin</code>，不会自动让 shell 全局识别 <code>rea</code>。</p>
+<h3>C. 给 AI 客户端配置 REA</h3>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>npx rea-agents@latest setup</code></pre></div>
+<p>向导选择客户端、显示准确的改动路径、备份现有配置、经操作者确认后写入 MCP 配置和匹配的工作流 skill。完成后重启相应 AI 客户端。npm 下载包的许可不等于 REA 向导内的配置修改或 Hopper 安装许可。</p>
+<p>Bun 对应入口为 <code>bunx rea-agents@latest setup</code>。项目 CI 验证 Node.js；Bun 的兼容性与内存控制有独立边界，不能把 Bun 视为 Node 的同等实测基线。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer"><code>package.json</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.nvmrc" target="_blank" rel="noopener noreferrer"><code>.nvmrc</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer"><code>README.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md#L5" target="_blank" rel="noopener noreferrer"><code>docs/installation.md:5–110</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs" target="_blank" rel="noopener noreferrer">rea.mjs</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer">package.json</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.nvmrc" target="_blank" rel="noopener noreferrer">.nvmrc</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer">README.md</a></span></div></section>
+<section id="operations-3" aria-labelledby="title-operations-3"><span class="section-no">05 / 安装与配置</span><h2 id="title-operations-3">MCP 配置与客户端</h2><h3>先查看再应用指定客户端的计划</h3>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea setup --client codex --dry-run --json
+rea setup --client codex --yes --json
+rea doctor --client codex --json</code></pre></div>
+<p>多客户端可以重复指定 <code>--client</code>：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea setup --client codex --client cursor --skill=false --dry-run</code></pre></div>
+<p><code>--dry-run</code> 只返回计划，退出码为 0。<code>--skill=false</code> 不安装配套 skill。<code>--all-detected</code> 表示明确选择所有已检测客户端；单独 <code>--yes</code> 并不自动授权配置所有检测到的客户端。自动安装缺少的 Hopper 另需 <code>--install-hopper</code>，例如：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea setup --yes --all-detected --install-hopper --json</code></pre></div>
+<p>可由向导配置的 17 个客户端 ID：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>客户端</th>
+<th><code>--client</code> ID</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Claude Code</td>
+<td><code>claude_code</code></td>
+</tr>
+<tr>
+<td>Claude Desktop</td>
+<td><code>claude_desktop</code></td>
+</tr>
+<tr>
+<td>Codex</td>
+<td><code>codex</code></td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td><code>cursor</code></td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>gemini_cli</code></td>
+</tr>
+<tr>
+<td>Windsurf</td>
+<td><code>windsurf</code></td>
+</tr>
+<tr>
+<td>Devin</td>
+<td><code>devin</code></td>
+</tr>
+<tr>
+<td>OpenCode</td>
+<td><code>opencode</code></td>
+</tr>
+<tr>
+<td>Antigravity</td>
+<td><code>antigravity</code></td>
+</tr>
+<tr>
+<td>GitHub Copilot CLI</td>
+<td><code>copilot_cli</code></td>
+</tr>
+<tr>
+<td>Command Code</td>
+<td><code>commandcode</code></td>
+</tr>
+<tr>
+<td>Qwen Code</td>
+<td><code>qwen_code</code></td>
+</tr>
+<tr>
+<td>VS Code</td>
+<td><code>vscode</code></td>
+</tr>
+<tr>
+<td>Grok Build</td>
+<td><code>grok_build</code></td>
+</tr>
+<tr>
+<td>OMP</td>
+<td><code>omp</code></td>
+</tr>
+<tr>
+<td>Pi</td>
+<td><code>pi</code></td>
+</tr>
+<tr>
+<td>Hermes</td>
+<td><code>hermes</code></td>
+</tr>
+</tbody></table>
+</div><p>Grok Bot 的云端 connector、DeepSeek Harness 的 Cordis YAML 配置不是上述普通本机配置格式，需要官方文档中的独立手动流程。不要认为任意 MCP 客户端都必然接受相同 JSON 外形。</p>
+<h3>通用 JSON 客户端的手动示例</h3>
+<div class="codebox"><div class="code-head"><span>json</span></div><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;rea&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;rea-agents@6.4.0&quot;, &quot;mcp&quot;]
+    }
+  }
+}</code></pre></div>
+<p>长久保存的注册应固定精确版本。Windows 的包运行器注册由 setup 包装为 <code>cmd.exe /d /c</code>；Codex 与 Grok Build 使用 TOML，setup 同时配置 <code>startup_timeout_sec = 30</code>，因此优先使用向导，避免直接粘贴 JSON 到所有客户端。</p>
+<p>针对本次固定源码的通用客户端，可使用绝对的 Node 路径与入口路径：</p>
+<div class="codebox"><div class="code-head"><span>json</span></div><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;rea&quot;: {
+      &quot;command&quot;: &quot;/absolute/path/to/node&quot;,
+      &quot;args&quot;: [&quot;/absolute/path/to/rea/scripts/rea.mjs&quot;, &quot;mcp&quot;]
+    }
+  }
+}</code></pre></div>
+<p>REA 在官方 MCP Registry 中的名字是 <code>io.github.morluto/rea</code>；Registry 使用的仍是 <code>rea-agents</code> npm 包。</p>
+<h3>Skill 与服务的关系</h3>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>npx skills add morluto/rea --skill reverse-engineer-anything</code></pre></div>
+<p>这只安装 AI 工作流指引与参考资料，不注册 REA MCP 服务，不安装逆向引擎。<code>setup</code> 默认同时安装与运行包匹配的 skill。单独从仓库获得的 skill 可能比 npm 服务更新，因此实际服务器 schema 才是参数与功能的依据。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md#L111" target="_blank" rel="noopener noreferrer"><code>docs/installation.md:111–441,894–926</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/setupCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/setupCommands.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/setupCommands.ts" target="_blank" rel="noopener noreferrer">setupCommands.ts</a></span></div></section>
+<section id="operations-4" aria-labelledby="title-operations-4"><span class="section-no">06 / 安装与配置</span><h2 id="title-operations-4">原生分析引擎配置</h2><p>REA 是编排和证据层，深度原生分析需要外部 provider。静态 JS/.NET 分析不需要原生 provider。</p>
+<h3>Ghidra</h3>
+<p>支持已有的 <strong>Ghidra 12.1.x</strong>，文档实测基线是 <strong>12.1.4 + 64 位完整 JDK 21</strong>。Ghidra 安装自身的 <code>application.java.min/max</code> 决定 JDK 范围；当前 12.1 要求 JDK 21+。完整 JDK 必须具有 <code>javac</code>，并具有对应主机架构的原生 decompiler。</p>
+<p>Linux/macOS：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>export GHIDRA_INSTALL_DIR=/absolute/path/to/ghidra_12.1.4_PUBLIC
+export JAVA_HOME=/absolute/path/to/jdk-21
+rea doctor --provider ghidra --json
+rea analyze /absolute/path/to/program --provider ghidra --json</code></pre></div>
+<p>Windows PowerShell：</p>
+<div class="codebox"><div class="code-head"><span>powershell</span></div><pre><code>$env:GHIDRA_INSTALL_DIR = &quot;C:\tools\ghidra_12.1.4_PUBLIC&quot;
+$env:JAVA_HOME = &quot;C:\Program Files\Java\jdk-21&quot;
+rea doctor --provider ghidra --json
+rea providers --json</code></pre></div>
+<p>主机支持 Linux x64/arm64、macOS x64/arm64；Windows x64 是实验性 P0，限定固定本地 NTFS 上的 x86/x64 PE 应用与 DLL，仍为只读。Linux ARM64 的官方归档可能不含 <code>linux_arm_64</code> decompiler，需要操作者另行构建。REA 不安装 Ghidra/Java，不修改 Gatekeeper quarantine。</p>
+<p>会话使用临时 Ghidra 项目与隔离的 home/cache/config/temp，不打开用户已有项目。<code>open_binary</code> 绑定并验证目标，实际 import/auto-analysis 在首个需要引擎的查询上延迟启动。默认启动超时 <strong>330000 ms</strong>，大型文件可设置：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>export REA_GHIDRA_STARTUP_TIMEOUT_MS=900000</code></pre></div>
+<p>该值必须为 1–2147483647 的十进制整数；它与客户端单次 MCP 工具调用超时、MCP 进程启动超时是三个不同的期限。</p>
+<h3>Hopper</h3>
+<p>Hopper 是独立的商业软件，可使用厂商 demo 或已有许可。macOS 12+ 与官方列出的 Linux 基线（Ubuntu 24.04+、Fedora 41+、Nobara 44+、64 位 Arch/CachyOS/Omarchy）有向导支持。Windows 不支持 Hopper 安装。</p>
+<p>macOS 经确认的向导安装到 <code>~/Applications/Hopper Disassembler.app</code>，不使用 Homebrew 或管理员权限；Linux 经确认会安装相应包及 Xvfb/Python/X11/XTEST 依赖。REA 原生启动需要时才启动 Hopper。</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>export HOPPER_LAUNCHER_PATH=/absolute/path/to/Hopper
+rea doctor --provider hopper --json
+rea analyze /absolute/path/to/program --provider hopper --json</code></pre></div>
+<p>默认 macOS 启动路径为 <code>/Applications/Hopper Disassembler.app/Contents/MacOS/hopper</code>。Linux 优先 <code>/opt/hopper/bin/Hopper</code>，其次 <code>~/.local/share/rea/hopper/bin/Hopper</code>。默认启动 deadline <strong>120000 ms</strong>，通过 <code>REA_HOPPER_STARTUP_TIMEOUT_MS</code> 扩大，整数范围与 Ghidra 相同。</p>
+<p>首次 macOS 启动可能需要选择 demo/激活已有许可；Automation/Apple Events 拒绝时到系统“隐私与安全 → 自动化”授予启动 REA 的应用相应许可。Linux 使用私有 Xvfb 显示，合作 REA 进程每个用户只能保留一个 Linux Hopper 应用所有权；冲突时需关闭所属 REA 会话后再切换。GUI 焦点切换并不改变已绑定目标。</p>
+<h3>IDA</h3>
+<p>REA 连接操作者已有的 <code>mrexodia/ida-pro-mcp</code>，不安装/激活/授权 IDA、Hex-Rays 或 Python。支持“已打开 GUI 的 legacy 1.4.0 工具”与“headless database supervisor API”两种 profile，功能边界不同。</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>export REA_IDA_MCP_CONFIG=/absolute/path/to/ida-mcp.json
+export REA_ANALYSIS_PROVIDER=ida
+rea function /absolute/path/to/original-program main --json
+rea decompile /absolute/path/to/original-program main --json</code></pre></div>
+<p>REA 的目标是原始输入二进制，不是 <code>.idb/.i64</code>。已附着 GUI 模式按输入 SHA-256 与 image base 验证身份；关闭 REA 连接不会保存或关闭既有 GUI 数据库。headless REA 与 supervisor 应共享主机文件系统与本机路径语法。</p>
+<p>IDA adapter 不包含 binary_overview、whole-symbol inventory、修改、调试与任意 Python 执行，不应把 Hopper/Ghidra 的全部操作套用到 IDA。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md#L470" target="_blank" rel="noopener noreferrer"><code>docs/installation.md:470–874</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ida-provider.md" target="_blank" rel="noopener noreferrer"><code>docs/ida-provider.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/environment.ts" target="_blank" rel="noopener noreferrer"><code>src/config/environment.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ida-provider.md" target="_blank" rel="noopener noreferrer">ida-provider.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/environment.ts" target="_blank" rel="noopener noreferrer">environment.ts</a></span></div></section>
+<section id="operations-5" aria-labelledby="title-operations-5"><span class="section-no">07 / 安装与配置</span><h2 id="title-operations-5">选择 provider 与就绪检查</h2><div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea providers --json
+rea capabilities --json
+rea doctor --provider ghidra --json
+rea doctor --client codex --json
+rea doctor --skill --json</code></pre></div>
+<p><code>doctor</code> 严格只读。无 scope 时检查所有检测到的配置和可选引擎，所以全局 <code>healthy: false</code> 不代表静态 JS 任务不可用。显式 scope 的 <code>scope_checks</code> 决定 health 与退出状态，其他检查只在 <code>informational_checks</code>；<code>--target</code> 单独添加目标检查并不会自动把整份检查限定到该任务。</p>
+<p>自动 provider 选择只在恰好一个可用引擎支持目标时成立。多个可用引擎时明确指定 <code>--provider</code>。环境默认值：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>export REA_ANALYSIS_PROVIDER=ghidra</code></pre></div>
+<p>CLI 显式参数优先于环境。MCP 为：</p>
+<div class="codebox"><div class="code-head"><span>json</span></div><pre><code>{&quot;path&quot;:&quot;/absolute/path/to/program&quot;,&quot;provider_id&quot;:&quot;ghidra&quot;}</code></pre></div>
+<p><code>capability_unavailable.details.selection_reason</code> 为 <code>ambiguous</code> 时，从 <code>candidate_ids</code> 选择；为 <code>provider_unavailable</code> 时修复选中的引擎。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md#L65" target="_blank" rel="noopener noreferrer"><code>docs/cli.md:65–108</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md#L442" target="_blank" rel="noopener noreferrer"><code>docs/installation.md:442–469</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer">cli.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a></span></div></section>
+<section id="operations-8" aria-labelledby="title-operations-8"><span class="section-no">08 / 安装与配置</span><h2 id="title-operations-8">常用环境变量速查</h2><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>设置</th>
+<th>用途 / 限制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>REA_ANALYSIS_PROVIDER</code></td>
+<td>默认 native provider，默认 <code>auto</code>；CLI 显式 provider 优先</td>
+</tr>
+<tr>
+<td><code>GHIDRA_INSTALL_DIR</code></td>
+<td>已有 Ghidra 的绝对目录</td>
+</tr>
+<tr>
+<td><code>JAVA_HOME</code></td>
+<td>已有完整 JDK 的绝对目录</td>
+</tr>
+<tr>
+<td><code>HOPPER_LAUNCHER_PATH</code></td>
+<td>Hopper launcher 覆盖</td>
+</tr>
+<tr>
+<td><code>REA_GHIDRA_STARTUP_TIMEOUT_MS</code></td>
+<td>Ghidra startup，默认 330000 ms</td>
+</tr>
+<tr>
+<td><code>REA_HOPPER_STARTUP_TIMEOUT_MS</code></td>
+<td>Hopper startup，默认 120000 ms</td>
+</tr>
+<tr>
+<td><code>REA_IDA_MCP_CONFIG</code></td>
+<td>已有 IDA MCP registration 的绝对 JSON 文件路径</td>
+</tr>
+<tr>
+<td><code>REA_GHIDRA_LANGUAGE_ID</code></td>
+<td>明确 Ghidra import processor/language</td>
+</tr>
+<tr>
+<td><code>REA_GHIDRA_COMPILER_SPEC_ID</code></td>
+<td>必须与 language ID 一同配置</td>
+</tr>
+<tr>
+<td><code>REA_GHIDRA_SEED_FILE</code></td>
+<td>已有绝对 seed file 路径</td>
+</tr>
+<tr>
+<td><code>REA_GHIDRA_NATIVEAOT_JAR</code></td>
+<td>调用者自行提供的 NativeAOT Ghidra 扩展</td>
+</tr>
+<tr>
+<td><code>REA_JADX_MCP_JAR</code></td>
+<td>Android headless JADX JAR 绝对路径</td>
+</tr>
+<tr>
+<td><code>REA_ADB_PATH</code></td>
+<td>可选 adb 绝对路径，否则 PATH</td>
+</tr>
+<tr>
+<td><code>REA_BINWALK_COMMAND</code> / <code>REA_UNBLOB_COMMAND</code></td>
+<td>固件引擎绝对路径</td>
+</tr>
+<tr>
+<td><code>REA_ILSPY_CMD_PATH</code></td>
+<td>可选 ilspycmd 的绝对路径；canonical managed inspection 不依赖它</td>
+</tr>
+<tr>
+<td><code>REA_MCP_INPUT_SCHEMA_PROFILE</code></td>
+<td><code>full</code> 默认，或 <code>compact</code>；针对 client schema 容量问题，REA 仍验证 canonical inputs</td>
+</tr>
+<tr>
+<td><code>REA_MCP_MAX_RESPONSE_BYTES</code></td>
+<td>配合 client receiver 的 MCP response 上限，至少 10485760</td>
+</tr>
+<tr>
+<td><code>REA_REFERENCE_SECRET_PATTERNS_JSON</code></td>
+<td>历史源码 import 排除的敏感文件 glob JSON 数组，默认 <code>[]</code></td>
+</tr>
+<tr>
+<td><code>REA_LOG_LEVEL</code></td>
+<td><code>trace/debug/info/warn/error/fatal/silent</code>，默认 <code>info</code></td>
+</tr>
+</tbody></table>
+</div><p>上述不是所有可选 provider 的完整配置；使用特定工具时仍应阅读对应 guide，不能把测试 fixture 环境变量当作生产必需配置。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/environment.ts" target="_blank" rel="noopener noreferrer"><code>src/config/environment.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/parseConfig.ts" target="_blank" rel="noopener noreferrer"><code>src/config/parseConfig.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/providerStartupTimeout.ts" target="_blank" rel="noopener noreferrer"><code>src/config/providerStartupTimeout.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/mcpResponseBudget.ts" target="_blank" rel="noopener noreferrer"><code>src/config/mcpResponseBudget.ts</code></a>、对应 provider 文档。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/environment.ts" target="_blank" rel="noopener noreferrer">environment.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/parseConfig.ts" target="_blank" rel="noopener noreferrer">parseConfig.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/providerStartupTimeout.ts" target="_blank" rel="noopener noreferrer">providerStartupTimeout.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/config/mcpResponseBudget.ts" target="_blank" rel="noopener noreferrer">mcpResponseBudget.ts</a></span></div></section>
+<section id="operations-9" aria-labelledby="title-operations-9"><span class="section-no">09 / 安装与配置</span><h2 id="title-operations-9">更新、卸载与常见问题</h2><h3>更新</h3>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea update</code></pre></div>
+<p>更新拥有当前 CLI 的 npm/Bun 全局安装，并核验新版本；不会自动重新跑 onboarding 或修改客户端注册。按输出中的 scoped setup 命令查看并应用注册/skill 更新，最后重启客户端。Bun global 更新要求 Bun 1.2.17+；旧版本需操作者先更新 Bun。源码 checkout 与 npx 临时副本不能由全局 updater 更新，源码使用 Git 流程，npx 使用 <code>npx rea-agents@latest setup</code>。</p>
+<h3>移除</h3>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea uninstall
+rea uninstall --purge-data</code></pre></div>
+<p>该操作删除 REA 管理的客户端注册与 skill。<code>--purge-data</code> 另清理 <code>~/.rea</code> 的 cache/state。保留 Hopper、Node.js、Evidence/captures、其他 skill 与 MCP 服务器。<strong>不是移除 npm 全局包的同义操作</strong>；希望同时删除已安装 CLI 时，配置卸载后另运行 <code>npm uninstall --global rea-agents</code>。后者依据 npm 的通用包管理操作，而非项目自定义 uninstall 命令。</p>
+<h3>排错表</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>现象</th>
+<th>检查与处理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>shell 找不到 <code>rea</code></td>
+<td>确认是否仅局部安装；改用 <code>npx -y rea-agents@latest ...</code> 或全局安装，并检查 PATH</td>
+</tr>
+<tr>
+<td>源码提示 compiled runtime missing</td>
+<td><code>npm ci</code> 后 <code>npm run build:cached</code>；安装包则重新安装</td>
+</tr>
+<tr>
+<td>配置写了但 AI 看不到工具</td>
+<td>scope doctor 只核查磁盘/前提，不验证 live connection；重启或重连客户端</td>
+</tr>
+<tr>
+<td>doctor 全局不健康，但想做 JS</td>
+<td>直接跑静态 JS；缺可选 native provider 不阻塞无关工作流</td>
+</tr>
+<tr>
+<td>多 provider 报 ambiguous</td>
+<td>从 <code>candidate_ids</code> 中显式指定 provider</td>
+</tr>
+<tr>
+<td>Ghidra 显示 javac 缺少/不兼容</td>
+<td>配置完整 64 位 JDK 与该安装支持的版本、native decompiler 架构</td>
+</tr>
+<tr>
+<td>Ghidra 大目标首次查询超时</td>
+<td>同时核查 provider startup、client MCP init 与单次 request deadline；timeout 不必然停止后台分析</td>
+</tr>
+<tr>
+<td>Hopper Linux 找不到共享库</td>
+<td>对准确 launcher 运行 <code>ldd</code> 检查缺库，按 scoped doctor 修复 Xvfb/Python/X11/XTEST 前提</td>
+</tr>
+<tr>
+<td>Hopper 所有权冲突</td>
+<td>在拥有目标的连接中关闭/切换；不要杀无关 Hopper 进程</td>
+</tr>
+<tr>
+<td><code>cleanup_incomplete</code></td>
+<td>阅读报告中资源与路径，在原连接重试 <code>close_binary</code>；未确认清理前不可宣称 provider 已停止</td>
+</tr>
+<tr>
+<td>Evidence 超出 MCP frame</td>
+<td>使用 summary/page/item 或 export；保留完整 local evidence</td>
+</tr>
+<tr>
+<td>现有 client 文件 malformed</td>
+<td>修复报告指出的格式/路径/环境值后再 setup；setup 不会无声丢弃其他设置</td>
+</tr>
+<tr>
+<td>网站 target 为空/placeholder URL</td>
+<td>确认浏览器真的完成导航，选择已提交且允许的 HTTP(S) 目标</td>
+</tr>
+<tr>
+<td>历史源码 import 在 native Windows 报 unsupported_host</td>
+<td>该安全 no-follow 边界仅 Linux/macOS；改用 WSL 内的 Linux REA</td>
+</tr>
+</tbody></table>
+</div><p>退出码：0 表示操作完成（仍可能有 partial/unknown/warning）；1 表示未完成，包括 invalid input、permissions、cancel、timeout。<code>setup --dry-run</code> 为 <code>planned</code> 且退出 0，操作者取消 setup 也是 0，<code>needs_confirmation/needs_human</code> 为 1。管道建议启用 <code>set -o pipefail</code>，避免 jq 的成功掩盖上游失败。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md#L875" target="_blank" rel="noopener noreferrer"><code>docs/installation.md:875–893</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md#L203" target="_blank" rel="noopener noreferrer"><code>docs/cli.md:203–229</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs" target="_blank" rel="noopener noreferrer"><code>scripts/rea.mjs</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer">cli.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs" target="_blank" rel="noopener noreferrer">rea.mjs</a></span></div></section>
+<section id="installed-1" aria-labelledby="title-installed-1"><span class="section-no">10 / 本机安装与 Sifu</span><h2 id="title-installed-1">本机安装结果与实际过程</h2><p><strong>2026-10-12 已在 WSL 的 <code>Ubuntu-20.04</code> 中安装 REA 和 Ghidra。</strong> 软件位于 Linux 用户目录，游戏仍从 Windows 磁盘读取。Windows 提供一个命令入口，将请求转发给这套 WSL 工具。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>已安装版本</th>
+<th>安装位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Node.js</td>
+<td>24.21.0，Linux x64</td>
+<td><code>/home/jeremiah/.local/share/rea/node</code></td>
+</tr>
+<tr>
+<td>npm</td>
+<td>11.19.0，随上述 Node 提供</td>
+<td><code>node/bin/npm</code></td>
+</tr>
+<tr>
+<td>REA</td>
+<td>npm 发布版 <code>rea-agents@6.4.0</code></td>
+<td><code>/home/jeremiah/.local/share/rea/npm/lib/node_modules/rea-agents</code></td>
+</tr>
+<tr>
+<td>完整 JDK</td>
+<td>Eclipse Temurin 21.0.12.1+1，64 位</td>
+<td><code>/home/jeremiah/.local/share/rea/jdk</code></td>
+</tr>
+<tr>
+<td>Ghidra</td>
+<td>12.1.4 PUBLIC</td>
+<td><code>/home/jeremiah/.local/share/rea/ghidra</code></td>
+</tr>
+<tr>
+<td>常用命令入口</td>
+<td><code>rea</code>、<code>rea-agents</code></td>
+<td><code>/home/jeremiah/.local/bin/</code></td>
+</tr>
+<tr>
+<td>Windows 调用入口</td>
+<td><code>rea-wsl.cmd</code></td>
+<td><code>D:\projects\rea\installation\rea-wsl.cmd</code></td>
+</tr>
+</tbody></table>
+</div><h3>实际执行的步骤</h3>
+<ol>
+<li><strong>检查环境与目标。</strong> 确认 WSL 是 Ubuntu 20.04 x86_64，原环境没有可用的 Linux Node，Java 只有 JRE 8、缺少 <code>javac</code>；检查 npm Registry，当前发布版是 REA 6.4.0。确认 Sifu 安装目录存在。</li>
+<li><strong>下载并校验运行时与引擎。</strong> 从 Node.js 官方站、Adoptium 和 NSA Ghidra 官方发布页下载 Node 24、完整 JDK 21、Ghidra 12.1.4。校验三个归档的 SHA-256 后才解压。下载较慢时使用服务器支持的并行 HTTP 字节范围，最终仍对完整文件校验。</li>
+<li><strong>安装 REA 发布包。</strong> 使用新的 Linux Node/npm，安装到独立的用户级 npm 全局前缀。npm 实际报告新增 144 个包，耗时约 25 秒。</li>
+<li><strong>创建启动入口。</strong> <code>configure-rea.py</code> 创建 <code>rea</code> 和 <code>rea-agents</code> 脚本，设置本机 Node、JDK、Ghidra 位置，默认选择 Ghidra。现有 shell 配置已加载 <code>~/.local/bin</code>，无需修改配置文件。</li>
+<li><strong>执行专项诊断。</strong> <code>rea --version</code>、CLI 帮助和 Ghidra 专项 doctor 均验证；原生反编译器动态库依赖可以正确加载。</li>
+<li><strong>验证实际工作流。</strong> 启动 stdio MCP，获取 170 个工具并成功查询 <code>binary_session</code>。生成项目自有的 1,536 字节 Windows x64 PE，对函数 <code>0x140001010</code> 做真实 Ghidra 反编译，得到预期的 <code>return 0x2a;</code>，即 42。该 EXE 没有被执行。</li>
+</ol>
+<p>REA 安装命令如下；<code>PATH</code> 设置只用于该终端及其子进程。</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>cd /mnt/d/projects/rea
+export PATH=&quot;/home/jeremiah/.local/share/rea/node/bin:$PATH&quot;
+npm install --global \
+  --prefix /home/jeremiah/.local/share/rea/npm \
+  --registry=https://registry.npmjs.org \
+  rea-agents@6.4.0 --no-audit --no-fund
+python3 installation/configure-rea.py</code></pre></div>
+<p>前置工具的下载、校验、解压步骤保存在 <code>installation/install-tools.py</code>；实际下载 URL、版本和 SHA-256 在 <code>installation/toolchain-manifest.json</code> 中。该脚本复用校验成功的缓存，遇到已有工具别名指向另一安装时会停止，不覆盖它。</p>
+<h3>已完成的验证与实际限制</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>验证</th>
+<th>结果</th>
+<th>本地记录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CLI 版本和帮助</td>
+<td>6.4.0，可正常读取帮助</td>
+<td><code>installation/rea-help.txt</code></td>
+</tr>
+<tr>
+<td>Ghidra 专项 doctor</td>
+<td><code>healthy: true</code>，9 项检查通过</td>
+<td><code>installation/doctor-ghidra.json</code></td>
+</tr>
+<tr>
+<td>MCP stdio</td>
+<td>170 个工具，session 状态调用成功</td>
+<td><code>installation/mcp-check.json</code></td>
+</tr>
+<tr>
+<td>真实 PE 反编译</td>
+<td>Ghidra 12.1.4，返回值 42 与样本一致</td>
+<td><code>installation/fixture-decompile.json</code>、<code>installation/native-check.json</code></td>
+</tr>
+<tr>
+<td>Windows → WSL 命令入口</td>
+<td><code>--version</code> 返回 6.4.0</td>
+<td><code>installation/windows-wrapper-check.json</code></td>
+</tr>
+</tbody></table>
+</div><p><strong>专项就绪与整体环境状态不同。</strong> 当前 <code>doctor --provider ghidra --json</code> 同时返回 <code>environment_healthy: false</code>：Ubuntu 20.04 不在 REA 推荐的整体宿主范围内，并且 Hopper、IDA、客户端注册和 Skill 尚未配置。本次已实际验证 Ghidra 在该主机读取和反编译微型 PE；不能据此承诺所有 Provider 或整个游戏的分析均通过。没有升级系统发行版。</p>
+<p>本次测试的是 REA 发布包，不是 <code>source</code> 目录的开发构建。MCP 服务本身已验证，Windows 客户端可用的配置示例保存在 <code>installation/rea-mcp-windows.json</code>，尚未写入 Codex 或其他客户端配置。后续可以直接通过终端调用这套工具。</p>
+<p>下载依据：<a href="https://nodejs.org/dist/v24.21.0/SHASUMS256.txt">Node.js 24.21.0 校验清单</a>、<a href="https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.12.1%2B1">Temurin JDK 21 发布</a>、<a href="https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build">Ghidra 12.1.4 官方发布</a>。REA 安装和引擎语义依据：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer"><code>docs/installation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-provider.md" target="_blank" rel="noopener noreferrer"><code>docs/ghidra-provider.md</code></a>。测试样本依据：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/create-ghidra-windows-fixture.mjs" target="_blank" rel="noopener noreferrer"><code>scripts/create-ghidra-windows-fixture.mjs</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-provider.md" target="_blank" rel="noopener noreferrer">ghidra-provider.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/create-ghidra-windows-fixture.mjs" target="_blank" rel="noopener noreferrer">create-ghidra-windows-fixture.mjs</a></span></div></section>
+<section id="installed-2" aria-labelledby="title-installed-2"><span class="section-no">11 / 本机安装与 Sifu</span><h2 id="title-installed-2">Sifu 分析环境与后续使用</h2><h3>为什么选择 WSL</h3>
+<p>REA 的 Ghidra Provider 在 Linux x64 可以静态读取 Windows PE，并以独立的临时分析数据库提供伪代码、汇编、函数和引用。本机这一链路已通过真实样本验证。WSL 也便于沿用现有 Python 扫描结果。游戏继续在 Windows 运行；涉及实时调试、Windows GUI 或游戏进程内存时，需要相应的 Windows 端工具。</p>
+<p>本机游戏目录为：</p>
+<div class="codebox"><div class="code-head"><span>text</span></div><pre><code>Windows: D:\SteamLibrary\steamapps\common\Sifu
+WSL:     /mnt/d/SteamLibrary/steamapps/common/Sifu
+主程序:  Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe
+符号:    Sifu/Binaries/Win64/Sifu-Win64-Shipping.pdb</code></pre></div>
+<p>此前的 <code>D:\projects\rea\sifu_ana\README.md</code> 和 <code>summary.json</code> 记录：该安装是 x64 UE4.26 Shipping 构建，主 EXE 约 96 MiB，PDB 约 896 MiB，EXE/PDB 的 GUID 与 age 匹配。这些属于此前盘点结果，本次安装没有重新分析整个主程序。</p>
+<p>后续研究可以先读取 PDB 的函数名与地址，再按明确问题定位战斗、招架、闪避或 AI 调度函数。<strong>REA 导入 EXE 时使用私有副本，不能假定自动加载游戏目录中的 PDB。</strong> 符号导入或地址种子需要单独验证。主 Pak 已记录索引加密；安装 REA/Ghidra 并不自动提供明文资产、蓝图或完整源码。</p>
+<h3>常用命令</h3>
+<p>在新开的 WSL 终端中：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea --version
+rea doctor --provider ghidra --json
+rea providers --json
+
+# 重现安装时的微型 PE 测试
+REA_GHIDRA_STARTUP_TIMEOUT_MS=120000 GHIDRA_HEADLESS_MAXMEM=512M \
+  rea decompile \
+  /mnt/d/projects/rea/installation/build/fixtures/rea-ghidra-windows.exe \
+  0x140001010 --provider ghidra --json</code></pre></div>
+<p>在 Windows PowerShell 中：</p>
+<div class="codebox"><div class="code-head"><span>powershell</span></div><pre><code>cd D:\projects\rea
+.\installation\rea-wsl.cmd --version
+.\installation\rea-wsl.cmd doctor --provider ghidra --json</code></pre></div>
+<p>从 Windows 入口传给 REA 的目标路径仍使用 WSL 格式，例如 <code>/mnt/d/SteamLibrary/steamapps/common/Sifu/...</code>。</p>
+<p>默认启动脚本配置 <code>GHIDRA_HEADLESS_MAXMEM=4G</code>、<code>REA_GHIDRA_STARTUP_TIMEOUT_MS=900000</code>，也就是 4 GiB Java 堆、15 分钟首次导入期限。可以在启动命令前覆盖这两个标准变量；Java 堆不是整个进程的总内存上限，较大目标也可能需要更多内存或时间。本次微型测试使用 512 MiB 和 120 秒，不能将其耗时外推到 Sifu 主程序及 PDB。</p>
+<p>源码和官方行为依据：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer"><code>docs/installation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-provider.md" target="_blank" rel="noopener noreferrer"><code>docs/ghidra-provider.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraClient.ts" target="_blank" rel="noopener noreferrer"><code>src/ghidra/GhidraClient.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraLauncher.ts" target="_blank" rel="noopener noreferrer"><code>src/ghidra/GhidraLauncher.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-provider.md" target="_blank" rel="noopener noreferrer">ghidra-provider.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraClient.ts" target="_blank" rel="noopener noreferrer">GhidraClient.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraLauncher.ts" target="_blank" rel="noopener noreferrer">GhidraLauncher.ts</a></span></div></section>
+<section id="workflows-3" aria-labelledby="title-workflows-3"><span class="section-no">12 / 分析工作流</span><h2 id="title-workflows-3">从未知文件开始：先识别，再选路线</h2><div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea inspect-artifact /absolute/path/to/target --json &gt; artifact.json
+rea providers --json
+rea capabilities --json</code></pre></div>
+<p>先读 <code>artifact.json</code> 的类型、内容图、完整性矛盾与下一步 probes，再选择深度分析。<code>inspect-artifact</code> 不解包；需要实际文件时运行：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea extract-artifact /absolute/path/to/package --json &gt; extracted.json</code></pre></div>
+<p><code>extract-artifact</code> 安全提取所有 regular child files，在结果中给出新临时目录位置。拒绝目录穿越和符号链接逃逸，不覆盖已有内容。默认 ASAR 声明完整性不符就失败。显式 <code>--integrity-policy record-and-continue</code> 才会保留观察到的矛盾字节，并标记 <code>observed-untrusted</code> 和部分覆盖。</p>
+<p>MCP 的制品工具绑定当前 target：先调用 <code>open_binary</code>，再 <code>inspect_artifact {}</code>、<code>extract_artifact {}</code>；CLI 通过路径完成同一链路。不要把文档内部的 <code>inventory_artifact</code> 或 verifier 内部方法误写成未注册的用户 CLI。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-artifact-reconstruction.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-artifact-reconstruction.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/apple-application-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/apple-application-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/artifactCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/artifactCommands.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/artifactToolContracts.ts" target="_blank" rel="noopener noreferrer"><code>src/contracts/artifactToolContracts.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-artifact-reconstruction.md" target="_blank" rel="noopener noreferrer">javascript-artifact-reconstruction.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/apple-application-analysis.md" target="_blank" rel="noopener noreferrer">apple-application-analysis.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/artifactCommands.ts" target="_blank" rel="noopener noreferrer">artifactCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/artifactToolContracts.ts" target="_blank" rel="noopener noreferrer">artifactToolContracts.ts</a></span></div></section>
+<section id="workflows-4" aria-labelledby="title-workflows-4"><span class="section-no">13 / 分析工作流</span><h2 id="title-workflows-4">原生程序：从字符串找到功能</h2><p>引擎安装配置完成后，先明确 provider，保存概览：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea analyze /absolute/path/to/program --provider ghidra --json &gt; overview.json
+rea search /absolute/path/to/program &quot;search&quot; --provider ghidra --json
+rea trace /absolute/path/to/program &quot;search&quot; --provider ghidra --json
+rea function /absolute/path/to/program main --provider ghidra --json &gt; main.json
+rea decompile /absolute/path/to/program main --provider ghidra --json
+rea instructions /absolute/path/to/program main --provider ghidra --json
+rea xrefs /absolute/path/to/program 0x1000 --provider ghidra --json</code></pre></div>
+<p><code>0x1000</code> 和 <code>main</code> 是模板，需要替换为该文件实际返回的符号或地址。<code>analyze</code>/<code>inspect</code> 提供概览；<code>function</code> 返回完整函数档案（不是仅文本）；<code>decompile</code> 返回伪代码；<code>instructions</code> 读指令。Ghidra 字符串查询只覆盖它已定义的 string Data，未定义/packed/Rust 字符串可能不在集合里，空搜索不证明字节中没有文本。</p>
+<p>参数以 <code>-</code> 开头时使用 named selector 的 equals 形式，例如：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea function ./app &#39;--procedure=-[REAWidget delegate]&#39; --provider hopper --json
+rea trace ./app --query=--help --provider hopper --json</code></pre></div>
+<p>进阶工具：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea inspect-native-instruction ./program 0x1000 --provider ghidra --json
+rea resolve-native-call-targets ./program 0x1000 --provider ghidra --json
+rea inspect-native-data-type ./program --type /MyStruct --provider ghidra --json
+rea trace-native-values ./program main --provider ghidra --json</code></pre></div>
+<p>指令/调用结果区分 direct、静态 resolved indirect、ambiguous、unresolved、non-call。值流是 Ghidra high-p-code 派生，受深度/函数/节点/边预算约束，alias、持久状态和 RNG 角色仍可能未知。<code>batch_decompile</code> 有 MCP 工具，没有专门 CLI；不要编造 <code>rea batch-decompile</code>。</p>
+<p>MCP 原生最小顺序（下方为工具名与参数模板）：</p>
+<div class="codebox"><div class="code-head"><span>json</span></div><pre><code>{&quot;name&quot;:&quot;open_binary&quot;,&quot;arguments&quot;:{&quot;path&quot;:&quot;/absolute/path/to/program&quot;,&quot;provider_id&quot;:&quot;ghidra&quot;}}
+{&quot;name&quot;:&quot;binary_session&quot;,&quot;arguments&quot;:{}}
+{&quot;name&quot;:&quot;binary_overview&quot;,&quot;arguments&quot;:{}}
+{&quot;name&quot;:&quot;analyze_function&quot;,&quot;arguments&quot;:{&quot;procedure&quot;:&quot;main&quot;}}
+{&quot;name&quot;:&quot;procedure_pseudo_code&quot;,&quot;arguments&quot;:{&quot;procedure&quot;:&quot;main&quot;}}
+{&quot;name&quot;:&quot;export_evidence_bundle&quot;,&quot;arguments&quot;:{&quot;path&quot;:&quot;/absolute/path/to/evidence.json&quot;}}
+{&quot;name&quot;:&quot;close_binary&quot;,&quot;arguments&quot;:{}}</code></pre></div>
+<p><code>binary_session.result.tool_availability</code> 是当前 target/provider/host/client 特性的真实可用性来源。完整 tools/list 不会因为尚无 target 或某引擎不可用而消失。</p>
+<p>多个可用引擎不能凭“第一个”选：显式 <code>--provider ghidra</code>、<code>--provider hopper</code>、<code>--provider ida</code>，或 <code>REA_ANALYSIS_PROVIDER</code>；CLI 参数覆盖环境偏好。引擎选择绑定会话，发生引擎故障不会自动改用另一个引擎。</p>
+<p>Ghidra 导入临时数据库：Linux/macOS 可以原子更新函数名/入口注释；Windows P0 只读。注释不修改原始 executable；CLI 返回更新后的档案即丢弃会话。IDA 接入需要已有 upstream ida-pro-mcp 注册文件并设置 <code>REA_IDA_MCP_CONFIG</code>；attached GUI profile 使用原始 binary 的 SHA-256 绑定，GUI 可以被上游反编译动作移动；headless profile 要支持 database supervisor API，不能把 legacy SSE idalib 误当相同接口。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/native-investigation.md" target="_blank" rel="noopener noreferrer"><code>docs/native-investigation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-provider.md" target="_blank" rel="noopener noreferrer"><code>docs/ghidra-provider.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ida-provider.md" target="_blank" rel="noopener noreferrer"><code>docs/ida-provider.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/coreNativeCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/coreNativeCommands.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/officialToolContracts.ts" target="_blank" rel="noopener noreferrer"><code>src/contracts/officialToolContracts.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/enhancedToolContracts.ts" target="_blank" rel="noopener noreferrer"><code>src/contracts/enhancedToolContracts.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/native-investigation.md" target="_blank" rel="noopener noreferrer">native-investigation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-provider.md" target="_blank" rel="noopener noreferrer">ghidra-provider.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ida-provider.md" target="_blank" rel="noopener noreferrer">ida-provider.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/coreNativeCommands.ts" target="_blank" rel="noopener noreferrer">coreNativeCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/officialToolContracts.ts" target="_blank" rel="noopener noreferrer">officialToolContracts.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/enhancedToolContracts.ts" target="_blank" rel="noopener noreferrer">enhancedToolContracts.ts</a></span></div></section>
+<section id="workflows-5" aria-labelledby="title-workflows-5"><span class="section-no">14 / 分析工作流</span><h2 id="title-workflows-5">JavaScript/Electron 静态分析：ASAR → 应用图 → 功能追踪 → 版本对比</h2><p>选本地 ASAR 或提取目录：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea analyze-javascript-application /absolute/path/to/app.asar --json &gt; application-evidence.json</code></pre></div>
+<p>generic <code>rea analyze PATH</code> 只在 directory/.asar 且没有 <code>--provider</code>、<code>--snapshot</code>、<code>--target-format</code> 时自动选择同一静态路线；<code>.app</code> 仍走原生路线。单个 JavaScript 文件也不走这个 directory/ASAR 自动分支。指定命令最清晰。</p>
+<p>REA 不启动应用，从 <code>.js/.jsx/.mjs/.cjs/.ts/.tsx/.mts/.cts</code> 的 inert text、package.json、本地 HTML、bundle factory、source map 恢复模块、entry、imports、require、route、endpoint、worker、storage、native <code>.node</code> 请求；同时读 BrowserWindow、preload、contextBridge 和 IPC 的可静态解析表达式。动态 channel/options 保持未知；未声明 BrowserWindow 选项不会擅自填 Electron 版本默认值。缺失 <code>.asar.unpacked</code> companion 记录 unavailable，仍可继续分析 archive 内 JavaScript。</p>
+<p>完整 Evidence 可以很大，保留文件后先看摘要：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>jq -c &#39;{source: {kind: &quot;inline&quot;, evidence: .}, view: {kind: &quot;summary&quot;}}&#39; application-evidence.json &gt; view.json
+rea inspect-analysis-view view.json --json</code></pre></div>
+<p>若未安装 jq，用 Node 编写同样 JSON。分页 view 模板：</p>
+<div class="codebox"><div class="code-head"><span>json</span></div><pre><code>{&quot;source&quot;:{&quot;kind&quot;:&quot;inline&quot;,&quot;evidence&quot;:&quot;这里替换为完整 Evidence 对象&quot;},&quot;view&quot;:{&quot;kind&quot;:&quot;page&quot;,&quot;collection&quot;:&quot;modules&quot;,&quot;offset&quot;:0,&quot;limit&quot;:32}}</code></pre></div>
+<p><code>evidence</code> 必须是完整对象，上面的中文字符串只是说明，不能作为真实输入。严禁随意删减 Evidence 字段缩小体积，因为会破坏 semantic ID 校验。MCP 可在分析请求用 <code>detail: "summary"</code>，之后以 summary 的 <code>normalized_result.parent_evidence_id</code> 读取 retained analysis，CLI 仍始终完整输出。</p>
+<p>功能追踪输入必须带上真实完整 Evidence；下面 Node 生成输入：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>node --input-type=module -e &#39;
+import { readFileSync, writeFileSync } from &quot;node:fs&quot;;
+const application = JSON.parse(readFileSync(&quot;application-evidence.json&quot;, &quot;utf8&quot;));
+writeFileSync(&quot;trace-input.json&quot;, JSON.stringify({
+  application,
+  seed: { kind: &quot;string&quot;, value: &quot;search-result&quot; },
+  direction: &quot;both&quot;
+}));&#39;
+rea trace-application-feature trace-input.json --json &gt; feature-trace.json</code></pre></div>
+<p>可选 seed kind：<code>node-id</code>、<code>route</code>、<code>string</code>、<code>api</code>、<code>channel</code>、<code>module</code>、<code>native-export</code>。<code>match</code> 是 <code>exact</code>/<code>contains</code>，不接受正则或可执行谓词；string 默认 contains，其他默认 exact。返回所有匹配 seed 的完整可达 subgraph、terminal paths、authority 摘要与 native handoff。原生 handoff 若没有匹配 exact digest 的已有 native Evidence，就建议后续分析，不会暗中启动/切换引擎。</p>
+<p>两个版本分别独立分析，然后生成比较输入：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea analyze-javascript-application /absolute/path/to/version-a --json &gt; a.json
+rea analyze-javascript-application /absolute/path/to/version-b --json &gt; b.json
+node --input-type=module -e &#39;
+import { readFileSync, writeFileSync } from &quot;node:fs&quot;;
+const read = path =&gt; JSON.parse(readFileSync(path, &quot;utf8&quot;));
+writeFileSync(&quot;compare-input.json&quot;, JSON.stringify({left: read(&quot;a.json&quot;), right: read(&quot;b.json&quot;)}));&#39;
+rea compare-application-versions compare-input.json --json &gt; version-diff.json</code></pre></div>
+<p>结果 <code>unchanged/added/removed/changed/unknown</code> 根据 exact digest、module source digest、node identity、source-map identity、structural fingerprint 等逐层唯一匹配；重复候选保留 ambiguous，不按压缩变量名/模块序号/fuzzy text 自动配对。只有另一边完整覆盖才可把单边实体认定 added/removed；部分覆盖只能 unknown。</p>
+<p>其他图工作流：<code>trace-javascript-semantics</code> 追 provenance/influence/callers/ownership；<code>compare-javascript-export-shapes</code> 比指定 module/export 的静态返回 shape；<code>import-reference-source</code> + <code>compare-source-to-bundle</code> 对照历史源树。历史源导入的安全 no-follow 主机边界是 Linux/macOS，native Windows 返回 unsupported_host，可用 WSL 的 Linux REA。导入 <code>.gitignore</code> 和默认生成/依赖排除，保留源哈希与 exclusion 原因。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-artifact-reconstruction.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-artifact-reconstruction.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-application-workflows.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-application-workflows.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-application-graph.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-application-graph.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/applicationCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/applicationCommands.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/javascript/applicationWorkflowInputContracts.ts" target="_blank" rel="noopener noreferrer"><code>src/contracts/javascript/applicationWorkflowInputContracts.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-artifact-reconstruction.md" target="_blank" rel="noopener noreferrer">javascript-artifact-reconstruction.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-application-workflows.md" target="_blank" rel="noopener noreferrer">javascript-application-workflows.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-application-graph.md" target="_blank" rel="noopener noreferrer">javascript-application-graph.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/applicationCommands.ts" target="_blank" rel="noopener noreferrer">applicationCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/javascript/applicationWorkflowInputContracts.ts" target="_blank" rel="noopener noreferrer">applicationWorkflowInputContracts.ts</a></span></div></section>
+<section id="workflows-6" aria-labelledby="title-workflows-6"><span class="section-no">15 / 分析工作流</span><h2 id="title-workflows-6">浏览器：被动捕获与主动场景</h2><h3>被动：人工操作期间观察现有页面</h3>
+<p>使用用户拥有的专用 profile 启动浏览器（具体 executable 名随主机安装变化）：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>google-chrome --remote-debugging-port=9222 --user-data-dir=/tmp/rea-browser-profile http://127.0.0.1:3000
+rea list-browser-targets http://127.0.0.1:9222 --json
+rea inspect-web-page http://127.0.0.1:9222 TARGET_ID --observation-ms 1000 --json &gt; web-capture.json
+rea observe-web-session http://127.0.0.1:9222 TARGET_ID --observation-ms 10000 --json
+rea analyze-web-bundle http://127.0.0.1:9222 TARGET_ID --json</code></pre></div>
+<p>TARGET_ID 必须来自当前 endpoint discovery；跨浏览器实例不稳定。Endpoint 只接受字面 loopback 地址、显式端口、HTTP；<code>http://localhost:9222</code>、LAN、HTTPS endpoint、附带 path/query/credentials 均不符合此合同。</p>
+<p>默认 DOM 不保存 text/attribute values；AX text、console primitive text、script source、JSON/WebSocket typed shapes、storage key/fingerprint 是独立可选项。需要静态分析网页脚本时：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea inspect-web-page http://127.0.0.1:9222 TARGET_ID --include-script-sources --json &gt; scripts-capture.json
+rea export-web-scripts /absolute/path/to/scripts-capture.json /absolute/path/to/exported-scripts --json
+rea analyze-javascript-application /absolute/path/to/exported-scripts/files --json</code></pre></div>
+<p>导出目录必须不存在。导出读 saved capture，不 fetch URL，不执行代码。URL/query variants、版本碰撞、inline source 分开命名并保留原因。后续本地 JS resolver 不等同浏览器 import-map/root-relative/remote import 解析，未捕获依赖仍未知。</p>
+<h3>主动：声明点击，等待真正的结果状态，保留可比较证据</h3>
+<p>保存 <code>browser-search.json</code>，路径、URL、selector 改为目标应用：</p>
+<div class="codebox"><div class="code-head"><span>json</span></div><pre><code>{
+  &quot;browser&quot;: {&quot;mode&quot;: &quot;launch&quot;, &quot;executable_path&quot;: &quot;/absolute/path/to/chromium&quot;},
+  &quot;start_url&quot;: {&quot;url&quot;: &quot;http://127.0.0.1:3000&quot;},
+  &quot;actions&quot;: [
+    {&quot;step_id&quot;:&quot;search&quot;,&quot;action&quot;:&quot;click&quot;,&quot;locator&quot;:{&quot;kind&quot;:&quot;css&quot;,&quot;selector&quot;:&quot;#search&quot;},&quot;timeout_ms&quot;:10000},
+    {&quot;step_id&quot;:&quot;results-ready&quot;,&quot;action&quot;:&quot;wait_for&quot;,&quot;locator&quot;:{&quot;kind&quot;:&quot;css&quot;,&quot;selector&quot;:&quot;#results[data-state=\&quot;ready\&quot;]&quot;},&quot;state&quot;:&quot;visible&quot;,&quot;timeout_ms&quot;:10000}
+  ],
+  &quot;capture&quot;: {&quot;at_end&quot;: [&quot;dom&quot;, &quot;accessibility&quot;, &quot;url&quot;]}
+}</code></pre></div>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea capture-browser-scenario browser-search.json --json &gt; browser-search-capture.json</code></pre></div>
+<p>程序不会替你启动 <code>127.0.0.1:3000</code> 的服务或安装浏览器。默认只有 final URL，点击完成不意味着 async fetch/render 完成，所以声明与目标页面一致的 ready condition。只看 URL 的 complete 结果无法证明搜索结果渲染；<code>not_requested</code> 表示未捕获而非不存在。</p>
+<p>launcher 拥有临时 profile 并清理；connect 模式只断开外部浏览器，不关闭它。场景结果按 initial state 和各 action 返回动作状态、URL、capture 状态与声明的 artifacts/events。截图/DOM/AX 用于不同问题；选 <code>after_each_step</code> 可留中间状态。浏览器普通请求按场景 URL 及页面自身机制执行，没有独立 origin allowlist/request-interception sandbox。</p>
+<p>被动 WebMCP discovery 只列 registration/schema/hash，不调用 WebMCP tool。<code>compare-web-captures</code> 两类输入不同：passive 使用 before/after 各自的 complete normalized inspection；scenario 使用 before_scenario/after_scenario。不要混写或把 Evidence envelope 填到要求 normalized_result 的位置。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/browser-observation.md" target="_blank" rel="noopener noreferrer"><code>docs/browser-observation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/browser-scenario-contract.md" target="_blank" rel="noopener noreferrer"><code>docs/browser-scenario-contract.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/website-script-export.md" target="_blank" rel="noopener noreferrer"><code>docs/website-script-export.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/browserCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/browserCommands.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cliBrowserScenarioCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cliBrowserScenarioCommands.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/webScriptCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/webScriptCommands.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/browser-observation.md" target="_blank" rel="noopener noreferrer">browser-observation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/browser-scenario-contract.md" target="_blank" rel="noopener noreferrer">browser-scenario-contract.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/website-script-export.md" target="_blank" rel="noopener noreferrer">website-script-export.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/browserCommands.ts" target="_blank" rel="noopener noreferrer">browserCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cliBrowserScenarioCommands.ts" target="_blank" rel="noopener noreferrer">cliBrowserScenarioCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/webScriptCommands.ts" target="_blank" rel="noopener noreferrer">webScriptCommands.ts</a></span></div></section>
+<section id="workflows-7" aria-labelledby="title-workflows-7"><span class="section-no">16 / 分析工作流</span><h2 id="title-workflows-7">Electron 与 Node 运行观察</h2><p>已有 Electron renderer 调试 endpoint 的被动流程：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea list-electron-targets http://127.0.0.1:9223 --json
+rea inspect-electron-page http://127.0.0.1:9223 TARGET_ID --observation-ms 100 --include-script-sources --json &gt; electron-capture.json</code></pre></div>
+<p>仅合法本地 <code>file://</code> 页面，包含实际 app.asar member；DOM 不保留值，脚本来源需显式选。之后 <code>reconcile-javascript-runtime INPUT_JSON</code> 把已存在的静态图与被动捕获对齐；它不重新解析 artifact、不再连接 CDP，仍保留 static/runtime/inference 的区分。</p>
+<p>Node：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>node --inspect=127.0.0.1:9229 ./app.mjs
+rea list-javascript-runtime-targets http://127.0.0.1:9229 --json
+rea observe-javascript-runtime http://127.0.0.1:9229 TARGET_ID --runtime-kind node --json</code></pre></div>
+<p>不要用 <code>--inspect-brk</code> 期待 REA 自动恢复：它没有 resume/runIfWaitingForDebugger。该路线不读源码、不中断执行、不记录 import caller、EventEmitter、IPC 调用；记录 script parsed/context lifecycle。角色 electron-main/preload/renderer 是 caller-declared-unverified，不自动证明多个 targets 属于同一个 app。</p>
+<p>主动 Electron 使用 <code>rea capture-electron-scenario scenario.json --json</code>。需显式 executable、entrypoint、actions；实际启动，通过 Playwright Electron API 持有生命周期。结果保留 IPC channel 和值形状，不保留 payload values。外部 shell/navigation/permission/download/popup/updater/OS integration 等 hook 能阻止并记录部分副作用，但所选应用仍以用户的文件系统/网络权限运行。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/electron-observation.md" target="_blank" rel="noopener noreferrer"><code>docs/electron-observation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-runtime-observation.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-runtime-observation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-runtime-reconciliation.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-runtime-reconciliation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/electronCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/electronCommands.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cliJavaScriptRuntimeCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cliJavaScriptRuntimeCommands.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/electron-observation.md" target="_blank" rel="noopener noreferrer">electron-observation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-runtime-observation.md" target="_blank" rel="noopener noreferrer">javascript-runtime-observation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-runtime-reconciliation.md" target="_blank" rel="noopener noreferrer">javascript-runtime-reconciliation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/electronCommands.ts" target="_blank" rel="noopener noreferrer">electronCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cliJavaScriptRuntimeCommands.ts" target="_blank" rel="noopener noreferrer">cliJavaScriptRuntimeCommands.ts</a></span></div></section>
+<section id="workflows-8" aria-labelledby="title-workflows-8"><span class="section-no">17 / 分析工作流</span><h2 id="title-workflows-8">.NET：元数据、CIL、native boundary 与版本变化</h2><div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea inspect-managed-artifact /absolute/path/to/Example.dll --json &gt; managed-artifact.json
+rea inspect-managed-members /absolute/path/to/Example.dll --json &gt; managed-members.json
+rea inspect-managed-native-boundaries /absolute/path/to/Example.dll --json &gt; managed-boundaries.json
+rea compare-managed-members /absolute/path/to/Example-v1.dll /absolute/path/to/Example-v2.dll --json &gt; managed-diff.json</code></pre></div>
+<p>元数据工具不 load/execute assembly。得到确切 SHA-256、MVID、assembly/module、target frameworks、references/resources/attributes、types/methods、CIL/hash、field access 等。当前用户 CLI/MCP member 入口只有 path，没有可自由拼出的 <code>--token</code>/<code>--offset</code> 用户选项；docs 的 benchmark/verifier selected-page 不等同公共命令。</p>
+<p><code>il_sha256</code> 锁 raw CIL bytes（不含 header/exception 等），<code>normalized_il_sha256</code> 锁 decoded opcode/operand tuple，后者不是完整语义等价：没有跨 MVID 解 token、没有完整 switch/exception semantics。对比先 exact CIL/signature、再 exact declared type/name/signature、再 bounded shape；重复候选保持歧义，不能把 build A 的 token 当作 build B 同一方法。</p>
+<p>P/Invoke、ImplMap、非 IL implementation flags 只是 native boundary 声明。<code>verify-managed-native-boundaries INPUT_JSON</code> 需要真实 supplied native Evidence 做核对；<code>import-managed-reconstruction INPUT_JSON</code> 对已验证 member identity 导入外部反编译内容。工具不自带“运行 C# 得知 CLR 行为”的能力。</p>
+<p>NativeAOT 是 native ELF/PE/Mach-O，不只是 <code>.exe</code>；普通 native file 不能仅凭命名推成 managed assembly。普通 CIL tool 不能把已去除的 CIL body 恢复成原 C#，需要原生引擎及有边界的 optional metadata adapter。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/managed-code-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/managed-code-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-nativeaot.md" target="_blank" rel="noopener noreferrer"><code>docs/ghidra-nativeaot.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/managedCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/managedCommands.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/managed/managedToolContracts.ts" target="_blank" rel="noopener noreferrer"><code>src/contracts/managed/managedToolContracts.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/managed-code-analysis.md" target="_blank" rel="noopener noreferrer">managed-code-analysis.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-nativeaot.md" target="_blank" rel="noopener noreferrer">ghidra-nativeaot.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/managedCommands.ts" target="_blank" rel="noopener noreferrer">managedCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/managed/managedToolContracts.ts" target="_blank" rel="noopener noreferrer">managedToolContracts.ts</a></span></div></section>
+<section id="workflows-9" aria-labelledby="title-workflows-9"><span class="section-no">18 / 分析工作流</span><h2 id="title-workflows-9">Android APK：manifest → 类 → 重载方法 → 引用</h2><p>配置已存在工具：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>export REA_JADX_MCP_JAR=/absolute/path/jadx-headless-mcp-0.7.1-all.jar
+export JAVA_HOME=/absolute/path/existing-jdk
+rea inspect-android-package /absolute/path/Example.apk --json
+rea search-android-classes /absolute/path/Example.apk MainActivity --json
+rea inspect-android-class /absolute/path/Example.apk example.MainActivity --json
+rea inspect-android-method /absolute/path/Example.apk example.MainActivity onCreate --json
+rea inspect-android-method /absolute/path/Example.apk example.MainActivity select --overload-index 1 --json
+rea trace-android-references /absolute/path/Example.apk example.MainActivity --method-name onCreate --json</code></pre></div>
+<p>必须 full JDK 17+（JRE 不足）；可用 <code>java --list-modules</code> 确認 <code>jdk.compiler</code>。Windows x64 还需 REA 匹配 bundled native controls，包括 owned protocol stdin；Windows arm64 不在边界内。</p>
+<p>先 inspect class 选重载。method request 歧义会失败，不默认取第一个；overload_index 只绑定此 artifact/engine，不是跨版本稳定身份。references 仅是 upstream 静态入边，不是实际 runtime call，source lines 和 DEX instruction offsets 保持未知。Manifest 保留 decoded XML，摘要必要时应与 XML 核对；signature verification 明确 not_performed。</p>
+<p>反编译可返回 Java 或 smali，带 fallback/completeness；native/abstract no-body 返回 <code>body_status: not_available</code>，不推测具体 flag。text complete 不意味着 complete semantics。AAB/split APK、runtime、native library 深析都不由这组入口自动完成。</p>
+<p>REA 持有 immutable APK/JAR/bridge private copies，单个串行 session；变化/失败/超时/取消/disconnect/shutdown 或 60 秒 inactivity 清理；one-shot CLI 返回前 await 清理。队列前端后整项 120 秒 deadline，上游反编译 90 秒。可选择 <code>REA_JADX_HEAP_MIB</code> 与 <code>REA_JADX_ACTIVE_PROCESSOR_COUNT</code>，但 JVM heap 并非 RSS cap。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/android-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/android-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/androidCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/androidCommands.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/android/androidToolContracts.ts" target="_blank" rel="noopener noreferrer"><code>src/contracts/android/androidToolContracts.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/android-analysis.md" target="_blank" rel="noopener noreferrer">android-analysis.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/androidCommands.ts" target="_blank" rel="noopener noreferrer">androidCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/android/androidToolContracts.ts" target="_blank" rel="noopener noreferrer">androidToolContracts.ts</a></span></div></section>
+<section id="extensions-1" aria-labelledby="title-extensions-1"><span class="section-no">19 / 分析工作流</span><h2 id="title-extensions-1">设备、固件与离线扩展工作流</h2><h3>从 Android 设备取回 APK</h3>
+<p>先提供已有 adb 并列出设备，再选择真实 serial 和包名。以下 <code>emulator-5554</code> 与 <code>example.app</code> 都是占位值：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>export REA_ADB_PATH=/absolute/path/to/adb
+rea inspect-adb-client --json
+rea list-adb-devices --json
+rea list-adb-packages emulator-5554 --json
+rea inspect-adb-package emulator-5554 example.app --json
+rea pull-adb-package emulator-5554 example.app --output-directory /absolute/path/to/acquired --json</code></pre></div>
+<p>取回操作的结果给出 APK 文件集的位置与摘要；再将真实 APK 路径交给 <code>inspect-android-package</code>。读取、拉取与安装、启动、停止、卸载、推送文件具有不同效果，操作设备时应选择与你的研究问题一致的入口。未配置 <code>REA_ADB_PATH</code> 时从 PATH 找 adb。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/adb-device-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/adb-device-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/adbCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/adbCommands.ts</code></a>。</p>
+<h3>固件：识别区域、提取、继续分析</h3>
+<p>已有 Linux x64 的 Binwalk 3.1.x、Unblob 26.6.x 与 util-linux <code>prlimit</code> 时：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>export REA_BINWALK_COMMAND=/absolute/path/to/binwalk
+export REA_UNBLOB_COMMAND=/absolute/path/to/unblob
+rea inspect-firmware-regions /absolute/path/to/firmware.bin --json
+rea extract-firmware /absolute/path/to/firmware.bin /absolute/path/to/new-output --json</code></pre></div>
+<p>项目实测基线为 Binwalk 3.1.0、Unblob 26.6.4。具体解包格式还可能需要对应提取器。读取报告中的范围、未知块、子产物和摘要，将明确的 ELF 等子文件作为下一步原生目标。输出目录、范围与提取覆盖应按返回结果核对。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/firmware-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/firmware-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/firmwareCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/firmwareCommands.ts</code></a>。</p>
+<h3>WASM：离线验证并取得 WAT</h3>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>export REA_WABT_BIN_DIRECTORY=/absolute/path/to/wabt/bin
+rea inspect-wasm-artifact /absolute/path/to/module.wasm --json</code></pre></div>
+<p>目录应含 WABT 1.0.42 的 <code>wasm-validate</code>、<code>wasm-objdump</code>、<code>wasm2wat</code>（Windows 为 <code>.exe</code>）。当前 real-tool 文档基线是 macOS arm64，其余宿主应单独验证。工具保留原始文件 SHA-256、section、精确 import/export WAT 和解码输出；WAT 不等于原始源码，也不证明执行语义或重新编码后的字节完全一致。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/wasm-artifacts.md" target="_blank" rel="noopener noreferrer"><code>docs/wasm-artifacts.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/wasmCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/wasmCommands.ts</code></a>。</p>
+<h3>EVM：从本地载体提取接口候选</h3>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea inspect-evm-interface /absolute/path/to/runtime.hex hex --json
+rea inspect-evm-interface /absolute/path/to/runtime.bin raw --json</code></pre></div>
+<p>显式指定 <code>hex</code> 或 <code>raw</code>，Linux x64 需现有 util-linux <code>prlimit</code>。输出 selector、字节偏移、参数与 mutability 候选，属于推断，不是链上部署身份认证或经过验证的源码 ABI；不访问链、不发送交易，也不执行目标合约。EOF 风格 EF00 载体属于当前不支持的目标。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/evm-bytecode.md" target="_blank" rel="noopener noreferrer"><code>docs/evm-bytecode.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/evmCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/evmCommands.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/adb-device-analysis.md" target="_blank" rel="noopener noreferrer">adb-device-analysis.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/adbCommands.ts" target="_blank" rel="noopener noreferrer">adbCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/firmware-analysis.md" target="_blank" rel="noopener noreferrer">firmware-analysis.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/firmwareCommands.ts" target="_blank" rel="noopener noreferrer">firmwareCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/wasm-artifacts.md" target="_blank" rel="noopener noreferrer">wasm-artifacts.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/wasmCommands.ts" target="_blank" rel="noopener noreferrer">wasmCommands.ts</a></span></div></section>
+<section id="extensions-2" aria-labelledby="title-extensions-2"><span class="section-no">20 / 分析工作流</span><h2 id="title-extensions-2">进程行为捕获与重建对照</h2><p>当问题是“这个命令运行时怎样交互、退出和修改文件”，使用进程捕获。新场景支持 Linux/macOS 与可用原生 PTY；原生 Windows 新捕获不可用。WSL 中运行的是 Linux 工作流，不能据此宣称覆盖原生 Windows 进程树。</p>
+<p>先准备自己的 <code>app.mjs</code> 和明确的观察目录，再保存 <code>scenario.json</code>：</p>
+<div class="codebox"><div class="code-head"><span>json</span></div><pre><code>{
+  &quot;executable&quot;: &quot;node&quot;,
+  &quot;arguments&quot;: [&quot;./app.mjs&quot;],
+  &quot;working_directory&quot;: &quot;.&quot;,
+  &quot;environment&quot;: {&quot;APP_MODE&quot;: &quot;test&quot;},
+  &quot;filesystem_observation_paths&quot;: [&quot;./state&quot;],
+  &quot;terminal&quot;: {&quot;columns&quot;: 80, &quot;rows&quot;: 24, &quot;scrollback&quot;: 1000},
+  &quot;events&quot;: [],
+  &quot;timeout_ms&quot;: 30000,
+  &quot;idle_timeout_ms&quot;: 30000,
+  &quot;settle_ms&quot;: 100
+}</code></pre></div>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea capture-process ./scenario.json --json &gt; capture.json
+rea compare-process-captures authority.json reconstruction.json --json</code></pre></div>
+<p>第二条命令读取你分别对原实现与重建实现生成的真实捕获文件。场景输入与输出文件必须不同，避免 shell 重定向先截断输入。</p>
+<p>结果保留 PTY 原始与渲染输出、声明的交互、退出原因、进程树观察与前后文件状态。文件观察路径选择“看哪些路径”，不会限制程序的文件系统权限；它也不是 syscall trace，短暂产生后消失的文件可能未被前后快照观察到。目标以当前用户权限运行，继承的环境不会自动完整写入 Evidence。</p>
+<p>按来源与覆盖判断差异，部分观察中的零变化不能证明整个文件系统未变化。macOS 的进程所有权检查还需要可用的 <code>xcrun</code> / Swift 工具链。运行中 stderr 的 <code>rea_progress</code> 是状态，stdout 才是最终 Evidence。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/process-capture.md" target="_blank" rel="noopener noreferrer"><code>docs/process-capture.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/processCommands.ts" target="_blank" rel="noopener noreferrer"><code>src/cli/processCommands.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/process/processScenario.ts" target="_blank" rel="noopener noreferrer"><code>src/domain/process/processScenario.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/process-capture.md" target="_blank" rel="noopener noreferrer">process-capture.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli/processCommands.ts" target="_blank" rel="noopener noreferrer">processCommands.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/process/processScenario.ts" target="_blank" rel="noopener noreferrer">processScenario.ts</a></span></div></section>
+<section id="evidence-7" aria-labelledby="title-evidence-7"><span class="section-no">21 / Evidence 与会话</span><h2 id="title-evidence-7">Evidence、结果保存与会话</h2><p>REA 的输出保留目标 identity/hash、provider、观察值、推断与 unknown/limitations。完成状态并不说明每个未知问题已经解决。MCP Evidence 的 <code>structuredContent.normalized_result</code> 是规范化结果，<code>evidence_id</code> 是身份，<code>raw_result</code> 保留 producer 表示，<code>analysis_profile</code> 必须存在（可为 null）。</p>
+<p>每次 CLI 调用是单独进程，所以需要后续使用时显式保存结果。MCP retained Evidence reference 仅属于当前连接，不能作为另一次 CLI 调用的通用引用。</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea evidence-import /absolute/path/to/evidence/bundle.json
+rea evidence-export /absolute/path/to/evidence/bundle.json /absolute/path/to/evidence/canonical.json
+rea compare /absolute/path/to/evidence/left.json /absolute/path/to/evidence/right.json</code></pre></div>
+<p>已有 export 目标默认保留，只有 <code>--overwrite</code> 明确允许覆盖。</p>
+<p>Snapshot 保存可复用的准确成功查询结果：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea analyze /absolute/path/to/program --provider ghidra --snapshot /absolute/path/to/analysis/program.json</code></pre></div>
+<p>在目标字节、操作、参数、provider 和设置一致时，再次准确调用可命中缓存，CLI 命中可在启动 provider 前返回。Snapshot 不等于保存 Ghidra/Hopper 数据库；修改与 cursor-dependent 操作不作为缓存复用。MCP 的 <code>open_binary.snapshot_path</code> 导入，<code>close_binary.snapshot_path</code> 保存后释放；保存失败保留打开会话。</p>
+<p>默认 MCP stdio 回复预算 <strong>10 MiB</strong>，计算 text 与 structured 两份表示以及 envelope，以适配默认客户端接收缓冲；超限会返回 <code>resource_constraint</code>，但当前会话完整 Evidence 仍被保留。优先采用 <code>inspect_analysis_view</code> 的 summary/page/item 或 <code>export_evidence_bundle</code> 流式保存完整 bundle。只有客户端也支持更大的接收缓冲时，才同步配置 <code>REA_MCP_MAX_RESPONSE_BYTES</code>（十进制安全整数，至少 10485760），并重启服务；仅调 server 不改变 client 缓冲，也不增加分析覆盖。</p>
+<p>默认 CLI 人读格式为 TOON，<code>--json</code> 终端为缩进 JSON、重定向/pipe 为紧凑 JSON。<code>--help</code> 查看每个命令准确参数。源码主 CLI 清单为 <strong>129 个命令</strong>，另有 <code>compare-bundles</code> 别名；部分 native primitive 和会话管理只通过 MCP 暴露，不应声称每个 MCP 工具都有一一对应的 CLI。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md#L109" target="_blank" rel="noopener noreferrer"><code>docs/cli.md:109–229</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md#L280" target="_blank" rel="noopener noreferrer"><code>docs/mcp-contracts.md:280–339</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cliCommandNames.ts" target="_blank" rel="noopener noreferrer"><code>src/cliCommandNames.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer">cli.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md" target="_blank" rel="noopener noreferrer">mcp-contracts.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cliCommandNames.ts" target="_blank" rel="noopener noreferrer">cliCommandNames.ts</a></span></div></section>
+<section id="evidence-details-10" aria-labelledby="title-evidence-details-10"><span class="section-no">22 / Evidence 与会话</span><h2 id="title-evidence-details-10">Evidence、缓存、返回值如何读</h2><p>Evidence schema 核心字段：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>解读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>evidence_id</td>
+<td><code>ev_</code> + canonical semantic SHA-256，校验 payload 是否变动；不是作者签名或结论真实性认证</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>target digest/format/architecture/local_path；可能为 null，不能编造 target identity</td>
+</tr>
+<tr>
+<td>provider / analysis_profile</td>
+<td>producer 与分析条件；profile 必须存在，可为 null；有对象时 provider 要一致</td>
+</tr>
+<tr>
+<td>operation / parameters</td>
+<td>真正做过的操作与输入</td>
+</tr>
+<tr>
+<td>raw_result</td>
+<td>原始 producer representation；没有则 null</td>
+</tr>
+<tr>
+<td>normalized_result</td>
+<td>具体操作结果，读取 graph/inspection/coverage 等从这里开始</td>
+</tr>
+<tr>
+<td>confidence</td>
+<td>observed / derived / inferred</td>
+</tr>
+<tr>
+<td>authority</td>
+<td>shipped-artifact / controlled-replay / historical-reference / external-service / analyst-inference</td>
+</tr>
+<tr>
+<td>limitations / locations / evidence_links</td>
+<td>不能证明的内容、artifact-path/address/file-offset 位置、关联 Evidence</td>
+</tr>
+</tbody></table>
+</div><p>semantic ID 包含 raw+normalized result、profile、authority 等；subject display name/local_path 不在语义投影中，但 digest/format/architecture 在。Evidence IDs 能发现篡改，不能证明第三方真实执行过 claimed observation。</p>
+<p>CLI 默认 TOON，给 JSON consumer 保存必须 <code>--json</code>；terminal 时 indented，pipe/redirect compact。stderr 有 <code>rea_progress</code>，stdout 最终文档。<code>0</code> 仅表示 operation completed，结果仍可 partial/warnings/unknown；<code>1</code> 失败；signal 常见 <code>128+N</code>。处理管道可 <code>set -o pipefail</code>，避免 jq 覆盖 REA exit status。</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea evidence-import /absolute/path/to/bundle.json
+rea evidence-export /absolute/path/to/bundle.json /absolute/path/to/canonical.json
+rea compare /absolute/path/to/left.json /absolute/path/to/right.json</code></pre></div>
+<p>这些消费的是 evidence bundle，不能假设单个 operation Evidence 文件就是 bundle。导出默认保留已有 destination，明确 <code>--overwrite</code> 才覆盖。</p>
+<p>snapshot 用法：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>rea analyze ./program --provider ghidra --snapshot /absolute/path/to/program.snapshot.json --json</code></pre></div>
+<p>只有 target bytes、operation、parameters、provider、settings/profile exact 匹配才重用。snapshot 是缓存 observations，不是保存的 Ghidra/provider 数据库；新/live query 仍需引擎。mutations/cursor-dependent calls 不进入 exact cache。metadata edits 后当前 session 不能 save/import immutable snapshot，应导出 Evidence 后 close/reopen。</p>
+<p>MCP Evidence-producing tools 在 text 与 structuredContent 中返回 complete record；读 <code>structuredContent.normalized_result</code>。默认 stdio response 需适配 pinned client 10 MiB receive budget，因此 complete analysis 太大会报 transport resource_constraint，完整 Evidence 仍在 session。用 <code>inspect_analysis_view</code> 缩小视图或 <code>export_evidence_bundle</code> 流式写文件，不要把大图直接 get_evidence_bundle 期待自动变小。<code>get_evidence_bundle {detail:"summary"}</code> 用于发现 records；summary 不证明 payload 原始分析覆盖完整。</p>
+<p>MCP reuse 示例：</p>
+<div class="codebox"><div class="code-head"><span>json</span></div><pre><code>{&quot;name&quot;:&quot;analyze_javascript_application&quot;,&quot;arguments&quot;:{&quot;input_path&quot;:&quot;/absolute/path/to/app.asar&quot;,&quot;detail&quot;:&quot;summary&quot;}}
+{&quot;name&quot;:&quot;trace_application_feature&quot;,&quot;arguments&quot;:{&quot;application&quot;:{&quot;kind&quot;:&quot;retained-evidence&quot;,&quot;evidence_id&quot;:&quot;把返回的 parent_evidence_id 放这里&quot;},&quot;seed&quot;:{&quot;kind&quot;:&quot;channel&quot;,&quot;value&quot;:&quot;notes:export&quot;,&quot;match&quot;:&quot;exact&quot;},&quot;direction&quot;:&quot;both&quot;}}</code></pre></div>
+<p>该中文 Evidence ID 也是模板，必须使用真实返回 ID。retained reference 只属当前 connection ledger；open 另一 target 保留记录，<code>close_binary</code> 即使没有 binary active 也会清空。新 connection 需导入已 export 的 bundle 或 supplied full inline Evidence。每次 CLI 是独立 process，所以 CLI 图工作流必须带 saved full records，不理解另一个 MCP connection 的 retained IDs。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md" target="_blank" rel="noopener noreferrer"><code>docs/mcp-contracts.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer"><code>docs/cli.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/evidence.ts" target="_blank" rel="noopener noreferrer"><code>src/domain/evidence.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/sessionToolContracts.ts" target="_blank" rel="noopener noreferrer"><code>src/contracts/sessionToolContracts.ts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/server/registerEvidenceTools.ts" target="_blank" rel="noopener noreferrer"><code>src/server/registerEvidenceTools.ts</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md" target="_blank" rel="noopener noreferrer">mcp-contracts.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer">cli.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/evidence.ts" target="_blank" rel="noopener noreferrer">evidence.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/contracts/sessionToolContracts.ts" target="_blank" rel="noopener noreferrer">sessionToolContracts.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/server/registerEvidenceTools.ts" target="_blank" rel="noopener noreferrer">registerEvidenceTools.ts</a></span></div></section>
+<section id="architecture-1" aria-labelledby="title-architecture-1"><span class="section-no">23 / 源码架构</span><h2 id="title-architecture-1">架构总览与目录分工</h2><p>本章分析固定提交 <code>fb94d9dde0ccda83ae520ac6fb22b1d283562cf3</code>，结论来自源码读取。后续发布包的 Ghidra 微型 PE 验证见“本机安装与 Sifu”；Hopper、IDA、浏览器观察和设备能力尚未在当前主机运行验证。</p>
+<p>REA 是在本机运行的逆向工程工具体系。它将制品解析、外部分析引擎和运行时观察统一成终端 CLI 与 Agent MCP 工具，再把结果组织成可校验来源的 Evidence。应用场景包括函数理解、应用模块与边界恢复、功能追踪、版本差异、静态/运行时对齐，以及有限范围的重建验证。实际能力取决于目标格式、平台、Provider 安装和能力声明。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli.ts#L48" target="_blank" rel="noopener noreferrer"><code>src/cli.ts:48</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/server/createServer.ts#L105" target="_blank" rel="noopener noreferrer"><code>src/server/createServer.ts:105</code></a>。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>目录／文件</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs" target="_blank" rel="noopener noreferrer"><code>scripts/rea.mjs</code></a></td>
+<td>可执行调度器，决定加载 CLI、MCP 或 MCP doctor</td>
+</tr>
+<tr>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli.ts" target="_blank" rel="noopener noreferrer"><code>src/cli.ts</code></a>、<code>src/cli/</code></td>
+<td>Incur 命令注册、参数解析、JSON 输出</td>
+</tr>
+<tr>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/main.ts" target="_blank" rel="noopener noreferrer"><code>src/main.ts</code></a>、<code>src/main/</code></td>
+<td>MCP 配置、初始目标、stdio 连接、进程关闭</td>
+</tr>
+<tr>
+<td><code>src/server/</code></td>
+<td>MCP 工具 handler、契约转换、准入、进度与交付</td>
+</tr>
+<tr>
+<td><code>src/composition/</code></td>
+<td>生产依赖组合工厂，CLI/MCP 共用会话语义</td>
+</tr>
+<tr>
+<td><code>src/application/</code></td>
+<td>共用业务工作流、BinarySession、调查记录、诊断/设置</td>
+</tr>
+<tr>
+<td><code>src/contracts/</code></td>
+<td>调用者可见输入/输出 Schema 和命名契约</td>
+</tr>
+<tr>
+<td><code>src/domain/</code></td>
+<td>Evidence、目标身份、比较、应用图、未知项与验证纯语义</td>
+</tr>
+<tr>
+<td><code>src/config/</code></td>
+<td>经验证的环境配置和参数来源</td>
+</tr>
+<tr>
+<td><code>src/hopper/</code>、<code>src/ghidra/</code>、<code>src/ida/</code></td>
+<td>重叠的原生深度分析引擎适配器</td>
+</tr>
+<tr>
+<td><code>bridge/</code></td>
+<td>Hopper Python 和 Ghidra Java 引擎内桥接</td>
+</tr>
+<tr>
+<td><code>src/artifacts/</code></td>
+<td>软件包清单、格式读取、提取与稳定身份</td>
+</tr>
+<tr>
+<td><code>src/browser/</code>、<code>src/inspector/</code></td>
+<td>CDP/Playwright、V8 Inspector 观察</td>
+</tr>
+<tr>
+<td><code>src/javascript/</code></td>
+<td>AST worker、Wakaru 恢复与 Source Map codec</td>
+</tr>
+<tr>
+<td><code>src/dotnet/</code>、<code>src/android/</code>、<code>src/apktool/</code>、<code>src/jeb/</code>、<code>src/adb/</code></td>
+<td>托管代码、APK/JADX、资源、JEB 与设备能力</td>
+</tr>
+<tr>
+<td><code>src/native/</code>、<code>src/firmware/</code>、<code>src/wasm/</code>、<code>src/evm/</code></td>
+<td>原生/ELF/core、固件、WASM 与 EVM</td>
+</tr>
+<tr>
+<td><code>src/process/</code>、<code>src/windows/</code>、<code>native/windows/</code></td>
+<td>资源身份、进程监督、私有目录、Windows宿主边界</td>
+</tr>
+<tr>
+<td><code>src/reference/</code>、<code>src/evaluation/</code>、<code>tests/</code></td>
+<td>参考源码读取、Agent release评估与测试</td>
+</tr>
+<tr>
+<td><code>docs/</code>、<code>website/</code></td>
+<td>使用文档和项目网站</td>
+</tr>
+</tbody></table>
+</div><p>依赖从入口适配层向共用 application、contracts/domain 流动；引擎协议保留在 Provider adapter。<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/architecture.mermaid#L1" target="_blank" rel="noopener noreferrer"><code>docs/architecture.mermaid:1</code></a> 给出了维护者的整体架构；<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/composition/binary.ts#L19" target="_blank" rel="noopener noreferrer"><code>src/composition/binary.ts:19</code></a> 是 CLI/MCP 共同的 BinarySession 生产组合点。</p>
+<div class="pipeline"><div><span class="num">01 / ADAPTER</span><strong>CLI / MCP 入口</strong>解析参数、加载配置，创建会话。</div><div><span class="num">02 / APPLICATION</span><strong>共用工作流</strong>验证契约，选择目标与能力，组织分析步骤。</div><div><span class="num">03 / PROVIDER</span><strong>分析适配器</strong>调用引擎、静态解析器或观察工具。</div><div><span class="num">04 / DOMAIN</span><strong>Evidence 与记录</strong>校验来源和目标，保存证据，再交付调用者。</div></div>
+
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/cli.ts" target="_blank" rel="noopener noreferrer">cli.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/server/createServer.ts" target="_blank" rel="noopener noreferrer">createServer.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs" target="_blank" rel="noopener noreferrer">rea.mjs</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/main.ts" target="_blank" rel="noopener noreferrer">main.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/architecture.mermaid" target="_blank" rel="noopener noreferrer">architecture.mermaid</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/composition/binary.ts" target="_blank" rel="noopener noreferrer">binary.ts</a></span></div></section>
+<section id="architecture-2" aria-labelledby="title-architecture-2"><span class="section-no">24 / 源码架构</span><h2 id="title-architecture-2">请求链路：CLI 与 MCP</h2><h3>CLI 单次调用</h3>
+<p><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs#L14" target="_blank" rel="noopener noreferrer"><code>scripts/rea.mjs:14</code></a> 只在参数恰好为 <code>mcp</code> 或 <code>--mcp</code> 时走正式 MCP 入口，<code>mcp doctor</code> 单独处理。调度器检查编译输出后加载 CLI。<code>createCli</code> 固定调用者环境快照，注册命令并绑定 <code>DirectAnalysis</code>。</p>
+<p>普通原生命令链路是：参数解析 → 读取配置 → 新建 session → 解析目标/选择 Provider → 打开并健康检查 → 执行操作 → 生成 Evidence → <code>withSessionCleanup</code> 关闭。每次 CLI 命令都是独立会话，后一个命令不会沿用前一个引擎客户端；跨命令复用依靠匹配 snapshot 或已保存 Evidence。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/DirectAnalysis.ts#L83" target="_blank" rel="noopener noreferrer"><code>src/application/DirectAnalysis.ts:83</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/DirectAnalysis.ts#L175" target="_blank" rel="noopener noreferrer"><code>src/application/DirectAnalysis.ts:175</code></a>。</p>
+<p><code>analyze_function</code> 验证并保留引擎 function dossier 来源；<code>binary_overview</code>、<code>trace_feature</code> 等组合工作流输出 REA 派生来源。Managed-only session 可直接读取 PE/CLI metadata，不必选择原生引擎。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/DirectAnalysis.ts#L319" target="_blank" rel="noopener noreferrer"><code>src/application/DirectAnalysis.ts:319</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/composition/binary.ts#L40" target="_blank" rel="noopener noreferrer"><code>src/composition/binary.ts:40</code></a>。</p>
+<h3>MCP 长寿命调用</h3>
+<p><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/main.ts#L50" target="_blank" rel="noopener noreferrer"><code>src/main.ts:50</code></a> 解析配置、创建长寿命 BinarySession、可选地打开初始目标，再加载可选观察 Provider、创建 server 和 stdio transport。EOF、SIGINT、SIGTERM 进入幂等退出清理；可选 Provider 装载失败仅影响对应能力。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/main/transport.ts#L29" target="_blank" rel="noopener noreferrer"><code>src/main/transport.ts:29</code></a>。</p>
+<p>普通工具链路是：命名契约解析 → <code>withAdmittedAnalysis</code> 准入 → session 检查活动目标/能力/profile/cache → 已绑定 Provider 执行 → Provider/目标归属校验 → <code>createEvidence</code> → ledger 记录 → MCP 交付。取消信号和进度沿链路传递。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/server/registerOfficialTools.ts#L59" target="_blank" rel="noopener noreferrer"><code>src/server/registerOfficialTools.ts:59</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySession.ts#L509" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySession.ts:509</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySessionExecution.ts#L59" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySessionExecution.ts:59</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs" target="_blank" rel="noopener noreferrer">rea.mjs</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/DirectAnalysis.ts" target="_blank" rel="noopener noreferrer">DirectAnalysis.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/composition/binary.ts" target="_blank" rel="noopener noreferrer">binary.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/main.ts" target="_blank" rel="noopener noreferrer">main.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/main/transport.ts" target="_blank" rel="noopener noreferrer">transport.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/server/registerOfficialTools.ts" target="_blank" rel="noopener noreferrer">registerOfficialTools.ts</a></span></div></section>
+<section id="architecture-3" aria-labelledby="title-architecture-3"><span class="section-no">25 / 源码架构</span><h2 id="title-architecture-3">Provider 选择与平台边界</h2><p>生产组合包含 Hopper、Ghidra、IDA 三个 deep provider 候选。Registry 验证 Provider 身份与能力来源一致、禁止重复操作，按 Provider ID 输出候选，注册顺序不决定优先级。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/composition/binary.ts#L30" target="_blank" rel="noopener noreferrer"><code>src/composition/binary.ts:30</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/AnalysisProviderRegistry.ts#L79" target="_blank" rel="noopener noreferrer"><code>src/application/binary/AnalysisProviderRegistry.ts:79</code></a>。</p>
+<p>选择规则：请求 selector 优先于环境；显式选择失败返回该引擎的失败原因，不自动改用另一引擎；<code>auto</code> 只有一个可用且支持目标、能解析 profile 的候选时绑定它；多个候选返回 <code>ambiguous</code>；零个候选允许没有 deep binding 的 route，使辅助能力继续存在，但深度请求会得到不可用原因。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/AnalysisProviderRegistry.ts#L146" target="_blank" rel="noopener noreferrer"><code>src/application/binary/AnalysisProviderRegistry.ts:146</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/AnalysisProviderRegistry.ts#L264" target="_blank" rel="noopener noreferrer"><code>src/application/binary/AnalysisProviderRegistry.ts:264</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/AnalysisProviderRegistry.ts#L312" target="_blank" rel="noopener noreferrer"><code>src/application/binary/AnalysisProviderRegistry.ts:312</code></a>。</p>
+<p><code>SessionProviderRouter</code> 强制辅助 Provider 的操作互不重叠，也不与 deep 操作重叠。单个目标只绑定一个 deep provider，不会静默把同一次函数分析混合交给几个引擎。辅助族包括 artifact、native macOS、managed static，并按需 lazy load。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/SessionProviderRouter.ts#L45" target="_blank" rel="noopener noreferrer"><code>src/application/binary/SessionProviderRouter.ts:45</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/composition/auxiliaryAnalysisProviders.ts#L20" target="_blank" rel="noopener noreferrer"><code>src/composition/auxiliaryAnalysisProviders.ts:20</code></a>。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>实现及已核对限制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hopper</td>
+<td>macOS/Linux 私有 Python bridge与 Unix socket；拒绝 MIPS和DOS MZ/COM；可以打开 Hopper database；依赖引擎完成的静态分析</td>
+</tr>
+<tr>
+<td>Ghidra</td>
+<td>独立 headless import与临时 Program/project；导入可执行文件，不导入分析数据库；架构/profile受限；不能强制选择 universal Mach-O slice 时拒绝；metadata可以在临时session修改，原始字节不写入</td>
+</tr>
+<tr>
+<td>IDA</td>
+<td>外部 ida-pro-mcp 的 attached或headless路径；读取当前数据库；<code>cachePolicy: live</code>，不重放静态快照；adapter version不等同实际engine version；没有已验证MIPS路径</td>
+</tr>
+</tbody></table>
+</div><p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/hopper/HopperProvider.ts#L75" target="_blank" rel="noopener noreferrer"><code>src/hopper/HopperProvider.ts:75</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraProvider.ts#L134" target="_blank" rel="noopener noreferrer"><code>src/ghidra/GhidraProvider.ts:134</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraProviderCapabilities.ts#L27" target="_blank" rel="noopener noreferrer"><code>src/ghidra/GhidraProviderCapabilities.ts:27</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ida/IdaProviderCapabilities.ts#L31" target="_blank" rel="noopener noreferrer"><code>src/ida/IdaProviderCapabilities.ts:31</code></a>。</p>
+<p>Windows Ghidra P0 额外限制为 native x86/x86-64 PE application/DLL，要求 Windows 10+、对应 Windows x64 native addon、本地 NTFS和私有运行目录，且不提供 mutation authority。不能把 POSIX功能直接当成Windows承诺。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraProviderCapabilities.ts#L34" target="_blank" rel="noopener noreferrer"><code>src/ghidra/GhidraProviderCapabilities.ts:34</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraProvider.ts#L316" target="_blank" rel="noopener noreferrer"><code>src/ghidra/GhidraProvider.ts:316</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/composition/binary.ts" target="_blank" rel="noopener noreferrer">binary.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/AnalysisProviderRegistry.ts" target="_blank" rel="noopener noreferrer">AnalysisProviderRegistry.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/SessionProviderRouter.ts" target="_blank" rel="noopener noreferrer">SessionProviderRouter.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/composition/auxiliaryAnalysisProviders.ts" target="_blank" rel="noopener noreferrer">auxiliaryAnalysisProviders.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/hopper/HopperProvider.ts" target="_blank" rel="noopener noreferrer">HopperProvider.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ghidra/GhidraProvider.ts" target="_blank" rel="noopener noreferrer">GhidraProvider.ts</a></span></div></section>
+<section id="architecture-4" aria-labelledby="title-architecture-4"><span class="section-no">26 / 源码架构</span><h2 id="title-architecture-4">Session、目标身份与 Snapshot</h2><p>目标先解析再选择 Provider：解析本地文件/应用入口、格式、架构和 SHA-256。Profile把具体 Provider身份/版本及影响分析的参数形成 canonical SHA-256 commitment。Snapshot必须匹配目标、Provider与profile；仅路径或文件名一致不够。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/BinaryTargetResolver.ts#L54" target="_blank" rel="noopener noreferrer"><code>src/application/BinaryTargetResolver.ts:54</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/analysisProfile.ts#L25" target="_blank" rel="noopener noreferrer"><code>src/domain/analysisProfile.ts:25</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySessionOpen.ts#L143" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySessionOpen.ts:143</code></a>。</p>
+<p>Session切换/关闭使用 lifecycle lock，等待此前已获准的请求完成，新请求等待切换。创建客户端、生成runId并通过health后才设为活动目标。失败尝试清理与恢复旧目标；清理失败保留资源所有权，后续可重试。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySession.ts#L230" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySession.ts:230</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySession.ts#L277" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySession.ts:277</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySession.ts#L698" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySession.ts:698</code></a>。</p>
+<p>Evidence bundle是调查资料，包含观察与 manifests/Unknown revisions；analysis snapshot是某目标/profile的查询重放缓存，携带相关Evidence，但不是引擎原生项目文件。</p>
+<p>成功切换目标会更新snapshot的target/profile，<strong>不会直接清空 InvestigationRecords</strong>。会话可以保留跨目标调查证据，active snapshot导出按活动SHA筛选；close/closeWithSnapshot最终调用<code>clearSessionRecords</code>清空ledger、unknowns和cache。需要保留资料，应在关闭前导出。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySession.ts#L300" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySession.ts:300</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySessionRecords.ts#L104" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySessionRecords.ts:104</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySessionRecords.ts#L253" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySessionRecords.ts:253</code></a>。</p>
+<p>缓存排除health、当前地址/文档和GUI状态；cursor默认操作需要显式address，文档相关操作需要显式document。metadata mutation、权限修改和live策略不可按静态读取重放。上限为10,000个查询绑定。metadata修改后snapshot作废，不能继续导入/保存；应先导出Evidence再关闭重开。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/AnalysisSnapshotCache.ts#L36" target="_blank" rel="noopener noreferrer"><code>src/application/binary/AnalysisSnapshotCache.ts:36</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/AnalysisSnapshotCache.ts#L61" target="_blank" rel="noopener noreferrer"><code>src/application/binary/AnalysisSnapshotCache.ts:61</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySessionRecords.ts#L235" target="_blank" rel="noopener noreferrer"><code>src/application/binary/BinarySessionRecords.ts:235</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/BinaryTargetResolver.ts" target="_blank" rel="noopener noreferrer">BinaryTargetResolver.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/analysisProfile.ts" target="_blank" rel="noopener noreferrer">analysisProfile.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySessionOpen.ts" target="_blank" rel="noopener noreferrer">BinarySessionOpen.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySession.ts" target="_blank" rel="noopener noreferrer">BinarySession.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/BinarySessionRecords.ts" target="_blank" rel="noopener noreferrer">BinarySessionRecords.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/binary/AnalysisSnapshotCache.ts" target="_blank" rel="noopener noreferrer">AnalysisSnapshotCache.ts</a></span></div></section>
+<section id="architecture-5" aria-labelledby="title-architecture-5"><span class="section-no">27 / 源码架构</span><h2 id="title-architecture-5">Evidence、Bundle 与未知项</h2><p>Evidence是严格的Provider-neutral数据协议，字段包括<code>evidence_id</code>、制品subject/SHA、provider、analysis_profile、operation、parameters、raw_result、normalized_result、confidence、authority、environment、limitations、locations、evidence_links。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/evidence.ts#L103" target="_blank" rel="noopener noreferrer"><code>src/domain/evidence.ts:103</code></a>。</p>
+<p><code>confidence</code>区分 observed实际观察、derived派生、inferred推断；<code>authority</code>区分 shipped-artifact、controlled-replay、historical-reference、external-service、analyst-inference。这两个维度不能互相替代。Provider profile的身份必须与观察Provider一致。</p>
+<p><code>ev_</code>ID摘要覆盖Provider/profile、输入、结果、confidence/authority、限制、定位与链接；subject展示名称/本地路径不参与subject语义身份。注意parameters或结果内的实际路径仍可能参与摘要，不是所有路径都被排除。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/evidence.ts#L211" target="_blank" rel="noopener noreferrer"><code>src/domain/evidence.ts:211</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/evidence.ts#L236" target="_blank" rel="noopener noreferrer"><code>src/domain/evidence.ts:236</code></a>。</p>
+<p>Ledger认证并冻结记录，重复相同ID幂等，冲突拒绝。Bundle按稳定ID顺序导出，排序没有因果语义；导入先校验全体record ID、canonical manifests、Unknown引用与revision链，然后原子merge。单条Evidence JSON不等于bundle。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/investigation/EvidenceLedger.ts#L42" target="_blank" rel="noopener noreferrer"><code>src/application/investigation/EvidenceLedger.ts:42</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/evidenceBundle.ts#L236" target="_blank" rel="noopener noreferrer"><code>src/domain/evidenceBundle.ts:236</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/evidenceBundle.ts#L299" target="_blank" rel="noopener noreferrer"><code>src/domain/evidenceBundle.ts:299</code></a>。</p>
+<p>Unknown保存未解决问题、支持/矛盾证据、所需authority/confidence、建议探针和关系；更新需expected_revision。<code>verifyUnknownResolution</code>检查登记是否resolved及disposition是否verified，并不重新执行实验证明结论真实。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/investigation/EvidenceLedger.ts#L279" target="_blank" rel="noopener noreferrer"><code>src/application/investigation/EvidenceLedger.ts:279</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/investigation/EvidenceLedger.ts#L329" target="_blank" rel="noopener noreferrer"><code>src/application/investigation/EvidenceLedger.ts:329</code></a>。</p>
+<p>组合工作流使用<code>rea-workflow</code>身份、<code>confidence: derived</code>，并可把residual unknowns写入registry，保持引擎直接观察与REA派生结论的区别。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/WorkflowEvidence.ts#L24" target="_blank" rel="noopener noreferrer"><code>src/application/WorkflowEvidence.ts:24</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/evidence.ts" target="_blank" rel="noopener noreferrer">evidence.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/investigation/EvidenceLedger.ts" target="_blank" rel="noopener noreferrer">EvidenceLedger.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/domain/evidenceBundle.ts" target="_blank" rel="noopener noreferrer">evidenceBundle.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/WorkflowEvidence.ts" target="_blank" rel="noopener noreferrer">WorkflowEvidence.ts</a></span></div></section>
+<section id="architecture-6" aria-labelledby="title-architecture-6"><span class="section-no">28 / 源码架构</span><h2 id="title-architecture-6">JavaScript 图分析与重建验证</h2><p><code>analyze_javascript_application</code>接受目录或.asar，静态过程不执行应用。流程为canonical artifact inventory/integrity检查 → 读取清单绑定文本 → 有堆容量、deadline与取消控制的worker解析AST → application graph与semantic graph → Electron boundaries → Evidence。统计包含相关文件、解析文件、AST nodes、modules、parse failures，结果保留limitations。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptArtifactReconstruction.ts#L64" target="_blank" rel="noopener noreferrer"><code>src/application/javascript/JavaScriptArtifactReconstruction.ts:64</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptArtifactReconstruction.ts#L140" target="_blank" rel="noopener noreferrer"><code>src/application/javascript/JavaScriptArtifactReconstruction.ts:140</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptArtifactReconstruction.ts#L196" target="_blank" rel="noopener noreferrer"><code>src/application/javascript/JavaScriptArtifactReconstruction.ts:196</code></a>。</p>
+<p>后续功能基于已认证graph Evidence：<code>trace_application_feature</code>、<code>compare_application_versions</code>、<code>compare_source_to_bundle</code>、<code>compare_javascript_export_shapes</code>。可以补充native observations并保留来源；静态候选边不代表已经执行。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptApplicationWorkflowService.ts#L38" target="_blank" rel="noopener noreferrer"><code>src/application/javascript/JavaScriptApplicationWorkflowService.ts:38</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptApplicationWorkflowService.ts#L102" target="_blank" rel="noopener noreferrer"><code>src/application/javascript/JavaScriptApplicationWorkflowService.ts:102</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptApplicationWorkflowService.ts#L186" target="_blank" rel="noopener noreferrer"><code>src/application/javascript/JavaScriptApplicationWorkflowService.ts:186</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptApplicationWorkflowService.ts#L225" target="_blank" rel="noopener noreferrer"><code>src/application/javascript/JavaScriptApplicationWorkflowService.ts:225</code></a>。</p>
+<p><code>reconcile_javascript_runtime</code>用verified static/passive-runtime Evidence及显式runtime mappings结合图，不能仅凭相似名称假定任意本地文件与运行时target同源。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptRuntimeReconciliationService.ts#L24" target="_blank" rel="noopener noreferrer"><code>src/application/javascript/JavaScriptRuntimeReconciliationService.ts:24</code></a>。</p>
+<p>重建不是自动完整恢复任何软件原始源码。Obligation ledger检查owner、parser/schema/type、必要cases、original authority、verifier Evidence、矛盾、残余未知和dependency；状态包括unowned、implemented、blocked、unknown、verified。没有任何义务不能以空集合宣称闭环完成；有限生成范围或孤立manifest仍保留unknown。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/ReconstructionObligationLedgerEvaluation.ts#L50" target="_blank" rel="noopener noreferrer"><code>src/application/ReconstructionObligationLedgerEvaluation.ts:50</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/ReconstructionObligationLedgerEvaluation.ts#L172" target="_blank" rel="noopener noreferrer"><code>src/application/ReconstructionObligationLedgerEvaluation.ts:172</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/ReconstructionObligationLedgerEvaluation.ts#L464" target="_blank" rel="noopener noreferrer"><code>src/application/ReconstructionObligationLedgerEvaluation.ts:464</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptArtifactReconstruction.ts" target="_blank" rel="noopener noreferrer">JavaScriptArtifactReconstruction.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptApplicationWorkflowService.ts" target="_blank" rel="noopener noreferrer">JavaScriptApplicationWorkflowService.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/javascript/JavaScriptRuntimeReconciliationService.ts" target="_blank" rel="noopener noreferrer">JavaScriptRuntimeReconciliationService.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/ReconstructionObligationLedgerEvaluation.ts" target="_blank" rel="noopener noreferrer">ReconstructionObligationLedgerEvaluation.ts</a></span></div></section>
+<section id="architecture-7" aria-labelledby="title-architecture-7"><span class="section-no">29 / 源码架构</span><h2 id="title-architecture-7">资源、交付与结果解释限制</h2><p>输入用命名契约/Zod，预期失败用tagged error与Result，已取得partial observation可以在取消、容量或清理失败时保留。Provider使用owned process/private runtime/deadline及身份管理，PID和可执行路径本身不足以证明资源所有权。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/AnalysisProvider.ts#L91" target="_blank" rel="noopener noreferrer"><code>src/application/AnalysisProvider.ts:91</code></a>、<code>src/process/</code>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/AGENTS.md#L17" target="_blank" rel="noopener noreferrer"><code>AGENTS.md:17</code></a>。</p>
+<p>MCP受stdio response budget和Node单字符串上限限制。操作已经完成而完整结果过大时，交付层返回<code>AnalysisResourceConstraintError</code>，明确结果没有截断；若已记录，提供retained evidence reference。恢复途径为导出Evidence、完整CLI JSON，或在客户端接收缓冲匹配时提高MCP预算。不能把交付约束解释为引擎没有产出。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/server/toolResult.ts#L48" target="_blank" rel="noopener noreferrer"><code>src/server/toolResult.ts:48</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/server/toolResult.ts#L125" target="_blank" rel="noopener noreferrer"><code>src/server/toolResult.ts:125</code></a>。</p>
+<p>本地程序不保证每个能力离线：IDA可能通过HTTP连接，浏览器会访问用户指定URL，安装/下载有网络行为。静态未发现、空数组、有限对比通过都不等同完整行为不存在或全软件等价；应结合coverage、limitations、authority与Unknown。真实Provider主机/版本验证必须单独报告，fake bridge测试不能建立该承诺。来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ida/IdaProviderCapabilities.ts#L67" target="_blank" rel="noopener noreferrer"><code>src/ida/IdaProviderCapabilities.ts:67</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/AGENTS.md#L46" target="_blank" rel="noopener noreferrer"><code>AGENTS.md:46</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/application/AnalysisProvider.ts" target="_blank" rel="noopener noreferrer">AnalysisProvider.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/AGENTS.md" target="_blank" rel="noopener noreferrer">AGENTS.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/server/toolResult.ts" target="_blank" rel="noopener noreferrer">toolResult.ts</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/src/ida/IdaProviderCapabilities.ts" target="_blank" rel="noopener noreferrer">IdaProviderCapabilities.ts</a></span></div></section>
+<section id="develop-2" aria-labelledby="title-develop-2"><span class="section-no">30 / 构建与开发</span><h2 id="title-develop-2">源码克隆、构建与直接运行</h2><p>在新的目标目录中使用以下流程：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>git clone https://github.com/morluto/rea.git
+cd rea
+git checkout fb94d9dde0ccda83ae520ac6fb22b1d283562cf3
+nvm use
+npm ci
+npm run check:fast
+npm run build:cached
+node scripts/rea.mjs --help</code></pre></div>
+<p><code>nvm use</code> 仅适用于已安装 nvm 的环境；其他环境使用与 <a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.nvmrc" target="_blank" rel="noopener noreferrer"><code>.nvmrc</code></a> 匹配的 Node.js 24.18.0。</p>
+<p><code>npm ci</code> 按 lockfile 安装依赖并准备 Husky hooks，<strong>不会构建项目</strong>。<code>build:cached</code> 编译运行时、打包 authored skill，并允许复用 Turbo 缓存；<code>build</code> 强制重新运行这些构建任务。二者均不等于生成测试 catalog、文档投影或 managed verification evidence。修改 package、lockfile 或 managed-skill 版本后，先运行 <code>npm run metadata:generate</code>。</p>
+<p>源码 CLI 与 MCP：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>node scripts/rea.mjs analyze-javascript-application /absolute/path/to/app --json
+node scripts/rea.mjs doctor --json
+node scripts/rea.mjs mcp</code></pre></div>
+<p><code>npm start</code> 也是 <code>node scripts/rea.mjs mcp</code>。<code>mcp</code> 是 stdio MCP 服务，供客户端建立协议连接，不是普通 HTTP 网页服务器。源码未构建时，入口会提示运行 <code>npm ci && npm run build:cached</code>。</p>
+<p><code>third_party/</code> 的 Git 子模块主要用于可选上游引擎源码与 provenance；普通 REA 构建和 npm 包不自动构建这些引擎，因此基本入门无须盲目初始化全部子模块。例如仅研究固件上游源码时可运行：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>git submodule update --init third_party/binwalk third_party/unblob</code></pre></div>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/CONTRIBUTING.md#L22" target="_blank" rel="noopener noreferrer"><code>CONTRIBUTING.md:22–43</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs" target="_blank" rel="noopener noreferrer"><code>scripts/rea.mjs</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/prepare.mjs" target="_blank" rel="noopener noreferrer"><code>scripts/prepare.mjs</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.gitmodules" target="_blank" rel="noopener noreferrer"><code>.gitmodules</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/firmware-analysis.md#L39" target="_blank" rel="noopener noreferrer"><code>docs/firmware-analysis.md:39–47</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.nvmrc" target="_blank" rel="noopener noreferrer">.nvmrc</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/rea.mjs" target="_blank" rel="noopener noreferrer">rea.mjs</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/scripts/prepare.mjs" target="_blank" rel="noopener noreferrer">prepare.mjs</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.gitmodules" target="_blank" rel="noopener noreferrer">.gitmodules</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/firmware-analysis.md" target="_blank" rel="noopener noreferrer">firmware-analysis.md</a></span></div></section>
+<section id="develop-10" aria-labelledby="title-develop-10"><span class="section-no">31 / 构建与开发</span><h2 id="title-develop-10">开发检查与原有文档网站</h2><div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>npm run check:fast
+npm run test:local
+npm run test:focused -- src/config.test.ts
+npm run check
+npm run docs:check</code></pre></div>
+<p><code>check:fast</code> 是 typecheck/lint；<code>test:local</code> 运行源代码测试而不构建；<code>test:focused</code> 针对改变行为相关的测试；<code>check</code> 为更完整静态检查与 architecture guards。合同/generated metadata 改动需要 <code>docs:check</code>。完整可选本地门禁为 <code>check:pr</code>，CI 负责完整确定性测试与 coverage。外部引擎集成需要对应 <code>verify:*</code> lane，unit pass 不能替代真实工具链验证；package/setup/distribution 修改另需 <code>verify:package</code> 和 <code>npm pack --dry-run</code>。</p>
+<p>仓库自带 VitePress 文档网站：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>npm run docs:dev
+npm run docs:build
+npm run docs:preview</code></pre></div>
+<p><code>docs:build</code> 会先生成 docs projections；preview 的 base 是 <code>/rea/</code>。此处与用户要求的独立中文 Wiki 是不同产物。仓库正式网站是 <code>website/public/</code> 经 Cloudflare Workers 提供；<code>.github/workflows/pages.yml</code> 手动构建 VitePress但不发布，另有 <code>.github/workflows/website-pages.yml</code> 管理 GitHub Pages 的网站部署。不要仅凭文档构建成功就说网站已经公开发布。</p>
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/CONTRIBUTING.md#L45" target="_blank" rel="noopener noreferrer"><code>CONTRIBUTING.md:45–118</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer"><code>package.json#scripts</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/testing.md#L926" target="_blank" rel="noopener noreferrer"><code>docs/testing.md:926–1044</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer">package.json</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/testing.md" target="_blank" rel="noopener noreferrer">testing.md</a></span></div></section>
+<section id="local-1" aria-labelledby="title-local-1"><span class="section-no">32 / 挂载与参考</span><h2 id="title-local-1">Wiki 本地挂载与维护</h2><p>Wiki 与被分析仓库分开放置，便于更新源码、备份文档和单独部署静态 HTML。</p>
+<div class="codebox"><div class="code-head"><span>text</span></div><pre><code>D:\projects\rea\
+├─ source\               REA 源码，固定分析分支
+├─ installation\         本机安装脚本、版本校验与真实引擎验证记录
+└─ wiki\
+   ├─ index.html         完整中文 Wiki（CSS/JS 已嵌入，可离线打开）
+   ├─ assets\            可编辑的样式与交互源文件
+   ├─ overview.md        项目概览与能力说明
+   ├─ extensions.md      设备、固件、离线产物与进程捕获
+   ├─ local-installation.md  已完成的本机安装与 Sifu 准备情况
+   ├─ research-*.md      安装操作、工作流、架构的分析底稿
+   ├─ local-and-faq.md   本地挂载及常见问题
+   ├─ build.mjs          HTML 生成器
+   ├─ serve.py           Python 标准库 HTTP 服务
+   ├─ start-wiki.sh      Linux/WSL 启动脚本
+   └─ start-wiki.bat     当前 Windows/WSL 环境的双击入口</code></pre></div>
+<h3>本机访问与重新启动</h3>
+<p>默认地址为 <strong><a href="http://127.0.0.1:8765/">http://127.0.0.1:8765/</a></strong>。服务只绑定本机，提供 <code>wiki</code> 目录内容；源码目录及 <code>.git</code> 不在此服务根目录中。</p>
+<p>在 WSL/Linux 中运行：</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>cd /mnt/d/projects/rea
+python3 wiki/serve.py --port 8765</code></pre></div>
+<p>也可以执行 <code>sh wiki/start-wiki.sh</code>。在当前 Windows 机器中可双击 <code>wiki\start-wiki.bat</code>，它调用已有 WSL 的 Python。若使用原生 Windows Python，可在 PowerShell 中运行：</p>
+<div class="codebox"><div class="code-head"><span>powershell</span></div><pre><code>cd D:\projects\rea
+py -3 .\wiki\serve.py --port 8765</code></pre></div>
+<p>终端打印地址后即可访问。按 <code>Ctrl+C</code> 停止；如端口被占用，改用 <code>--port 8766</code>，并访问对应端口。Windows 访问 WSL 地址依赖本机 localhost 转发；若环境关闭了该机制，可直接在 Windows Python 中启动服务。<strong>挂载不代表已配置开机自启</strong>；服务结束后使用以上命令重新启动。</p>
+<h3>页面操作</h3>
+<ul>
+<li>左侧目录跳转章节；滚动时会标出当前章节，并显示阅读进度。</li>
+<li>搜索框按章节内容检索，可输入中文功能、命令或环境变量；快捷键为 <code>Ctrl+K</code> / <code>Cmd+K</code>。</li>
+<li>每个代码块提供复制按钮。命令中的示例路径、函数地址和 ID 必须换成自己的实际值。</li>
+<li>顶栏可切换深浅主题，浏览器会记住选择；窄屏使用“目录”按钮展开导航。</li>
+<li>“打印 / PDF”展开 FAQ 并使用打印排版；浏览器打印对话框可以保存 PDF。</li>
+<li>每章源码依据链接固定提交；联网时可查看 GitHub 原文。主体阅读和页面交互无需外部 CDN。</li>
+</ul>
+<h3>备份、修改与重新生成</h3>
+<p>直接备份 <code>wiki</code> 目录即可；<code>index.html</code> 是自包含文件，可单独分享或离线打开。分析底稿为 Markdown，修改后通过 <code>build.mjs</code> 重新生成；生成器需要 Node.js 及 <code>marked</code>，可用 <code>--renderer</code> 指定已有 <code>marked.esm.js</code> 的绝对路径。它不会构建或修改 REA 运行时。</p>
+<div class="codebox"><div class="code-head"><span>bash</span></div><pre><code>node wiki/build.mjs
+# 如 marked 不在模块解析路径中：
+node wiki/build.mjs --renderer /absolute/path/to/marked/lib/marked.esm.js</code></pre></div>
+<p>更新项目源码前先检查自己的更改，再切回 <code>main</code> 更新。更新后需要重新核对命令与依赖并修订 Wiki，不能只更换首页版本号；当前生成器会校验固定分析分支的提交，防止证据链接与源码版本不一致。</p>
+<p>来源：本次生成的 <code>serve.py</code>、<code>start-wiki.sh</code>、<code>start-wiki.bat</code>、<code>build.mjs</code>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span>本章为操作说明；分析底稿：local-and-faq.md</span></div></section>
+<section id="local-2" aria-labelledby="title-local-2"><span class="section-no">33 / 挂载与参考</span><h2 id="title-local-2">常见问题</h2><details><summary>我只想看 Electron / ASAR，需要安装 Ghidra 吗？</summary><p>静态 JavaScript/Electron 分析无需原生引擎。先执行 <code>rea analyze-javascript-application PATH --json</code>。当问题涉及 .node 等原生模块的内部实现时，再配置支持该文件格式的 Provider。</p></details>
+
+<details><summary>只安装 Skill，Agent 就能调用 REA 吗？</summary><p>Skill 是工作流说明；实际调用还需要 MCP Server 注册。通常用 <code>npx rea-agents@latest setup</code> 同时完成，再重启 Agent 并确认工具列表。</p></details>
+
+<details><summary>REA 是否直接把闭源程序变成完整源码？</summary><p>REA 提供伪代码、汇编、模块、元数据和行为证据。完整重建由调用者或 Agent 根据证据实施，还需功能测试或原目标对照。命名缺失、优化、动态加载、外部服务和未观察路径都可能保留为未知项。</p></details>
+
+<details><summary>Ghidra 首次调用很慢，open 成功为什么还在等待？</summary><p><code>open_binary</code> 主要建立目标与 Provider 绑定。Ghidra 导入和自动分析由第一次实际查询延迟触发，服务端启动截止时间与客户端工具调用截止时间不同。先看 session 的 <code>analysis_activity</code>，按安装及排错章节处理。</p></details>
+
+<details><summary>退出码 0 是否代表分析完备或重建等价？</summary><p>仅表示操作完成；结果仍可能部分覆盖、带警告或包含未知项。应结合 Evidence 的来源、覆盖范围、置信度及具体验证记录判断。</p></details>
+
+<details><summary>能把一次 MCP 返回的 evidence_id 用到另一终端命令吗？</summary><p>单个 retained Evidence ID 属于当前 MCP 连接，不能作为另一进程的持久数据库索引。跨 CLI 命令使用完整保存的 Evidence JSON，跨连接则导出 bundle 或符合条件的 snapshot。</p></details>
+
+<details><summary>全量 doctor 不健康，是否说明所有功能都无法使用？</summary><p>默认 doctor 是全面审计，未配置的可选引擎也会出现在报告里。对自己的工作流执行限定检查，例如 <code>rea doctor --provider ghidra --json</code> 或 <code>rea doctor --client codex --json</code>；静态 JS 可直接尝试相应命令。</p></details>
+
+<details><summary>Wiki 的本地 HTTP 服务就是 REA MCP Server 吗？</summary><p>两者独立。这里的 Python 服务只展示静态文档，默认端口 8765。REA MCP 的默认传输是 stdio，由 Agent 启动并调用，不通过这个 Wiki 服务执行分析。</p></details>
+
+<details><summary>需要填写模型 API Key 或启动数据库吗？</summary><p>直接 CLI 静态分析不需要模型账号或数据库；Agent 自身的模型配置由客户端管理。某些分析 Provider 需要已有软件、许可或本地 endpoint。当前 Wiki 没有账号、数据库或外部服务依赖。</p></details>
+
+<p>来源：<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer"><code>README.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer"><code>docs/cli.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md" target="_blank" rel="noopener noreferrer"><code>docs/mcp-contracts.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer"><code>docs/installation.md</code></a>。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer">README.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer">cli.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md" target="_blank" rel="noopener noreferrer">mcp-contracts.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a></span></div></section>
+<section id="local-3" aria-labelledby="title-local-3"><span class="section-no">34 / 挂载与参考</span><h2 id="title-local-3">源码与官方文档索引</h2><p>阅读顺序建议：用途和能力 → 安装与 Provider → 选择一条目标工作流 → Evidence 和会话 → 架构与开发。阅读具体命令之前，先确认固定提交、包版本、宿主系统以及目标类型。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>阅读目标</th>
+<th>仓库位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项目总体介绍</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer"><code>README.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README_zh.md" target="_blank" rel="noopener noreferrer"><code>README_zh.md</code></a></td>
+</tr>
+<tr>
+<td>安装、Agent、Provider 和维护</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer"><code>docs/installation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer"><code>docs/cli.md</code></a></td>
+</tr>
+<tr>
+<td>MCP 结果、错误、会话、传输约束</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md" target="_blank" rel="noopener noreferrer"><code>docs/mcp-contracts.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-prompts.md" target="_blank" rel="noopener noreferrer"><code>docs/mcp-prompts.md</code></a></td>
+</tr>
+<tr>
+<td>原生深度分析</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/native-investigation.md" target="_blank" rel="noopener noreferrer"><code>docs/native-investigation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ghidra-provider.md" target="_blank" rel="noopener noreferrer"><code>docs/ghidra-provider.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/ida-provider.md" target="_blank" rel="noopener noreferrer"><code>docs/ida-provider.md</code></a></td>
+</tr>
+<tr>
+<td>Windows Ghidra 边界</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/windows-ghidra-p0.md" target="_blank" rel="noopener noreferrer"><code>docs/windows-ghidra-p0.md</code></a></td>
+</tr>
+<tr>
+<td>JS/Electron 静态与应用图</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-artifact-reconstruction.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-artifact-reconstruction.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-application-workflows.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-application-workflows.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-application-graph.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-application-graph.md</code></a></td>
+</tr>
+<tr>
+<td>JS/Electron 运行时</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/electron-observation.md" target="_blank" rel="noopener noreferrer"><code>docs/electron-observation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/javascript-runtime-observation.md" target="_blank" rel="noopener noreferrer"><code>docs/javascript-runtime-observation.md</code></a></td>
+</tr>
+<tr>
+<td>浏览器与网站行为</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/browser-observation.md" target="_blank" rel="noopener noreferrer"><code>docs/browser-observation.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/browser-scenario-contract.md" target="_blank" rel="noopener noreferrer"><code>docs/browser-scenario-contract.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/web-runtime.md" target="_blank" rel="noopener noreferrer"><code>docs/web-runtime.md</code></a></td>
+</tr>
+<tr>
+<td>.NET 与 Android</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/managed-code-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/managed-code-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/android-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/android-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/adb-device-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/adb-device-analysis.md</code></a></td>
+</tr>
+<tr>
+<td>固件与离线其他产物</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/firmware-analysis.md" target="_blank" rel="noopener noreferrer"><code>docs/firmware-analysis.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/wasm-artifacts.md" target="_blank" rel="noopener noreferrer"><code>docs/wasm-artifacts.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/evm-bytecode.md" target="_blank" rel="noopener noreferrer"><code>docs/evm-bytecode.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/binary-diagnostics.md" target="_blank" rel="noopener noreferrer"><code>docs/binary-diagnostics.md</code></a></td>
+</tr>
+<tr>
+<td>数据来源与重建判定</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/reconstruction-readiness.md" target="_blank" rel="noopener noreferrer"><code>docs/reconstruction-readiness.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/reconstruction-obligation-ledgers.md" target="_blank" rel="noopener noreferrer"><code>docs/reconstruction-obligation-ledgers.md</code></a></td>
+</tr>
+<tr>
+<td>开发与真实工具验证</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer"><code>CONTRIBUTING.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/testing.md" target="_blank" rel="noopener noreferrer"><code>docs/testing.md</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/architecture.mermaid" target="_blank" rel="noopener noreferrer"><code>docs/architecture.mermaid</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/AGENTS.md" target="_blank" rel="noopener noreferrer"><code>AGENTS.md</code></a></td>
+</tr>
+<tr>
+<td>依赖、脚本、包与子模块</td>
+<td><a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package.json" target="_blank" rel="noopener noreferrer"><code>package.json</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/package-lock.json" target="_blank" rel="noopener noreferrer"><code>package-lock.json</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.nvmrc" target="_blank" rel="noopener noreferrer"><code>.nvmrc</code></a>、<a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/.gitmodules" target="_blank" rel="noopener noreferrer"><code>.gitmodules</code></a></td>
+</tr>
+</tbody></table>
+</div><p>开源许可为 MIT，见 <a class="source-code" href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/LICENSE" target="_blank" rel="noopener noreferrer"><code>LICENSE</code></a>。分析目标所需的授权与第三方工具许可由各自的使用场景决定。</p>
+<div class="source-note"><span>源码依据 · fb94d9dd</span><span><a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README.md" target="_blank" rel="noopener noreferrer">README.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/README_zh.md" target="_blank" rel="noopener noreferrer">README_zh.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/installation.md" target="_blank" rel="noopener noreferrer">installation.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/cli.md" target="_blank" rel="noopener noreferrer">cli.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-contracts.md" target="_blank" rel="noopener noreferrer">mcp-contracts.md</a> · <a href="https://github.com/morluto/rea/blob/fb94d9dde0ccda83ae520ac6fb22b1d283562cf3/docs/mcp-prompts.md" target="_blank" rel="noopener noreferrer">mcp-prompts.md</a></span></div></section></article>
+<footer class="doc-footer">REA 中文 Wiki · 固定源码提交 fb94d9dd · 无外部字体、CDN 或统计脚本<br>本地文档服务独立于 REA MCP，提供文档阅读。</footer></main>
+<div id="toast" class="toast" role="status" hidden></div><script>(() => {
+  'use strict';
+  const root = document.documentElement;
+  const search = document.getElementById('search');
+  const sidebar = document.getElementById('sidebar');
+  const backdrop = document.getElementById('backdrop');
+  const menu = document.getElementById('menu');
+  const sections = [...document.querySelectorAll('article section')];
+  const links = [...document.querySelectorAll('.nav a')];
+  const results = document.getElementById('search-results');
+  const theme = document.getElementById('theme');
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  const say = text => {
+    toast.textContent = text;
+    toast.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toast.hidden = true; }, 2600);
+  };
+  const closeMenu = () => {
+    sidebar.classList.remove('open'); backdrop.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  };
+  menu.addEventListener('click', () => {
+    const open = sidebar.classList.toggle('open');
+    backdrop.classList.toggle('open', open);
+    menu.setAttribute('aria-expanded', String(open));
+  });
+  backdrop.addEventListener('click', closeMenu);
+  links.forEach(link => link.addEventListener('click', closeMenu));
+  const updateTheme = () => {
+    const dark = root.dataset.theme === 'dark';
+    theme.textContent = dark ? '浅色' : '深色';
+    theme.setAttribute('aria-label', dark ? '切换到浅色主题' : '切换到深色主题');
+  };
+  updateTheme();
+  theme.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('rea-wiki-theme', root.dataset.theme); } catch (_) {}
+    updateTheme();
+  });
+  document.getElementById('print').addEventListener('click', () => {
+    const collapsed = [...document.querySelectorAll('details:not([open])')];
+    collapsed.forEach(item => { item.open = true; });
+    const restore = () => collapsed.forEach(item => { item.open = false; });
+    window.addEventListener('afterprint', restore, {once: true});
+    window.print();
+  });
+  document.querySelectorAll('.codebox').forEach(box => {
+    const button = document.createElement('button');
+    button.className = 'copy'; button.type = 'button'; button.textContent = '复制';
+    button.setAttribute('aria-label', '复制此代码块');
+    box.querySelector('.code-head').append(button);
+    button.addEventListener('click', async () => {
+      const text = box.querySelector('code').textContent;
+      try {
+        if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text);
+        else {
+          const input = document.createElement('textarea'); input.value = text;
+          input.style.position = 'fixed'; input.style.opacity = '0';
+          document.body.append(input); input.select();
+          const ok = document.execCommand('copy'); input.remove();
+          if (!ok) throw new Error('copy unavailable');
+        }
+        button.textContent = '已复制'; say('代码已复制');
+        setTimeout(() => { button.textContent = '复制'; }, 1800);
+      } catch (_) { say('浏览器未允许复制，请手动选择代码。'); }
+    });
+  });
+  const index = sections.map(section => ({id: section.id, title: section.querySelector('h2').textContent,
+    text: section.textContent.replace(/\s+/g, ' ').trim()}));
+  search.addEventListener('input', () => {
+    const value = search.value.trim().toLocaleLowerCase();
+    results.replaceChildren();
+    if (!value) { results.hidden = true; return; }
+    const words = value.split(/\s+/);
+    const matches = index.filter(item => words.every(word => item.text.toLocaleLowerCase().includes(word)));
+    const heading = document.createElement('h2');
+    heading.textContent = '搜索结果 · ' + matches.length + ' 个章节'; results.append(heading);
+    matches.forEach(item => {
+      const a = document.createElement('a'); a.className = 'search-hit'; a.href = '#' + item.id;
+      const title = document.createElement('strong'); title.textContent = item.title;
+      const snippet = document.createElement('small');
+      const pos = item.text.toLocaleLowerCase().indexOf(words[0]);
+      const start = Math.max(0, pos - 45);
+      snippet.textContent = (start ? '…' : '') + item.text.slice(start, start + 180) + '…';
+      a.append(title, snippet); a.addEventListener('click', closeMenu); results.append(a);
+    });
+    if (!matches.length) {
+      const p = document.createElement('p'); p.textContent = '没有匹配的章节。可搜索功能名称、CLI 命令或环境变量。';
+      results.append(p);
+    }
+    results.hidden = false;
+    if (window.innerWidth > 780) results.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  document.addEventListener('keydown', event => {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      if (window.innerWidth <= 780) { sidebar.classList.add('open'); backdrop.classList.add('open'); menu.setAttribute('aria-expanded','true'); }
+      search.focus();
+    }
+    if (event.key === 'Escape') { search.value = ''; search.dispatchEvent(new Event('input')); closeMenu(); }
+  });
+  let pending = false;
+  const scrollUpdate = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('progress').style.width = (max > 0 ? window.scrollY / max * 100 : 0) + '%';
+    let active = sections[0].id;
+    sections.forEach(section => { if (section.getBoundingClientRect().top < 160) active = section.id; });
+    links.forEach(link => {
+      const current = link.getAttribute('href') === '#' + active;
+      link.classList.toggle('active', current);
+      if (current) link.setAttribute('aria-current','location'); else link.removeAttribute('aria-current');
+    });
+    pending = false;
+  };
+  window.addEventListener('scroll', () => { if (!pending) { pending = true; requestAnimationFrame(scrollUpdate); } }, {passive:true});
+  window.addEventListener('resize', scrollUpdate);
+  scrollUpdate();
+})();
+</script></body></html>

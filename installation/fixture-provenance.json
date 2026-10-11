@@ -1,0 +1,7 @@
+{
+  "sourceRepository": "https://github.com/morluto/rea",
+  "commit": "fb94d9dde0ccda83ae520ac6fb22b1d283562cf3",
+  "path": "scripts/create-ghidra-windows-fixture.mjs",
+  "sha256": "908060d4d73aeb36a5bd25beb5c8fcae089231732fa631f0173e1e5e29e1a546",
+  "executesTarget": false
+}

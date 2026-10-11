@@ -1,0 +1,5 @@
+{
+  "ok": true,
+  "version": "6.4.0",
+  "command": "installation/rea-wsl.cmd --version"
+}

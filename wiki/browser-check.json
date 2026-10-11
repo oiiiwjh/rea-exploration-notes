@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "checkedAt": "2026-10-11T16:05:22.908Z",
+  "http": 200,
+  "chapters": 32,
+  "desktop": "1440x1000",
+  "mobile": "390x844",
+  "copy": true,
+  "search": true,
+  "themePersistence": true,
+  "mobileMenu": true,
+  "print": true,
+  "offline": true,
+  "pageErrors": [],
+  "externalRequests": []
+}

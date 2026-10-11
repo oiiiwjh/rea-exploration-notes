@@ -1,0 +1,172 @@
+
+/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu.exe:     file format pei-x86-64
+
+Characteristics 0x22
+	executable
+	large address aware
+
+Time/Date		Thu Jun  5 02:11:07 2025
+Magic			020b	(PE32+)
+MajorLinkerVersion	14
+MinorLinkerVersion	29
+SizeOfCode		000000000000fa00
+SizeOfInitializedData	000000000002ee00
+SizeOfUninitializedData	0000000000000000
+AddressOfEntryPoint	0000000000001cd8
+BaseOfCode		0000000000001000
+ImageBase		0000000140000000
+SectionAlignment	00001000
+FileAlignment		00000200
+MajorOSystemVersion	6
+MinorOSystemVersion	0
+MajorImageVersion	0
+MinorImageVersion	0
+MajorSubsystemVersion	6
+MinorSubsystemVersion	0
+Win32Version		00000000
+SizeOfImage		00043000
+SizeOfHeaders		00000400
+CheckSum		000354bd
+Subsystem		00000002	(Windows GUI)
+DllCharacteristics	00008160
+SizeOfStackReserve	0000000000b71b00
+SizeOfStackCommit	0000000000001000
+SizeOfHeapReserve	0000000000100000
+SizeOfHeapCommit	0000000000001000
+LoaderFlags		00000000
+NumberOfRvaAndSizes	00000010
+
+The Data Directory
+Entry 0 0000000000000000 00000000 Export Directory [.edata (or where ever we found it)]
+Entry 1 000000000001ad84 00000078 Import Directory [parts of .idata]
+Entry 2 0000000000020000 00021f74 Resource Directory [.rsrc]
+Entry 3 000000000001e000 00000f78 Exception Directory [.pdata]
+Entry 4 0000000000000000 00000000 Security Directory
+Entry 5 0000000000042000 00000684 Base Relocation Directory [.reloc]
+Entry 6 0000000000019830 00000054 Debug Directory
+Entry 7 0000000000000000 00000000 Description Directory
+Entry 8 0000000000000000 00000000 Special Directory
+Entry 9 0000000000000000 00000000 Thread Storage Directory [.tls]
+Entry a 0000000000019890 00000138 Load Configuration Directory
+Entry b 0000000000000000 00000000 Bound Import Directory
+Entry c 0000000000011000 000002c8 Import Address Table Directory
+Entry d 0000000000000000 00000000 Delay Import Directory
+Entry e 0000000000000000 00000000 CLR Runtime Header
+Entry f 0000000000000000 00000000 Reserved
+
+There is an import table in .rdata at 0x14001ad84
+
+The Import Tables (interpreted .rdata section contents)
+ vma:            Hint    Time      Forward  DLL       First
+                 Table   Stamp     Chain    Name      Thunk
+ 0001ad84	0001ae20 00000000 00000000 0001b1a2 00011020
+
+	DLL Name: KERNEL32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	1b112	  579  GetExitCodeProcess
+	1b128	  229  CreateProcessW
+	1b13a	  634  GetModuleFileNameW
+	1b150	  970  LoadResource
+	1b160	  990  LockResource
+	1b0fc	 1510  WaitForSingleObject
+	1b182	  412  FindResourceW
+	1b192	  967  LoadLibraryW
+	1b706	 1568  WriteConsoleW
+	1b6f8	  203  CreateFileW
+	1b0ec	  615  GetLastError
+	1b0de	  134  CloseHandle
+	1b170	 1418  SizeofResource
+	1b0c8	  588  GetFileAttributesW
+	1b6e6	  514  GetConsoleMode
+	1b6d6	  496  GetConsoleCP
+	1b6c2	  421  FlushFileBuffers
+	1b6b4	  853  HeapReAlloc
+	1b6a8	  855  HeapSize
+	1b694	 1329  SetFilePointerEx
+	1b27a	 1235  RtlCaptureContext
+	1b28e	 1242  RtlLookupFunctionEntry
+	1b2a8	 1249  RtlVirtualUnwind
+	1b2bc	 1468  UnhandledExceptionFilter
+	1b2d8	 1403  SetUnhandledExceptionFilter
+	1b2f6	  541  GetCurrentProcess
+	1b30a	 1434  TerminateProcess
+	1b31e	  905  IsProcessorFeaturePresent
+	1b33a	 1104  QueryPerformanceCounter
+	1b354	  542  GetCurrentProcessId
+	1b36a	  546  GetCurrentThreadId
+	1b380	  752  GetSystemTimeAsFileTime
+	1b39a	  876  InitializeSListHead
+	1b3b0	  898  IsDebuggerPresent
+	1b3c4	  727  GetStartupInfoW
+	1b3d6	  638  GetModuleHandleW
+	1b3ea	 1248  RtlUnwindEx
+	1b3f8	 1244  RtlPcToFileHeader
+	1b40c	 1126  RaiseException
+	1b41e	 1343  SetLastError
+	1b42e	  309  EnterCriticalSection
+	1b446	  960  LeaveCriticalSection
+	1b45e	  273  DeleteCriticalSection
+	1b476	  872  InitializeCriticalSectionAndSpinCount
+	1b49e	 1452  TlsAlloc
+	1b4aa	 1454  TlsGetValue
+	1b4b8	 1455  TlsSetValue
+	1b4c6	 1453  TlsFree
+	1b4d0	  433  FreeLibrary
+	1b4de	  693  GetProcAddress
+	1b4f0	  966  LoadLibraryExW
+	1b502	  729  GetStdHandle
+	1b512	 1569  WriteFile
+	1b51e	  356  ExitProcess
+	1b52c	  637  GetModuleHandleExW
+	1b542	  850  HeapFree
+	1b54e	  846  HeapAlloc
+	1b55a	  597  GetFileType
+	1b568	  379  FindClose
+	1b574	  385  FindFirstFileExW
+	1b588	  402  FindNextFileW
+	1b598	  910  IsValidCodePage
+	1b5aa	  440  GetACP
+	1b5b4	  670  GetOEMCP
+	1b5c0	  455  GetCPInfo
+	1b5cc	  476  GetCommandLineA
+	1b5de	  477  GetCommandLineW
+	1b5f0	 1010  MultiByteToWideChar
+	1b606	 1549  WideCharToMultiByte
+	1b61c	  574  GetEnvironmentStringsW
+	1b636	  432  FreeEnvironmentStringsW
+	1b650	 1367  SetStdHandle
+	1b660	  734  GetStringTypeW
+	1b672	  948  LCMapStringW
+	1b682	  699  GetProcessHeap
+
+ 0001ad98	0001b0b0 00000000 00000000 0001b1ca 000112b0
+
+	DLL Name: USER32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	1b1b0	  997  wsprintfW
+	1b1bc	  650  MessageBoxW
+
+ 0001adac	0001ae00 00000000 00000000 0001b208 00011000
+
+	DLL Name: ADVAPI32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	1b1e4	  652  RegOpenKeyExW
+	1b1d6	  603  RegCloseKey
+	1b1f4	  665  RegQueryValueExW
+
+ 0001adc0	0001b080 00000000 00000000 0001b228 00011280
+
+	DLL Name: SHELL32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	1b216	  438  ShellExecuteExW
+
+ 0001add4	0001b090 00000000 00000000 0001b26e 00011290
+
+	DLL Name: SHLWAPI.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	1b248	   61  PathCombineW
+	1b258	  143  PathRemoveFileSpecW
+	1b234	   59  PathCanonicalizeW
+
+ 0001ade8	00000000 00000000 00000000 00000000 00000000
+

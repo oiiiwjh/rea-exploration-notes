@@ -1,0 +1,578 @@
+{
+  "repository": "https://github.com/morluto/rea",
+  "commit": "fb94d9dde0ccda83ae520ac6fb22b1d283562cf3",
+  "draft": false,
+  "branch": "wiki-analysis-20261011",
+  "packageVersion": "6.4.0",
+  "preparedDate": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "sections": [
+    {
+      "id": "overview-1",
+      "title": "项目用途与核心概念",
+      "group": "项目概览",
+      "file": "overview.md",
+      "refs": [
+        "README.md",
+        "package.json",
+        "docs/cli.md",
+        "docs/mcp-contracts.md",
+        "src/main.ts"
+      ]
+    },
+    {
+      "id": "overview-2",
+      "title": "能力、依赖与平台对照",
+      "group": "项目概览",
+      "file": "overview.md",
+      "refs": [
+        "README.md",
+        "docs/windows-ghidra-p0.md",
+        "docs/android-analysis.md",
+        "docs/managed-code-analysis.md",
+        "docs/wasm-artifacts.md",
+        "docs/binary-diagnostics.md",
+        "docs/recorded-crashes.md",
+        "docs/evm-bytecode.md",
+        "docs/process-capture.md"
+      ]
+    },
+    {
+      "id": "overview-3",
+      "title": "阅读范围与版本依据",
+      "group": "项目概览",
+      "file": "overview.md",
+      "refs": [
+        ".gitmodules",
+        "package.json",
+        "docs/installation.md",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "operations-1",
+      "title": "安装选择与版本边界",
+      "group": "安装与配置",
+      "file": "research-operations.md",
+      "refs": [
+        "scripts/rea.mjs",
+        "package.json",
+        ".nvmrc",
+        "docs/installation.md",
+        "README.md"
+      ]
+    },
+    {
+      "id": "operations-3",
+      "title": "MCP 配置与客户端",
+      "group": "安装与配置",
+      "file": "research-operations.md",
+      "refs": [
+        "docs/installation.md",
+        "src/cli/setupCommands.ts"
+      ]
+    },
+    {
+      "id": "operations-4",
+      "title": "原生分析引擎配置",
+      "group": "安装与配置",
+      "file": "research-operations.md",
+      "refs": [
+        "docs/installation.md",
+        "docs/ida-provider.md",
+        "src/config/environment.ts"
+      ]
+    },
+    {
+      "id": "operations-5",
+      "title": "选择 provider 与就绪检查",
+      "group": "安装与配置",
+      "file": "research-operations.md",
+      "refs": [
+        "docs/cli.md",
+        "docs/installation.md"
+      ]
+    },
+    {
+      "id": "operations-8",
+      "title": "常用环境变量速查",
+      "group": "安装与配置",
+      "file": "research-operations.md",
+      "refs": [
+        "src/config/environment.ts",
+        "src/config/parseConfig.ts",
+        "src/config/providerStartupTimeout.ts",
+        "src/config/mcpResponseBudget.ts"
+      ]
+    },
+    {
+      "id": "operations-9",
+      "title": "更新、卸载与常见问题",
+      "group": "安装与配置",
+      "file": "research-operations.md",
+      "refs": [
+        "docs/installation.md",
+        "docs/cli.md",
+        "scripts/rea.mjs"
+      ]
+    },
+    {
+      "id": "installed-1",
+      "title": "本机安装结果与实际过程",
+      "group": "本机安装与 Sifu",
+      "file": "local-installation.md",
+      "refs": [
+        "docs/installation.md",
+        "docs/ghidra-provider.md",
+        "scripts/create-ghidra-windows-fixture.mjs"
+      ]
+    },
+    {
+      "id": "installed-2",
+      "title": "Sifu 分析环境与后续使用",
+      "group": "本机安装与 Sifu",
+      "file": "local-installation.md",
+      "refs": [
+        "docs/installation.md",
+        "docs/ghidra-provider.md",
+        "src/ghidra/GhidraClient.ts",
+        "src/ghidra/GhidraLauncher.ts"
+      ]
+    },
+    {
+      "id": "workflows-3",
+      "title": "从未知文件开始：先识别，再选路线",
+      "group": "分析工作流",
+      "file": "research-workflows.md",
+      "refs": [
+        "docs/javascript-artifact-reconstruction.md",
+        "docs/apple-application-analysis.md",
+        "src/cli/artifactCommands.ts",
+        "src/contracts/artifactToolContracts.ts"
+      ]
+    },
+    {
+      "id": "workflows-4",
+      "title": "原生程序：从字符串找到功能",
+      "group": "分析工作流",
+      "file": "research-workflows.md",
+      "refs": [
+        "docs/native-investigation.md",
+        "docs/ghidra-provider.md",
+        "docs/ida-provider.md",
+        "src/cli/coreNativeCommands.ts",
+        "src/contracts/officialToolContracts.ts",
+        "src/contracts/enhancedToolContracts.ts"
+      ]
+    },
+    {
+      "id": "workflows-5",
+      "title": "JavaScript/Electron 静态分析：ASAR → 应用图 → 功能追踪 → 版本对比",
+      "group": "分析工作流",
+      "file": "research-workflows.md",
+      "refs": [
+        "docs/javascript-artifact-reconstruction.md",
+        "docs/javascript-application-workflows.md",
+        "docs/javascript-application-graph.md",
+        "src/cli/applicationCommands.ts",
+        "src/contracts/javascript/applicationWorkflowInputContracts.ts"
+      ]
+    },
+    {
+      "id": "workflows-6",
+      "title": "浏览器：被动捕获与主动场景",
+      "group": "分析工作流",
+      "file": "research-workflows.md",
+      "refs": [
+        "docs/browser-observation.md",
+        "docs/browser-scenario-contract.md",
+        "docs/website-script-export.md",
+        "src/cli/browserCommands.ts",
+        "src/cliBrowserScenarioCommands.ts",
+        "src/cli/webScriptCommands.ts"
+      ]
+    },
+    {
+      "id": "workflows-7",
+      "title": "Electron 与 Node 运行观察",
+      "group": "分析工作流",
+      "file": "research-workflows.md",
+      "refs": [
+        "docs/electron-observation.md",
+        "docs/javascript-runtime-observation.md",
+        "docs/javascript-runtime-reconciliation.md",
+        "src/cli/electronCommands.ts",
+        "src/cliJavaScriptRuntimeCommands.ts"
+      ]
+    },
+    {
+      "id": "workflows-8",
+      "title": ".NET：元数据、CIL、native boundary 与版本变化",
+      "group": "分析工作流",
+      "file": "research-workflows.md",
+      "refs": [
+        "docs/managed-code-analysis.md",
+        "docs/ghidra-nativeaot.md",
+        "src/cli/managedCommands.ts",
+        "src/contracts/managed/managedToolContracts.ts"
+      ]
+    },
+    {
+      "id": "workflows-9",
+      "title": "Android APK：manifest → 类 → 重载方法 → 引用",
+      "group": "分析工作流",
+      "file": "research-workflows.md",
+      "refs": [
+        "docs/android-analysis.md",
+        "src/cli/androidCommands.ts",
+        "src/contracts/android/androidToolContracts.ts"
+      ]
+    },
+    {
+      "id": "extensions-1",
+      "title": "设备、固件与离线扩展工作流",
+      "group": "分析工作流",
+      "file": "extensions.md",
+      "refs": [
+        "docs/adb-device-analysis.md",
+        "src/cli/adbCommands.ts",
+        "docs/firmware-analysis.md",
+        "src/cli/firmwareCommands.ts",
+        "docs/wasm-artifacts.md",
+        "src/cli/wasmCommands.ts",
+        "docs/evm-bytecode.md",
+        "src/cli/evmCommands.ts"
+      ]
+    },
+    {
+      "id": "extensions-2",
+      "title": "进程行为捕获与重建对照",
+      "group": "分析工作流",
+      "file": "extensions.md",
+      "refs": [
+        "docs/process-capture.md",
+        "src/cli/processCommands.ts",
+        "src/domain/process/processScenario.ts"
+      ]
+    },
+    {
+      "id": "evidence-7",
+      "title": "Evidence、结果保存与会话",
+      "group": "Evidence 与会话",
+      "file": "research-operations.md",
+      "refs": [
+        "docs/cli.md",
+        "docs/mcp-contracts.md",
+        "src/cliCommandNames.ts"
+      ]
+    },
+    {
+      "id": "evidence-details-10",
+      "title": "Evidence、缓存、返回值如何读",
+      "group": "Evidence 与会话",
+      "file": "research-workflows.md",
+      "refs": [
+        "docs/mcp-contracts.md",
+        "docs/cli.md",
+        "src/domain/evidence.ts",
+        "src/contracts/sessionToolContracts.ts",
+        "src/server/registerEvidenceTools.ts"
+      ]
+    },
+    {
+      "id": "architecture-1",
+      "title": "架构总览与目录分工",
+      "group": "源码架构",
+      "file": "research-architecture.md",
+      "refs": [
+        "src/cli.ts",
+        "src/server/createServer.ts",
+        "scripts/rea.mjs",
+        "src/main.ts",
+        "docs/architecture.mermaid",
+        "src/composition/binary.ts"
+      ]
+    },
+    {
+      "id": "architecture-2",
+      "title": "请求链路：CLI 与 MCP",
+      "group": "源码架构",
+      "file": "research-architecture.md",
+      "refs": [
+        "scripts/rea.mjs",
+        "src/application/DirectAnalysis.ts",
+        "src/composition/binary.ts",
+        "src/main.ts",
+        "src/main/transport.ts",
+        "src/server/registerOfficialTools.ts",
+        "src/application/binary/BinarySession.ts",
+        "src/application/binary/BinarySessionExecution.ts"
+      ]
+    },
+    {
+      "id": "architecture-3",
+      "title": "Provider 选择与平台边界",
+      "group": "源码架构",
+      "file": "research-architecture.md",
+      "refs": [
+        "src/composition/binary.ts",
+        "src/application/binary/AnalysisProviderRegistry.ts",
+        "src/application/binary/SessionProviderRouter.ts",
+        "src/composition/auxiliaryAnalysisProviders.ts",
+        "src/hopper/HopperProvider.ts",
+        "src/ghidra/GhidraProvider.ts",
+        "src/ghidra/GhidraProviderCapabilities.ts",
+        "src/ida/IdaProviderCapabilities.ts"
+      ]
+    },
+    {
+      "id": "architecture-4",
+      "title": "Session、目标身份与 Snapshot",
+      "group": "源码架构",
+      "file": "research-architecture.md",
+      "refs": [
+        "src/application/BinaryTargetResolver.ts",
+        "src/domain/analysisProfile.ts",
+        "src/application/binary/BinarySessionOpen.ts",
+        "src/application/binary/BinarySession.ts",
+        "src/application/binary/BinarySessionRecords.ts",
+        "src/application/binary/AnalysisSnapshotCache.ts"
+      ]
+    },
+    {
+      "id": "architecture-5",
+      "title": "Evidence、Bundle 与未知项",
+      "group": "源码架构",
+      "file": "research-architecture.md",
+      "refs": [
+        "src/domain/evidence.ts",
+        "src/application/investigation/EvidenceLedger.ts",
+        "src/domain/evidenceBundle.ts",
+        "src/application/WorkflowEvidence.ts"
+      ]
+    },
+    {
+      "id": "architecture-6",
+      "title": "JavaScript 图分析与重建验证",
+      "group": "源码架构",
+      "file": "research-architecture.md",
+      "refs": [
+        "src/application/javascript/JavaScriptArtifactReconstruction.ts",
+        "src/application/javascript/JavaScriptApplicationWorkflowService.ts",
+        "src/application/javascript/JavaScriptRuntimeReconciliationService.ts",
+        "src/application/ReconstructionObligationLedgerEvaluation.ts"
+      ]
+    },
+    {
+      "id": "architecture-7",
+      "title": "资源、交付与结果解释限制",
+      "group": "源码架构",
+      "file": "research-architecture.md",
+      "refs": [
+        "src/application/AnalysisProvider.ts",
+        "AGENTS.md",
+        "src/server/toolResult.ts",
+        "src/ida/IdaProviderCapabilities.ts"
+      ]
+    },
+    {
+      "id": "develop-2",
+      "title": "源码克隆、构建与直接运行",
+      "group": "构建与开发",
+      "file": "research-operations.md",
+      "refs": [
+        ".nvmrc",
+        "CONTRIBUTING.md",
+        "scripts/rea.mjs",
+        "scripts/prepare.mjs",
+        ".gitmodules",
+        "docs/firmware-analysis.md"
+      ]
+    },
+    {
+      "id": "develop-10",
+      "title": "开发检查与原有文档网站",
+      "group": "构建与开发",
+      "file": "research-operations.md",
+      "refs": [
+        "CONTRIBUTING.md",
+        "package.json",
+        "docs/testing.md"
+      ]
+    },
+    {
+      "id": "local-1",
+      "title": "Wiki 本地挂载与维护",
+      "group": "挂载与参考",
+      "file": "local-and-faq.md",
+      "refs": []
+    },
+    {
+      "id": "local-2",
+      "title": "常见问题",
+      "group": "挂载与参考",
+      "file": "local-and-faq.md",
+      "refs": [
+        "README.md",
+        "docs/cli.md",
+        "docs/mcp-contracts.md",
+        "docs/installation.md"
+      ]
+    },
+    {
+      "id": "local-3",
+      "title": "源码与官方文档索引",
+      "group": "挂载与参考",
+      "file": "local-and-faq.md",
+      "refs": [
+        "README.md",
+        "README_zh.md",
+        "docs/installation.md",
+        "docs/cli.md",
+        "docs/mcp-contracts.md",
+        "docs/mcp-prompts.md",
+        "docs/native-investigation.md",
+        "docs/ghidra-provider.md",
+        "docs/ida-provider.md",
+        "docs/windows-ghidra-p0.md",
+        "docs/javascript-artifact-reconstruction.md",
+        "docs/javascript-application-workflows.md",
+        "docs/javascript-application-graph.md",
+        "docs/electron-observation.md",
+        "docs/javascript-runtime-observation.md",
+        "docs/browser-observation.md",
+        "docs/browser-scenario-contract.md",
+        "docs/web-runtime.md",
+        "docs/managed-code-analysis.md",
+        "docs/android-analysis.md",
+        "docs/adb-device-analysis.md",
+        "docs/firmware-analysis.md",
+        "docs/wasm-artifacts.md",
+        "docs/evm-bytecode.md",
+        "docs/binary-diagnostics.md",
+        "docs/reconstruction-readiness.md",
+        "docs/reconstruction-obligation-ledgers.md",
+        "CONTRIBUTING.md",
+        "docs/testing.md",
+        "docs/architecture.mermaid",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        ".nvmrc",
+        ".gitmodules",
+        "LICENSE"
+      ]
+    }
+  ],
+  "sourcePaths": [
+    ".gitmodules",
+    ".nvmrc",
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "README.md",
+    "README_zh.md",
+    "docs/adb-device-analysis.md",
+    "docs/android-analysis.md",
+    "docs/apple-application-analysis.md",
+    "docs/architecture.mermaid",
+    "docs/binary-diagnostics.md",
+    "docs/browser-observation.md",
+    "docs/browser-scenario-contract.md",
+    "docs/cli.md",
+    "docs/electron-observation.md",
+    "docs/evm-bytecode.md",
+    "docs/firmware-analysis.md",
+    "docs/ghidra-nativeaot.md",
+    "docs/ghidra-provider.md",
+    "docs/ida-provider.md",
+    "docs/installation.md",
+    "docs/javascript-application-graph.md",
+    "docs/javascript-application-workflows.md",
+    "docs/javascript-artifact-reconstruction.md",
+    "docs/javascript-runtime-observation.md",
+    "docs/javascript-runtime-reconciliation.md",
+    "docs/managed-code-analysis.md",
+    "docs/mcp-contracts.md",
+    "docs/mcp-prompts.md",
+    "docs/native-investigation.md",
+    "docs/process-capture.md",
+    "docs/reconstruction-obligation-ledgers.md",
+    "docs/reconstruction-readiness.md",
+    "docs/recorded-crashes.md",
+    "docs/testing.md",
+    "docs/wasm-artifacts.md",
+    "docs/web-runtime.md",
+    "docs/website-script-export.md",
+    "docs/windows-ghidra-p0.md",
+    "package-lock.json",
+    "package.json",
+    "scripts/create-ghidra-windows-fixture.mjs",
+    "scripts/prepare.mjs",
+    "scripts/rea.mjs",
+    "src/application/AnalysisProvider.ts",
+    "src/application/BinaryTargetResolver.ts",
+    "src/application/DirectAnalysis.ts",
+    "src/application/ReconstructionObligationLedgerEvaluation.ts",
+    "src/application/WorkflowEvidence.ts",
+    "src/application/binary/AnalysisProviderRegistry.ts",
+    "src/application/binary/AnalysisSnapshotCache.ts",
+    "src/application/binary/BinarySession.ts",
+    "src/application/binary/BinarySessionExecution.ts",
+    "src/application/binary/BinarySessionOpen.ts",
+    "src/application/binary/BinarySessionRecords.ts",
+    "src/application/binary/SessionProviderRouter.ts",
+    "src/application/investigation/EvidenceLedger.ts",
+    "src/application/javascript/JavaScriptApplicationWorkflowService.ts",
+    "src/application/javascript/JavaScriptArtifactReconstruction.ts",
+    "src/application/javascript/JavaScriptRuntimeReconciliationService.ts",
+    "src/cli.ts",
+    "src/cli/adbCommands.ts",
+    "src/cli/androidCommands.ts",
+    "src/cli/applicationCommands.ts",
+    "src/cli/artifactCommands.ts",
+    "src/cli/browserCommands.ts",
+    "src/cli/coreNativeCommands.ts",
+    "src/cli/electronCommands.ts",
+    "src/cli/evmCommands.ts",
+    "src/cli/firmwareCommands.ts",
+    "src/cli/managedCommands.ts",
+    "src/cli/processCommands.ts",
+    "src/cli/setupCommands.ts",
+    "src/cli/wasmCommands.ts",
+    "src/cli/webScriptCommands.ts",
+    "src/cliBrowserScenarioCommands.ts",
+    "src/cliCommandNames.ts",
+    "src/cliJavaScriptRuntimeCommands.ts",
+    "src/composition/auxiliaryAnalysisProviders.ts",
+    "src/composition/binary.ts",
+    "src/config/environment.ts",
+    "src/config/mcpResponseBudget.ts",
+    "src/config/parseConfig.ts",
+    "src/config/providerStartupTimeout.ts",
+    "src/contracts/android/androidToolContracts.ts",
+    "src/contracts/artifactToolContracts.ts",
+    "src/contracts/enhancedToolContracts.ts",
+    "src/contracts/javascript/applicationWorkflowInputContracts.ts",
+    "src/contracts/managed/managedToolContracts.ts",
+    "src/contracts/officialToolContracts.ts",
+    "src/contracts/sessionToolContracts.ts",
+    "src/domain/analysisProfile.ts",
+    "src/domain/evidence.ts",
+    "src/domain/evidenceBundle.ts",
+    "src/domain/process/processScenario.ts",
+    "src/ghidra/GhidraClient.ts",
+    "src/ghidra/GhidraLauncher.ts",
+    "src/ghidra/GhidraProvider.ts",
+    "src/ghidra/GhidraProviderCapabilities.ts",
+    "src/hopper/HopperProvider.ts",
+    "src/ida/IdaProviderCapabilities.ts",
+    "src/main.ts",
+    "src/main/transport.ts",
+    "src/server/createServer.ts",
+    "src/server/registerEvidenceTools.ts",
+    "src/server/registerOfficialTools.ts",
+    "src/server/toolResult.ts"
+  ],
+  "bytes": 204556
+}

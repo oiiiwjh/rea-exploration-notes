@@ -1,0 +1,2689 @@
+
+/mnt/d/SteamLibrary/steamapps/common/Sifu/Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe:     file format pei-x86-64
+
+Characteristics 0x22
+	executable
+	large address aware
+
+Time/Date		Thu Jun  5 03:12:48 2025
+Magic			020b	(PE32+)
+MajorLinkerVersion	14
+MinorLinkerVersion	29
+SizeOfCode		000000000424a200
+SizeOfInitializedData	0000000002044a00
+SizeOfUninitializedData	0000000000000000
+AddressOfEntryPoint	00000000041a4acc
+BaseOfCode		0000000000001000
+ImageBase		0000000140000000
+SectionAlignment	00001000
+FileAlignment		00000200
+MajorOSystemVersion	6
+MinorOSystemVersion	0
+MajorImageVersion	0
+MinorImageVersion	0
+MajorSubsystemVersion	6
+MinorSubsystemVersion	0
+Win32Version		00000000
+SizeOfImage		06295000
+SizeOfHeaders		00000600
+CheckSum		05fdd6ab
+Subsystem		00000002	(Windows GUI)
+DllCharacteristics	00008160
+SizeOfStackReserve	0000000000b71b00
+SizeOfStackCommit	0000000000001000
+SizeOfHeapReserve	0000000000100000
+SizeOfHeapCommit	0000000000001000
+LoaderFlags		00000000
+NumberOfRvaAndSizes	00000010
+
+The Data Directory
+Entry 0 000000000575bbd0 0000975c Export Directory [.edata (or where ever we found it)]
+Entry 1 000000000576532c 00000384 Import Directory [parts of .idata]
+Entry 2 00000000060b1000 00022178 Resource Directory [.rsrc]
+Entry 3 0000000005d0e000 00377d24 Exception Directory [.pdata]
+Entry 4 0000000000000000 00000000 Security Directory
+Entry 5 00000000060d4000 001c0cd4 Base Relocation Directory [.reloc]
+Entry 6 0000000005415e48 00000054 Debug Directory
+Entry 7 0000000000000000 00000000 Description Directory
+Entry 8 0000000000000000 00000000 Special Directory
+Entry 9 0000000005415f00 00000028 Thread Storage Directory [.tls]
+Entry a 00000000053cf530 00000138 Load Configuration Directory
+Entry b 0000000000000000 00000000 Bound Import Directory
+Entry c 000000000424c000 00001f58 Import Address Table Directory
+Entry d 00000000057581d4 000002c0 Delay Import Directory
+Entry e 0000000000000000 00000000 CLR Runtime Header
+Entry f 0000000000000000 00000000 Reserved
+
+There is an import table in .rdata at 0x14576532c
+
+The Import Tables (interpreted .rdata section contents)
+ vma:            Hint    Time      Forward  DLL       First
+                 Table   Stamp     Chain    Name      Thunk
+ 0576532c	05766da8 00000000 00000000 05767632 0424d6f8
+
+	DLL Name: X3DAudio1_7.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5767608	    1  X3DAudioInitialize
+	576761e	    0  X3DAudioCalculate
+
+ 05765340	05766dc0 00000000 00000000 0576764e 0424d710
+
+	DLL Name: XAPOFX1_5.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5767642	    0  CreateFX
+
+ 05765354	05767568 00000000 00000000 05767686 0424deb8
+
+	DLL Name: dxgi.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5767672	    3  CreateDXGIFactory
+	576765c	    4  CreateDXGIFactory1
+
+ 05765368	05767528 00000000 00000000 057676ba 0424de78
+
+	DLL Name: d3d9.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	57676a6	    1  D3DPERF_EndEvent
+	5767690	    0  D3DPERF_BeginEvent
+
+ 0576537c	05767518 00000000 00000000 057676d8 0424de68
+
+	DLL Name: d3d11.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	57676c4	    4  D3D11CreateDevice
+
+ 05765390	057657f8 00000000 00000000 057676f4 0424c148
+
+	DLL Name: D3DCOMPILER_43.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	57676e2	    5  D3DDisassemble
+
+ 057653a4	05766dd0 00000000 00000000 05767708 0424d720
+
+	DLL Name: XINPUT1_3.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	8000000000000003	    000000003  <none>
+	8000000000000002	    000000002  <none>
+
+ 057653b8	05766708 00000000 00000000 05768410 0424d058
+
+	DLL Name: USER32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5767e0e	    3  AdjustWindowRectEx
+	5767dfe	  309  GetClientRect
+	5767dec	  540  InvalidateRect
+	5767ddc	  896  SetWindowRgn
+	576963a	  389  GetMessageA
+	5767dd0	  246  EndPaint
+	5767dc2	   16  BeginPaint
+	5767db6	  773  ReleaseDC
+	5767e24	  907  ShowCursor
+	5767d98	  344  GetForegroundWindow
+	5767d76	  970  UpdateWindow
+	5767e80	  998  WindowFromPoint
+	5767e92	   76  ClipCursor
+	5767ea0	  485  GetWindowLongW
+	5767eb2	  893  SetWindowLongW
+	5769648	  188  DispatchMessageA
+	5767ec4	  594  LoadCursorW
+	576965c	  784  SendMessageA
+	576966c	  684  PostMessageA
+	5767ed2	  593  LoadCursorFromFileW
+	5767ee8	  596  LoadIconW
+	5767ef4	  598  LoadImageW
+	5767716	  361  GetKeyboardLayout
+	576776a	    7  AllowSetForegroundWindow
+	57677d0	  694  PeekMessageW
+	57677e0	  753  RegisterHotKey
+	57677f2	  957  UnregisterHotKey
+	5767806	  699  PostQuitMessage
+	5767e32	  818  SetCursorPos
+	5767e42	  816  SetCursor
+	5767e6e	   75  ClientToScreen
+	5767e5e	  310  GetClipCursor
+	5767dae	  324  GetDC
+	5767e4e	  323  GetCursorPos
+	5767818	  895  SetWindowPos
+	5767828	  188  DialogBoxParamW
+	576783a	  244  EndDialog
+	5767846	  334  GetDlgItem
+	5767854	  828  SetDlgItemTextW
+	5767866	  451  GetSystemMetrics
+	576787a	  832  SetForegroundWindow
+	5767890	  900  SetWindowTextW
+	57678a2	  492  GetWindowRect
+	57678b2	  663  MessageBoxW
+	57678c0	  785  ScreenToClient
+	57678d2	  461  GetTopWindow
+	57678e2	  500  GetWindowThreadProcessId
+	57678fe	  255  EnumDisplayDevicesW
+	576968e	  104  CreateDialogIndirectParamW
+	576967c	  166  DefWindowProcA
+	57696dc	  222  DrawTextW
+	57696ce	  613  LoadStringW
+	57696c2	  871  SetTimer
+	57696ac	  326  GetDialogBaseUnits
+	5767d86	  803  SetActiveWindow
+	57679ac	  649  MapVirtualKeyW
+	5767ac2	  189  DisableProcessWindowsGhosting
+	5767ae2	  944  TranslateMessage
+	5767af6	  191  DispatchMessageW
+	5767b0a	  698  PostMessageW
+	5767b1a	  169  DefWindowProcW
+	5767b2c	  744  RegisterClassW
+	5767b3e	  955  UnregisterClassW
+	5767b52	  116  CreateWindowExW
+	5767f02	  108  CreateIconIndirect
+	57683fa	  254  EnumDisplayDevicesA
+	5767b64	  577  IsWindow
+	576821e	  468  GetUserObjectInformationW
+	5768204	  427  GetProcessWindowStation
+	5767b70	  183  DestroyWindow
+	57681f6	  656  MessageBoxA
+	57681e2	  892  SetWindowLongPtrW
+	57681ce	  484  GetWindowLongPtrW
+	57681bc	   32  CallWindowProcW
+	576819c	  956  UnregisterDeviceNotification
+	576817e	  749  RegisterDeviceNotificationW
+	576816a	  327  GetDesktopWindow
+	576814e	  888  SetWindowDisplayAffinity
+	5768132	  477  GetWindowDisplayAffinity
+	5768116	   39  ChangeDisplaySettingsExW
+	57680fc	   40  ChangeDisplaySettingsW
+	5767b80	  912  ShowWindow
+	5767b8e	  837  SetLayeredWindowAttributes
+	5767bac	  280  FlashWindowEx
+	5767bbc	  490  GetWindowPlacement
+	5767bd2	  894  SetWindowPlacement
+	5767be8	  559  IsIconic
+	5767bf4	  585  IsZoomed
+	5767c00	  680  OpenClipboard
+	5767f18	  260  EnumDisplaySettingsW
+	5767c10	   77  CloseClipboard
+	5767c22	  812  SetClipboardData
+	5767c36	  312  GetClipboardData
+	5767c4a	  234  EmptyClipboard
+	5767c5c	  831  SetFocus
+	5767c68	  284  GetActiveWindow
+	5767c7a	  343  GetFocus
+	5767c86	  360  GetKeyState
+	5767c94	  291  GetAsyncKeyState
+	5767ca8	  794  SendInput
+	5767cb4	  462  GetTouchInputInfo
+	5767cc8	   80  CloseTouchInputHandle
+	5767ce0	  768  RegisterTouchWindow
+	5767cf6	  295  GetCapture
+	5767d04	  804  SetCapture
+	5767d12	  772  ReleaseCapture
+	5767d24	  241  EnableWindow
+	5767d34	  579  IsWindowEnabled
+	5767d46	  450  GetSystemMenu
+	5767d56	  235  EnableMenuItem
+	5768000	  436  GetRawInputDeviceList
+	5767fe6	  760  RegisterRawInputDevices
+	5767fcc	  434  GetRawInputDeviceInfoA
+	5767fba	  433  GetRawInputData
+	5767faa	  481  GetWindowInfo
+	5767f94	  256  EnumDisplayMonitors
+	5767f82	  395  GetMonitorInfoW
+	5767f6e	  668  MonitorFromWindow
+	5767f5c	  667  MonitorFromRect
+	5767f48	  666  MonitorFromPoint
+	5767f30	  928  SystemParametersInfoW
+	5767d68	  220  DrawStateW
+
+ 057653cc	057656b0 00000000 00000000 0576841c 0424c000
+
+	DLL Name: ADVAPI32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576828e	  215  CryptGetProvParam
+	576799a	  681  RegSetValueExW
+	5767986	  665  RegQueryValueExW
+	5767976	  652  RegOpenKeyExW
+	5769746	  641  RegGetValueW
+	5767966	  637  RegEnumValueW
+	5767956	  634  RegEnumKeyExW
+	5767944	  627  RegDeleteValueW
+	5767934	  623  RegDeleteKeyW
+	5767922	  612  RegCreateKeyExW
+	5767914	  603  RegCloseKey
+	576823a	  194  CryptAcquireContextW
+	5768252	  220  CryptReleaseContext
+	5768268	  200  CryptDestroyKey
+	576827a	  221  CryptSetHashParam
+	5768050	   33  AllocateLocallyUniqueId
+	57683e2	  430  LookupPrivilegeValueA
+	57683ca	   31  AdjustTokenPrivileges
+	576772a	  237  DeregisterEventSource
+	5767742	  686  RegisterEventSourceW
+	576775a	  704  ReportEventW
+	57683b6	  533  OpenProcessToken
+	5767786	  379  GetUserNameW
+	57682a2	  216  CryptGetUserKey
+	57682b4	  208  CryptExportKey
+	57682c6	  197  CryptDecrypt
+	57682d6	  196  CryptCreateHash
+	57682e8	  199  CryptDestroyHash
+	57682fc	  229  CryptSignHashW
+	576830e	  207  CryptEnumProvidersW
+
+ 057653e0	05765840 00000000 00000000 0576842a 0424c190
+
+	DLL Name: GDI32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	57680dc	  889  SetPixelFormat
+	57680c8	   25  ChoosePixelFormat
+	57696e8	   79  CreatePen
+	576973a	  794  Rectangle
+	57680ee	  916  SwapBuffers
+	5769708	    2  AddFontMemResourceEx
+	57696f4	   90  CreateSolidBrush
+	5767796	   49  CreateCompatibleDC
+	57679be	   41  CreateBitmap
+	57679ce	   67  CreateFontIndirectW
+	57679e4	   83  CreateRectRgn
+	57679f4	   85  CreateRoundRectRgn
+	5767a0a	  373  DeleteObject
+	5767a1a	  621  GetDeviceCaps
+	5767a2a	  688  GetStockObject
+	5767a3c	  779  PtInRegion
+	5767a4a	  851  SelectObject
+	5767a5a	  858  SetBkColor
+	5767a68	  859  SetBkMode
+	5767a74	  899  SetTextColor
+	5767a84	  897  SetTextAlign
+	5767a94	   55  CreateDIBSection
+	5767aa8	  671  GetObjectW
+	5767ab6	  918  TextOutW
+	57677ac	  370  DeleteDC
+	57677b8	  705  GetTextExtentPoint32W
+	5769720	  795  RemoveFontMemResourceEx
+
+ 057653f4	05766ca0 00000000 00000000 05768434 0424d5f0
+
+	DLL Name: WS2_32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	8000000000000073	    000000073  <none>
+	8000000000000074	    000000074  <none>
+	8000000000000016	    000000016  <none>
+	8000000000000015	    000000015  <none>
+	8000000000000014	    000000014  <none>
+	8000000000000013	    000000013  <none>
+	8000000000000012	    000000012  <none>
+	8000000000000011	    000000011  <none>
+	8000000000000010	    000000010  <none>
+	800000000000000f	    00000000f  <none>
+	800000000000006f	    00000006f  <none>
+	5768018	  165  getaddrinfo
+	5768026	  164  freeaddrinfo
+	5768036	  169  getnameinfo
+	8000000000000001	    000000001  <none>
+	5768044	  182  inet_pton
+	8000000000000070	    000000070  <none>
+	576844c	   58  WSAIoctl
+	8000000000000097	    000000097  <none>
+	8000000000000039	    000000039  <none>
+	800000000000000e	    00000000e  <none>
+	800000000000000d	    00000000d  <none>
+	8000000000000009	    000000009  <none>
+	8000000000000008	    000000008  <none>
+	8000000000000007	    000000007  <none>
+	8000000000000006	    000000006  <none>
+	8000000000000005	    000000005  <none>
+	800000000000000a	    00000000a  <none>
+	8000000000000004	    000000004  <none>
+	8000000000000003	    000000003  <none>
+	8000000000000002	    000000002  <none>
+	8000000000000017	    000000017  <none>
+
+ 05765408	057657a8 00000000 00000000 05768440 0424c0f8
+
+	DLL Name: CRYPT32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5768334	   53  CertFindCertificateInStore
+	5768352	   37  CertDuplicateCertificateContext
+	5768374	   64  CertFreeCertificateContext
+	5768392	   70  CertGetCertificateContextProperty
+	576806a	   18  CertCloseStore
+	576807c	   44  CertEnumCertificatesInStore
+	576809a	   75  CertGetNameStringW
+	5768324	   89  CertOpenStore
+	57680b0	   91  CertOpenSystemStoreW
+
+ 0576541c	05766c18 00000000 00000000 05768466 0424d568
+
+	DLL Name: WLDAP32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	8000000000000016	    000000016  <none>
+	800000000000012d	    00000012d  <none>
+	80000000000000c8	    0000000c8  <none>
+	800000000000008f	    00000008f  <none>
+	800000000000002e	    00000002e  <none>
+	80000000000000d3	    0000000d3  <none>
+	800000000000003c	    00000003c  <none>
+	8000000000000032	    000000032  <none>
+	8000000000000029	    000000029  <none>
+	800000000000001e	    00000001e  <none>
+	800000000000004f	    00000004f  <none>
+	8000000000000023	    000000023  <none>
+	8000000000000021	    000000021  <none>
+	8000000000000020	    000000020  <none>
+	800000000000001b	    00000001b  <none>
+	800000000000001a	    00000001a  <none>
+
+ 05765430	057665b0 00000000 00000000 05768472 0424cf00
+
+	DLL Name: Normaliz.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5768458	    0  IdnToAscii
+
+ 05765444	05765808 00000000 00000000 05768480 0424c158
+
+	DLL Name: DSOUND.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	8000000000000006	    000000006  <none>
+	8000000000000003	    000000003  <none>
+	8000000000000001	    000000001  <none>
+	8000000000000008	    000000008  <none>
+	800000000000000b	    00000000b  <none>
+	800000000000000c	    00000000c  <none>
+
+ 05765458	05766be8 00000000 00000000 057684c2 0424d538
+
+	DLL Name: WINMM.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	57684b2	  135  timeEndPeriod
+	57684a0	  134  timeBeginPeriod
+	576848c	  164  waveOutGetNumDevs
+
+ 0576546c	05765998 00000000 00000000 0576962c 0424c2e8
+
+	DLL Name: KERNEL32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5769528	  786  GetTimeFormatEx
+	576950e	  789  GetTimeZoneInformation
+	57694ec	 1431  SystemTimeToTzSpecificLocalTime
+	57694d8	 1231  ResolveLocaleName
+	57694c2	  527  GetCurrencyFormatEx
+	57694ae	  665  GetNumberFormatEx
+	576949a	  986  LocaleNameToLCID
+	5769486	  945  LCIDToLocaleName
+	5769476	  799  GetUserGeoID
+	5769468	  611  GetGeoInfoW
+	5769448	  569  GetDynamicTimeZoneInformation
+	5769436	  618  GetLocaleInfoEx
+	576942c	  440  GetACP
+	5769412	  575  GetEnvironmentVariableA
+	5769402	 1503  VirtualUnlock
+	57693ec	  613  GetLargePageMinimum
+	57693de	  419  FlsSetValue
+	57693d2	  416  FlsAlloc
+	57693b6	 1420  SleepConditionVariableCS
+	576939e	 1519  WakeConditionVariable
+	5769380	  868  InitializeConditionVariable
+	5769362	  873  InitializeCriticalSectionEx
+	5769352	 1140  ReadConsoleW
+	5769342	 1130  ReadConsoleA
+	5769330	 1287  SetConsoleMode
+	576931e	  514  GetConsoleMode
+	5769306	  164  ConvertThreadToFiber
+	57692ee	  161  ConvertFiberToThread
+	57692e0	  192  CreateFiber
+	57692d2	  274  DeleteFiber
+	57692c2	 1428  SwitchToFiber
+	57692b0	  151  CompareFileTime
+	576929c	 1297  SetConsoleTitleA
+	576928c	 1558  WriteConsoleA
+	5769276	 1051  OutputDebugStringA
+	576926a	 1602  lstrcmpA
+	576925c	  973  LocalAlloc
+	576924a	  966  LoadLibraryExW
+	5769234	  743  GetSystemDirectoryW
+	5769220	  233  CreateSemaphoreA
+	576920e	  428  FormatMessageA
+	57691f2	 1509  WaitForMultipleObjectsEx
+	57691e8	 1422  SleepEx
+	57691d2	  636  GetModuleHandleExA
+	57691b8	 1461  TryEnterCriticalSection
+	57691a6	  424  FlushViewOfFile
+	5769198	  594  GetFileSize
+	5769186	  783  GetTickCount64
+	576916e	 1511  WaitForSingleObjectEx
+	576915a	  898  IsDebuggerPresent
+	5769148	  699  GetProcessHeap
+	576913c	  850  HeapFree
+	5769130	  846  HeapAlloc
+	5769108	  872  InitializeCriticalSectionAndSpinCount
+	57690e6	 1219  RemoveVectoredExceptionHandler
+	57690c8	   19  AddVectoredExceptionHandler
+	57690ae	  933  K32GetModuleFileNameExA
+	5769096	  922  K32EnumProcessModules
+	5769086	  964  LoadLibraryA
+	5769074	  965  LoadLibraryExA
+	576905e	  633  GetModuleFileNameA
+	5769046	 1299  SetConsoleWindowInfo
+	576902c	 1296  SetConsoleTextAttribute
+	576900e	 1295  SetConsoleScreenBufferSize
+	5768ff0	  520  GetConsoleScreenBufferInfo
+	5768fe0	   37  AttachConsole
+	5768fd2	  430  FreeConsole
+	5768fc2	   21  AllocConsole
+	5768fb4	  833  GlobalLock
+	5768fa4	  840  GlobalUnlock
+	5768f96	  822  GlobalAlloc
+	5768f70	  698  GetProcessHandleCount
+	5768f5e	 1073  Process32NextW
+	5768f4c	 1071  Process32FirstW
+	5768f32	  939  K32GetProcessMemoryInfo
+	5768f1e	  525  GetConsoleWindow
+	5768f06	 1271  SetConsoleCtrlHandler
+	5768eea	  797  GetUserDefaultLocaleName
+	5768ecc	  800  GetUserPreferredUILanguages
+	5768eb4	  747  GetSystemPowerStatus
+	5768e9e	 1492  VerifyVersionInfoW
+	5768e8a	  485  GetComputerNameW
+	5768e72	 1376  SetThreadAffinityMask
+	5768e62	  412  FindResourceW
+	5768e40	  990  LockResource
+	5768e30	  970  LoadResource
+	5768e1e	  693  GetProcAddress
+	5768e08	  637  GetModuleHandleExW
+	5768df4	  638  GetModuleHandleW
+	5768dde	  634  GetModuleFileNameW
+	5768dd0	  433  FreeLibrary
+	5768dc2	 1496  VirtualFree
+	5768db0	 1499  VirtualProtect
+	5768da0	 1493  VirtualAlloc
+	5768d8a	  651  GetNativeSystemInfo
+	5768d66	  624  GetLogicalProcessorInformationEx
+	5768d56	  804  GetVersionExW
+	5768d46	  616  GetLocalTime
+	5768d2c	  752  GetSystemTimeAsFileTime
+	5768d1c	  750  GetSystemTime
+	5768d0c	  746  GetSystemInfo
+	5768cf4	  835  GlobalMemoryStatusEx
+	5768ce6	 1040  OpenProcess
+	5768cd2	  766  GetThreadContext
+	5768cc0	  229  CreateProcessW
+	5768cae	 1429  SwitchToThread
+	5768c98	  579  GetExitCodeProcess
+	5768c84	 1434  TerminateProcess
+	5768c72	  709  GetProcessTimes
+	5768c5e	  236  CreateSemaphoreW
+	5768c4a	 1208  ReleaseSemaphore
+	5768c2e	 1105  QueryPerformanceFrequency
+	5768c1e	 1061  PeekNamedPipe
+	5768c08	 1379  SetThreadErrorMode
+	576954c	  635  GetModuleHandleA
+	5768bf2	 1052  OutputDebugStringW
+	5768be2	  765  GetTempPathW
+	5768bce	  628  GetLongPathNameW
+	5768bba	  608  GetFullPathNameW
+	5768ba4	  559  GetDiskFreeSpaceExW
+	5768b8c	  535  GetCurrentDirectoryW
+	5768b74	 1303  SetCurrentDirectoryW
+	5768b5a	 1314  SetEnvironmentVariableW
+	5768b40	  576  GetEnvironmentVariableW
+	5768b2a	 1488  VerSetConditionMask
+	5768b0e	 1236  RtlCaptureStackBackTrace
+	5769560	 1508  WaitForMultipleObjects
+	576957a	  359  ExpandEnvironmentStringsA
+	5769596	  742  GetSystemDirectoryA
+	57695ac	 1491  VerifyVersionInfoA
+	57695c2	 1009  MulDiv
+	57695cc	 1003  MoveFileExW
+	57695da	  798  GetUserDefaultUILanguage
+	57695f6	  578  GetErrorMode
+	5769606	  866  InitOnceExecuteOnce
+	576961c	 1501  VirtualQuery
+	576cd88	  876  InitializeSListHead
+	576cd9e	  727  GetStartupInfoW
+	576cdb0	  263  DebugBreak
+	5768afe	 1451  Thread32Next
+	5768aee	 1450  Thread32First
+	576cd0e	 1235  RtlCaptureContext
+	576cd22	 1242  RtlLookupFunctionEntry
+	576cd3c	 1249  RtlVirtualUnwind
+	576cd50	 1468  UnhandledExceptionFilter
+	576953a	  551  GetDateFormatEx
+	5768f88	  802  GetVersion
+	576873a	  429  FormatMessageW
+	576cd6c	  905  IsProcessorFeaturePresent
+	57684cc	  871  InitializeCriticalSection
+	57684e8	 1300  SetCriticalSectionSpinCount
+	5768506	  309  EnterCriticalSection
+	576851e	  960  LeaveCriticalSection
+	5768536	  273  DeleteCriticalSection
+	576854e	 1104  QueryPerformanceCounter
+	5768568	  546  GetCurrentThreadId
+	576857e	 1454  TlsGetValue
+	576858c	 1455  TlsSetValue
+	576859a	  729  GetStdHandle
+	57685aa	  477  GetCommandLineW
+	57685bc	  379  FindClose
+	57685c8	  390  FindFirstFileW
+	57685da	  597  GetFileType
+	57685e8	  615  GetLastError
+	57685f8	 1315  SetErrorMode
+	5768608	 1204  ReleaseMutex
+	5768618	  218  CreateMutexW
+	5768628	 1419  Sleep
+	5768630	  978  LocalFree
+	576863c	 1568  WriteConsoleW
+	576864c	 1010  MultiByteToWideChar
+	5768662	 1549  WideCharToMultiByte
+	5768678	    1  AcquireSRWLockShared
+	5768690	 1207  ReleaseSRWLockShared
+	57686a8	    0  AcquireSRWLockExclusive
+	57686c2	 1206  ReleaseSRWLockExclusive
+	57686dc	  877  InitializeSRWLock
+	57686f0	  134  CloseHandle
+	57686fe	 1412  SetWaitableTimer
+	5768712	  257  CreateWaitableTimerW
+	576872a	  967  LoadLibraryW
+	5768e50	 1418  SizeofResource
+	576874c	 1452  TlsAlloc
+	5768758	 1453  TlsFree
+	5768762	  854  HeapSetInformation
+	5768778	 1339  SetHandleInformation
+	5768790	  221  CreatePipe
+	576879e	  186  CreateDirectoryW
+	57687b2	  203  CreateFileW
+	57687c0	  278  DeleteFileW
+	57687ce	  402  FindNextFileW
+	57687de	  421  FlushFileBuffers
+	57687f2	  588  GetFileAttributesW
+	5768808	  585  GetFileAttributesExW
+	5768820	  595  GetFileSizeEx
+	5768830	  599  GetFinalPathNameByHandleW
+	576884c	 1143  ReadFile
+	5768858	 1213  RemoveDirectoryW
+	576886c	 1310  SetEndOfFile
+	576887c	 1323  SetFileAttributesW
+	5768892	 1328  SetFilePointer
+	57688a4	 1332  SetFileTime
+	57688b2	 1569  WriteFile
+	57688be	 1126  RaiseException
+	57688d0	 1403  SetUnhandledExceptionFilter
+	57688ee	 1343  SetLastError
+	57688fe	  671  GetOverlappedResult
+	5768914	 1316  SetEvent
+	5768920	 1226  ResetEvent
+	576892e	 1510  WaitForSingleObject
+	5768944	  191  CreateEventW
+	5768954	  541  GetCurrentProcess
+	5768968	  542  GetCurrentProcessId
+	576897e	  356  ExitProcess
+	576898c	  242  CreateThread
+	576899c	  545  GetCurrentThread
+	57689b0	 1047  OpenThread
+	57689be	 1387  SetThreadPriority
+	57689d2	 1427  SuspendThread
+	57689e2	 1233  ResumeThread
+	57689f2	  701  GetProcessId
+	5768a02	  200  CreateFileMappingW
+	5768a18	  993  MapViewOfFile
+	5768a28	 1471  UnmapViewOfFile
+	5768a3a	 1308  SetDllDirectoryW
+	5768a4e	  564  GetDllDirectoryW
+	5768a62	 1006  MoveFileW
+	5768a6e	  368  FileTimeToSystemTime
+	5768a86	 1430  SystemTimeToFileTime
+	5768a9e	  923  K32EnumProcessModulesEx
+	5768ab8	  934  K32GetModuleFileNameExW
+	5768ad2	  251  CreateToolhelp32Snapshot
+
+ 05765480	05766690 00000000 00000000 057697ec 0424cfe0
+
+	DLL Name: SHELL32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5769756	    7  CommandLineToArgvW
+	576976c	  344  SHGetFolderPathW
+	5769780	  354  SHGetKnownFolderPath
+	80000000000000a5	    0000000a5  <none>
+	57697d4	  155  SHCreateDirectoryExW
+	57697ba	  374  SHGetSpecialFolderPathW
+	57697a8	  438  ShellExecuteExW
+	5769798	  439  ShellExecuteW
+
+ 05765494	05767580 00000000 00000000 05769916 0424ded0
+
+	DLL Name: ole32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	57698a6	  456  OleUninitialize
+	5769852	  144  CoUninitialize
+	57698cc	  475  RevokeDragDrop
+	57698f2	  139  CoTaskMemAlloc
+	5769886	   96  CoInitialize
+	5769864	  524  StringFromGUID2
+	5769842	  140  CoTaskMemFree
+	576982e	  463  PropVariantClear
+	576981c	  464  PropVariantCopy
+	576980c	  317  IIDFromString
+	5769896	  427  OleInitialize
+	5769876	   42  CoCreateGuid
+	5769904	   97  CoInitializeEx
+	57697f8	   43  CoCreateInstance
+	57698b8	  472  RegisterDragDrop
+	57698de	  473  ReleaseStgMedium
+
+ 057654a8	057665c0 00000000 00000000 05769920 0424cf10
+
+	DLL Name: OLEAUT32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	800000000000001a	    00000001a  <none>
+	8000000000000006	    000000006  <none>
+	8000000000000002	    000000002  <none>
+	800000000000019b	    00000019b  <none>
+	800000000000000a	    00000000a  <none>
+
+ 057654bc	05765988 00000000 00000000 05769946 0424c2d8
+
+	DLL Name: IPHLPAPI.DLL
+	vma:  Hint/Ord Member-Name Bound-To
+	576992e	   67  GetAdaptersAddresses
+
+ 057654d0	05766628 00000000 00000000 05769aa0 0424cf78
+
+	DLL Name: SETUPAPI.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5769a6c	  337  SetupDiGetClassDevsA
+	5769a4a	  464  SetupGetInfDriverStoreLocationW
+	5769a32	  340  SetupDiGetClassDevsW
+	5769a0e	  364  SetupDiGetDeviceInterfaceDetailW
+	5769a84	  368  SetupDiGetDevicePropertyW
+	57699be	   85  CM_Get_Device_IDW
+	57699a6	  401  SetupDiOpenDevRegKey
+	576998c	  339  SetupDiGetClassDevsExW
+	576996c	  317  SetupDiDestroyDeviceInfoList
+	5769954	  320  SetupDiEnumDeviceInfo
+	57699d2	  361  SetupDiGetDeviceInstanceIdW
+	57699f0	  321  SetupDiEnumDeviceInterfaces
+
+ 057654e4	05767540 00000000 00000000 05769b0a 0424de90
+
+	DLL Name: dwmapi.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5769ae4	   18  DwmIsCompositionEnabled
+	5769acc	   27  DwmSetWindowAttribute
+	5769aae	   11  DwmGetCompositionTimingInfo
+	5769afe	    9  DwmFlush
+
+ 057654f8	05765920 00000000 00000000 05769c14 0424c270
+
+	DLL Name: IMM32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5769b16	   65  ImmGetDescriptionW
+	5769b2c	   73  ImmGetIMEFileNameW
+	5769b42	   78  ImmGetProperty
+	5769b54	   31  ImmCreateContext
+	5769b68	   34  ImmDestroyContext
+	5769b7c	   59  ImmGetContext
+	5769b8c	  107  ImmReleaseContext
+	5769ba0	   26  ImmAssociateContext
+	5769bb6	   57  ImmGetCompositionStringW
+	5769bd2	  100  ImmNotifyIME
+	5769be2	  119  ImmSetCompositionWindow
+	5769bfc	  114  ImmSetCandidateWindow
+
+ 0576550c	057666d8 00000000 00000000 05769cb4 0424d028
+
+	DLL Name: UIAutomationCore.DLL
+	vma:  Hint/Ord Member-Name Bound-To
+	5769c7c	   98  UiaReturnRawElementProvider
+	5769c38	   91  UiaRaiseAutomationPropertyChangedEvent
+	5769c1e	   58  UiaClientsAreListening
+	5769c9a	   76  UiaHostProviderFromHwnd
+	5769c62	   90  UiaRaiseAutomationEvent
+
+ 05765520	05766bd0 00000000 00000000 05769d18 0424d520
+
+	DLL Name: WINHTTP.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5769cf0	   28  WinHttpGetIEProxyConfigForCurrentUser
+	5769cca	   27  WinHttpGetDefaultProxyConfiguration
+
+ 05765534	057665f0 00000000 00000000 05769d9c 0424cf40
+
+	DLL Name: OPENGL32.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	5769d38	  345  wglCreateContext
+	5769d4c	  347  wglDeleteContext
+	5769d60	  350  wglGetCurrentContext
+	5769d78	  351  wglGetCurrentDC
+	5769d8a	  356  wglMakeCurrent
+	5769d24	  355  wglGetProcAddress
+
+ 05765548	057660e0 00000000 00000000 0576bec8 0424ca30
+
+	DLL Name: MSVCP140.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576bdd4	  682  ?clear@?$basic_ios@_WU?$char_traits@_W@std@@@std@@QEAAXH_N@Z
+	576bd7e	 1022  ?in@?$codecvt@_WDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEA_W3AEAPEA_W@Z
+	5769daa	 1412  _Mtx_init_in_situ
+	5769dbe	 1409  _Mtx_destroy_in_situ
+	5769dd6	 1413  _Mtx_lock
+	5769de2	 1417  _Mtx_unlock
+	5769df0	  628  ?_Throw_C_error@std@@YAXH@Z
+	5769e0e	  109  ??0_Lockit@std@@QEAA@H@Z
+	5769e2a	  165  ??1_Lockit@std@@QEAA@XZ
+	5769e44	  654  ?_Xlength_error@std@@YAXPEBD@Z
+	5769e66	  655  ?_Xout_of_range@std@@YAXPEBD@Z
+	576bd4a	  971  ?id@?$codecvt@_WDU_Mbstatet@@@std@@2V0locale@2@A
+	576bd24	  498  ?_Incref@facet@locale@std@@UEAAXXZ
+	5769e88	 1461  _Thrd_join
+	576bcee	  414  ?_Decref@facet@locale@std@@UEAAPEAV_Facet_base@3@XZ
+	576bcc2	  144  ??1?$codecvt@_WDU_Mbstatet@@@std@@MEAA@XZ
+	576bc94	   65  ??0?$codecvt@_WDU_Mbstatet@@@std@@QEAA@_K@Z
+	5769e96	 1460  _Thrd_id
+	576bc3c	 1079  ?out@?$codecvt@_WDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEB_W1AEAPEB_WPEAD3AEAPEAD@Z
+	576bc10	  527  ?_Init@locale@std@@CAPEAV_Locimp@12@_N@Z
+	576bbcc	  545  ?_Locimp_Addfac@_Locimp@locale@std@@CAXPEAV123@PEAVfacet@23@_K@Z
+	576bb94	  578  ?_New_Locimp@_Locimp@locale@std@@CAPEAV123@AEBV123@@Z
+	576bb6e	  177  ??4?$_Yarn@D@std@@QEAAAEAV01@PEBD@Z
+	576bb4a	  977  ?id@?$ctype@_W@std@@2V0locale@2@A
+	576bafe	 1352  ?xsputn@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@MEAA_JPEB_W_J@Z
+	576bab2	 1349  ?xsgetn@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@MEAA_JPEA_W_J@Z
+	576ba70	 1309  ?uflow@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@MEAAGXZ
+	576ba2e	 1279  ?sync@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@MEAAHXZ
+	576b9e6	 1239  ?showmanyc@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@MEAA_JXZ
+	576b996	 1207  ?setbuf@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@MEAAPEAV12@PEA_W_J@Z
+	576b946	 1016  ?imbue@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@MEAAXAEBVlocale@2@@Z
+	576b902	  641  ?_Unlock@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@UEAAXXZ
+	576b8c0	  554  ?_Lock@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@UEAAXXZ
+	576b882	  130  ??1?$basic_iostream@_WU?$char_traits@_W@std@@@std@@UEAA@XZ
+	576b812	   23  ??0?$basic_iostream@_WU?$char_traits@_W@std@@@std@@QEAA@PEAV?$basic_streambuf@_WU?$char_traits@_W@std@@@1@@Z
+	5769ea2	 1358  _Cnd_do_broadcast_at_thread_exit
+	5769ec6	  629  ?_Throw_Cpp_error@std@@YAXH@Z
+	5769ee6	  305  ??Bid@locale@std@@QEAA_KXZ
+	5769f04	  469  ?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ
+	5769f38	  669  ?always_noconv@codecvt_base@std@@QEBA_NXZ
+	5769f64	 1018  ?in@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z
+	5769fb8	 1075  ?out@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z
+	576a00c	 1319  ?unshift@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEAD1AEAPEAD@Z
+	576a058	  433  ?_Getcat@?$codecvt@DDU_Mbstatet@@@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z
+	576a0a6	   47  ??0?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAA@XZ
+	576a0e2	  137  ??1?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAA@XZ
+	576a11e	  960  ?getloc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEBA?AVlocale@2@XZ
+	576a16a	 1246  ?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z
+	576a1ac	 1249  ?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z
+	576b7cc	  874  ?flush@?$basic_ostream@_WU?$char_traits@_W@std@@@std@@QEAAAEAV12@XZ
+	576b78c	  582  ?_Osfx@?$basic_ostream@_WU?$char_traits@_W@std@@@std@@QEAAXXZ
+	576b74a	  258  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@K@Z
+	576b708	  257  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@J@Z
+	576b6d0	   16  ??0?$basic_ios@_WU?$char_traits@_W@std@@@std@@IEAA@XZ
+	576b68e	 1225  ?setstate@?$basic_ios@_WU?$char_traits@_W@std@@@std@@QEAAXH_N@Z
+	576b656	  127  ??1?$basic_ios@_WU?$char_traits@_W@std@@@std@@UEAA@XZ
+	576b60e	  564  ?_LogWorkItemCompleted@_TaskEventLogger@details@Concurrency@@QEAAXXZ
+	576a1f4	  488  ?_Gninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ
+	576a238	  586  ?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ
+	576a27c	  501  ?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXXZ
+	576a2bc	 1347  ?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEAD_J@Z
+	576a304	 1350  ?xsputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEBD_J@Z
+	576a34c	  125  ??1?$basic_ios@DU?$char_traits@D@std@@@std@@UEAA@XZ
+	576a382	 1221  ?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z
+	576a3c2	   12  ??0?$basic_ios@DU?$char_traits@D@std@@@std@@IEAA@XZ
+	576a3f8	   37  ??0?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@_N@Z
+	576a464	  134  ??1?$basic_ostream@DU?$char_traits@D@std@@@std@@UEAA@XZ
+	576a49e	  580  ?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ
+	576a4dc	 1343  ?write@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@PEBD_J@Z
+	576a526	  872  ?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ
+	576a56a	 1165  ?read@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@PEAD_J@Z
+	576a5b4	  427  ?_Fiopen@std@@YAPEAU_iobuf@@PEBDHH@Z
+	576a5dc	  652  ?_Xbad_function_call@std@@YAXXZ
+	576a5fe	 1237  ?showmanyc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JXZ
+	576a644	  604  ?_Raise_handler@std@@3P6AXAEBVexception@stdext@@@ZEA
+	576a67c	  969  ?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A
+	576a6ae	  267  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@_J@Z
+	576a6f0	  552  ?_Lock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ
+	576a730	  639  ?_Unlock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ
+	576a772	 1014  ?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAXAEBVlocale@2@@Z
+	576a7c0	 1205  ?setbuf@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAPEAV12@PEAD_J@Z
+	576a80e	 1277  ?sync@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAHXZ
+	576a84e	 1307  ?uflow@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAHXZ
+	576a88e	  651  ?_Xbad_alloc@std@@YAXXZ
+	576a8a8	  678  ?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z
+	576a8e6	  255  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z
+	576a928	 1121  ?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z
+	576a96c	   19  ??0?$basic_iostream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@@Z
+	576a9d8	  128  ??1?$basic_iostream@DU?$char_traits@D@std@@@std@@UEAA@XZ
+	576aa14	  256  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@I@Z
+	576aa56	  674  ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	576aa92	 1310  ?uncaught_exception@std@@YA_NXZ
+	576aab4	  268  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@_K@Z
+	576aaf6	 1191  ?seekp@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@V?$fpos@U_Mbstatet@@@2@@Z
+	576ab52	 1286  ?tellp@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA?AV?$fpos@U_Mbstatet@@@2@XZ
+	576aba8	   26  ??0?$basic_istream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@_N@Z
+	576ac14	  131  ??1?$basic_istream@DU?$char_traits@D@std@@@std@@UEAA@XZ
+	576ac4e	  878  ?gcount@?$basic_istream@DU?$char_traits@D@std@@@std@@QEBA_JXZ
+	576ac8e	 1182  ?seekg@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@V?$fpos@U_Mbstatet@@@2@@Z
+	576acea	 1283  ?tellg@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAA?AV?$fpos@U_Mbstatet@@@2@XZ
+	576ad40	  429  ?_Fiopen@std@@YAPEAU_iobuf@@PEB_WHH@Z
+	576ad68	 1464  _Thrd_yield
+	576ad76	 1463  _Thrd_start
+	576ad84	 1411  _Mtx_init
+	576ad90	 1408  _Mtx_destroy
+	576ada0	 1359  _Cnd_init
+	576adac	 1356  _Cnd_destroy
+	576adbc	 1365  _Cnd_wait
+	576adc8	 1362  _Cnd_signal
+	576add6	 1360  _Cnd_init_in_situ
+	576adea	 1357  _Cnd_destroy_in_situ
+	576ae02	 1355  _Cnd_broadcast
+	576ae14	  663  ?__ExceptionPtrCreate@@YAXPEAX@Z
+	576ae38	  665  ?__ExceptionPtrDestroy@@YAXPEAX@Z
+	576ae5c	  661  ?__ExceptionPtrCopy@@YAXPEAXPEBX@Z
+	576ae82	  659  ?__ExceptionPtrAssign@@YAXPEAXPEBX@Z
+	576aeaa	  668  ?__ExceptionPtrToBool@@YA_NPEBX@Z
+	576aece	  422  ?_Execute_once@std@@YAHAEAUonce_flag@1@P6AHPEAX1PEAPEAX@Z1@Z
+	576af0e	  627  ?_Syserror_map@std@@YAPEBDH@Z
+	576af2e	 1361  _Cnd_register_at_thread_exit
+	576af4e	 1364  _Cnd_unregister_at_thread_exit
+	576af70	  630  ?_Throw_future_error@std@@YAXAEBVerror_code@1@@Z
+	576afa4	  613  ?_Rethrow_future_exception@std@@YAXVexception_ptr@1@@Z
+	576afde	  664  ?__ExceptionPtrCurrentException@@YAXPEAX@Z
+	576b00c	  666  ?__ExceptionPtrRethrow@@YAXPEBX@Z
+	576b030	 1340  ?widen@?$ctype@_W@std@@QEBA_WD@Z
+	576b054	  440  ?_Getcat@?$ctype@_W@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z
+	576b094	  963  ?getloc@ios_base@std@@QEBA?AVlocale@2@XZ
+	576b0c0	   53  ??0?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@IEAA@XZ
+	576b0fe	  139  ??1?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@UEAA@XZ
+	576b13c	 1248  ?sputc@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@QEAAG_W@Z
+	576b180	 1251  ?sputn@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@QEAA_JPEB_W_J@Z
+	576b1ca	  588  ?_Pninc@?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@IEAAPEA_WXZ
+	576b212	 1484  _Xtime_get_ticks
+	576b226	 1407  _Mtx_current_owns
+	576b23a	 1363  _Cnd_timedwait
+	576b24c	  647  ?_XGetLastError@std@@YAXXZ
+	576b26a	  615  ?_Schedule_chore@details@Concurrency@@YAHPEAU_Threadpool_chore@12@@Z
+	576b2b2	  606  ?_Release_chore@details@Concurrency@@YAXPEAU_Threadpool_chore@12@@Z
+	576b2f8	  610  ?_ReportUnobservedException@details@Concurrency@@YAXXZ
+	576b332	  398  ?GetCurrentThreadId@platform@details@Concurrency@@YAJXZ
+	576b36c	  410  ?_CallInContext@_ContextCallback@details@Concurrency@@QEBAXV?$function@$$A6AXXZ@std@@_N@Z
+	576b3c8	  612  ?_Reset@_ContextCallback@details@Concurrency@@AEAAXXZ
+	576b400	  412  ?_Capture@_ContextCallback@details@Concurrency@@AEAAXXZ
+	576b43a	  400  ?ReportUnhandledError@_ExceptionHolder@details@Concurrency@@AEAAXXZ
+	576b480	  120  ??0task_continuation_context@Concurrency@@AEAA@XZ
+	576b4b4	  561  ?_LogScheduleTask@_TaskEventLogger@details@Concurrency@@QEAAX_N@Z
+	576be14	  265  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@@Z
+	576b4f8	  560  ?_LogCancelTask@_TaskEventLogger@details@Concurrency@@QEAAXXZ
+	576b538	  562  ?_LogTaskCompleted@_TaskEventLogger@details@Concurrency@@QEAAXXZ
+	576b57c	  563  ?_LogTaskExecutionCompleted@_TaskEventLogger@details@Concurrency@@QEAAXXZ
+	576be84	  292  ??6?$basic_ostream@_WU?$char_traits@_W@std@@@std@@QEAAAEAV01@K@Z
+	576b5c8	  565  ?_LogWorkItemStarted@_TaskEventLogger@details@Concurrency@@QEAAXXZ
+
+ 0576555c	05766c08 00000000 00000000 0576bee8 0424d558
+
+	DLL Name: WINTRUST.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576bed6	  143  WinVerifyTrust
+
+ 05765570	05767508 00000000 00000000 0576bf08 0424de58
+
+	DLL Name: bcrypt.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576bef6	   29  BCryptGenRandom
+
+ 05765584	05766ae0 00000000 00000000 0576c0ea 0424d430
+
+	DLL Name: VCRUNTIME140.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c0a0	   27  __current_exception
+	576c0b6	   28  __current_exception_context
+	576c0d4	   29  __intrinsic_setjmp
+	576bf4c	   62  memset
+	576bf56	   68  wcschr
+	576bf60	   69  wcsrchr
+	576bf6a	   59  memcmp
+	576bf74	   70  wcsstr
+	576bf42	   61  memmove
+	576bf94	   35  __std_terminate
+	576bfa6	   33  __std_exception_copy
+	576bf38	   60  memcpy
+	576bfbe	   34  __std_exception_destroy
+	576bfd8	    1  _CxxThrowException
+	576bfee	   24  __RTDynamicCast
+	576c000	   66  strstr
+	576c00a	   65  strrchr
+	576c014	   55  _set_purecall_handler
+	576c02c	   57  longjmp
+	576c036	   58  memchr
+	576c040	   64  strchr
+	576c04a	   39  __std_type_info_name
+	576c062	   14  __CxxFrameHandler3
+	576c078	   25  __RTtypeid
+	576c086	   36  __std_type_info_compare
+	576bf14	   54  _purecall
+	576bf20	    8  __C_specific_handler
+
+ 05765598	05766bc0 00000000 00000000 0576c0fc 0424d510
+
+	DLL Name: VCRUNTIME140_1.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576bf7e	    0  __CxxFrameHandler4
+
+ 057655ac	057670a8 00000000 00000000 0576cb78 0424d9f8
+
+	DLL Name: api-ms-win-crt-runtime-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576cad4	   54  _initterm
+	576cab0	   43  _get_narrow_winmain_command_line
+	576ca8c	   66  _set_app_type
+	576ca7a	   64  _seh_filter_exe
+	576ca70	   22  _cexit
+	576ca62	   30  _crt_atexit
+	576ca46	   60  _register_onexit_function
+	576ca2a	   52  _initialize_onexit_table
+	576ca08	   51  _initialize_narrow_environment
+	576c9ee	   24  _configure_narrow_argv
+	576c7aa	  101  strerror_s
+	576c932	   50  _getpid
+	576c906	   13  __sys_nerr
+	576cb06	   61  _register_thread_local_exe_atexit_callback
+	576cafc	   21  _c_exit
+	576c392	   20  _beginthreadex
+	576c110	   85  exit
+	576c118	   71  _set_invalid_parameter_handler
+	576c838	  100  strerror
+	576c80c	   99  signal
+	576c7e2	   97  raise
+	576c7da	   35  _exit
+	576cae0	   55  _initterm_e
+	576c780	   79  _wassert
+	576c6d8	  103  terminate
+	576c2b6	   57  _invalid_parameter_noinfo_noreturn
+	576c2dc	   58  _invoke_watson
+	576c2ee	   33  _errno
+	576c2f8	   84  abort
+	576c5f2	   32  _endthreadex
+
+ 057655c0	057674d8 00000000 00000000 0576cb9a 0424de28
+
+	DLL Name: api-ms-win-crt-utility-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c142	   27  rand
+	576c5ea	   25  qsort
+	576c8d0	   16  bsearch
+	576c898	   18  div
+	576c13a	   29  srand
+
+ 057655d4	057671a0 00000000 00000000 0576cbbc 0424daf0
+
+	DLL Name: api-ms-win-crt-stdio-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c31e	  116  fclose
+	576c300	   57  _get_stream_buffer_pointers
+	576c330	  121  fgetpos
+	576c466	   16  __stdio_common_vsscanf
+	576c44c	  135  fseek
+	576c4b2	  122  fgets
+	576c442	  126  fopen_s
+	576c410	   17  __stdio_common_vswprintf
+	576c33a	  127  fputc
+	576c598	   15  __stdio_common_vsprintf_s
+	576c64c	   98  _wfopen
+	576c656	  117  feof
+	576c65e	   37  _filelengthi64
+	576c342	  131  fread
+	576c34a	  136  fsetpos
+	576c354	   47  _fseeki64
+	576c232	   19  __stdio_common_vswprintf_s
+	576c56e	    3  __stdio_common_vfprintf
+	576c9e4	  124  fgetws
+	576c9ba	   11  __stdio_common_vsnprintf_s
+	576c9a0	   99  _wfopen_s
+	576c96a	  151  setbuf
+	576c95e	  114  clearerr
+	576c732	  102  _wfsopen
+	576c73e	  128  fputs
+	576c746	    5  __stdio_common_vfprintf_s
+	576c93c	   70  _lseeki64
+	576c328	  120  fgetc
+	576c566	  147  puts
+	576c78c	  125  fopen
+	576cb70	   73  _open
+	576cb66	   23  _close
+	576cb5c	  107  _write
+	576cb54	   82  _read
+	576c360	  138  fwrite
+	576c1b6	   13  __stdio_common_vsprintf
+	576cb44	    1  __p__commode
+	576caee	   84  _set_fmode
+	576c36a	  157  ungetc
+	576c54a	  118  ferror
+	576c454	  137  ftell
+	576c534	   38  _fileno
+	576c18c	  152  setvbuf
+	576c53e	   87  _setmode
+	576c182	  119  fflush
+	576c14a	    0  __acrt_iob_func
+	576c15c	    7  __stdio_common_vfwprintf
+
+ 057655e8	05767320 00000000 00000000 0576cbdc 0424dc70
+
+	DLL Name: api-ms-win-crt-string-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c45c	  108  isprint
+	576c844	  152  toupper
+	576c84e	  140  strncat
+	576c7ea	   41  _strdup
+	576c60c	  144  strncpy_s
+	576c488	  134  strcmp
+	576c492	  124  iswupper
+	576c528	  120  iswlower
+	576c554	  145  strnlen
+	576c49e	  142  strncmp
+	576c7d0	  147  strspn
+	576c506	   93  _wcsupr
+	576c7c6	  138  strcspn
+	576c1d0	  143  strncpy
+	576c794	   52  _strnicmp
+	576c1ec	  123  iswspace
+	576c4a8	  110  isspace
+	576c622	  165  wcsncat_s
+	576c42c	  125  iswxdigit
+	576c8ee	  137  strcpy_s
+	576c8fa	  126  isxdigit
+	576c3dc	   42  _stricmp
+	576c62e	  141  strncat_s
+	576c91e	  146  strpbrk
+	576c928	  100  isalnum
+	576c3f0	  166  wcsncmp
+	576c4e2	  112  iswalnum
+	576c178	  167  wcsncpy
+	576c692	  148  strtok
+	576c726	   84  _wcsnicmp
+	576c71a	   74  _wcsicmp
+	576c404	  113  iswalpha
+	576c982	  111  isupper
+	576c98c	  107  islower
+	576c996	  105  isgraph
+	576c9ac	   71  _towupper_l
+	576c710	   73  _wcsdup
+	576c9d8	  173  wcstok_s
+	576c704	  161  wcscpy_s
+	576c6f8	  157  wcscat_s
+	576c6ee	  104  isdigit
+	576c6e4	  101  isalpha
+	576c212	  168  wcsncpy_s
+	576c6be	  151  tolower
+	576c260	  118  iswdigit
+
+ 057655fc	05766df8 00000000 00000000 0576cbfe 0424d748
+
+	DLL Name: api-ms-win-crt-convert-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c19e	   72  _wtoi64
+	576c196	   71  _wtoi
+	576c802	   97  strtol
+	576c684	   39  _strtoui64
+	576c1a8	   62  _wcstoui64
+	576c1da	  107  wcstod
+	576c1e4	   69  _wtof
+	576c914	   99  strtoll
+	576c8e6	   79  atof
+	576c670	   94  strtod
+	576c51c	   33  _strtoi64
+	576c510	   54  _wcstoi64
+	576c588	   80  atoi
+	576c67a	  100  strtoul
+	576c256	  115  wcstoul
+
+ 05765610	05766f30 00000000 00000000 0576cc20 0424d880
+
+	DLL Name: api-ms-win-crt-math-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c1f8	   41  _finite
+	576c816	  190  floor
+	576c26c	  202  fmodf
+	576c274	  145  cosf
+	576c27c	  275  sinf
+	576c81e	  278  sqrt
+	576c284	   75  acosf
+	576c28c	   80  asinf
+	576c294	  281  tanf
+	576c29c	   74  acos
+	576c2a4	  144  cos
+	576c2aa	  274  sin
+	576c2b0	  280  tan
+	576c826	  265  round
+	576c82e	   25  _dtest
+	576c886	   23  _dsign
+	576c640	  142  copysignf
+	576c602	  191  floorf
+	576c5e2	  219  log10
+	576c250	  254  pow
+	576c5c6	  178  exp
+	576c5be	  201  fmod
+	576c5b4	  220  log10f
+	576c590	  277  sinhf
+	576c63a	  218  log
+	576c55e	  179  exp2
+	576c890	  287  trunc
+	576c89e	   79  asin
+	576c8a6	   84  atan
+	576c6c8	  125  ceilf
+	576c3a4	   85  atan2
+	576c202	  255  powf
+	576c21e	   86  atan2f
+	576c6d0	  124  ceil
+	576c3c8	  182  expf
+	576c3d0	   43  _fpclass
+	576c4fe	  238  modff
+	576c3e8	   87  atanf
+	576c4f6	  208  ldexp
+	576c3fa	   48  _isnan
+	576c4ee	  203  frexp
+	576c4da	  237  modf
+	576c20a	  230  logf
+	576ca9c	    9  __setusermatherr
+	576c228	  288  truncf
+	576c480	  279  sqrtf
+
+ 05765624	05766e88 00000000 00000000 0576cc40 0424d7d8
+
+	DLL Name: api-ms-win-crt-filesystem-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c948	   16  _fstat64
+	576c954	   31  _stat64
+	576c374	   22  _lock_file
+	576c7b8	   32  _stat64i32
+	576c382	   36  _unlock_file
+	576c974	   17  _fstat64i32
+
+ 05765638	05766ec0 00000000 00000000 0576cc66 0424d810
+
+	DLL Name: api-ms-win-crt-heap-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c3be	   26  realloc
+	576c4ce	   13  _heapchk
+	576c69c	    0  _aligned_free
+	576c3b4	   25  malloc
+	576c3ac	   24  free
+	576cb34	   22  _set_new_mode
+	576c438	   23  calloc
+	576c6ac	    1  _aligned_malloc
+	576c4ba	   12  _get_heap_handle
+
+ 0576564c	05766f10 00000000 00000000 0576cc86 0424d860
+
+	DLL Name: api-ms-win-crt-locale-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c8c0	   10  _free_locale
+	576c8ae	    9  _create_locale
+	576c5cc	    8  _configthreadlocale
+
+ 05765660	05767490 00000000 00000000 0576cca8 0424dde0
+
+	DLL Name: api-ms-win-crt-time-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c618	   48  _time64
+	576c862	   10  __timezone
+	576c762	   36  _localtime64_s
+	576c870	   11  __tzname
+	576c774	   70  strftime
+	576c8da	   31  _gmtime64
+	576c7f4	   32  _gmtime64_s
+	576c87c	   51  _tzset
+
+ 05765674	05766e78 00000000 00000000 0576ccc8 0424d7c8
+
+	DLL Name: api-ms-win-crt-environment-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c7a0	   16  getenv
+
+ 05765688	05766de8 00000000 00000000 0576ccee 0424d738
+
+	DLL Name: api-ms-win-crt-conio-l1-1-0.dll
+	vma:  Hint/Ord Member-Name Bound-To
+	576c858	   12  _cputs
+
+ 0576569c	00000000 00000000 00000000 00000000 00000000
+
+There is an export table in .rdata at 0x14575bbd0
+
+The Export Tables (interpreted .rdata section contents)
+
+Export Flags 			0
+Time/Date stamp 		ffffffff
+Major/Minor 			0/0
+Name 				000000000575d7d2 Sifu-Win64-Shipping.exe
+Ordinal Base 			1
+Number in:
+	Export Address Table 		000002c9
+	[Name Pointer/Ordinal] Table	000002c9
+Table Addresses
+	Export Address Table 		000000000575bbf8
+	Name Pointer Table 		000000000575c71c
+	Ordinal Table 			000000000575d240
+
+Export Address Table -- Ordinal Base 1
+	[   0] +base[   1] 3b84210 Export RVA
+	[   1] +base[   2] 3b84230 Export RVA
+	[   2] +base[   3] 41ab9d0 Export RVA
+	[   3] +base[   4] 41ab9f0 Export RVA
+	[   4] +base[   5] 41aba10 Export RVA
+	[   5] +base[   6] 3b84250 Export RVA
+	[   6] +base[   7] 3bc4700 Export RVA
+	[   7] +base[   8] 3bf8460 Export RVA
+	[   8] +base[   9] 3bc4940 Export RVA
+	[   9] +base[  10] 3b84280 Export RVA
+	[  10] +base[  11] 41aba30 Export RVA
+	[  11] +base[  12] 41aba40 Export RVA
+	[  12] +base[  13] 3b84290 Export RVA
+	[  13] +base[  14] 3b66890 Export RVA
+	[  14] +base[  15] 3c25450 Export RVA
+	[  15] +base[  16] 3b66930 Export RVA
+	[  16] +base[  17] 3b669c0 Export RVA
+	[  17] +base[  18] 3b66b50 Export RVA
+	[  18] +base[  19] 3bbedc0 Export RVA
+	[  19] +base[  20] 3bbedd0 Export RVA
+	[  20] +base[  21] 3b84420 Export RVA
+	[  21] +base[  22] 3b84420 Export RVA
+	[  22] +base[  23] 3b66ed0 Export RVA
+	[  23] +base[  24] 85ac20 Export RVA
+	[  24] +base[  25] 1535970 Export RVA
+	[  25] +base[  26] 3b66f40 Export RVA
+	[  26] +base[  27] 3b66f60 Export RVA
+	[  27] +base[  28] 3b66f80 Export RVA
+	[  28] +base[  29] 3b66fa0 Export RVA
+	[  29] +base[  30] 3c754b0 Export RVA
+	[  30] +base[  31] 3b84430 Export RVA
+	[  31] +base[  32] 3b66fc0 Export RVA
+	[  32] +base[  33] 3c45c20 Export RVA
+	[  33] +base[  34] 3b670b0 Export RVA
+	[  34] +base[  35] 3b67180 Export RVA
+	[  35] +base[  36] 1baac20 Export RVA
+	[  36] +base[  37] 988bd0 Export RVA
+	[  37] +base[  38] 1baac20 Export RVA
+	[  38] +base[  39] 3c256d0 Export RVA
+	[  39] +base[  40] 3c25f30 Export RVA
+	[  40] +base[  41] 3b67700 Export RVA
+	[  41] +base[  42] 3c263e0 Export RVA
+	[  42] +base[  43] 85ac20 Export RVA
+	[  43] +base[  44] 3b84440 Export RVA
+	[  44] +base[  45] 3b95d50 Export RVA
+	[  45] +base[  46] 3b67c20 Export RVA
+	[  46] +base[  47] 3b67d10 Export RVA
+	[  47] +base[  48] 3b67d50 Export RVA
+	[  48] +base[  49] 3b67d90 Export RVA
+	[  49] +base[  50] 3c224b0 Export RVA
+	[  50] +base[  51] 3c264c0 Export RVA
+	[  51] +base[  52] 3c224c0 Export RVA
+	[  52] +base[  53] 3b73450 Export RVA
+	[  53] +base[  54] 3b67e60 Export RVA
+	[  54] +base[  55] 3b67e90 Export RVA
+	[  55] +base[  56] 3b681f0 Export RVA
+	[  56] +base[  57] 3b682b0 Export RVA
+	[  57] +base[  58] 3b682e0 Export RVA
+	[  58] +base[  59] 3b68310 Export RVA
+	[  59] +base[  60] 859090 Export RVA
+	[  60] +base[  61] 3b68320 Export RVA
+	[  61] +base[  62] 3c26740 Export RVA
+	[  62] +base[  63] 3b734c0 Export RVA
+	[  63] +base[  64] 3b734c0 Export RVA
+	[  64] +base[  65] 3b96170 Export RVA
+	[  65] +base[  66] 3c26750 Export RVA
+	[  66] +base[  67] 3c2fab0 Export RVA
+	[  67] +base[  68] 3b684e0 Export RVA
+	[  68] +base[  69] 3b68550 Export RVA
+	[  69] +base[  70] 3c221c0 Export RVA
+	[  70] +base[  71] 859090 Export RVA
+	[  71] +base[  72] 3b719a0 Export RVA
+	[  72] +base[  73] 3b719f0 Export RVA
+	[  73] +base[  74] 3b68560 Export RVA
+	[  74] +base[  75] 3b68640 Export RVA
+	[  75] +base[  76] 3b71c80 Export RVA
+	[  76] +base[  77] 3b68780 Export RVA
+	[  77] +base[  78] 3b68850 Export RVA
+	[  78] +base[  79] 3c0f1e0 Export RVA
+	[  79] +base[  80] 3b73660 Export RVA
+	[  80] +base[  81] 3c267a0 Export RVA
+	[  81] +base[  82] 3b73680 Export RVA
+	[  82] +base[  83] 3b73810 Export RVA
+	[  83] +base[  84] 3b73900 Export RVA
+	[  84] +base[  85] 3b68920 Export RVA
+	[  85] +base[  86] 859090 Export RVA
+	[  86] +base[  87] 3b689a0 Export RVA
+	[  87] +base[  88] 3b68a90 Export RVA
+	[  88] +base[  89] 3b73920 Export RVA
+	[  89] +base[  90] 3b73960 Export RVA
+	[  90] +base[  91] 3b73a10 Export RVA
+	[  91] +base[  92] 3b73a80 Export RVA
+	[  92] +base[  93] 3b73b60 Export RVA
+	[  93] +base[  94] 3b73ba0 Export RVA
+	[  94] +base[  95] 3ba6390 Export RVA
+	[  95] +base[  96] 3b73bf0 Export RVA
+	[  96] +base[  97] 3b68be0 Export RVA
+	[  97] +base[  98] 3b68c40 Export RVA
+	[  98] +base[  99] 3b68cb0 Export RVA
+	[  99] +base[ 100] 3b68d20 Export RVA
+	[ 100] +base[ 101] 3b68da0 Export RVA
+	[ 101] +base[ 102] 3b73d30 Export RVA
+	[ 102] +base[ 103] 3b68e40 Export RVA
+	[ 103] +base[ 104] 3c2fac0 Export RVA
+	[ 104] +base[ 105] 3b73d60 Export RVA
+	[ 105] +base[ 106] 3b73e80 Export RVA
+	[ 106] +base[ 107] 3b73f00 Export RVA
+	[ 107] +base[ 108] 3b740c0 Export RVA
+	[ 108] +base[ 109] 3b74100 Export RVA
+	[ 109] +base[ 110] 3b68f60 Export RVA
+	[ 110] +base[ 111] 3b68fc0 Export RVA
+	[ 111] +base[ 112] 3b69000 Export RVA
+	[ 112] +base[ 113] 3b69060 Export RVA
+	[ 113] +base[ 114] 3b69100 Export RVA
+	[ 114] +base[ 115] 3b74140 Export RVA
+	[ 115] +base[ 116] 3b741a0 Export RVA
+	[ 116] +base[ 117] 3b74200 Export RVA
+	[ 117] +base[ 118] 3b74260 Export RVA
+	[ 118] +base[ 119] 3b74330 Export RVA
+	[ 119] +base[ 120] 3b74360 Export RVA
+	[ 120] +base[ 121] 85ac20 Export RVA
+	[ 121] +base[ 122] 3b72250 Export RVA
+	[ 122] +base[ 123] 3b723a0 Export RVA
+	[ 123] +base[ 124] 3b72400 Export RVA
+	[ 124] +base[ 125] 3c0fc00 Export RVA
+	[ 125] +base[ 126] 3c22240 Export RVA
+	[ 126] +base[ 127] 3c2fae0 Export RVA
+	[ 127] +base[ 128] 3b691f0 Export RVA
+	[ 128] +base[ 129] 3c47b20 Export RVA
+	[ 129] +base[ 130] 3c22450 Export RVA
+	[ 130] +base[ 131] 3bc22b0 Export RVA
+	[ 131] +base[ 132] 3c224e0 Export RVA
+	[ 132] +base[ 133] 3b69410 Export RVA
+	[ 133] +base[ 134] 3b69420 Export RVA
+	[ 134] +base[ 135] 3b694f0 Export RVA
+	[ 135] +base[ 136] 3b69580 Export RVA
+	[ 136] +base[ 137] 3b69690 Export RVA
+	[ 137] +base[ 138] 3b69770 Export RVA
+	[ 138] +base[ 139] 3b69870 Export RVA
+	[ 139] +base[ 140] 3b69950 Export RVA
+	[ 140] +base[ 141] 3b69a50 Export RVA
+	[ 141] +base[ 142] 3b69b50 Export RVA
+	[ 142] +base[ 143] 3b69c50 Export RVA
+	[ 143] +base[ 144] 3b69d50 Export RVA
+	[ 144] +base[ 145] 3c224f0 Export RVA
+	[ 145] +base[ 146] 3c22500 Export RVA
+	[ 146] +base[ 147] 3bbefb0 Export RVA
+	[ 147] +base[ 148] 3bbf050 Export RVA
+	[ 148] +base[ 149] 3bbf060 Export RVA
+	[ 149] +base[ 150] 3bbf230 Export RVA
+	[ 150] +base[ 151] 3bbf250 Export RVA
+	[ 151] +base[ 152] 3b69f50 Export RVA
+	[ 152] +base[ 153] 3b69fa0 Export RVA
+	[ 153] +base[ 154] 3b6a0c0 Export RVA
+	[ 154] +base[ 155] 3b6a150 Export RVA
+	[ 155] +base[ 156] 3b6a240 Export RVA
+	[ 156] +base[ 157] 3b6a270 Export RVA
+	[ 157] +base[ 158] 3b6a2a0 Export RVA
+	[ 158] +base[ 159] 3b6a330 Export RVA
+	[ 159] +base[ 160] 88fab0 Export RVA
+	[ 160] +base[ 161] 3b6a3c0 Export RVA
+	[ 161] +base[ 162] 3b6a600 Export RVA
+	[ 162] +base[ 163] 3b6a6d0 Export RVA
+	[ 163] +base[ 164] 3b6a980 Export RVA
+	[ 164] +base[ 165] 88fab0 Export RVA
+	[ 165] +base[ 166] 88fab0 Export RVA
+	[ 166] +base[ 167] 3b6acd0 Export RVA
+	[ 167] +base[ 168] 3b6ad30 Export RVA
+	[ 168] +base[ 169] 3b6ada0 Export RVA
+	[ 169] +base[ 170] 3b6b390 Export RVA
+	[ 170] +base[ 171] 3b6b440 Export RVA
+	[ 171] +base[ 172] 3b6b530 Export RVA
+	[ 172] +base[ 173] 3b6b620 Export RVA
+	[ 173] +base[ 174] 3b6b740 Export RVA
+	[ 174] +base[ 175] 3b6b830 Export RVA
+	[ 175] +base[ 176] 3b6b950 Export RVA
+	[ 176] +base[ 177] 3b6b9d0 Export RVA
+	[ 177] +base[ 178] 3b6ba00 Export RVA
+	[ 178] +base[ 179] 3b6bbd0 Export RVA
+	[ 179] +base[ 180] 3b6bd60 Export RVA
+	[ 180] +base[ 181] 3b6bf30 Export RVA
+	[ 181] +base[ 182] 3b6c220 Export RVA
+	[ 182] +base[ 183] 3b6c2c0 Export RVA
+	[ 183] +base[ 184] 3b6c300 Export RVA
+	[ 184] +base[ 185] 3b6c4e0 Export RVA
+	[ 185] +base[ 186] 3b6c6f0 Export RVA
+	[ 186] +base[ 187] 3b6c8d0 Export RVA
+	[ 187] +base[ 188] 3b743c0 Export RVA
+	[ 188] +base[ 189] 3b744b0 Export RVA
+	[ 189] +base[ 190] 3b744f0 Export RVA
+	[ 190] +base[ 191] 3c48140 Export RVA
+	[ 191] +base[ 192] 3c483e0 Export RVA
+	[ 192] +base[ 193] 3c486d0 Export RVA
+	[ 193] +base[ 194] 3b84460 Export RVA
+	[ 194] +base[ 195] 41abb70 Export RVA
+	[ 195] +base[ 196] 3c22510 Export RVA
+	[ 196] +base[ 197] 3b6cc50 Export RVA
+	[ 197] +base[ 198] 3b6cc60 Export RVA
+	[ 198] +base[ 199] 3b6cc90 Export RVA
+	[ 199] +base[ 200] 3b6ccf0 Export RVA
+	[ 200] +base[ 201] 3b6cd20 Export RVA
+	[ 201] +base[ 202] 3b6cd20 Export RVA
+	[ 202] +base[ 203] 3b6cdc0 Export RVA
+	[ 203] +base[ 204] 3c487f0 Export RVA
+	[ 204] +base[ 205] 3b6cfa0 Export RVA
+	[ 205] +base[ 206] 3b72b70 Export RVA
+	[ 206] +base[ 207] 891720 Export RVA
+	[ 207] +base[ 208] 3b6d010 Export RVA
+	[ 208] +base[ 209] 3c48a80 Export RVA
+	[ 209] +base[ 210] 3c48ae0 Export RVA
+	[ 210] +base[ 211] 3c26af0 Export RVA
+	[ 211] +base[ 212] 3b6d080 Export RVA
+	[ 212] +base[ 213] 3b6d110 Export RVA
+	[ 213] +base[ 214] 3c48b60 Export RVA
+	[ 214] +base[ 215] 3c48bc0 Export RVA
+	[ 215] +base[ 216] 3b6d160 Export RVA
+	[ 216] +base[ 217] 3b6d170 Export RVA
+	[ 217] +base[ 218] 85ae20 Export RVA
+	[ 218] +base[ 219] 3b844e0 Export RVA
+	[ 219] +base[ 220] 3b6d2c0 Export RVA
+	[ 220] +base[ 221] 3b6d310 Export RVA
+	[ 221] +base[ 222] 3b6d3d0 Export RVA
+	[ 222] +base[ 223] 3b6d430 Export RVA
+	[ 223] +base[ 224] 3b6d490 Export RVA
+	[ 224] +base[ 225] 3b6d570 Export RVA
+	[ 225] +base[ 226] 3b6d690 Export RVA
+	[ 226] +base[ 227] 3b6d7b0 Export RVA
+	[ 227] +base[ 228] 3b6d840 Export RVA
+	[ 228] +base[ 229] 3b6d8d0 Export RVA
+	[ 229] +base[ 230] 3b6d960 Export RVA
+	[ 230] +base[ 231] 3b6da50 Export RVA
+	[ 231] +base[ 232] 3b6db60 Export RVA
+	[ 232] +base[ 233] 3b6dba0 Export RVA
+	[ 233] +base[ 234] 3b6dbe0 Export RVA
+	[ 234] +base[ 235] 3b6dc20 Export RVA
+	[ 235] +base[ 236] 3b6dcb0 Export RVA
+	[ 236] +base[ 237] 3b6dde0 Export RVA
+	[ 237] +base[ 238] 3b6de50 Export RVA
+	[ 238] +base[ 239] 3b6de80 Export RVA
+	[ 239] +base[ 240] 3b6dee0 Export RVA
+	[ 240] +base[ 241] 3b6df50 Export RVA
+	[ 241] +base[ 242] 3b6dfc0 Export RVA
+	[ 242] +base[ 243] 3b6e130 Export RVA
+	[ 243] +base[ 244] 3b6e2c0 Export RVA
+	[ 244] +base[ 245] 3b6e5a0 Export RVA
+	[ 245] +base[ 246] 3b6e610 Export RVA
+	[ 246] +base[ 247] 3b6e650 Export RVA
+	[ 247] +base[ 248] 3b6e690 Export RVA
+	[ 248] +base[ 249] 2f48800 Export RVA
+	[ 249] +base[ 250] 1bb7ce0 Export RVA
+	[ 250] +base[ 251] 3c26b90 Export RVA
+	[ 251] +base[ 252] 3b6e8c0 Export RVA
+	[ 252] +base[ 253] 3c48c20 Export RVA
+	[ 253] +base[ 254] 3c48c80 Export RVA
+	[ 254] +base[ 255] 3c26c90 Export RVA
+	[ 255] +base[ 256] 3b6e8d0 Export RVA
+	[ 256] +base[ 257] 3c48cf0 Export RVA
+	[ 257] +base[ 258] 3b6e9c0 Export RVA
+	[ 258] +base[ 259] 3c48d60 Export RVA
+	[ 259] +base[ 260] 3c49220 Export RVA
+	[ 260] +base[ 261] 3b6ea60 Export RVA
+	[ 261] +base[ 262] 3b6eb90 Export RVA
+	[ 262] +base[ 263] 88fab0 Export RVA
+	[ 263] +base[ 264] 3b6ebc0 Export RVA
+	[ 264] +base[ 265] 3b6ec20 Export RVA
+	[ 265] +base[ 266] 3b84540 Export RVA
+	[ 266] +base[ 267] 3b6ec50 Export RVA
+	[ 267] +base[ 268] 3b6ecb0 Export RVA
+	[ 268] +base[ 269] 3b6ed30 Export RVA
+	[ 269] +base[ 270] 3b6edb0 Export RVA
+	[ 270] +base[ 271] 3b6ef10 Export RVA
+	[ 271] +base[ 272] 3b6f1e0 Export RVA
+	[ 272] +base[ 273] 3c49510 Export RVA
+	[ 273] +base[ 274] 3b6f4c0 Export RVA
+	[ 274] +base[ 275] 3b6f5a0 Export RVA
+	[ 275] +base[ 276] 3b6f620 Export RVA
+	[ 276] +base[ 277] 3c49520 Export RVA
+	[ 277] +base[ 278] 3c49700 Export RVA
+	[ 278] +base[ 279] 3b6f680 Export RVA
+	[ 279] +base[ 280] 3b6f6a0 Export RVA
+	[ 280] +base[ 281] 3b7df00 Export RVA
+	[ 281] +base[ 282] 3b7e610 Export RVA
+	[ 282] +base[ 283] 3b6f850 Export RVA
+	[ 283] +base[ 284] 3b6f880 Export RVA
+	[ 284] +base[ 285] 3b6f8f0 Export RVA
+	[ 285] +base[ 286] 3b6f960 Export RVA
+	[ 286] +base[ 287] 3b6f9e0 Export RVA
+	[ 287] +base[ 288] 3b6fa40 Export RVA
+	[ 288] +base[ 289] 3b6fb90 Export RVA
+	[ 289] +base[ 290] 3c497c0 Export RVA
+	[ 290] +base[ 291] 3c49830 Export RVA
+	[ 291] +base[ 292] 3b6fbd0 Export RVA
+	[ 292] +base[ 293] 3b6fc70 Export RVA
+	[ 293] +base[ 294] 3b6fdc0 Export RVA
+	[ 294] +base[ 295] 3b6fea0 Export RVA
+	[ 295] +base[ 296] 3b6fef0 Export RVA
+	[ 296] +base[ 297] 3b6ff40 Export RVA
+	[ 297] +base[ 298] 3b6ffb0 Export RVA
+	[ 298] +base[ 299] 3b70010 Export RVA
+	[ 299] +base[ 300] 3b70070 Export RVA
+	[ 300] +base[ 301] 988bd0 Export RVA
+	[ 301] +base[ 302] 3b70300 Export RVA
+	[ 302] +base[ 303] 859090 Export RVA
+	[ 303] +base[ 304] 88fab0 Export RVA
+	[ 304] +base[ 305] 3b703b0 Export RVA
+	[ 305] +base[ 306] 3b70440 Export RVA
+	[ 306] +base[ 307] 3b704b0 Export RVA
+	[ 307] +base[ 308] 3b706d0 Export RVA
+	[ 308] +base[ 309] 3b70720 Export RVA
+	[ 309] +base[ 310] 85ac20 Export RVA
+	[ 310] +base[ 311] 88fab0 Export RVA
+	[ 311] +base[ 312] 3b70790 Export RVA
+	[ 312] +base[ 313] 3b70810 Export RVA
+	[ 313] +base[ 314] 3c22460 Export RVA
+	[ 314] +base[ 315] 3c30960 Export RVA
+	[ 315] +base[ 316] 3b70830 Export RVA
+	[ 316] +base[ 317] 3c224a0 Export RVA
+	[ 317] +base[ 318] 3b70c40 Export RVA
+	[ 318] +base[ 319] 3b70ca0 Export RVA
+	[ 319] +base[ 320] 3b70d80 Export RVA
+	[ 320] +base[ 321] 3b70e20 Export RVA
+	[ 321] +base[ 322] 3b70e40 Export RVA
+	[ 322] +base[ 323] 3b70f20 Export RVA
+	[ 323] +base[ 324] 3b70f40 Export RVA
+	[ 324] +base[ 325] 3b71020 Export RVA
+	[ 325] +base[ 326] 3b710c0 Export RVA
+	[ 326] +base[ 327] 3b71190 Export RVA
+	[ 327] +base[ 328] 3b711b0 Export RVA
+	[ 328] +base[ 329] 3b711d0 Export RVA
+	[ 329] +base[ 330] 3b71220 Export RVA
+	[ 330] +base[ 331] 3b71240 Export RVA
+	[ 331] +base[ 332] 3b712b0 Export RVA
+	[ 332] +base[ 333] 3c49c90 Export RVA
+	[ 333] +base[ 334] 891720 Export RVA
+	[ 334] +base[ 335] 3b713c0 Export RVA
+	[ 335] +base[ 336] 3b714a0 Export RVA
+	[ 336] +base[ 337] 41abba0 Export RVA
+	[ 337] +base[ 338] 3b84580 Export RVA
+	[ 338] +base[ 339] 5cc9268 Export RVA
+	[ 339] +base[ 340] 58ef7d8 Export RVA
+	[ 340] +base[ 341] 5cc92b8 Export RVA
+	[ 341] +base[ 342] 5cc9228 Export RVA
+	[ 342] +base[ 343] 5cc9220 Export RVA
+	[ 343] +base[ 344] 5ccac08 Export RVA
+	[ 344] +base[ 345] 41aa570 Export RVA
+	[ 345] +base[ 346] 41aa5a0 Export RVA
+	[ 346] +base[ 347] 41aa5b0 Export RVA
+	[ 347] +base[ 348] 41aa5c0 Export RVA
+	[ 348] +base[ 349] 576d00c Export RVA
+	[ 349] +base[ 350] 3d40d30 Export RVA
+	[ 350] +base[ 351] 3d40d90 Export RVA
+	[ 351] +base[ 352] 3d40e00 Export RVA
+	[ 352] +base[ 353] 3d40e60 Export RVA
+	[ 353] +base[ 354] 3d40ed0 Export RVA
+	[ 354] +base[ 355] 3d40f10 Export RVA
+	[ 355] +base[ 356] 3d40f70 Export RVA
+	[ 356] +base[ 357] 3d40fc0 Export RVA
+	[ 357] +base[ 358] 3d41250 Export RVA
+	[ 358] +base[ 359] 3d412a0 Export RVA
+	[ 359] +base[ 360] 3d412b0 Export RVA
+	[ 360] +base[ 361] 3d41840 Export RVA
+	[ 361] +base[ 362] 3d418a0 Export RVA
+	[ 362] +base[ 363] 3d41910 Export RVA
+	[ 363] +base[ 364] 3d41970 Export RVA
+	[ 364] +base[ 365] 3d419e0 Export RVA
+	[ 365] +base[ 366] 3d41a20 Export RVA
+	[ 366] +base[ 367] 3d41a80 Export RVA
+	[ 367] +base[ 368] 3d41ad0 Export RVA
+	[ 368] +base[ 369] 3d41d60 Export RVA
+	[ 369] +base[ 370] 3d41db0 Export RVA
+	[ 370] +base[ 371] 3d41dc0 Export RVA
+	[ 371] +base[ 372] 3d40070 Export RVA
+	[ 372] +base[ 373] 3d400d0 Export RVA
+	[ 373] +base[ 374] 3d40130 Export RVA
+	[ 374] +base[ 375] 3d40190 Export RVA
+	[ 375] +base[ 376] 3d401f0 Export RVA
+	[ 376] +base[ 377] 3d40250 Export RVA
+	[ 377] +base[ 378] 3d402b0 Export RVA
+	[ 378] +base[ 379] 3d40310 Export RVA
+	[ 379] +base[ 380] 3d40370 Export RVA
+	[ 380] +base[ 381] 3d403c0 Export RVA
+	[ 381] +base[ 382] 3d40420 Export RVA
+	[ 382] +base[ 383] 3d40480 Export RVA
+	[ 383] +base[ 384] 3d404d0 Export RVA
+	[ 384] +base[ 385] 3d40530 Export RVA
+	[ 385] +base[ 386] 3d40590 Export RVA
+	[ 386] +base[ 387] 3d405f0 Export RVA
+	[ 387] +base[ 388] 3d42720 Export RVA
+	[ 388] +base[ 389] 3d42780 Export RVA
+	[ 389] +base[ 390] 3d427f0 Export RVA
+	[ 390] +base[ 391] 3d42870 Export RVA
+	[ 391] +base[ 392] 3d428d0 Export RVA
+	[ 392] +base[ 393] 3d42940 Export RVA
+	[ 393] +base[ 394] 3d42980 Export RVA
+	[ 394] +base[ 395] 3d429e0 Export RVA
+	[ 395] +base[ 396] 3d42a30 Export RVA
+	[ 396] +base[ 397] 3d42a90 Export RVA
+	[ 397] +base[ 398] 3d42c60 Export RVA
+	[ 398] +base[ 399] 3d42cb0 Export RVA
+	[ 399] +base[ 400] 3d42ce0 Export RVA
+	[ 400] +base[ 401] 3d42cf0 Export RVA
+	[ 401] +base[ 402] 576d008 Export RVA
+	[ 402] +base[ 403] 413ab20 Export RVA
+	[ 403] +base[ 404] 4135950 Export RVA
+	[ 404] +base[ 405] 4136d90 Export RVA
+	[ 405] +base[ 406] 4136e10 Export RVA
+	[ 406] +base[ 407] 41371d0 Export RVA
+	[ 407] +base[ 408] 4137260 Export RVA
+	[ 408] +base[ 409] 4137280 Export RVA
+	[ 409] +base[ 410] 4137370 Export RVA
+	[ 410] +base[ 411] 41373f0 Export RVA
+	[ 411] +base[ 412] 4137440 Export RVA
+	[ 412] +base[ 413] 41374a0 Export RVA
+	[ 413] +base[ 414] 4137570 Export RVA
+	[ 414] +base[ 415] 4137670 Export RVA
+	[ 415] +base[ 416] 4137740 Export RVA
+	[ 416] +base[ 417] 4137840 Export RVA
+	[ 417] +base[ 418] 4137890 Export RVA
+	[ 418] +base[ 419] 4137a20 Export RVA
+	[ 419] +base[ 420] 4137ac0 Export RVA
+	[ 420] +base[ 421] 4137b10 Export RVA
+	[ 421] +base[ 422] 4137b60 Export RVA
+	[ 422] +base[ 423] 4137bb0 Export RVA
+	[ 423] +base[ 424] 4138900 Export RVA
+	[ 424] +base[ 425] 4138a20 Export RVA
+	[ 425] +base[ 426] 4138c20 Export RVA
+	[ 426] +base[ 427] 4138ca0 Export RVA
+	[ 427] +base[ 428] 4138d70 Export RVA
+	[ 428] +base[ 429] 4138d90 Export RVA
+	[ 429] +base[ 430] 4138e70 Export RVA
+	[ 430] +base[ 431] 4138f30 Export RVA
+	[ 431] +base[ 432] 4138f70 Export RVA
+	[ 432] +base[ 433] 4138fb0 Export RVA
+	[ 433] +base[ 434] 4139050 Export RVA
+	[ 434] +base[ 435] 4135a90 Export RVA
+	[ 435] +base[ 436] 41364b0 Export RVA
+	[ 436] +base[ 437] 5cc97c8 Export RVA
+	[ 437] +base[ 438] 531850 Export RVA
+	[ 438] +base[ 439] 531990 Export RVA
+	[ 439] +base[ 440] 5329a0 Export RVA
+	[ 440] +base[ 441] 532aa0 Export RVA
+	[ 441] +base[ 442] 532c90 Export RVA
+	[ 442] +base[ 443] 532ca0 Export RVA
+	[ 443] +base[ 444] 532cc0 Export RVA
+	[ 444] +base[ 445] 532d10 Export RVA
+	[ 445] +base[ 446] 535000 Export RVA
+	[ 446] +base[ 447] 535180 Export RVA
+	[ 447] +base[ 448] 537540 Export RVA
+	[ 448] +base[ 449] 537670 Export RVA
+	[ 449] +base[ 450] 532c90 Export RVA
+	[ 450] +base[ 451] 537d30 Export RVA
+	[ 451] +base[ 452] 537d80 Export RVA
+	[ 452] +base[ 453] 5317c0 Export RVA
+	[ 453] +base[ 454] 5392b0 Export RVA
+	[ 454] +base[ 455] 5392f0 Export RVA
+	[ 455] +base[ 456] 539690 Export RVA
+	[ 456] +base[ 457] 539790 Export RVA
+	[ 457] +base[ 458] 532c90 Export RVA
+	[ 458] +base[ 459] 5399c0 Export RVA
+	[ 459] +base[ 460] 539a30 Export RVA
+	[ 460] +base[ 461] 53ab20 Export RVA
+	[ 461] +base[ 462] 53ac30 Export RVA
+	[ 462] +base[ 463] 532e60 Export RVA
+	[ 463] +base[ 464] 532eb0 Export RVA
+	[ 464] +base[ 465] 532ec0 Export RVA
+	[ 465] +base[ 466] 532f00 Export RVA
+	[ 466] +base[ 467] 532f90 Export RVA
+	[ 467] +base[ 468] 53ada0 Export RVA
+	[ 468] +base[ 469] 539ca0 Export RVA
+	[ 469] +base[ 470] 53ae80 Export RVA
+	[ 470] +base[ 471] 53a0b0 Export RVA
+	[ 471] +base[ 472] 53af20 Export RVA
+	[ 472] +base[ 473] 53b020 Export RVA
+	[ 473] +base[ 474] 532c90 Export RVA
+	[ 474] +base[ 475] 53b050 Export RVA
+	[ 475] +base[ 476] 53b060 Export RVA
+	[ 476] +base[ 477] 53b070 Export RVA
+	[ 477] +base[ 478] 53b080 Export RVA
+	[ 478] +base[ 479] 53b0b0 Export RVA
+	[ 479] +base[ 480] 5317d0 Export RVA
+	[ 480] +base[ 481] 572030 Export RVA
+	[ 481] +base[ 482] 5764e0 Export RVA
+	[ 482] +base[ 483] 57e750 Export RVA
+	[ 483] +base[ 484] 57f730 Export RVA
+	[ 484] +base[ 485] 576770 Export RVA
+	[ 485] +base[ 486] 576500 Export RVA
+	[ 486] +base[ 487] 5766e0 Export RVA
+	[ 487] +base[ 488] 574bf0 Export RVA
+	[ 488] +base[ 489] 574c20 Export RVA
+	[ 489] +base[ 490] 571e70 Export RVA
+	[ 490] +base[ 491] 571810 Export RVA
+	[ 491] +base[ 492] 576900 Export RVA
+	[ 492] +base[ 493] 576920 Export RVA
+	[ 493] +base[ 494] 574c90 Export RVA
+	[ 494] +base[ 495] 574cb0 Export RVA
+	[ 495] +base[ 496] 5719c0 Export RVA
+	[ 496] +base[ 497] 5718b0 Export RVA
+	[ 497] +base[ 498] 577bb0 Export RVA
+	[ 498] +base[ 499] 5753d0 Export RVA
+	[ 499] +base[ 500] 576330 Export RVA
+	[ 500] +base[ 501] 57f830 Export RVA
+	[ 501] +base[ 502] 571a00 Export RVA
+	[ 502] +base[ 503] 57f860 Export RVA
+	[ 503] +base[ 504] 581dd0 Export RVA
+	[ 504] +base[ 505] 582160 Export RVA
+	[ 505] +base[ 506] 581a70 Export RVA
+	[ 506] +base[ 507] 5814c0 Export RVA
+	[ 507] +base[ 508] 581aa0 Export RVA
+	[ 508] +base[ 509] 581bd0 Export RVA
+	[ 509] +base[ 510] 581a40 Export RVA
+	[ 510] +base[ 511] 582340 Export RVA
+	[ 511] +base[ 512] 582350 Export RVA
+	[ 512] +base[ 513] 5814d0 Export RVA
+	[ 513] +base[ 514] 582310 Export RVA
+	[ 514] +base[ 515] 581500 Export RVA
+	[ 515] +base[ 516] 571f90 Export RVA
+	[ 516] +base[ 517] 57f3b0 Export RVA
+	[ 517] +base[ 518] 57f390 Export RVA
+	[ 518] +base[ 519] 5768f0 Export RVA
+	[ 519] +base[ 520] 5814e0 Export RVA
+	[ 520] +base[ 521] 581cb0 Export RVA
+	[ 521] +base[ 522] 581c80 Export RVA
+	[ 522] +base[ 523] 581da0 Export RVA
+	[ 523] +base[ 524] 571fa0 Export RVA
+	[ 524] +base[ 525] 571fb0 Export RVA
+	[ 525] +base[ 526] 581d10 Export RVA
+	[ 526] +base[ 527] 5814b0 Export RVA
+	[ 527] +base[ 528] 5814a0 Export RVA
+	[ 528] +base[ 529] 58b6c0 Export RVA
+	[ 529] +base[ 530] 5814f0 Export RVA
+	[ 530] +base[ 531] 582380 Export RVA
+	[ 531] +base[ 532] 582370 Export RVA
+	[ 532] +base[ 533] 571e50 Export RVA
+	[ 533] +base[ 534] 582360 Export RVA
+	[ 534] +base[ 535] 571fa0 Export RVA
+	[ 535] +base[ 536] 57f920 Export RVA
+	[ 536] +base[ 537] 581ec0 Export RVA
+	[ 537] +base[ 538] 581f10 Export RVA
+	[ 538] +base[ 539] 582100 Export RVA
+	[ 539] +base[ 540] 581990 Export RVA
+	[ 540] +base[ 541] 5815a0 Export RVA
+	[ 541] +base[ 542] 5815e0 Export RVA
+	[ 542] +base[ 543] 581710 Export RVA
+	[ 543] +base[ 544] 581570 Export RVA
+	[ 544] +base[ 545] 5822f0 Export RVA
+	[ 545] +base[ 546] 581460 Export RVA
+	[ 546] +base[ 547] 581480 Export RVA
+	[ 547] +base[ 548] 582190 Export RVA
+	[ 548] +base[ 549] 582050 Export RVA
+	[ 549] +base[ 550] 581fc0 Export RVA
+	[ 550] +base[ 551] 5820c0 Export RVA
+	[ 551] +base[ 552] 581d70 Export RVA
+	[ 552] +base[ 553] 581ce0 Export RVA
+	[ 553] +base[ 554] 581a50 Export RVA
+	[ 554] +base[ 555] 582200 Export RVA
+	[ 555] +base[ 556] 582230 Export RVA
+	[ 556] +base[ 557] 5821c0 Export RVA
+	[ 557] +base[ 558] 58b6d0 Export RVA
+	[ 558] +base[ 559] 58b6a0 Export RVA
+	[ 559] +base[ 560] 58b6c0 Export RVA
+	[ 560] +base[ 561] 5822c0 Export RVA
+	[ 561] +base[ 562] 582300 Export RVA
+	[ 562] +base[ 563] 582330 Export RVA
+	[ 563] +base[ 564] 57f380 Export RVA
+	[ 564] +base[ 565] 582320 Export RVA
+	[ 565] +base[ 566] 581440 Export RVA
+	[ 566] +base[ 567] 581910 Export RVA
+	[ 567] +base[ 568] 581890 Export RVA
+	[ 568] +base[ 569] 581650 Export RVA
+	[ 569] +base[ 570] 5816b0 Export RVA
+	[ 570] +base[ 571] 581790 Export RVA
+	[ 571] +base[ 572] 581510 Export RVA
+	[ 572] +base[ 573] 581950 Export RVA
+	[ 573] +base[ 574] 5818d0 Export RVA
+	[ 574] +base[ 575] 581680 Export RVA
+	[ 575] +base[ 576] 5816e0 Export RVA
+	[ 576] +base[ 577] 581810 Export RVA
+	[ 577] +base[ 578] 581540 Export RVA
+	[ 578] +base[ 579] 571fc0 Export RVA
+	[ 579] +base[ 580] 571860 Export RVA
+	[ 580] +base[ 581] 571e60 Export RVA
+	[ 581] +base[ 582] 576890 Export RVA
+	[ 582] +base[ 583] 57f7b0 Export RVA
+	[ 583] +base[ 584] 57f810 Export RVA
+	[ 584] +base[ 585] 57f880 Export RVA
+	[ 585] +base[ 586] 581130 Export RVA
+	[ 586] +base[ 587] 577700 Export RVA
+	[ 587] +base[ 588] 577610 Export RVA
+	[ 588] +base[ 589] 576c90 Export RVA
+	[ 589] +base[ 590] 577fd0 Export RVA
+	[ 590] +base[ 591] 5770b0 Export RVA
+	[ 591] +base[ 592] 577540 Export RVA
+	[ 592] +base[ 593] 577040 Export RVA
+	[ 593] +base[ 594] 572010 Export RVA
+	[ 594] +base[ 595] 582390 Export RVA
+	[ 595] +base[ 596] 5823b0 Export RVA
+	[ 596] +base[ 597] 582390 Export RVA
+	[ 597] +base[ 598] 57fdb0 Export RVA
+	[ 598] +base[ 599] 580570 Export RVA
+	[ 599] +base[ 600] 57ea00 Export RVA
+	[ 600] +base[ 601] 57f930 Export RVA
+	[ 601] +base[ 602] 578400 Export RVA
+	[ 602] +base[ 603] 578390 Export RVA
+	[ 603] +base[ 604] 581410 Export RVA
+	[ 604] +base[ 605] 57e8f0 Export RVA
+	[ 605] +base[ 606] 57fa40 Export RVA
+	[ 606] +base[ 607] 57f960 Export RVA
+	[ 607] +base[ 608] 5813f0 Export RVA
+	[ 608] +base[ 609] 581400 Export RVA
+	[ 609] +base[ 610] 581330 Export RVA
+	[ 610] +base[ 611] 576040 Export RVA
+	[ 611] +base[ 612] 576060 Export RVA
+	[ 612] +base[ 613] 576110 Export RVA
+	[ 613] +base[ 614] 576080 Export RVA
+	[ 614] +base[ 615] 5760a0 Export RVA
+	[ 615] +base[ 616] 5782a0 Export RVA
+	[ 616] +base[ 617] 5768d0 Export RVA
+	[ 617] +base[ 618] 579150 Export RVA
+	[ 618] +base[ 619] 5791b0 Export RVA
+	[ 619] +base[ 620] 579170 Export RVA
+	[ 620] +base[ 621] 57e9a0 Export RVA
+	[ 621] +base[ 622] 575680 Export RVA
+	[ 622] +base[ 623] 5758c0 Export RVA
+	[ 623] +base[ 624] 575e10 Export RVA
+	[ 624] +base[ 625] 5752c0 Export RVA
+	[ 625] +base[ 626] 57fc70 Export RVA
+	[ 626] +base[ 627] 57fc40 Export RVA
+	[ 627] +base[ 628] 5790a0 Export RVA
+	[ 628] +base[ 629] 579020 Export RVA
+	[ 629] +base[ 630] 5791e0 Export RVA
+	[ 630] +base[ 631] 57fcc0 Export RVA
+	[ 631] +base[ 632] 580710 Export RVA
+	[ 632] +base[ 633] 57e980 Export RVA
+	[ 633] +base[ 634] 5813b0 Export RVA
+	[ 634] +base[ 635] 57ea90 Export RVA
+	[ 635] +base[ 636] 57eaa0 Export RVA
+	[ 636] +base[ 637] 581150 Export RVA
+	[ 637] +base[ 638] 576870 Export RVA
+	[ 638] +base[ 639] 57f900 Export RVA
+	[ 639] +base[ 640] 57feb0 Export RVA
+	[ 640] +base[ 641] 57fee0 Export RVA
+	[ 641] +base[ 642] 580540 Export RVA
+	[ 642] +base[ 643] 57e920 Export RVA
+	[ 643] +base[ 644] 57e940 Export RVA
+	[ 644] +base[ 645] 579150 Export RVA
+	[ 645] +base[ 646] 5784d0 Export RVA
+	[ 646] +base[ 647] 57f550 Export RVA
+	[ 647] +base[ 648] 577fc0 Export RVA
+	[ 648] +base[ 649] 5812c0 Export RVA
+	[ 649] +base[ 650] 579410 Export RVA
+	[ 650] +base[ 651] 5792f0 Export RVA
+	[ 651] +base[ 652] 579200 Export RVA
+	[ 652] +base[ 653] 5812e0 Export RVA
+	[ 653] +base[ 654] 580640 Export RVA
+	[ 654] +base[ 655] 580370 Export RVA
+	[ 655] +base[ 656] 580470 Export RVA
+	[ 656] +base[ 657] 5801b0 Export RVA
+	[ 657] +base[ 658] 580d50 Export RVA
+	[ 658] +base[ 659] 580660 Export RVA
+	[ 659] +base[ 660] 580680 Export RVA
+	[ 660] +base[ 661] 57e960 Export RVA
+	[ 661] +base[ 662] 5716a0 Export RVA
+	[ 662] +base[ 663] 5784a0 Export RVA
+	[ 663] +base[ 664] 5784c0 Export RVA
+	[ 664] +base[ 665] 57e900 Export RVA
+	[ 665] +base[ 666] 57ea80 Export RVA
+	[ 666] +base[ 667] 580c20 Export RVA
+	[ 667] +base[ 668] 580c40 Export RVA
+	[ 668] +base[ 669] 579190 Export RVA
+	[ 669] +base[ 670] 580860 Export RVA
+	[ 670] +base[ 671] 581100 Export RVA
+	[ 671] +base[ 672] 580f50 Export RVA
+	[ 672] +base[ 673] 5813d0 Export RVA
+	[ 673] +base[ 674] 57f360 Export RVA
+	[ 674] +base[ 675] 57f470 Export RVA
+	[ 675] +base[ 676] 576150 Export RVA
+	[ 676] +base[ 677] 576160 Export RVA
+	[ 677] +base[ 678] 5716d0 Export RVA
+	[ 678] +base[ 679] 577090 Export RVA
+	[ 679] +base[ 680] 5763c0 Export RVA
+	[ 680] +base[ 681] 582440 Export RVA
+	[ 681] +base[ 682] 582600 Export RVA
+	[ 682] +base[ 683] 582650 Export RVA
+	[ 683] +base[ 684] 582550 Export RVA
+	[ 684] +base[ 685] 574a40 Export RVA
+	[ 685] +base[ 686] 5752e0 Export RVA
+	[ 686] +base[ 687] 575250 Export RVA
+	[ 687] +base[ 688] 574640 Export RVA
+	[ 688] +base[ 689] 5743f0 Export RVA
+	[ 689] +base[ 690] 576180 Export RVA
+	[ 690] +base[ 691] 574fd0 Export RVA
+	[ 691] +base[ 692] 574f90 Export RVA
+	[ 692] +base[ 693] 5823c0 Export RVA
+	[ 693] +base[ 694] 2f1e010 Export RVA
+	[ 694] +base[ 695] 2f1e0d0 Export RVA
+	[ 695] +base[ 696] 2f1e3d0 Export RVA
+	[ 696] +base[ 697] 2f1e490 Export RVA
+	[ 697] +base[ 698] 2f1e4e0 Export RVA
+	[ 698] +base[ 699] 2f1e4f0 Export RVA
+	[ 699] +base[ 700] 2f1e560 Export RVA
+	[ 700] +base[ 701] 2f1e5d0 Export RVA
+	[ 701] +base[ 702] 2f1e600 Export RVA
+	[ 702] +base[ 703] 2f1e650 Export RVA
+	[ 703] +base[ 704] 2f1e6a0 Export RVA
+	[ 704] +base[ 705] 2f1e6b0 Export RVA
+	[ 705] +base[ 706] 2f1e700 Export RVA
+	[ 706] +base[ 707] 2f1e720 Export RVA
+	[ 707] +base[ 708] 2f1e950 Export RVA
+	[ 708] +base[ 709] 2f1eaa0 Export RVA
+	[ 709] +base[ 710] 2f1eae0 Export RVA
+	[ 710] +base[ 711] 2f1eb20 Export RVA
+	[ 711] +base[ 712] 2f1eb70 Export RVA
+	[ 712] +base[ 713] 2f1ec00 Export RVA
+
+[Ordinal/Name Pointer] Table
+	[   0] ??0ReadBytesMem@AK@@QEAA@PEBXJ@Z
+	[   1] ??0ReadBytesMem@AK@@QEAA@XZ
+	[   2] ??0ReadBytesSkip@AK@@QEAA@PEBXJ@Z
+	[   3] ??0ReadBytesSkip@AK@@QEAA@XZ
+	[   4] ??0WriteBytesCount@AK@@QEAA@XZ
+	[   5] ??0WriteBytesMem@AK@@QEAA@XZ
+	[   6] ??1CAkEmitter@@UEAA@XZ
+	[   7] ??1CAkGameObject@@UEAA@XZ
+	[   8] ??1CAkRegisteredObj@@UEAA@XZ
+	[   9] ??1ReadBytesMem@AK@@UEAA@XZ
+	[  10] ??1ReadBytesSkip@AK@@UEAA@XZ
+	[  11] ??1WriteBytesCount@AK@@UEAA@XZ
+	[  12] ??1WriteBytesMem@AK@@UEAA@XZ
+	[  13] ?AddDefaultListener@SoundEngine@AK@@YA?AW4AKRESULT@@_K@Z
+	[  14] ?AddLanguageChangeObserver@StreamMgr@AK@@YA?AW4AKRESULT@@P6AXQEB_WPEAX@Z1@Z
+	[  15] ?AddListener@SoundEngine@AK@@YA?AW4AKRESULT@@_K0@Z
+	[  16] ?AddOutput@SoundEngine@AK@@YA?AW4AKRESULT@@AEBUAkOutputSettings@@PEA_KPEB_KK@Z
+	[  17] ?AddOutputCaptureMarker@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD@Z
+	[  18] ?ApplyGain@AkMixer@@YAXPEAVAkAudioBuffer@@0UAkRamp@@_N@Z
+	[  19] ?ApplyGainAndInterleave@AkMixer@@YAXPEAVAkAudioBuffer@@0UAkRamp@@_N@Z
+	[  20] ?Attach@ReadBytesMem@AK@@QEAAXPEBXJ@Z
+	[  21] ?Attach@ReadBytesSkip@AK@@QEAAXPEBXJ@Z
+	[  22] ?Break@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@K@Z
+	[  23] ?Bytes@WriteBytesCount@AK@@UEBAPEAEXZ
+	[  24] ?Bytes@WriteBytesMem@AK@@UEBAPEAEXZ
+	[  25] ?CancelBankCallbackCookie@SoundEngine@AK@@YAXPEAX@Z
+	[  26] ?CancelEventCallback@SoundEngine@AK@@YAXK@Z
+	[  27] ?CancelEventCallbackCookie@SoundEngine@AK@@YAXPEAX@Z
+	[  28] ?CancelEventCallbackGameObject@SoundEngine@AK@@YAX_K@Z
+	[  29] ?Clear@WriteBytesCount@AK@@UEAAXXZ
+	[  30] ?Clear@WriteBytesMem@AK@@UEAAXXZ
+	[  31] ?ClearBanks@SoundEngine@AK@@YA?AW4AKRESULT@@XZ
+	[  32] ?ClearImageSources@SpatialAudio@AK@@YA?AW4AKRESULT@@K_K@Z
+	[  33] ?ClearPreparedEvents@SoundEngine@AK@@YA?AW4AKRESULT@@XZ
+	[  34] ?Close@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@K@Z
+	[  35] ?Count@ReadBytesSkip@AK@@QEAAJXZ
+	[  36] ?Count@WriteBytesCount@AK@@UEBAJXZ
+	[  37] ?Count@WriteBytesMem@AK@@UEBAJXZ
+	[  38] ?Create@StreamMgr@AK@@YAPEAVIAkStreamMgr@2@AEBUAkStreamMgrSettings@@@Z
+	[  39] ?CreateDevice@StreamMgr@AK@@YAKAEBUAkDeviceSettings@@PEAVIAkLowLevelIOHook@12@@Z
+	[  40] ?DecodeBank@SoundEngine@AK@@YA?AW4AKRESULT@@PEBXKJAEAPEAXAEAK@Z
+	[  41] ?DestroyDevice@StreamMgr@AK@@YA?AW4AKRESULT@@K@Z
+	[  42] ?Detach@WriteBytesCount@AK@@UEAAPEAEXZ
+	[  43] ?Detach@WriteBytesMem@AK@@UEAAPEAEXZ
+	[  44] ?EncodeVector@CAkSpeakerPan@@SAXHPEAM0@Z
+	[  45] ?ExecuteActionOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@KW4AkActionOnEventType@12@_KJW4AkCurveInterpolation@@K@Z
+	[  46] ?ExecuteActionOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDW4AkActionOnEventType@12@_KJW4AkCurveInterpolation@@K@Z
+	[  47] ?ExecuteActionOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WW4AkActionOnEventType@12@_KJW4AkCurveInterpolation@@K@Z
+	[  48] ?ExecuteActionOnPlayingID@SoundEngine@AK@@YAXW4AkActionOnEventType@12@KJW4AkCurveInterpolation@@@Z
+	[  49] ?Falign@MemoryMgr@AK@@YAXJPEAX@Z
+	[  50] ?FlushAllCaches@StreamMgr@AK@@YAXXZ
+	[  51] ?Free@MemoryMgr@AK@@YAXJPEAX@Z
+	[  52] ?GetActiveGameObjects@Query@SoundEngine@AK@@YA?AW4AKRESULT@@AEAV?$AkArray@_K_KU?$AkArrayAllocatorNoAlign@$0A@@@UAkGrowByPolicy_Proportional@@U?$AkAssignmentMovePolicy@_K@@@@@Z
+	[  53] ?GetAudioSettings@SoundEngine@AK@@YA?AW4AKRESULT@@AEAUAkAudioSettings@@@Z
+	[  54] ?GetBackgroundMusicMute@SoundEngine@AK@@YA_NXZ
+	[  55] ?GetBufferStatusForPinnedEvent@SoundEngine@AK@@YA?AW4AKRESULT@@KAEAMAEA_N@Z
+	[  56] ?GetBufferStatusForPinnedEvent@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDAEAMAEA_N@Z
+	[  57] ?GetBufferStatusForPinnedEvent@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WAEAMAEA_N@Z
+	[  58] ?GetBufferTick@SoundEngine@AK@@YAKXZ
+	[  59] ?GetCategoryStats@MemoryMgr@AK@@YAXJAEAUCategoryStats@12@@Z
+	[  60] ?GetContainerHistory@SoundEngine@AK@@YA?AW4AKRESULT@@PEAVIWriteBytes@2@@Z
+	[  61] ?GetCurrentLanguage@StreamMgr@AK@@YAPEB_WXZ
+	[  62] ?GetCustomPropertyValue@Query@SoundEngine@AK@@YA?AW4AKRESULT@@KKAEAJ@Z
+	[  63] ?GetCustomPropertyValue@Query@SoundEngine@AK@@YA?AW4AKRESULT@@KKAEAM@Z
+	[  64] ?GetDecodingMatrixShape@CAkSpeakerPan@@SAXUAkChannelConfig@@AEAKAEAH@Z
+	[  65] ?GetDefaultDeviceSettings@StreamMgr@AK@@YAXAEAUAkDeviceSettings@@@Z
+	[  66] ?GetDefaultInitSettings@MusicEngine@AK@@YAXAEAUAkMusicSettings@@@Z
+	[  67] ?GetDefaultInitSettings@SoundEngine@AK@@YAXAEAUAkInitSettings@@@Z
+	[  68] ?GetDefaultPlatformInitSettings@SoundEngine@AK@@YAXAEAUAkPlatformInitSettings@@@Z
+	[  69] ?GetDefaultSettings@MemoryMgr@AK@@YAXAEAUAkMemSettings@@@Z
+	[  70] ?GetDefaultSettings@StreamMgr@AK@@YAXAEAUAkStreamMgrSettings@@@Z
+	[  71] ?GetDeviceID@AK@@YAKPEAUIMMDevice@@@Z
+	[  72] ?GetDeviceIDFromName@AK@@YAKPEA_W@Z
+	[  73] ?GetDeviceList@SoundEngine@AK@@YA?AW4AKRESULT@@KAEAKPEAUAkDeviceDescription@@@Z
+	[  74] ?GetDeviceList@SoundEngine@AK@@YA?AW4AKRESULT@@KKAEAKPEAUAkDeviceDescription@@@Z
+	[  75] ?GetDeviceSpatialAudioSupport@SoundEngine@AK@@YA?AW4AKRESULT@@K@Z
+	[  76] ?GetDialogueEventCustomPropertyValue@DynamicDialogue@SoundEngine@AK@@YA?AW4AKRESULT@@KKAEAJ@Z
+	[  77] ?GetDialogueEventCustomPropertyValue@DynamicDialogue@SoundEngine@AK@@YA?AW4AKRESULT@@KKAEAM@Z
+	[  78] ?GetDirectSoundInstance@AK@@YAPEAUIDirectSound8@@XZ
+	[  79] ?GetEventIDFromPlayingID@Query@SoundEngine@AK@@YAKK@Z
+	[  80] ?GetFileLocationResolver@StreamMgr@AK@@YAPEAVIAkFileLocationResolver@12@XZ
+	[  81] ?GetGameObjectAuxSendValues@Query@SoundEngine@AK@@YA?AW4AKRESULT@@_KPEAUAkAuxSendValue@@AEAK@Z
+	[  82] ?GetGameObjectDryLevelValue@Query@SoundEngine@AK@@YA?AW4AKRESULT@@_K0AEAM@Z
+	[  83] ?GetGameObjectFromPlayingID@Query@SoundEngine@AK@@YA_KK@Z
+	[  84] ?GetGlobalPluginContext@SoundEngine@AK@@YAPEAVIAkGlobalPluginContext@2@XZ
+	[  85] ?GetGlobalStats@MemoryMgr@AK@@YAXAEAUGlobalStats@12@@Z
+	[  86] ?GetIDFromString@SoundEngine@AK@@YAKPEBD@Z
+	[  87] ?GetIDFromString@SoundEngine@AK@@YAKPEB_W@Z
+	[  88] ?GetIsGameObjectActive@Query@SoundEngine@AK@@YA_N_K@Z
+	[  89] ?GetListenerPosition@Query@SoundEngine@AK@@YA?AW4AKRESULT@@_KAEAVAkTransform@@@Z
+	[  90] ?GetListenerSpatialization@Query@SoundEngine@AK@@YA?AW4AKRESULT@@KAEA_NAEAPEAMAEAUAkChannelConfig@@@Z
+	[  91] ?GetListeners@Query@SoundEngine@AK@@YA?AW4AKRESULT@@_KPEA_KAEAK@Z
+	[  92] ?GetMaxRadius@Query@SoundEngine@AK@@YA?AW4AKRESULT@@AEAV?$AkArray@UGameObjDst@Query@SoundEngine@AK@@AEBU1234@U?$AkArrayAllocatorNoAlign@$0A@@@UAkGrowByPolicy_Proportional@@U?$AkAssignmentMovePolicy@UGameObjDst@Query@SoundEngine@AK@@@@@@@Z
+	[  93] ?GetMaxRadius@Query@SoundEngine@AK@@YAM_K@Z
+	[  94] ?GetObjAndAddref@CAkRegistryMgr@@QEAAPEAVCAkRegisteredObj@@_K@Z
+	[  95] ?GetObjectObstructionAndOcclusion@Query@SoundEngine@AK@@YA?AW4AKRESULT@@_K0AEAM1@Z
+	[  96] ?GetOutputID@SoundEngine@AK@@YA_KKK@Z
+	[  97] ?GetOutputID@SoundEngine@AK@@YA_KPEBDK@Z
+	[  98] ?GetOutputID@SoundEngine@AK@@YA_KPEB_WK@Z
+	[  99] ?GetPanningRule@SoundEngine@AK@@YA?AW4AKRESULT@@AEAW4AkPanningRule@@_K@Z
+	[ 100] ?GetPauseTimes@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@KAEAK0@Z
+	[ 101] ?GetPlayingIDsFromGameObject@Query@SoundEngine@AK@@YA?AW4AKRESULT@@_KAEAKPEAK@Z
+	[ 102] ?GetPlayingItem@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@KAEAKAEAPEAX@Z
+	[ 103] ?GetPlayingSegmentInfo@MusicEngine@AK@@YA?AW4AKRESULT@@KAEAUAkSegmentInfo@@_N@Z
+	[ 104] ?GetPosition@Query@SoundEngine@AK@@YA?AW4AKRESULT@@_KAEAVAkTransform@@@Z
+	[ 105] ?GetPositioningInfo@Query@SoundEngine@AK@@YA?AW4AKRESULT@@KAEAUAkPositioningInfo@@@Z
+	[ 106] ?GetRTPCValue@Query@SoundEngine@AK@@YA?AW4AKRESULT@@K_KKAEAMAEAW4RTPCValue_type@123@@Z
+	[ 107] ?GetRTPCValue@Query@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD_KKAEAMAEAW4RTPCValue_type@123@@Z
+	[ 108] ?GetRTPCValue@Query@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W_KKAEAMAEAW4RTPCValue_type@123@@Z
+	[ 109] ?GetSourcePlayPosition@SoundEngine@AK@@YA?AW4AKRESULT@@KPEAJ_N@Z
+	[ 110] ?GetSourcePlayPositions@SoundEngine@AK@@YA?AW4AKRESULT@@KPEAUAkSourcePosition@@PEAK_N@Z
+	[ 111] ?GetSourceStreamBuffering@SoundEngine@AK@@YA?AW4AKRESULT@@KAEAJAEA_N@Z
+	[ 112] ?GetSpeakerAngles@SoundEngine@AK@@YA?AW4AKRESULT@@PEAMAEAKAEAM_K@Z
+	[ 113] ?GetSpeakerConfiguration@SoundEngine@AK@@YA?AUAkChannelConfig@@_K@Z
+	[ 114] ?GetState@Query@SoundEngine@AK@@YA?AW4AKRESULT@@KAEAK@Z
+	[ 115] ?GetState@Query@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDAEAK@Z
+	[ 116] ?GetState@Query@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WAEAK@Z
+	[ 117] ?GetSwitch@Query@SoundEngine@AK@@YA?AW4AKRESULT@@K_KAEAK@Z
+	[ 118] ?GetSwitch@Query@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD_KAEAK@Z
+	[ 119] ?GetSwitch@Query@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W_KAEAK@Z
+	[ 120] ?GetTimeStamp@Monitor@AK@@YAJXZ
+	[ 121] ?GetWindowsDevice@AK@@YA_NJAEAKPEAPEAUIMMDevice@@W4AkAudioDeviceState@@@Z
+	[ 122] ?GetWindowsDeviceCount@AK@@YAKW4AkAudioDeviceState@@@Z
+	[ 123] ?GetWindowsDeviceName@AK@@YAPEB_WJAEAKW4AkAudioDeviceState@@@Z
+	[ 124] ?GetWwiseXAudio2Interface@AK@@YAPEAUIUnknown@@XZ
+	[ 125] ?Init@MemoryMgr@AK@@YA?AW4AKRESULT@@PEAUAkMemSettings@@@Z
+	[ 126] ?Init@MusicEngine@AK@@YA?AW4AKRESULT@@PEAUAkMusicSettings@@@Z
+	[ 127] ?Init@SoundEngine@AK@@YA?AW4AKRESULT@@PEAUAkInitSettings@@PEAUAkPlatformInitSettings@@@Z
+	[ 128] ?Init@SpatialAudio@AK@@YA?AW4AKRESULT@@AEBUAkSpatialAudioInitSettings@@@Z
+	[ 129] ?InitForThread@MemoryMgr@AK@@YAXXZ
+	[ 130] ?Instance@AkRuntimeEnvironmentMgr@AK@@SAPEAV12@XZ
+	[ 131] ?IsInitialized@MemoryMgr@AK@@YA_NXZ
+	[ 132] ?IsInitialized@SoundEngine@AK@@YA_NXZ
+	[ 133] ?LoadBank@SoundEngine@AK@@YA?AW4AKRESULT@@K@Z
+	[ 134] ?LoadBank@SoundEngine@AK@@YA?AW4AKRESULT@@KP6AXKPEBXW43@PEAX@Z2@Z
+	[ 135] ?LoadBank@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDAEAK@Z
+	[ 136] ?LoadBank@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDP6AXKPEBXW43@PEAX@Z3AEAK@Z
+	[ 137] ?LoadBank@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WAEAK@Z
+	[ 138] ?LoadBank@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WP6AXKPEBXW43@PEAX@Z3AEAK@Z
+	[ 139] ?LoadBankMemoryCopy@SoundEngine@AK@@YA?AW4AKRESULT@@PEBXKAEAK@Z
+	[ 140] ?LoadBankMemoryCopy@SoundEngine@AK@@YA?AW4AKRESULT@@PEBXKP6AXK0W43@PEAX@Z2AEAK@Z
+	[ 141] ?LoadBankMemoryView@SoundEngine@AK@@YA?AW4AKRESULT@@PEBXKAEAK@Z
+	[ 142] ?LoadBankMemoryView@SoundEngine@AK@@YA?AW4AKRESULT@@PEBXKP6AXK0W43@PEAX@Z2AEAK@Z
+	[ 143] ?LockPlaylist@DynamicSequence@SoundEngine@AK@@YAPEAVPlaylist@123@K@Z
+	[ 144] ?Malign@MemoryMgr@AK@@YAPEAXJ_KK@Z
+	[ 145] ?Malloc@MemoryMgr@AK@@YAPEAXJ_K@Z
+	[ 146] ?MixBypassNinNChannels@AkMixer@@YAXPEAVAkAudioBuffer@@0AEAUAkRamp@@PEBM2MGPEAVCAkSrcLpHpFilter@@@Z
+	[ 147] ?MixChannel@AkMixer@@YAXPEAM0MMK@Z
+	[ 148] ?MixFilterNinNChannels@AkMixer@@YAXPEAVAkAudioBuffer@@0AEAUAkRamp@@PEBM2MGPEAVCAkSrcLpHpFilter@@@Z
+	[ 149] ?MixNinNChannels@AkMixer@@YAXPEAVAkAudioBuffer@@0AEAUAkRamp@@PEBM2MG@Z
+	[ 150] ?MixOneInNChannels@AkMixer@@YAXPEIAMPEAVAkAudioBuffer@@UAkChannelConfig@@AEAUAkRamp@@PEBM4MG@Z
+	[ 151] ?MuteBackgroundMusic@SoundEngine@AK@@YAX_N@Z
+	[ 152] ?Open@DynamicSequence@SoundEngine@AK@@YAK_KKP6AXW4AkCallbackType@@PEAUAkCallbackInfo@@@ZPEAXW4DynamicSequenceType@123@@Z
+	[ 153] ?Pause@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@KJW4AkCurveInterpolation@@@Z
+	[ 154] ?PinEventInStreamCache@SoundEngine@AK@@YA?AW4AKRESULT@@KDD@Z
+	[ 155] ?PinEventInStreamCache@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDDD@Z
+	[ 156] ?PinEventInStreamCache@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WDD@Z
+	[ 157] ?Play@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@KJW4AkCurveInterpolation@@@Z
+	[ 158] ?PlaySourcePlugin@SoundEngine@AK@@YAKKK_K@Z
+	[ 159] ?PostCode@Monitor@AK@@YA?AW4AKRESULT@@W4ErrorCode@12@W4ErrorLevel@12@K_KK_N@Z
+	[ 160] ?PostEvent@SoundEngine@AK@@YAKK_KKP6AXW4AkCallbackType@@PEAUAkCallbackInfo@@@ZPEAXKPEAUAkExternalSourceInfo@@K@Z
+	[ 161] ?PostEvent@SoundEngine@AK@@YAKPEBD_KKP6AXW4AkCallbackType@@PEAUAkCallbackInfo@@@ZPEAXKPEAUAkExternalSourceInfo@@K@Z
+	[ 162] ?PostEvent@SoundEngine@AK@@YAKPEB_W_KKP6AXW4AkCallbackType@@PEAUAkCallbackInfo@@@ZPEAXKPEAUAkExternalSourceInfo@@K@Z
+	[ 163] ?PostMIDIOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@K_KPEAUAkMIDIPost@@G@Z
+	[ 164] ?PostString@Monitor@AK@@YA?AW4AKRESULT@@PEBDW4ErrorLevel@12@K_KK_N@Z
+	[ 165] ?PostString@Monitor@AK@@YA?AW4AKRESULT@@PEB_WW4ErrorLevel@12@K_KK_N@Z
+	[ 166] ?PostTrigger@SoundEngine@AK@@YA?AW4AKRESULT@@K_K@Z
+	[ 167] ?PostTrigger@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD_K@Z
+	[ 168] ?PostTrigger@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W_K@Z
+	[ 169] ?PrepareBank@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@KP6AXKPEBXW43@PEAX@Z3W4AkBankContent@12@@Z
+	[ 170] ?PrepareBank@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@KW4AkBankContent@12@@Z
+	[ 171] ?PrepareBank@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEBDP6AXKPEBXW43@PEAX@Z4W4AkBankContent@12@@Z
+	[ 172] ?PrepareBank@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEBDW4AkBankContent@12@@Z
+	[ 173] ?PrepareBank@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEB_WP6AXKPEBXW43@PEAX@Z4W4AkBankContent@12@@Z
+	[ 174] ?PrepareBank@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEB_WW4AkBankContent@12@@Z
+	[ 175] ?PrepareEvent@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEAKK@Z
+	[ 176] ?PrepareEvent@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEAKKP6AXKPEBXW43@PEAX@Z4@Z
+	[ 177] ?PrepareEvent@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEAPEBDK@Z
+	[ 178] ?PrepareEvent@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEAPEBDKP6AXKPEBXW43@PEAX@Z4@Z
+	[ 179] ?PrepareEvent@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEAPEB_WK@Z
+	[ 180] ?PrepareEvent@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@PEAPEB_WKP6AXKPEBXW43@PEAX@Z4@Z
+	[ 181] ?PrepareGameSyncs@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@W4AkGroupType@@KPEAKK@Z
+	[ 182] ?PrepareGameSyncs@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@W4AkGroupType@@KPEAKKP6AXKPEBXW43@PEAX@Z5@Z
+	[ 183] ?PrepareGameSyncs@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@W4AkGroupType@@PEBDPEAPEBDK@Z
+	[ 184] ?PrepareGameSyncs@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@W4AkGroupType@@PEBDPEAPEBDKP6AXKPEBXW43@PEAX@Z6@Z
+	[ 185] ?PrepareGameSyncs@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@W4AkGroupType@@PEB_WPEAPEB_WK@Z
+	[ 186] ?PrepareGameSyncs@SoundEngine@AK@@YA?AW4AKRESULT@@W4PreparationType@12@W4AkGroupType@@PEB_WPEAPEB_WKP6AXKPEBXW43@PEAX@Z6@Z
+	[ 187] ?QueryAudioObjectIDs@Query@SoundEngine@AK@@YA?AW4AKRESULT@@KAEAKPEAUAkObjectInfo@@@Z
+	[ 188] ?QueryAudioObjectIDs@Query@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDAEAKPEAUAkObjectInfo@@@Z
+	[ 189] ?QueryAudioObjectIDs@Query@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WAEAKPEAUAkObjectInfo@@@Z
+	[ 190] ?QueryDiffractionPaths@SpatialAudio@AK@@YA?AW4AKRESULT@@_KAEAUAkVector@@1PEAUAkDiffractionPathInfo@@AEAK@Z
+	[ 191] ?QueryReflectionPaths@SpatialAudio@AK@@YA?AW4AKRESULT@@_KAEAUAkVector@@1PEAUAkReflectionPathInfo@@AEAK@Z
+	[ 192] ?QueryWetDiffraction@SpatialAudio@AK@@YA?AW4AKRESULT@@UAkSpatialAudioID@@AEAM@Z
+	[ 193] ?ReadBytes@ReadBytesMem@AK@@UEAA_NPEAXJAEAJ@Z
+	[ 194] ?ReadBytes@ReadBytesSkip@AK@@UEAA_NPEAXJAEAJ@Z
+	[ 195] ?Realloc@MemoryMgr@AK@@YAPEAXJPEAX_K@Z
+	[ 196] ?RegisterAudioDeviceStatusCallback@SoundEngine@AK@@YA?AW4AKRESULT@@P6AXPEAVIAkGlobalPluginContext@2@KKW4AkAudioDeviceEvent@2@W43@@Z@Z
+	[ 197] ?RegisterBusMeteringCallback@SoundEngine@AK@@YA?AW4AKRESULT@@KP6AXPEAVIAkMetering@2@UAkChannelConfig@@W4AkMeteringFlags@@@Z2@Z
+	[ 198] ?RegisterBusVolumeCallback@SoundEngine@AK@@YA?AW4AKRESULT@@KP6AXPEAUAkSpeakerVolumeMatrixCallbackInfo@@@Z@Z
+	[ 199] ?RegisterCodec@SoundEngine@AK@@YA?AW4AKRESULT@@KKP6APEAVIAkSoftwareCodec@@PEAX@Z1@Z
+	[ 200] ?RegisterGameObj@SoundEngine@AK@@YA?AW4AKRESULT@@_K@Z
+	[ 201] ?RegisterGameObj@SoundEngine@AK@@YA?AW4AKRESULT@@_KPEBD@Z
+	[ 202] ?RegisterGlobalCallback@SoundEngine@AK@@YA?AW4AKRESULT@@P6AXPEAVIAkGlobalPluginContext@2@W4AkGlobalCallbackLocation@@PEAX@ZK2W4AkPluginType@@KK@Z
+	[ 203] ?RegisterListener@SpatialAudio@AK@@YA?AW4AKRESULT@@_K@Z
+	[ 204] ?RegisterPlugin@SoundEngine@AK@@YA?AW4AKRESULT@@W4AkPluginType@@KKP6APEAVIAkPlugin@2@PEAVIAkPluginMemAlloc@2@@ZP6APEAVIAkPluginParam@2@1@ZP6A?AW43@AEAKPEAUAkDeviceDescription@@@Z@Z
+	[ 205] ?RegisterPluginDLL@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W0@Z
+	[ 206] ?RegisterResourceMonitorCallback@SoundEngine@AK@@YA?AW4AKRESULT@@P6AXPEBUAkResourceMonitorDataSummary@@@Z@Z
+	[ 207] ?RemoveDefaultListener@SoundEngine@AK@@YA?AW4AKRESULT@@_K@Z
+	[ 208] ?RemoveGeometry@SpatialAudio@AK@@YA?AW4AKRESULT@@UAkSpatialAudioID@@@Z
+	[ 209] ?RemoveImageSource@SpatialAudio@AK@@YA?AW4AKRESULT@@KK_K@Z
+	[ 210] ?RemoveLanguageChangeObserver@StreamMgr@AK@@YAXPEAX@Z
+	[ 211] ?RemoveListener@SoundEngine@AK@@YA?AW4AKRESULT@@_K0@Z
+	[ 212] ?RemoveOutput@SoundEngine@AK@@YA?AW4AKRESULT@@_K@Z
+	[ 213] ?RemovePortal@SpatialAudio@AK@@YA?AW4AKRESULT@@UAkSpatialAudioID@@@Z
+	[ 214] ?RemoveRoom@SpatialAudio@AK@@YA?AW4AKRESULT@@UAkRoomID@@@Z
+	[ 215] ?RenderAudio@SoundEngine@AK@@YA?AW4AKRESULT@@_N@Z
+	[ 216] ?ReplaceOutput@SoundEngine@AK@@YA?AW4AKRESULT@@AEBUAkOutputSettings@@_KPEA_K@Z
+	[ 217] ?Reserve@WriteBytesCount@AK@@UEAA_NJ@Z
+	[ 218] ?Reserve@WriteBytesMem@AK@@UEAA_NJ@Z
+	[ 219] ?ResetListenersToDefault@SoundEngine@AK@@YA?AW4AKRESULT@@_K@Z
+	[ 220] ?ResetRTPCValue@SoundEngine@AK@@YA?AW4AKRESULT@@K_KJW4AkCurveInterpolation@@_N@Z
+	[ 221] ?ResetRTPCValue@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD_KJW4AkCurveInterpolation@@_N@Z
+	[ 222] ?ResetRTPCValue@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W_KJW4AkCurveInterpolation@@_N@Z
+	[ 223] ?ResolveDialogueEvent@DynamicDialogue@SoundEngine@AK@@YAKKPEAKKKP6A_NKKPEAX@Z1@Z
+	[ 224] ?ResolveDialogueEvent@DynamicDialogue@SoundEngine@AK@@YAKPEBDPEAPEBDKKP6A_NKKPEAX@Z2@Z
+	[ 225] ?ResolveDialogueEvent@DynamicDialogue@SoundEngine@AK@@YAKPEB_WPEAPEB_WKKP6A_NKKPEAX@Z2@Z
+	[ 226] ?Resume@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@KJW4AkCurveInterpolation@@@Z
+	[ 227] ?Seek@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@KJ_N@Z
+	[ 228] ?Seek@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@KM_N@Z
+	[ 229] ?SeekOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@K_KJ_NK@Z
+	[ 230] ?SeekOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@K_KM_NK@Z
+	[ 231] ?SeekOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD_KJ_NK@Z
+	[ 232] ?SeekOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD_KM_NK@Z
+	[ 233] ?SeekOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W_KJ_NK@Z
+	[ 234] ?SeekOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W_KM_NK@Z
+	[ 235] ?SendPluginCustomGameData@SoundEngine@AK@@YA?AW4AKRESULT@@K_KW4AkPluginType@@KKPEBXK@Z
+	[ 236] ?SetActorMixerEffect@SoundEngine@AK@@YA?AW4AKRESULT@@KKK@Z
+	[ 237] ?SetBankLoadIOSettings@SoundEngine@AK@@YA?AW4AKRESULT@@MD@Z
+	[ 238] ?SetBusConfig@SoundEngine@AK@@YA?AW4AKRESULT@@KUAkChannelConfig@@@Z
+	[ 239] ?SetBusConfig@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDUAkChannelConfig@@@Z
+	[ 240] ?SetBusConfig@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WUAkChannelConfig@@@Z
+	[ 241] ?SetBusDevice@SoundEngine@AK@@YA?AW4AKRESULT@@KK@Z
+	[ 242] ?SetBusDevice@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD0@Z
+	[ 243] ?SetBusDevice@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W0@Z
+	[ 244] ?SetBusEffect@SoundEngine@AK@@YA?AW4AKRESULT@@KKK@Z
+	[ 245] ?SetBusEffect@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDKK@Z
+	[ 246] ?SetBusEffect@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WKK@Z
+	[ 247] ?SetContainerHistory@SoundEngine@AK@@YA?AW4AKRESULT@@PEAVIReadBytes@2@@Z
+	[ 248] ?SetCount@WriteBytesCount@AK@@UEAAXJ@Z
+	[ 249] ?SetCount@WriteBytesMem@AK@@UEAAXJ@Z
+	[ 250] ?SetCurrentLanguage@StreamMgr@AK@@YA?AW4AKRESULT@@PEB_W@Z
+	[ 251] ?SetDefaultListeners@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_KK@Z
+	[ 252] ?SetEarlyReflectionsAuxSend@SpatialAudio@AK@@YA?AW4AKRESULT@@_KK@Z
+	[ 253] ?SetEarlyReflectionsVolume@SpatialAudio@AK@@YA?AW4AKRESULT@@_KM@Z
+	[ 254] ?SetFileLocationResolver@StreamMgr@AK@@YAXPEAVIAkFileLocationResolver@12@@Z
+	[ 255] ?SetGameObjectAuxSendValues@SoundEngine@AK@@YA?AW4AKRESULT@@_KPEAUAkAuxSendValue@@K@Z
+	[ 256] ?SetGameObjectInRoom@SpatialAudio@AK@@YA?AW4AKRESULT@@_KUAkRoomID@@@Z
+	[ 257] ?SetGameObjectOutputBusVolume@SoundEngine@AK@@YA?AW4AKRESULT@@_K0M@Z
+	[ 258] ?SetGeometry@SpatialAudio@AK@@YA?AW4AKRESULT@@UAkSpatialAudioID@@AEBUAkGeometryParams@@@Z
+	[ 259] ?SetImageSource@SpatialAudio@AK@@YA?AW4AKRESULT@@KAEBUAkImageSourceSettings@@KUAkRoomID@@_K@Z
+	[ 260] ?SetListenerSpatialization@SoundEngine@AK@@YA?AW4AKRESULT@@_K_NUAkChannelConfig@@PEAM@Z
+	[ 261] ?SetListeners@SoundEngine@AK@@YA?AW4AKRESULT@@_KPEB_KK@Z
+	[ 262] ?SetLocalOutput@Monitor@AK@@YA?AW4AKRESULT@@KP6AXW4ErrorCode@12@PEB_WW4ErrorLevel@12@K_K@Z@Z
+	[ 263] ?SetMaxNumVoicesLimit@SoundEngine@AK@@YA?AW4AKRESULT@@G@Z
+	[ 264] ?SetMedia@SoundEngine@AK@@YA?AW4AKRESULT@@PEAUAkSourceSettings@@K@Z
+	[ 265] ?SetMemPool@WriteBytesMem@AK@@QEAAXJ@Z
+	[ 266] ?SetMixer@SoundEngine@AK@@YA?AW4AKRESULT@@KK@Z
+	[ 267] ?SetMixer@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDK@Z
+	[ 268] ?SetMixer@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WK@Z
+	[ 269] ?SetMultipleObstructionAndOcclusion@SoundEngine@AK@@YA?AW4AKRESULT@@_K0PEAUAkObstructionOcclusionValues@@K@Z
+	[ 270] ?SetMultiplePositions@SoundEngine@AK@@YA?AW4AKRESULT@@_KPEBUAkChannelEmitter@@GW4MultiPositionType@12@@Z
+	[ 271] ?SetMultiplePositions@SoundEngine@AK@@YA?AW4AKRESULT@@_KPEBVAkTransform@@GW4MultiPositionType@12@@Z
+	[ 272] ?SetNumberOfPrimaryRays@SpatialAudio@AK@@YA?AW4AKRESULT@@K@Z
+	[ 273] ?SetObjectObstructionAndOcclusion@SoundEngine@AK@@YA?AW4AKRESULT@@_K0MM@Z
+	[ 274] ?SetOutputVolume@SoundEngine@AK@@YA?AW4AKRESULT@@_KM@Z
+	[ 275] ?SetPanningRule@SoundEngine@AK@@YA?AW4AKRESULT@@W4AkPanningRule@@_K@Z
+	[ 276] ?SetPortal@SpatialAudio@AK@@YA?AW4AKRESULT@@UAkSpatialAudioID@@AEBUAkPortalParams@@@Z
+	[ 277] ?SetPortalObstructionAndOcclusion@SpatialAudio@AK@@YA?AW4AKRESULT@@UAkSpatialAudioID@@MM@Z
+	[ 278] ?SetPosition@SoundEngine@AK@@YA?AW4AKRESULT@@_KAEBVAkTransform@@@Z
+	[ 279] ?SetPositionInternal@SoundEngine@AK@@YA?AW4AKRESULT@@_KAEBVAkTransform@@@Z
+	[ 280] ?SetRTPCInternal@CAkRTPCMgr@@QEAA?AW4AKRESULT@@KMAEBVAkRTPCKey@@AEAUTransParamsBase@@W4AkValueMeaning@@_N@Z
+	[ 281] ?SetRTPCInternal@CAkRTPCMgr@@QEAA?AW4AKRESULT@@KMPEAVCAkRegisteredObj@@KAEAUTransParamsBase@@W4AkValueMeaning@@@Z
+	[ 282] ?SetRTPCValue@SoundEngine@AK@@YA?AW4AKRESULT@@KM_KJW4AkCurveInterpolation@@_N@Z
+	[ 283] ?SetRTPCValue@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDM_KJW4AkCurveInterpolation@@_N@Z
+	[ 284] ?SetRTPCValue@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WM_KJW4AkCurveInterpolation@@_N@Z
+	[ 285] ?SetRTPCValueByPlayingID@SoundEngine@AK@@YA?AW4AKRESULT@@KMKJW4AkCurveInterpolation@@_N@Z
+	[ 286] ?SetRTPCValueByPlayingID@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDMKJW4AkCurveInterpolation@@_N@Z
+	[ 287] ?SetRTPCValueByPlayingID@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WMKJW4AkCurveInterpolation@@_N@Z
+	[ 288] ?SetRandomSeed@SoundEngine@AK@@YAXK@Z
+	[ 289] ?SetReflectionsOrder@SpatialAudio@AK@@YA?AW4AKRESULT@@K_N@Z
+	[ 290] ?SetRoom@SpatialAudio@AK@@YA?AW4AKRESULT@@UAkRoomID@@AEBUAkRoomParams@@@Z
+	[ 291] ?SetScalingFactor@SoundEngine@AK@@YA?AW4AKRESULT@@_KM@Z
+	[ 292] ?SetSpeakerAngles@SoundEngine@AK@@YA?AW4AKRESULT@@PEBMKM_K@Z
+	[ 293] ?SetState@SoundEngine@AK@@YA?AW4AKRESULT@@KK@Z
+	[ 294] ?SetState@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD0@Z
+	[ 295] ?SetState@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W0@Z
+	[ 296] ?SetSwitch@SoundEngine@AK@@YA?AW4AKRESULT@@KK_K@Z
+	[ 297] ?SetSwitch@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD0_K@Z
+	[ 298] ?SetSwitch@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W0_K@Z
+	[ 299] ?SetVolumeThreshold@SoundEngine@AK@@YA?AW4AKRESULT@@M@Z
+	[ 300] ?Size@WriteBytesMem@AK@@QEBAJXZ
+	[ 301] ?StartOutputCapture@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W@Z
+	[ 302] ?StartProfileThreadUsage@MemoryMgr@AK@@YAXXZ
+	[ 303] ?StartProfilerCapture@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W@Z
+	[ 304] ?Stop@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@KJW4AkCurveInterpolation@@@Z
+	[ 305] ?StopAll@SoundEngine@AK@@YAX_K@Z
+	[ 306] ?StopMIDIOnEvent@SoundEngine@AK@@YA?AW4AKRESULT@@K_K@Z
+	[ 307] ?StopOutputCapture@SoundEngine@AK@@YA?AW4AKRESULT@@XZ
+	[ 308] ?StopPlayingID@SoundEngine@AK@@YAXKJW4AkCurveInterpolation@@@Z
+	[ 309] ?StopProfileThreadUsage@MemoryMgr@AK@@YA_KXZ
+	[ 310] ?StopProfilerCapture@SoundEngine@AK@@YA?AW4AKRESULT@@XZ
+	[ 311] ?StopSourcePlugin@SoundEngine@AK@@YA?AW4AKRESULT@@KKK@Z
+	[ 312] ?Suspend@SoundEngine@AK@@YA?AW4AKRESULT@@_N@Z
+	[ 313] ?Term@MemoryMgr@AK@@YAXXZ
+	[ 314] ?Term@MusicEngine@AK@@YAXXZ
+	[ 315] ?Term@SoundEngine@AK@@YAXXZ
+	[ 316] ?TermForThread@MemoryMgr@AK@@YAXXZ
+	[ 317] ?TryUnsetMedia@SoundEngine@AK@@YA?AW4AKRESULT@@PEAUAkSourceSettings@@KPEAW43@@Z
+	[ 318] ?UnloadBank@SoundEngine@AK@@YA?AW4AKRESULT@@KPEBX@Z
+	[ 319] ?UnloadBank@SoundEngine@AK@@YA?AW4AKRESULT@@KPEBXP6AXK0W43@PEAX@Z2@Z
+	[ 320] ?UnloadBank@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDPEBX@Z
+	[ 321] ?UnloadBank@SoundEngine@AK@@YA?AW4AKRESULT@@PEBDPEBXP6AXK1W43@PEAX@Z3@Z
+	[ 322] ?UnloadBank@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WPEBX@Z
+	[ 323] ?UnloadBank@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_WPEBXP6AXK1W43@PEAX@Z3@Z
+	[ 324] ?UnlockPlaylist@DynamicSequence@SoundEngine@AK@@YA?AW4AKRESULT@@K@Z
+	[ 325] ?UnpinEventInStreamCache@SoundEngine@AK@@YA?AW4AKRESULT@@K@Z
+	[ 326] ?UnpinEventInStreamCache@SoundEngine@AK@@YA?AW4AKRESULT@@PEBD@Z
+	[ 327] ?UnpinEventInStreamCache@SoundEngine@AK@@YA?AW4AKRESULT@@PEB_W@Z
+	[ 328] ?UnregisterAllGameObj@SoundEngine@AK@@YA?AW4AKRESULT@@XZ
+	[ 329] ?UnregisterAudioDeviceStatusCallback@SoundEngine@AK@@YA?AW4AKRESULT@@XZ
+	[ 330] ?UnregisterGameObj@SoundEngine@AK@@YA?AW4AKRESULT@@_K@Z
+	[ 331] ?UnregisterGlobalCallback@SoundEngine@AK@@YA?AW4AKRESULT@@P6AXPEAVIAkGlobalPluginContext@2@W4AkGlobalCallbackLocation@@PEAX@ZK@Z
+	[ 332] ?UnregisterListener@SpatialAudio@AK@@YA?AW4AKRESULT@@_K@Z
+	[ 333] ?UnregisterResourceMonitorCallback@SoundEngine@AK@@YA?AW4AKRESULT@@P6AXPEBUAkResourceMonitorDataSummary@@@Z@Z
+	[ 334] ?UnsetMedia@SoundEngine@AK@@YA?AW4AKRESULT@@PEAUAkSourceSettings@@K@Z
+	[ 335] ?WakeupFromSuspend@SoundEngine@AK@@YA?AW4AKRESULT@@XZ
+	[ 336] ?WriteBytes@WriteBytesCount@AK@@UEAA_NPEBXJAEAJ@Z
+	[ 337] ?WriteBytes@WriteBytesMem@AK@@UEAA_NPEBXJAEAJ@Z
+	[ 338] ?g_PlayingID@SoundEngine@AK@@3JC
+	[ 339] ?g_pAssertHook@@3P6AXPEBD0H@ZEA
+	[ 340] ?g_pRTPCMgr@@3PEAVCAkRTPCMgr@@EA
+	[ 341] ?g_pRegistryMgr@@3PEAVCAkRegistryMgr@@EA
+	[ 342] ?g_pSwitchMgr@@3PEAVCAkSwitchMgr@@EA
+	[ 343] ?m_pStreamMgr@IAkStreamMgr@AK@@1PEAV12@EA
+	[ 344] AkTlsAllocateSlot
+	[ 345] AkTlsFreeSlot
+	[ 346] AkTlsGetValue
+	[ 347] AkTlsSetValue
+	[ 348] AmdPowerXpressRequestHighPerformance
+	[ 349] NVSDK_NGX_D3D11_AllocateParameters
+	[ 350] NVSDK_NGX_D3D11_CreateFeature
+	[ 351] NVSDK_NGX_D3D11_DestroyParameters
+	[ 352] NVSDK_NGX_D3D11_EvaluateFeature
+	[ 353] NVSDK_NGX_D3D11_EvaluateFeature_C
+	[ 354] NVSDK_NGX_D3D11_GetCapabilityParameters
+	[ 355] NVSDK_NGX_D3D11_GetParameters
+	[ 356] NVSDK_NGX_D3D11_GetScratchBufferSize
+	[ 357] NVSDK_NGX_D3D11_ReleaseFeature
+	[ 358] NVSDK_NGX_D3D11_Shutdown
+	[ 359] NVSDK_NGX_D3D11_Shutdown1
+	[ 360] NVSDK_NGX_D3D12_AllocateParameters
+	[ 361] NVSDK_NGX_D3D12_CreateFeature
+	[ 362] NVSDK_NGX_D3D12_DestroyParameters
+	[ 363] NVSDK_NGX_D3D12_EvaluateFeature
+	[ 364] NVSDK_NGX_D3D12_EvaluateFeature_C
+	[ 365] NVSDK_NGX_D3D12_GetCapabilityParameters
+	[ 366] NVSDK_NGX_D3D12_GetParameters
+	[ 367] NVSDK_NGX_D3D12_GetScratchBufferSize
+	[ 368] NVSDK_NGX_D3D12_ReleaseFeature
+	[ 369] NVSDK_NGX_D3D12_Shutdown
+	[ 370] NVSDK_NGX_D3D12_Shutdown1
+	[ 371] NVSDK_NGX_Parameter_GetD
+	[ 372] NVSDK_NGX_Parameter_GetD3d11Resource
+	[ 373] NVSDK_NGX_Parameter_GetD3d12Resource
+	[ 374] NVSDK_NGX_Parameter_GetF
+	[ 375] NVSDK_NGX_Parameter_GetI
+	[ 376] NVSDK_NGX_Parameter_GetUI
+	[ 377] NVSDK_NGX_Parameter_GetULL
+	[ 378] NVSDK_NGX_Parameter_GetVoidPointer
+	[ 379] NVSDK_NGX_Parameter_SetD
+	[ 380] NVSDK_NGX_Parameter_SetD3d11Resource
+	[ 381] NVSDK_NGX_Parameter_SetD3d12Resource
+	[ 382] NVSDK_NGX_Parameter_SetF
+	[ 383] NVSDK_NGX_Parameter_SetI
+	[ 384] NVSDK_NGX_Parameter_SetUI
+	[ 385] NVSDK_NGX_Parameter_SetULL
+	[ 386] NVSDK_NGX_Parameter_SetVoidPointer
+	[ 387] NVSDK_NGX_VULKAN_AllocateParameters
+	[ 388] NVSDK_NGX_VULKAN_CreateFeature
+	[ 389] NVSDK_NGX_VULKAN_CreateFeature1
+	[ 390] NVSDK_NGX_VULKAN_DestroyParameters
+	[ 391] NVSDK_NGX_VULKAN_EvaluateFeature
+	[ 392] NVSDK_NGX_VULKAN_EvaluateFeature_C
+	[ 393] NVSDK_NGX_VULKAN_GetCapabilityParameters
+	[ 394] NVSDK_NGX_VULKAN_GetParameters
+	[ 395] NVSDK_NGX_VULKAN_GetScratchBufferSize
+	[ 396] NVSDK_NGX_VULKAN_Init
+	[ 397] NVSDK_NGX_VULKAN_ReleaseFeature
+	[ 398] NVSDK_NGX_VULKAN_RequiredExtensions
+	[ 399] NVSDK_NGX_VULKAN_Shutdown
+	[ 400] NVSDK_NGX_VULKAN_Shutdown1
+	[ 401] NvOptimusEnablement
+	[ 402] agsCheckDriverVersion
+	[ 403] agsDeInit
+	[ 404] agsDriverExtensionsDX11_BeginUAVOverlap
+	[ 405] agsDriverExtensionsDX11_CreateDevice
+	[ 406] agsDriverExtensionsDX11_CreateFromDevice
+	[ 407] agsDriverExtensionsDX11_Destroy
+	[ 408] agsDriverExtensionsDX11_DestroyDevice
+	[ 409] agsDriverExtensionsDX11_EndUAVOverlap
+	[ 410] agsDriverExtensionsDX11_GetMaxClipRects
+	[ 411] agsDriverExtensionsDX11_IASetPrimitiveTopology
+	[ 412] agsDriverExtensionsDX11_MultiDrawIndexedInstancedIndirect
+	[ 413] agsDriverExtensionsDX11_MultiDrawIndexedInstancedIndirectCountIndirect
+	[ 414] agsDriverExtensionsDX11_MultiDrawInstancedIndirect
+	[ 415] agsDriverExtensionsDX11_MultiDrawInstancedIndirectCountIndirect
+	[ 416] agsDriverExtensionsDX11_NumPendingAsyncCompileJobs
+	[ 417] agsDriverExtensionsDX11_SetClipRects
+	[ 418] agsDriverExtensionsDX11_SetDepthBounds
+	[ 419] agsDriverExtensionsDX11_SetDiskShaderCacheEnabled
+	[ 420] agsDriverExtensionsDX11_SetMaxAsyncCompileThreadCount
+	[ 421] agsDriverExtensionsDX11_SetViewBroadcastMasks
+	[ 422] agsDriverExtensionsDX11_WriteBreadcrumb
+	[ 423] agsDriverExtensionsDX12_CreateCommandList
+	[ 424] agsDriverExtensionsDX12_CreateDevice
+	[ 425] agsDriverExtensionsDX12_CreateFromDevice
+	[ 426] agsDriverExtensionsDX12_CreateGraphicsPipelineState
+	[ 427] agsDriverExtensionsDX12_Destroy
+	[ 428] agsDriverExtensionsDX12_DestroyCommandList
+	[ 429] agsDriverExtensionsDX12_DestroyDevice
+	[ 430] agsDriverExtensionsDX12_PopMarker
+	[ 431] agsDriverExtensionsDX12_PushMarker
+	[ 432] agsDriverExtensionsDX12_SetDepthBounds
+	[ 433] agsDriverExtensionsDX12_SetMarker
+	[ 434] agsInit
+	[ 435] agsSetDisplayMode
+	[ 436] g_pAKPluginList
+	[ 437] opus_decode
+	[ 438] opus_decode_float
+	[ 439] opus_decoder_create
+	[ 440] opus_decoder_ctl
+	[ 441] opus_decoder_destroy
+	[ 442] opus_decoder_get_nb_samples
+	[ 443] opus_decoder_get_size
+	[ 444] opus_decoder_init
+	[ 445] opus_encode
+	[ 446] opus_encode_float
+	[ 447] opus_encoder_create
+	[ 448] opus_encoder_ctl
+	[ 449] opus_encoder_destroy
+	[ 450] opus_encoder_get_size
+	[ 451] opus_encoder_init
+	[ 452] opus_get_version_string
+	[ 453] opus_multistream_decode
+	[ 454] opus_multistream_decode_float
+	[ 455] opus_multistream_decoder_create
+	[ 456] opus_multistream_decoder_ctl
+	[ 457] opus_multistream_decoder_destroy
+	[ 458] opus_multistream_decoder_get_size
+	[ 459] opus_multistream_decoder_init
+	[ 460] opus_multistream_packet_pad
+	[ 461] opus_multistream_packet_unpad
+	[ 462] opus_packet_get_bandwidth
+	[ 463] opus_packet_get_nb_channels
+	[ 464] opus_packet_get_nb_frames
+	[ 465] opus_packet_get_nb_samples
+	[ 466] opus_packet_get_samples_per_frame
+	[ 467] opus_packet_pad
+	[ 468] opus_packet_parse
+	[ 469] opus_packet_unpad
+	[ 470] opus_pcm_soft_clip
+	[ 471] opus_repacketizer_cat
+	[ 472] opus_repacketizer_create
+	[ 473] opus_repacketizer_destroy
+	[ 474] opus_repacketizer_get_nb_frames
+	[ 475] opus_repacketizer_get_size
+	[ 476] opus_repacketizer_init
+	[ 477] opus_repacketizer_out
+	[ 478] opus_repacketizer_out_range
+	[ 479] opus_strerror
+	[ 480] png_access_version_number
+	[ 481] png_benign_error
+	[ 482] png_build_grayscale_palette
+	[ 483] png_calloc
+	[ 484] png_chunk_benign_error
+	[ 485] png_chunk_error
+	[ 486] png_chunk_warning
+	[ 487] png_convert_from_struct_tm
+	[ 488] png_convert_from_time_t
+	[ 489] png_convert_to_rfc1123
+	[ 490] png_create_info_struct
+	[ 491] png_create_read_struct
+	[ 492] png_create_read_struct_2
+	[ 493] png_create_write_struct
+	[ 494] png_create_write_struct_2
+	[ 495] png_data_freer
+	[ 496] png_destroy_info_struct
+	[ 497] png_destroy_read_struct
+	[ 498] png_destroy_write_struct
+	[ 499] png_error
+	[ 500] png_free
+	[ 501] png_free_data
+	[ 502] png_free_default
+	[ 503] png_get_IHDR
+	[ 504] png_get_PLTE
+	[ 505] png_get_bKGD
+	[ 506] png_get_bit_depth
+	[ 507] png_get_cHRM
+	[ 508] png_get_cHRM_fixed
+	[ 509] png_get_channels
+	[ 510] png_get_chunk_cache_max
+	[ 511] png_get_chunk_malloc_max
+	[ 512] png_get_color_type
+	[ 513] png_get_compression_buffer_size
+	[ 514] png_get_compression_type
+	[ 515] png_get_copyright
+	[ 516] png_get_current_pass_number
+	[ 517] png_get_current_row_number
+	[ 518] png_get_error_ptr
+	[ 519] png_get_filter_type
+	[ 520] png_get_gAMA
+	[ 521] png_get_gAMA_fixed
+	[ 522] png_get_hIST
+	[ 523] png_get_header_ver
+	[ 524] png_get_header_version
+	[ 525] png_get_iCCP
+	[ 526] png_get_image_height
+	[ 527] png_get_image_width
+	[ 528] png_get_int_32
+	[ 529] png_get_interlace_type
+	[ 530] png_get_io_chunk_name
+	[ 531] png_get_io_chunk_type
+	[ 532] png_get_io_ptr
+	[ 533] png_get_io_state
+	[ 534] png_get_libpng_ver
+	[ 535] png_get_mem_ptr
+	[ 536] png_get_oFFs
+	[ 537] png_get_pCAL
+	[ 538] png_get_pHYs
+	[ 539] png_get_pHYs_dpi
+	[ 540] png_get_pixel_aspect_ratio
+	[ 541] png_get_pixel_aspect_ratio_fixed
+	[ 542] png_get_pixels_per_inch
+	[ 543] png_get_pixels_per_meter
+	[ 544] png_get_rgb_to_gray_status
+	[ 545] png_get_rowbytes
+	[ 546] png_get_rows
+	[ 547] png_get_sBIT
+	[ 548] png_get_sCAL
+	[ 549] png_get_sCAL_fixed
+	[ 550] png_get_sCAL_s
+	[ 551] png_get_sPLT
+	[ 552] png_get_sRGB
+	[ 553] png_get_signature
+	[ 554] png_get_tIME
+	[ 555] png_get_tRNS
+	[ 556] png_get_text
+	[ 557] png_get_uint_16
+	[ 558] png_get_uint_31
+	[ 559] png_get_uint_32
+	[ 560] png_get_unknown_chunks
+	[ 561] png_get_user_chunk_ptr
+	[ 562] png_get_user_height_max
+	[ 563] png_get_user_transform_ptr
+	[ 564] png_get_user_width_max
+	[ 565] png_get_valid
+	[ 566] png_get_x_offset_inches
+	[ 567] png_get_x_offset_inches_fixed
+	[ 568] png_get_x_offset_microns
+	[ 569] png_get_x_offset_pixels
+	[ 570] png_get_x_pixels_per_inch
+	[ 571] png_get_x_pixels_per_meter
+	[ 572] png_get_y_offset_inches
+	[ 573] png_get_y_offset_inches_fixed
+	[ 574] png_get_y_offset_microns
+	[ 575] png_get_y_offset_pixels
+	[ 576] png_get_y_pixels_per_inch
+	[ 577] png_get_y_pixels_per_meter
+	[ 578] png_handle_as_unknown
+	[ 579] png_info_init_3
+	[ 580] png_init_io
+	[ 581] png_longjmp
+	[ 582] png_malloc
+	[ 583] png_malloc_default
+	[ 584] png_malloc_warn
+	[ 585] png_permit_mng_features
+	[ 586] png_read_end
+	[ 587] png_read_image
+	[ 588] png_read_info
+	[ 589] png_read_png
+	[ 590] png_read_row
+	[ 591] png_read_rows
+	[ 592] png_read_update_info
+	[ 593] png_reset_zstream
+	[ 594] png_save_int_32
+	[ 595] png_save_uint_16
+	[ 596] png_save_uint_32
+	[ 597] png_set_IHDR
+	[ 598] png_set_PLTE
+	[ 599] png_set_add_alpha
+	[ 600] png_set_bKGD
+	[ 601] png_set_background
+	[ 602] png_set_background_fixed
+	[ 603] png_set_benign_errors
+	[ 604] png_set_bgr
+	[ 605] png_set_cHRM
+	[ 606] png_set_cHRM_fixed
+	[ 607] png_set_chunk_cache_max
+	[ 608] png_set_chunk_malloc_max
+	[ 609] png_set_compression_buffer_size
+	[ 610] png_set_compression_level
+	[ 611] png_set_compression_mem_level
+	[ 612] png_set_compression_method
+	[ 613] png_set_compression_strategy
+	[ 614] png_set_compression_window_bits
+	[ 615] png_set_crc_action
+	[ 616] png_set_error_fn
+	[ 617] png_set_expand
+	[ 618] png_set_expand_16
+	[ 619] png_set_expand_gray_1_2_4_to_8
+	[ 620] png_set_filler
+	[ 621] png_set_filter
+	[ 622] png_set_filter_heuristics
+	[ 623] png_set_filter_heuristics_fixed
+	[ 624] png_set_flush
+	[ 625] png_set_gAMA
+	[ 626] png_set_gAMA_fixed
+	[ 627] png_set_gamma
+	[ 628] png_set_gamma_fixed
+	[ 629] png_set_gray_to_rgb
+	[ 630] png_set_hIST
+	[ 631] png_set_iCCP
+	[ 632] png_set_interlace_handling
+	[ 633] png_set_invalid
+	[ 634] png_set_invert_alpha
+	[ 635] png_set_invert_mono
+	[ 636] png_set_keep_unknown_chunks
+	[ 637] png_set_longjmp_fn
+	[ 638] png_set_mem_fn
+	[ 639] png_set_oFFs
+	[ 640] png_set_pCAL
+	[ 641] png_set_pHYs
+	[ 642] png_set_packing
+	[ 643] png_set_packswap
+	[ 644] png_set_palette_to_rgb
+	[ 645] png_set_quantize
+	[ 646] png_set_read_fn
+	[ 647] png_set_read_status_fn
+	[ 648] png_set_read_user_chunk_fn
+	[ 649] png_set_read_user_transform_fn
+	[ 650] png_set_rgb_to_gray
+	[ 651] png_set_rgb_to_gray_fixed
+	[ 652] png_set_rows
+	[ 653] png_set_sBIT
+	[ 654] png_set_sCAL
+	[ 655] png_set_sCAL_fixed
+	[ 656] png_set_sCAL_s
+	[ 657] png_set_sPLT
+	[ 658] png_set_sRGB
+	[ 659] png_set_sRGB_gAMA_and_cHRM
+	[ 660] png_set_shift
+	[ 661] png_set_sig_bytes
+	[ 662] png_set_strip_16
+	[ 663] png_set_strip_alpha
+	[ 664] png_set_swap
+	[ 665] png_set_swap_alpha
+	[ 666] png_set_tIME
+	[ 667] png_set_tRNS
+	[ 668] png_set_tRNS_to_alpha
+	[ 669] png_set_text
+	[ 670] png_set_unknown_chunk_location
+	[ 671] png_set_unknown_chunks
+	[ 672] png_set_user_limits
+	[ 673] png_set_user_transform_info
+	[ 674] png_set_write_fn
+	[ 675] png_set_write_status_fn
+	[ 676] png_set_write_user_transform_fn
+	[ 677] png_sig_cmp
+	[ 678] png_start_read_image
+	[ 679] png_warning
+	[ 680] png_write_chunk
+	[ 681] png_write_chunk_data
+	[ 682] png_write_chunk_end
+	[ 683] png_write_chunk_start
+	[ 684] png_write_end
+	[ 685] png_write_flush
+	[ 686] png_write_image
+	[ 687] png_write_info
+	[ 688] png_write_info_before_PLTE
+	[ 689] png_write_png
+	[ 690] png_write_row
+	[ 691] png_write_rows
+	[ 692] png_write_sig
+	[ 693] src_callback_new
+	[ 694] src_callback_read
+	[ 695] src_clone
+	[ 696] src_delete
+	[ 697] src_error
+	[ 698] src_float_to_int_array
+	[ 699] src_float_to_short_array
+	[ 700] src_get_channels
+	[ 701] src_get_description
+	[ 702] src_get_name
+	[ 703] src_get_version
+	[ 704] src_int_to_float_array
+	[ 705] src_is_valid_ratio
+	[ 706] src_new
+	[ 707] src_process
+	[ 708] src_reset
+	[ 709] src_set_ratio
+	[ 710] src_short_to_float_array
+	[ 711] src_simple
+	[ 712] src_strerror
+

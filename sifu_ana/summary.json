@@ -1,0 +1,95 @@
+{
+  "root": "/mnt/d/SteamLibrary/steamapps/common/Sifu",
+  "file_count": 241,
+  "total_bytes": 32504249208,
+  "extensions": {
+    ".dll": 163,
+    ".exe": 4,
+    ".pdb": 2,
+    ".tps": 1,
+    ".ttf": 1,
+    ".pak": 2,
+    ".txt": 2,
+    ".mp4": 63,
+    ".mov": 2,
+    ".sig": 1
+  },
+  "largest_files": [
+    {
+      "path": "Sifu/Content/Paks/pakchunk0-WindowsNoEditor.pak",
+      "bytes": 31100859986
+    },
+    {
+      "path": "Sifu/Binaries/Win64/Sifu-Win64-Shipping.pdb",
+      "bytes": 939708416
+    },
+    {
+      "path": "Engine/Binaries/Win64/CrashReportClient.pdb",
+      "bytes": 113930240
+    },
+    {
+      "path": "Sifu/Binaries/Win64/Sifu-Win64-Shipping.exe",
+      "bytes": 100491264
+    },
+    {
+      "path": "Engine/Programs/CrashReportClient/Content/Paks/CrashReportClient.pak",
+      "bytes": 47063845
+    },
+    {
+      "path": "Engine/Extras/Redist/en-us/UE4PrereqSetup_x64.exe",
+      "bytes": 41033784
+    },
+    {
+      "path": "Engine/Binaries/Win64/CrashReportClient.exe",
+      "bytes": 18458624
+    },
+    {
+      "path": "Engine/Plugins/Runtime/Nvidia/DLSS/Binaries/ThirdParty/Win64/nvngx_dlss.dll",
+      "bytes": 14452944
+    },
+    {
+      "path": "Sifu/Content/Movies/loadingscreen_Long.mp4",
+      "bytes": 8890020
+    },
+    {
+      "path": "Sifu/Content/Movies/OptionsIllustrations/OptionsGameplay_TakedownSurroundings02.mp4",
+      "bytes": 7179639
+    },
+    {
+      "path": "Sifu/Binaries/Win64/dbgeng.dll",
+      "bytes": 5557760
+    },
+    {
+      "path": "Sifu/Content/Movies/OptionsIllustrations/OptionsGameplay_ShakeEffect.mp4",
+      "bytes": 5439160
+    }
+  ],
+  "shipping": {
+    "sha256": "66845653ff78e4f1c31d7cfefccdcea435cbb5dc186451d443747b849c125e7e",
+    "bytes": 100491264,
+    "machine": "0x8664",
+    "sections": 9,
+    "coff_timestamp": 1749064368
+  },
+  "launcher": {
+    "sha256": "2895c84e6153dabbe4948dfc87ee4f28b518c6cc33ad585a581ea5cff3c82428",
+    "bytes": 257024,
+    "machine": "0x8664",
+    "sections": 7,
+    "coff_timestamp": 1749060667
+  },
+  "pak": [
+    {
+      "version": 11,
+      "index_offset": 31095030533,
+      "index_size": 1150256,
+      "footer_magic_offset": 31100859782,
+      "index_sha1": "189148edc81f69fa9a301c46339f4d73511c9d56",
+      "encrypted_index_byte": 1,
+      "tail_after_sha1_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "index_sha1_matches": false
+    }
+  ],
+  "pdb_header": "Microsoft C/C++ MSF 7.00\r\n\u001aDS\u0000\u0000\u0000",
+  "pdb_selected_strings": 11451
+}

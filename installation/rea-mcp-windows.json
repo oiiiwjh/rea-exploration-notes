@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "rea": {
+      "command": "wsl.exe",
+      "args": [
+        "-d",
+        "Ubuntu-20.04",
+        "--",
+        "/home/jeremiah/.local/bin/rea",
+        "mcp"
+      ]
+    }
+  }
+}

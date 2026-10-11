@@ -1,0 +1,282 @@
+++UE4+Release-4.26
+.RequestDeleteWwiseItem
+.RequestExploreWwiseItem
+.RequestFindInProjectExplorerWwisetem
+.RequestPlayWwiseItem
+.RequestRenameWwiseItem
+.RequestStopAllWwiseItem
+/Game/EditorResources/BP_SloclapDataAdviser
+/Game/EditorResources/BP_SloclapDataAdviser.BP_SloclapDataAdviser
+/Game/EditorResources/BP_SloclapTechAdviser
+/Game/EditorResources/BP_SloclapTechAdviser.BP_SloclapTechAdviser
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_PhysicalBreakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_PhysicalBreakable_Switch.AKE_PhysicalBreakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_Shakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_Shakable_Switch.AKE_Shakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_StaticBreakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_StaticBreakable_Switch.AKE_StaticBreakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_Vaporize_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_Vaporize_Switch.AKE_Vaporize_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_WeakBreakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_WeakBreakable_Switch.AKE_WeakBreakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_WindowsBreakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Destructible/AKE_WindowsBreakable_Switch.AKE_WindowsBreakable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Doors/AKE_Door_Material
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Doors/AKE_Door_Material.AKE_Door_Material
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Physical_Object/AKE_FakePhysical_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Physical_Object/AKE_FakePhysical_Switch.AKE_FakePhysical_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Throwable/AKE_Throwable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/GPE_Throwable/AKE_Throwable_Switch.AKE_Throwable_Switch
+/Game/Sounds/Wwise/ProtoWuguan/Music_System/Arena
+/Game/Sounds/Wwise/ProtoWuguan/UI_Menu
+/Game/Sounds/Wwise/ProtoWuguan/UI_Menu/DB_Notifs
+/Game/Sounds/Wwise/ProtoWuguan/UI_Menu/UI_EasyMode
+/Game/Sounds/Wwise/ProtoWuguan/UI_Menu/UI_HardPoints
+/Game/Sounds/Wwise/ProtoWuguan/Weapon
+/Game/Sounds/Wwise/ProtoWuguan/Weapon/AKE_WeaponName_Switch
+/Game/Sounds/Wwise/ProtoWuguan/Weapon/AKE_WeaponName_Switch.AKE_WeaponName_Switch
+/Game/WwiseAudio
+/Wwise/
+?GetWwiseXAudio2Interface@AK@@YAPEAUIUnknown@@XZ
+AkWwiseItemToControl
+AkWwiseObjectDetails
+BP_SloclapDataAdviser
+BP_SloclapDataAdviser::BP_MAX
+BP_SloclapDataAdviser::NewEnumerator0
+BP_SloclapDataAdviser::NewEnumerator1
+BP_SloclapDataAdviser::NewEnumerator10
+BP_SloclapDataAdviser::NewEnumerator11
+BP_SloclapDataAdviser::NewEnumerator12
+BP_SloclapDataAdviser::NewEnumerator13
+BP_SloclapDataAdviser::NewEnumerator14
+BP_SloclapDataAdviser::NewEnumerator15
+BP_SloclapDataAdviser::NewEnumerator16
+BP_SloclapDataAdviser::NewEnumerator2
+BP_SloclapDataAdviser::NewEnumerator3
+BP_SloclapDataAdviser::NewEnumerator4
+BP_SloclapDataAdviser::NewEnumerator5
+BP_SloclapDataAdviser::NewEnumerator6
+BP_SloclapDataAdviser::NewEnumerator7
+BP_SloclapDataAdviser::NewEnumerator8
+BP_SloclapDataAdviser::NewEnumerator9
+BP_SloclapTechAdviser
+BP_SloclapTechAdviser::BP_MAX
+BP_SloclapTechAdviser::NewEnumerator0
+BP_SloclapTechAdviser::NewEnumerator1
+BP_SloclapTechAdviser::NewEnumerator10
+BP_SloclapTechAdviser::NewEnumerator2
+BP_SloclapTechAdviser::NewEnumerator3
+BP_SloclapTechAdviser::NewEnumerator4
+BP_SloclapTechAdviser::NewEnumerator5
+BP_SloclapTechAdviser::NewEnumerator6
+BP_SloclapTechAdviser::NewEnumerator7
+BP_SloclapTechAdviser::NewEnumerator8
+BP_SloclapTechAdviser::NewEnumerator9
+BuildVersion
+BuildVersionString
+Changelist
+Choose A Wwise Item
+Choose a Wwise Item
+Choose an item from the Wwise tree
+Copyright xxxx SloClap, Inc. All Rights Reserved.
+Could not establish a WAAPI connection; WAAPI picker is disabled. Please enable WAAPI in your Wwise settings, or use the Wwise Picker.
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/AkWaapiSlate/Widgets/Input/AkSSlider.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/AkWaapiUMG/Components/AkCheckBox.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/AkWaapiUMG/Components/AkItemBoolProperties.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/AkWaapiUMG/Components/AkItemProperties.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/AkWaapiUMG/Components/AkSlider.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/AkWaapiUMG/Components/AkWwiseTree.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/AkWaapiUMG/Components/AkWwiseTreeSelector.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/AkWaapiUMG/Components/SAkItemBoolProperties.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/AkWaapiUMG/Components/SAkItemProperties.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/WaapiPicker/SWaapiPicker.cpp
+D:/UnrealEngine/Wuguan/Plugins/Wwise/Source/AkAudio/Private/WaapiPicker/SWaapiPickerRow.cpp
+D:\UnrealEngine\Wuguan\Plugins\Wwise\Source\AkAudio\Classes\AkAudioInputComponent.h
+D:\UnrealEngine\Wuguan\Plugins\Wwise\Source\AkAudio\Classes\AkWaapiUMG/Components/WwiseBoolPropertyDragDropOp.h
+D:\UnrealEngine\Wuguan\Plugins\Wwise\Source\AkAudio\Classes\AkWaapiUMG/Components/WwiseUmgDragDropOp.h
+DestinationBuildVersion
+Dumping FPS chart at %s using build %s in config %s built from changelist %i
+ECC_WWise
+E__BP_SloclapDataAdviser__pf
+E__BP_SloclapTechAdviser__pf
+FWwiseBoolPropertyDragDropOp
+FWwisePropertyDragDropOp
+FWwiseUmgDragDropOp
+If true, adds an on screen message with the current DemoTime and Changelist.
+Load bank failed : incompatible bank version. Bank was generated with %s version of Wwise. The Bank version is %d and the current SDK version is %d
+MapOfWWiseCulture
+MapOfWWiseCulture_Key
+NSLOCTEXT("BPSloclapDataAdviser", "2F72DA5B406301C4A748E1B92F4BF031", "Gauthier")
+NSLOCTEXT("BPSloclapDataAdviser", "458EF5E5402283B4854010A1F9800C9D", "Jordan")
+NSLOCTEXT("BPSloclapDataAdviser", "482871324635A66DB376B7B256408045", "Th
+NSLOCTEXT("BPSloclapDataAdviser", "5F4EBDF2407D853D88A363860827333D", "Guillaume Loquin")
+NSLOCTEXT("BPSloclapDataAdviser", "605083EF4FBC3A1004F05A8076328F98", "Lucas")
+NSLOCTEXT("BPSloclapDataAdviser", "68DF56D54995E30B8A764A831EFE6324", "Maxime")
+NSLOCTEXT("BPSloclapDataAdviser", "7074DCFF474CF2F035319EAC194C2561", "Thibault Cabanas")
+NSLOCTEXT("BPSloclapDataAdviser", "71D28500490A1EEA8FE689A73B101D3F", "Thomas Riboud")
+NSLOCTEXT("BPSloclapDataAdviser", "75FF20C342DDD912DFCE6AB5E3AEFF87", "Kevin")
+NSLOCTEXT("BPSloclapDataAdviser", "7B91705C4EE3B4CD40A8D8A88991C6A3", "Aurel")
+NSLOCTEXT("BPSloclapDataAdviser", "9587858A473C9BB70E61B798B3EE7450", "Map LD")
+NSLOCTEXT("BPSloclapDataAdviser", "BB3E16294FBC627BBBE671AD591CA243", "Map LA")
+NSLOCTEXT("BPSloclapDataAdviser", "CA5A58894055B8CE307E9F8D3D904E31", "Florian Droit")
+NSLOCTEXT("BPSloclapTechAdviser", "21E29308486591403615AEA5F5C84F7E", "Thomas Riboud")
+NSLOCTEXT("BPSloclapTechAdviser", "2F3DA22149217B6D504F6EA5B05ECA1F", "Guillaume Loquin")
+NSLOCTEXT("BPSloclapTechAdviser", "4893060B41014CBA5651C1A7DA123E24", "Aurelien")
+NSLOCTEXT("BPSloclapTechAdviser", "5C5C7D17446B0935161155AC56997A3A", "J
+NSLOCTEXT("BPSloclapTechAdviser", "7A6A115847509F1774794681114F1188", "Loris")
+NSLOCTEXT("BPSloclapTechAdviser", "FB3D2DEB46849FA8046560A44635D952", "Newin")
+NSLOCTEXT("BPSloclapUser", "47C3254A4BFE7FA0BAC132A89BD62713", "Olivier")
+NSLOCTEXT("BPSloclapUser", "9981972241DEDC14025659B1EEE4BD36", "Florian")
+NSLOCTEXT("BPSloclapUser", "AF848E1448050AF5207E9F8A0422F590", "Antoine")
+NSLOCTEXT("BPSloclapUser", "B455EEDC456B25DB243F23B5606E17B8", "Nicolas")
+NSLOCTEXT("BPSloclapUser", "C933BEEC4570C1645B70AD8F80A5529B", "Amine")
+OnWwiseItemDropDetected__DelegateSignature
+RequestDeleteWwiseItem
+RequestExploreWwiseItem
+RequestExploreWwiseItem_ToolTip
+RequestFindInProjectExplorerWwisetem
+RequestFindInProjectExplorerWwisetem_ToolTip
+RequestPlayWwiseItem
+RequestPlayWwiseItem_ToolTip
+RequestRenameWwiseItem
+RequestStopAllWwiseItem
+RequestStopAllWwiseItem_ToolTip
+STEAMVR
+STableRow< TSharedPtr<FWwiseTreeItem> >
+STreeView< TSharedPtr<FWwiseTreeItem> >
+Search Wwise Item
+Sifu-Win64-Shipping.pdb
+SloClap
+SourceBuildVersion
+SplashScreen/FullHD/SplashScreen_Sloclap_FullHD
+SplashScreen/FullHD/SplashScreen_UnrealWwiseNvidia_FullHD
+Steamv147
+SuppressWwiseProjectPathWarnings
+Type here to search for a Wwise asset
+UAkWwiseTree
+UAkWwiseTreeSelector
+Unreal Wwise Sound Data auto-generation
+UnrealCultureToWwiseCulture
+UnrealCultureToWwiseCulture_Key
+Wwise currently has a modal window opened. Please close it to use WAAPI functionality.
+WwiseAudio
+WwiseFolderPath
+WwiseMacInstallationPath
+WwiseProjectPath
+WwiseSoundDataFolder
+WwiseTree/Icons
+WwiseTypes
+WwiseWindowsInstallationPath
+_iChangeList
+ak.wwise.cli.addNewPlatform
+ak.wwise.cli.convertExternalSource
+ak.wwise.cli.createNewProject
+ak.wwise.cli.dumpObjects
+ak.wwise.cli.generateSoundbank
+ak.wwise.cli.migrate
+ak.wwise.cli.moveMediaIdsToSingleFile
+ak.wwise.cli.moveMediaIdsToWorkUnits
+ak.wwise.cli.tabDelimitedImport
+ak.wwise.cli.updateMediaIdsInSingleFile
+ak.wwise.cli.waapiServer
+ak.wwise.core.audio.import
+ak.wwise.core.audio.importTabDelimited
+ak.wwise.core.audio.imported
+ak.wwise.core.audioSourcePeaks.getMinMaxPeaksInRegion
+ak.wwise.core.audioSourcePeaks.getMinMaxPeaksInTrimmedRegion
+ak.wwise.core.getInfo
+ak.wwise.core.log.get
+ak.wwise.core.log.itemAdded
+ak.wwise.core.object.attenuationCurveChanged
+ak.wwise.core.object.attenuationCurveLinkChanged
+ak.wwise.core.object.childAdded
+ak.wwise.core.object.childRemoved
+ak.wwise.core.object.copy
+ak.wwise.core.object.create
+ak.wwise.core.object.created
+ak.wwise.core.object.curveChanged
+ak.wwise.core.object.delete
+ak.wwise.core.object.get
+ak.wwise.core.object.getAttenuationCurve
+ak.wwise.core.object.getPropertyAndReferenceNames
+ak.wwise.core.object.getPropertyInfo
+ak.wwise.core.object.getPropertyNames
+ak.wwise.core.object.getTypes
+ak.wwise.core.object.isPropertyEnabled
+ak.wwise.core.object.move
+ak.wwise.core.object.nameChanged
+ak.wwise.core.object.notesChanged
+ak.wwise.core.object.postDeleted
+ak.wwise.core.object.preDeleted
+ak.wwise.core.object.propertyChanged
+ak.wwise.core.object.referenceChanged
+ak.wwise.core.object.setAttenuationCurve
+ak.wwise.core.object.setName
+ak.wwise.core.object.setNotes
+ak.wwise.core.object.setProperty
+ak.wwise.core.object.setRandomizer
+ak.wwise.core.object.setReference
+ak.wwise.core.plugin.getList
+ak.wwise.core.plugin.getProperties
+ak.wwise.core.plugin.getProperty
+ak.wwise.core.profiler.getBusses
+ak.wwise.core.profiler.getCursorTime
+ak.wwise.core.profiler.getRTPCs
+ak.wwise.core.profiler.getVoiceContributions
+ak.wwise.core.profiler.getVoices
+ak.wwise.core.profiler.startCapture
+ak.wwise.core.profiler.stopCapture
+ak.wwise.core.project.loaded
+ak.wwise.core.project.postClosed
+ak.wwise.core.project.preClosed
+ak.wwise.core.project.save
+ak.wwise.core.project.saved
+ak.wwise.core.remote.connect
+ak.wwise.core.remote.disconnect
+ak.wwise.core.remote.getAvailableConsoles
+ak.wwise.core.remote.getConnectionStatus
+ak.wwise.core.soundbank.generate
+ak.wwise.core.soundbank.generated
+ak.wwise.core.soundbank.generationDone
+ak.wwise.core.soundbank.getInclusions
+ak.wwise.core.soundbank.setInclusions
+ak.wwise.core.switchContainer.addAssignment
+ak.wwise.core.switchContainer.assignmentAdded
+ak.wwise.core.switchContainer.assignmentRemoved
+ak.wwise.core.switchContainer.getAssignments
+ak.wwise.core.switchContainer.removeAssignment
+ak.wwise.core.transport.create
+ak.wwise.core.transport.destroy
+ak.wwise.core.transport.executeAction
+ak.wwise.core.transport.getList
+ak.wwise.core.transport.getState
+ak.wwise.core.transport.stateChanged
+ak.wwise.core.undo.beginGroup
+ak.wwise.core.undo.cancelGroup
+ak.wwise.core.undo.endGroup
+ak.wwise.debug.assertFailed
+ak.wwise.debug.enableAsserts
+ak.wwise.debug.enableAutomationMode
+ak.wwise.debug.testAssert
+ak.wwise.debug.testCrash
+ak.wwise.locked
+ak.wwise.ui.bringToForeground
+ak.wwise.ui.captureScreen
+ak.wwise.ui.commands.execute
+ak.wwise.ui.commands.executed
+ak.wwise.ui.commands.getCommands
+ak.wwise.ui.commands.register
+ak.wwise.ui.commands.unregister
+ak.wwise.ui.getSelectedObjects
+ak.wwise.ui.project.close
+ak.wwise.ui.project.open
+ak.wwise.ui.selectionChanged
+ak.wwise.waapi.getFunctions
+ak.wwise.waapi.getSchema
+ak.wwise.waapi.getTopics
+mRequestDeleteWwiseItem_ToolTip
+mRequestRenameWwiseItem_ToolTip
+m_iChangeList
+nWwiseItemToolTipText
+r.NGX.DLSS.MinimumWindowsBuildVersion
+wwise_logo_32

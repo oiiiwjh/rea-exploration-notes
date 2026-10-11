@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "format": "pe",
+  "architecture": "x86_64",
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "address": "0x140001010",
+  "expectedReturn": 42,
+  "pseudocode": "\nundefined8 FUN_140001010(void)\n\n{\n  return 0x2a;\n}\n\n",
+  "evidenceId": "ev_d90f85995af306e465ec0e586673c14c3dcfab501dec89c176b51f88996cba01",
+  "sha256": "3ecda6846bba71b9e14cb21d2da595d0c1fa1d74117759a9b2b9505e24f9523e",
+  "targetExecuted": false,
+  "fixtureBytes": 1536
+}

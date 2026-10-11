@@ -1,0 +1,16 @@
+{
+  "exe_rsds": {
+    "guid": "20f49b75-7758-45c9-9858-54a7643df1ee",
+    "age": 1,
+    "path": "Sifu-Win64-Shipping.pdb"
+  },
+  "pdb_info": {
+    "version": 20000404,
+    "signature": 1749064352,
+    "age": 1,
+    "guid": "20f49b75-7758-45c9-9858-54a7643df1ee",
+    "block_size": 4096,
+    "stream_count": 1875
+  },
+  "identity_matches": true
+}

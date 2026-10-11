@@ -1,0 +1,50 @@
+{
+  "installed": true,
+  "installationDate": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "platform": "WSL Ubuntu-20.04 x86_64",
+  "root": "/home/jeremiah/.local/share/rea",
+  "reaVersion": "6.4.0",
+  "npmVersion": "11.19.0",
+  "tools": [
+    {
+      "tool": "node",
+      "version": "v24.21.0",
+      "sha256": "fd8e59d5a511510f6a298afb548f18c7d2b1be404d8b4a27d94fbe49f56cb2d6",
+      "installedPath": "/home/jeremiah/.local/share/rea/node-v24.21.0-linux-x64"
+    },
+    {
+      "tool": "jdk",
+      "version": "21.0.12.1+1-LTS",
+      "sha256": "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
+      "installedPath": "/home/jeremiah/.local/share/rea/jdk-21.0.12.1+1"
+    },
+    {
+      "tool": "ghidra",
+      "version": "12.1.4",
+      "sha256": "ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db",
+      "installedPath": "/home/jeremiah/.local/share/rea/ghidra_12.1.4_PUBLIC"
+    }
+  ],
+  "checks": {
+    "cli": true,
+    "ghidraDoctor": true,
+    "overallEnvironmentHealthy": false,
+    "nativePe": true,
+    "mcp": true,
+    "mcpTools": 170,
+    "windowsWrapper": true
+  },
+  "verifiedFunction": {
+    "address": "0x140001010",
+    "return": 42,
+    "pseudocode": "\nundefined8 FUN_140001010(void)\n\n{\n  return 0x2a;\n}\n\n",
+    "evidenceId": "ev_d90f85995af306e465ec0e586673c14c3dcfab501dec89c176b51f88996cba01"
+  },
+  "clientRegistrationChanged": false,
+  "gameExecuted": false,
+  "limitations": [
+    "Ubuntu 20.04 is outside REA recommended overall host matrix; Ghidra scope and micro-PE workflow were validated.",
+    "Sifu full executable/PDB analysis was not performed by this installation."
+  ]
+}
