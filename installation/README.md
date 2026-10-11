@@ -2,6 +2,8 @@
 
 ## 本次安装记录
 
+完整过程见独立 Markdown 文档 [REA-installation-report.md](REA-installation-report.md)。
+
 原环境为 Ubuntu 20.04 WSL x86_64，工具链安装到用户目录 `~/.local/share/rea`，启动器位于 `~/.local/bin/rea` 和 `rea-agents`。
 
 `toolchain-manifest.json` 记录本次安装的 REA 6.4.0、Node v24.21.0、Temurin JDK 21.0.12.1+1、Ghidra 12.1.4 的来源与校验信息。
@@ -18,6 +20,9 @@
 
 ```bash
 python3 installation/install-tools.py
+export PATH="$HOME/.local/share/rea/node/bin:$PATH"
+npm install --global --prefix "$HOME/.local/share/rea/npm" \
+  --registry=https://registry.npmjs.org rea-agents@6.4.0 --no-audit --no-fund
 python3 installation/configure-rea.py
 ~/.local/bin/rea --help
 ~/.local/bin/rea doctor --provider ghidra --json
@@ -27,4 +32,4 @@ python3 installation/configure-rea.py
 
 MCP 模板 `rea-mcp-windows.json` 使用原发行版 `Ubuntu-20.04` 和原用户路径。`rea-wsl.cmd` 也应先检查路径。模板生成不等于已注册到 Agent；在新电脑按客户端配置方式添加并重启。不要覆盖新电脑已有配置。
 
-原生测试目标位于原机 `installation/build/fixtures/`，未上传；生成入口为 `scripts/create-ghidra-windows-fixture.mjs`，请先阅读其参数与工具链要求。
+原生测试目标位于原机 `installation/build/fixtures/`，未上传；生成入口为 `installation/scripts/create-ghidra-windows-fixture.mjs`，请先阅读其参数与工具链要求。
