@@ -166,3 +166,5 @@ node wiki/build.mjs --renderer scripts/node_modules/marked/lib/marked.esm.js
 ```
 
 修改文件后原校验清单会显示差异。只有维护者准备提交更新时，在 stage 新文件后运行 `python3 scripts/reproduction_manifest.py --write` 并提交新的清单。
+
+原机独立克隆验证已通过，详见 [REPRODUCTION_CHECKS.json](../REPRODUCTION_CHECKS.json)。在自己的独立检出目录可运行 `python3 scripts/reproduction_smoke.py --directory /absolute/path/to/checkout`，重跑无游戏复现检查。

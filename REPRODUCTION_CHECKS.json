@@ -1,0 +1,91 @@
+{
+  "ok": true,
+  "scenario": "separate checkout; no game files or virtual environment copied",
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "scripts/reproduction_manifest.py"
+      ],
+      "returncode": 0,
+      "output": "{\n  \"ok\": true,\n  \"files\": 1176,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "sifu_ana/reconstruction",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "output": "test_defense_inside_configured_demo_range (test_model.ModelTests) ... ok\ntest_encounter_completion_and_reset (test_model.ModelTests) ... ok\ntest_failed_condition_never_falls_back (test_model.ModelTests) ... ok\ntest_float_conversion_is_artifact_constant (test_model.ModelTests) ... ok\ntest_input_switch_default (test_model.ModelTests) ... ok\ntest_large_time_jump_rejected (test_model.ModelTests) ... ok\ntest_missing_hold_retries_regular (test_model.ModelTests) ... ok\ntest_options_boundary_and_focus_float_comparison (test_model.ModelTests) ... ok\ntest_property_required_only_on_open (test_model.ModelTests) ... ok\ntest_range_endpoints_and_unbounded (test_model.ModelTests) ... ok\ntest_recovered_guard_db_and_custom_profile_are_distinct (test_model.ModelTests) ... ok\ntest_weak_assignment_offsets_and_prediction_isolation (test_model.ModelTests) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "sifu_ana/structure",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "output": "test_fname_invalid_index_and_suffix (test_package_reader.PackageReaderTests) ... ok\ntest_out_of_bounds_and_negative_lengths (test_package_reader.PackageReaderTests) ... ok\ntest_property_size_rejected_before_decode (test_package_reader.PackageReaderTests) ... ok\ntest_tag_value_and_explicit_terminator (test_package_reader.PackageReaderTests) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "sifu_ana/rea/verify_results.py"
+      ],
+      "returncode": 0,
+      "output": "{\n  \"ok\": true,\n  \"functions\": 42,\n  \"listingInstructions\": 3992\n}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "sifu_ana/structure/search_index.py",
+        "^UDefenseComponent::SetParryWindow$",
+        "--limit",
+        "1"
+      ],
+      "returncode": 0,
+      "output": "{\"system_hint\": \"combat\", \"name\": \"UDefenseComponent::SetParryWindow\", \"owner_hint\": \"UDefenseComponent\", \"rva\": \"0x017a8b00\", \"va\": \"0x1417a8b00\", \"length\": \"182\", \"type_index\": \"1363132\", \"stream\": \"558\", \"record_offset\": \"691128\", \"module\": \"D:\\\\UnrealEngine\\\\Wuguan\\\\Intermediate\\\\Build\\\\Win64\\\\Sifu\\\\Shipping\\\\Sifu\\\\Module.Sifu.7_of_22.cpp.obj\"}\n"
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-fsyntax-only",
+        "sifu_ana/reconstruction/check_offsets.cpp"
+      ],
+      "returncode": 0,
+      "output": ""
+    }
+  ],
+  "testedCommit": "d362295cd7844958cdcafd1ff288e1d2c06f7e6d",
+  "cloneSource": "local committed repository; nested submodules fetched from their declared GitHub remotes",
+  "sameHost": true,
+  "gameFilesCopied": false,
+  "analysisVirtualEnvironmentCopied": false,
+  "submodules": [
+    " fb94d9dde0ccda83ae520ac6fb22b1d283562cf3 source (fb94d9d)",
+    " 4fdab3d464d97b68e0af9088df3f9e2e1545b21c source/third_party/binwalk (4fdab3d)",
+    " effeb734fc570c32650f88b159608979dc7b423e source/third_party/ghidra-nativeaot (heads/main)",
+    " 5844800a486d2248fa949b74c9896285f5b54de2 source/third_party/jadx-headless-mcp (5844800)",
+    " 1fcc7a0a584a70a96c31f5a276c20944d199a089 source/third_party/unblob (1fcc7a0)",
+    " 8219bf5016a063d7fb215101a8c45d5959ec733f source/third_party/wakaru (8219bf5)"
+  ],
+  "limitations": [
+    "Isolation was tested on the original WSL host, not a physically different computer.",
+    "The tested commit contains all implementation and evidence; the following commit adds this verification record and documentation only.",
+    "Binary analysis and full asset regeneration on another host still require its own tool installation and matching game files."
+  ]
+}

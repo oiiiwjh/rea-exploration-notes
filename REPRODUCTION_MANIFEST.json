@@ -17,9 +17,14 @@
       "sha256": "357cac93c8d8ffc912b9dd91d950cfab108989dec5ae79c223aa11d9518c1567"
     },
     {
+      "path": "REPRODUCTION_CHECKS.json",
+      "bytes": 4535,
+      "sha256": "18a0c16d2837b0c728547a41fd23d200b45de71277febe0343801f9699d41ac5"
+    },
+    {
       "path": "SIFU_RECONSTRUCTION.md",
-      "bytes": 16882,
-      "sha256": "0936535cde401e5e0d175357a79d4217d03ca166d7828cdd44c445af7a9f0269"
+      "bytes": 17291,
+      "sha256": "e40d4f6b78a2228636cd6d3a8c3ee02e72797024f2a9c6fc944e5ddf4a19a946"
     },
     {
       "path": "installation/REA-installation-report.html",
@@ -183,8 +188,8 @@
     },
     {
       "path": "sifu_ana/REPRODUCE.md",
-      "bytes": 9533,
-      "sha256": "e011c868079f6b965893e5d72035c9f510182a66ced1eb934a02f8ddf0cbb15d"
+      "bytes": 9787,
+      "sha256": "ec916c6635f077898396fae632fd3e5f65c025cd6efffb443eaea5ab2c933519"
     },
     {
       "path": "sifu_ana/TASKS.md",
@@ -5863,8 +5868,8 @@
     },
     {
       "path": "wiki/sifu-analysis.html",
-      "bytes": 164688,
-      "sha256": "90e211dbb8cca415cd320e234613541491b26bc011331e275372c0f5480e80d7"
+      "bytes": 165173,
+      "sha256": "43d569d1aa33dcf3e379cc9f684e9a3d07c3bbad82c98478237fed119f3bb2ac"
     },
     {
       "path": "wiki/start-wiki.bat",
